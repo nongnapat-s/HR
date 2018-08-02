@@ -25,3 +25,7 @@ Route::get('/fixed', function () {
     return view('w3-test-fixed');
 });
 
+
+Route::get('/test', function () {
+    return view('test');
+});

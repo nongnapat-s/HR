@@ -15,8 +15,11 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('panel-component', require('./components/PanelComponent.vue'));
+Vue.component('input-text', require('./components/InputTextComponent.vue'));
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data : {
+        first_name : 'nongnapat',
+    }
 });
