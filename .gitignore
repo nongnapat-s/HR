@@ -3,7 +3,7 @@
 /public/storage
 /public/css
 /public/js
-/public/mix_minifest.json
+/public/mix-minifest.json
 /storage/*.key
 /vendor
 /.idea
