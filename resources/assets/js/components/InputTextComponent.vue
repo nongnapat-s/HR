@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-    props : ['label','value']
+    props : ['label','value'] 
     // ,
     // methods : {
     //     OnInput(){
