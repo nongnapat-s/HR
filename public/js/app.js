@@ -43808,7 +43808,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "page col-md-8 col-md-offset-2" }, [
+  return _c("div", { staticClass: "page col-md-10 col-md-offset-1" }, [
     _c("div", { staticClass: "box w3-panel w3-card-4 w3-round" }, [
       _c("div", [
         _c(
