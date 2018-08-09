@@ -6,6 +6,7 @@
 @section('body')
     <panel-component title = "Add new employee">
         <input-text label="first name" v-model ="first_name"></input-text>
+        <input-text label="first name" v-model ="first_name"></input-text>
     </panel-component>
     
 @endsection
