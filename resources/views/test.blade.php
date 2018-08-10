@@ -24,11 +24,23 @@
             v-model ="english_name"
         ></input-text>
 
+        <!-- <input-radio
+            id = "toggle-gender"
+            :labels = "['ชาย','หญิง']"
+            :state = "true"
+        ></input-radio> -->
+        <!-- <input-radio
+            id = "toggle-feel"
+            :labels = "['เผลอ','ไม่เผลอ']"
+            :state = "false"
+        ></input-radio> -->
         <input-radio
-            name = "gender"
-            label = "ชาย"
+            id = "toggle-gender"
+            true-label = 'ชาย'  
+            false-label = 'หญิง' 
         ></input-radio>
-
+        
+        <!-- การบ้านให้ทำเป็น v-model -->
         <input-button 
             label = "เพิ่มข้อมูล"
         ></input-button>

@@ -4,16 +4,34 @@
             <input 
                 type="checkbox" 
                 class="switch" 
-                id="switch-id">
-            
-            <label  for="switch-id">หญิง</label>
+                :id="id"
+                :checked = "toggle"
+                @click="toggle = !toggle"
+            >         
+            <label :for="id">{{ toggle ? trueLabel:falseLabel }}</label>
         </span>     
     </div>
 </template>
 
 <script>
 export default {
-    props : ['name','label']
+    props : {
+        id : { required : true },
+        state : { default : false },
+        trueLabel : { default : 'on'},
+        falseLabel : { default : 'off'},
+        // labels :{ required : true , type : Array }
+    },
+    data () {
+        return {
+            toggle : this.state
+        } 
+    },
+    // computed : {
+    //     label() {
+    //        return this.toggle ? this.labels[0] : this.labels[1]
+    //     }
+    // },
 }
 </script>
 
@@ -129,11 +147,9 @@ export default {
 .switch + .switch {
   margin-left: 1rem;
 }
-
 body {
   padding: 1rem;
 }
-
 .dropdown-menu {
   margin-top: .75rem;
 }
