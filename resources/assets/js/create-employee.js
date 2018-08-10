@@ -26,5 +26,6 @@ const app = new Vue({
         title_name : '',
         thai_name : '',
         english_name : '',
+        gender : false,
     }
 });

@@ -36,8 +36,10 @@
         ></input-radio> -->
         <input-radio
             id = "toggle-gender"
+            v-model = "gender"
             true-label = 'ชาย'  
             false-label = 'หญิง' 
+            default-label = "เพศ"
         ></input-radio>
         
         <!-- การบ้านให้ทำเป็น v-model -->
