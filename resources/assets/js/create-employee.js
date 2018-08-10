@@ -17,9 +17,14 @@ require('./bootstrap');
 
 Vue.component('panel-component', require('./components/PanelComponent.vue'));
 Vue.component('input-text', require('./components/InputTextComponent.vue'));
+Vue.component('input-button',require('./components/InputButtonComponent.vue'));
+Vue.component('input-radio',require('./components/InputRadioButtonComponent.vue'));
 const app = new Vue({
     el: '#app',
     data : {
-        first_name : 'nongnapat',
+        ref_id : '',
+        title_name : '',
+        thai_name : '',
+        english_name : '',
     }
 });

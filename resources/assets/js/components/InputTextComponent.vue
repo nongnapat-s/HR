@@ -1,13 +1,13 @@
 <template>
-     <div class="form-group">
-        <!-- <label v-text = "label" ></label> -->
-        <!-- <input
+    <div class="form-group">
+        <label v-text = "label" ></label>
+        <input
             type="text"
             class="form-control"
             :value = "value"
             @input="$emit('input', $refs.input.value)"
-            ref="input"> -->
-            ​<div class="w3-row w3-section">
+            ref="input">
+            <!-- ​<div class="w3-row w3-section">
                     <div class="w3-col" style="width:150px">
                         <label 
                             v-text = "label"
@@ -20,8 +20,8 @@
                             @input="$emit('input', $refs.input.value)"            
                             ref="input">
                     </div>
-                </div>
-            </div>
+                </div> -->
+    </div>
 </template>
 <script>
 export default {
