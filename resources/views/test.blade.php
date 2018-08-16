@@ -80,6 +80,8 @@
 @endsection
 
 @section('js')
-    <script src ="{{ url('/js/create-employee.js') }}"></script>
+    <script src = "{{ mix('/js/manifest.js') }}"></script>
+    <script src = "{{ mix('/js/vendor.js') }}"></script>
+    <script src ="{{ mix('/js/create-employee.js') }}"></script>
 @endsection
 <!-- @section('app-js','/js/app.js') -->
