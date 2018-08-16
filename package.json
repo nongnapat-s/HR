@@ -19,6 +19,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "vue-pikaday": "^0.1.1",
         "w3-css": "^4.1.0"
     }
 }

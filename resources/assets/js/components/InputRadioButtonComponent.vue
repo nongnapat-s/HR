@@ -1,16 +1,21 @@
 <template>
-    <div> 
+    <div class = "row">
+      <div class="col-md-3">
         <!-- <span class="switch"> -->
-        <span :class = "themeClass">
-            <input 
-                type="checkbox" 
-                class="switch" 
-                :id="id"
-                :checked="value"
-                @click="toggle" 
-            />
-            <label :for="id">{{ label }}</label>
-        </span>     
+          <!-- <div class = "form-control"> -->
+            <span :class = "themeClass">
+              <input 
+                  type="checkbox" 
+                  class="switch" 
+                  :id="id"
+                  :checked="value"
+                  @click="toggle" 
+                />
+                <label :for="id">{{ label }}</label>
+            </span>
+            
+        <!-- </div>     -->
+      </div>
     </div>
 </template>
 
@@ -27,7 +32,7 @@ export default {
     data () {
         return {
             clicked: false,
-            themeClass: 'switch switch-lg'
+            themeClass: 'switch switch-md'
         } 
     },
     computed : {
@@ -43,13 +48,16 @@ export default {
         toggle() {
             this.$emit('input', !this.value)
             this.clicked = true
-            this.themeClass = 'switch switch-lg'
+            this.themeClass = 'switch switch-md'
         }
     }
 }
 </script>
 
 <style>
+  span {
+    top : 30px;
+  }
   .switch {
     font-size: 1rem;
     position: relative;

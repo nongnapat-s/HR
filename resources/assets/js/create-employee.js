@@ -19,6 +19,7 @@ Vue.component('panel-component', require('./components/PanelComponent.vue'));
 Vue.component('input-text', require('./components/InputTextComponent.vue'));
 Vue.component('input-button',require('./components/InputButtonComponent.vue'));
 Vue.component('input-radio',require('./components/InputRadioButtonComponent.vue'));
+Vue.component('pikaday',require('./components/PikadayComponent.vue'));
 const app = new Vue({
     el: '#app',
     data : {
@@ -26,6 +27,21 @@ const app = new Vue({
         title_name : '',
         thai_name : '',
         english_name : '',
+        nickname : '',
+        date_of_birth : '',
+        age : '',
         gender : false,
+        race : '',
+        nationality:'',
+    },
+    methods: {
+        submit_form: function (event) {
+            console.log(this.ref_id)
+            console.log(this.title_name)
+            console.log(this.thai_name)
+            console.log(this.english_name)
+            console.log(this.gender)
+        }
     }
+
 });

@@ -1,12 +1,12 @@
 <template>
-        <div class = "page col-md-10 col-md-offset-1">
-            <div class="box w3-panel w3-card-4 w3-round">
-                <div>
-                    <h1><center v-text = "title"></center></h1>
-                </div>
-                <hr/>
-                <div>
-                    <slot></slot>
+        <div class = "col-md-12">
+            <div class="w3-card">
+                <header class="w3-container">
+                    <h3 v-text = 'title'></h3>
+                </header>
+                <div class="w3-container">
+                    <br/>
+                        <slot></slot>
                 </div>
             </div>
         </div>
@@ -18,3 +18,8 @@ export default {
     props : ['title']
 }
 </script>
+<style>
+    header {
+        background-color:#D6EAF8
+    }
+</style>
