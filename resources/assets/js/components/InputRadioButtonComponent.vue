@@ -1,6 +1,6 @@
 <template>
     <div class = "row">
-      <div class="col-md-3">
+      <div class="col-xs-12">
         <!-- <span class="switch"> -->
           <!-- <div class = "form-control"> -->
             <span :class = "themeClass">
@@ -55,9 +55,9 @@ export default {
 </script>
 
 <style>
-  span {
+  /* span {
     top : 30px;
-  }
+  } */
   .switch {
     font-size: 1rem;
     position: relative;

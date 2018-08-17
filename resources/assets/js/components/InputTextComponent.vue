@@ -1,6 +1,6 @@
 <template>
     <!-- <div class = "row"> -->
-        <div class="form-group col-md-3">
+        <div class="form-group col-xs-12">
             <label 
                 v-text = "label" 
             ></label>
