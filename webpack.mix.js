@@ -20,5 +20,5 @@ mix.mix.extract([
 ])
     .autoload({ jquery: ['$', 'window.jQuery', 'jQuery'] })
     .js('resources/assets/js/app.js', 'public/js')
-    .js('resources/assets/js/create-employee.js', 'public/js')
+    .js('resources/assets/js/employee/create-employee.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css');

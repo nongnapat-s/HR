@@ -13,6 +13,8 @@
         @yield('body')
      </div>
 
-     @yield('js')
+    <script src = "{{ mix('/js/manifest.js') }}"></script>
+    <script src = "{{ mix('/js/vendor.js') }}"></script>
+     @yield('app-js')
 </body>
 </html>

@@ -16,7 +16,7 @@ require('./bootstrap');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('panel-component', require('./components/PanelComponent.vue'));
+// Vue.component('panel-component', require('./components/PanelComponent.vue'));
 const app = new Vue({
     el: '#app'
 });
