@@ -1,6 +1,4 @@
 <template>
-    <div class = "row">
-      <div class="col-xs-12">
         <!-- <span class="switch"> -->
           <!-- <div class = "form-control"> -->
             <span :class = "themeClass">
@@ -15,14 +13,12 @@
             </span>
             
         <!-- </div>     -->
-      </div>
-    </div>
 </template>
 
 <script>
 export default {
     props : {
-        id : { required : true },
+      
         value : { default : false },
         trueLabel : { default : 'on'},
         falseLabel : { default : 'off'},
