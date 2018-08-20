@@ -63,14 +63,17 @@
                 </div>
                 
                   <!-- <label for="">หมู่เลือด : </label> -->
-                 <li v-for = "(blood,index) in bloods">
-                    <input-radio 
-                        v-model = "blood.type" 
-                        name = "options" 
-                        label = "blood.type" 
-                        state ="blood.type"
-                     />
-                 </li>
+                <!-- <div class = "row">
+                    <div class ="col-md-6"> -->
+                           
+                        <input-radio 
+                            label = "หมู่เลือด :" 
+                            v-model = "blood_group" 
+                            name = "blood_group"  
+                            :options = "blood_groups"
+                        />
+                    <!-- </div> -->
+                <!-- </div> -->
                 <!-- <div class ="row"> -->
                    <!-- <div class ="col-md-6">
                        <label for="">หมู่เลือด : </label>
@@ -133,7 +136,6 @@
             InputToggle,
             InputRadio,
         },
-        
         data() {
             return {
                 ref_id : '',
@@ -145,12 +147,12 @@
                 race: '',
                 nationality: '',
                 gender : false,
-                blood_type : '',
-                bloods : [
-                    { type : 'A'},
-                    { type : 'B'},
-                    { type : 'O'},
-                    { type : 'AB'},
+                blood_group : '',
+                blood_groups : [
+                    { index : '0' , type : 'A' },
+                    { index : '1' , type : 'B' },
+                    { index : '2' , type : 'O' },
+                    { index : '3' , type : 'AB' },
                 ]
 
             }

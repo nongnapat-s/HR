@@ -1,37 +1,26 @@
 <template>
-    <div class="pretty p-default p-round">
-        
-        <input 
-            type="radio" 
-            name="name"
-            v-model = "radioButtonValue"
-            @click = "radio">  
-        <div class="state">
-            <label v-text = "state"></label>
+    <div class="form-group col-xs-12">
+        <label v-text = "label"></label>
+        <div v-for = "option in options" :key = "option.index" class="pretty p-default p-round">
+            <input 
+                type="radio" 
+                name="name"
+                @click = "radio(option.type)">  
+            <div class="state">
+                <label v-text = "option.type"></label>
+            </div>
         </div>
     </div>
 </template>
 <script>
-  import 'pretty-checkbox/src/pretty-checkbox.scss';
-export default {
-     props: ['name', 'label', 'state'],
-     computed: {
-        radioButtonValue: {
-            get: function() {
-                return this.state
-            },
-            set: function() {
-                // Communicate the change to parent component so that selectedValue can be updated
-                this.$emit("change", this.state)
+    import 'pretty-checkbox/src/pretty-checkbox.scss';
+    export default {
+        props: ['name', 'label', 'options'],
+        methods: {
+            radio(option) {
+                this.$emit('input',option)
             }
-        }
-    },
-       methods: {
-        radio() {
-            this.$emit('input', this.state)
-        }
+        }   
     }
-    
-}
 </script>
 
