@@ -18,7 +18,7 @@
 <script>
 export default {
     props : {
-      
+        id : { required : true },
         value : { default : false },
         trueLabel : { default : 'on'},
         falseLabel : { default : 'off'},
@@ -51,9 +51,9 @@ export default {
 </script>
 
 <style>
-  /* span {
-    top : 30px;
-  } */
+  span {
+    padding: 10px;
+  }
   .switch {
     font-size: 1rem;
     position: relative;

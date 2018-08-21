@@ -26,3 +26,5 @@
 Route::get('/create-employee',function() {
     return view('vue-app')->with(['title' => 'Create employee', 'jsFile' => 'create-employee.js']);
 });
+
+Route::post('/get-jobs-api','EmployeeController@getJobsApi');

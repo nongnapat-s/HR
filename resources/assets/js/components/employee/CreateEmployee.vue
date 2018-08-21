@@ -32,6 +32,7 @@
                         ></input-text>
                     </div>
                 </div>
+
                 <div class = "row">
                     <div class ="col-md-6">
                         <input-date 
@@ -47,6 +48,7 @@
                         ></input-text>
                     </div>
                 </div>
+
                 <div class = "row">
                     <div class ="col-md-6">
                         <input-text 
@@ -61,51 +63,17 @@
                         ></input-text>
                     </div>
                 </div>
-                
-                  <!-- <label for="">หมู่เลือด : </label> -->
-                <!-- <div class = "row">
-                    <div class ="col-md-6"> -->
-                           
+            
+                <div class = "row">   
+                    <div class = "col-md-6">     
                         <input-radio 
                             label = "หมู่เลือด :" 
                             v-model = "blood_group" 
                             name = "blood_group"  
                             :options = "blood_groups"
                         />
-                    <!-- </div> -->
-                <!-- </div> -->
-                <!-- <div class ="row"> -->
-                   <!-- <div class ="col-md-6">
-                       <label for="">หมู่เลือด : </label>
-                        <input-radio 
-                            v-model = "blood_type" 
-                            name = "options" 
-                            label = "A" 
-                            state ="A"
-                        />
-                        <input-radio 
-                            v-model = "blood_type"
-                            name = "options" 
-                            label = "B" 
-                            state = "B"
-                        />
-                        <input-radio 
-                            v-model = "blood_type"
-                            name = "options" 
-                            label = "O" 
-                            state = "O"
-                        />
-                        <input-radio 
-                            v-model = "blood_type"
-                            name = "options" 
-                            label = "AB" 
-                            state = "AB"
-                        />    
-                    </div> -->
-                
-                <!-- </div> -->
-                <!-- <div class = "row"> -->
-                    <!-- <div class ="col-md-6">
+                    </div> 
+                    <div class = "col-md-6">
                         <input-toggle
                             id = "gender"
                             v-model = "gender"
@@ -113,13 +81,21 @@
                             false-label= "หญิง"
                             default-label= "เพศ"
                         ></input-toggle>
-                    </div> -->
-                <!-- </div> -->
+                    </div>
+                </div>
 
+                <div class = "row">
+                    <div class = "col-md-6">
+                        <input-select
+                            label = "อาชีพ : "
+                            v-model = "job"
+                            :options = "apiJobs"
+                        ></input-select>
+                    </div>
+                </div>
             </panel>
     </div>
 </template>
-
 
 <script>
     //components
@@ -128,6 +104,7 @@
     import InputDate from '../inputs/InputDateComponent.vue'
     import InputToggle from '../inputs/InputToggleComponent.vue'
     import InputRadio from '../inputs/InputRadioComponent.vue'
+    import InputSelect from '../inputs/InputSelectComponent.vue'
     export default {
         components: {
             Panel,
@@ -135,6 +112,7 @@
             InputDate,
             InputToggle,
             InputRadio,
+            InputSelect
         },
         data() {
             return {
@@ -153,9 +131,16 @@
                     { index : '1' , type : 'B' },
                     { index : '2' , type : 'O' },
                     { index : '3' , type : 'AB' },
-                ]
-
+                ],
+                job : '',
+                apiJobs: null,
             }
+        },
+        mounted(){
+            axios.post('/get-jobs-api')
+                .then((response) => {
+                    this.apiJobs = response.data
+            })
         },
     }
 </script>

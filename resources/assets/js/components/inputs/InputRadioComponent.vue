@@ -5,7 +5,7 @@
             <input 
                 type="radio" 
                 name="name"
-                @click = "radio(option.type)">  
+                @click = "$emit('input',option.type)">  
             <div class="state">
                 <label v-text = "option.type"></label>
             </div>
@@ -16,11 +16,11 @@
     import 'pretty-checkbox/src/pretty-checkbox.scss';
     export default {
         props: ['name', 'label', 'options'],
-        methods: {
-            radio(option) {
-                this.$emit('input',option)
-            }
-        }   
+        // methods: {
+        //     radio(option) {
+        //         this.$emit('input',option)
+        //     }
+        // }   
     }
 </script>
 
