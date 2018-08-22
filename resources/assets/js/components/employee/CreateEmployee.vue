@@ -88,6 +88,7 @@
                     <div class = "col-md-6">
                         <input-select
                             label = "อาชีพ : "
+                            option_start_name = "เลือกอาชีพ"
                             v-model = "job"
                             :options = "apiJobs"
                         ></input-select>
