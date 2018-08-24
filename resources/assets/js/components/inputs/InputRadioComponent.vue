@@ -9,7 +9,7 @@
                 :value = "option.value"
                 :checked = "option.value === value"/>  
             <div class="state">
-                <label 
+                <label
                     v-text = "option.label">
                 </label>
             </div>
@@ -20,11 +20,6 @@
     import 'pretty-checkbox/src/pretty-checkbox.scss';
     export default {
         props: ['name', 'label', 'options','value'],
-        // methods: {
-        //     checked() {
-                
-        //     }
-        // }   
     }
 </script>
 

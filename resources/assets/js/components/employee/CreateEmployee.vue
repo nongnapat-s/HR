@@ -136,6 +136,7 @@
                             label = "อาชีพ : "
                             option_start_name = "เลือกอาชีพ"
                             v-model = "job"
+                            name = "job"
                             :options = "apiJobs"
                         ></input-select>
                     </div>
@@ -193,15 +194,24 @@
                     { value : '2' , label : 'O' },
                     { value : '3' , label : 'AB' },
                 ],
-                job : '',
-                apiJobs: null,
+                job : '4',
+                apiJobs: store.jobs,
             }
         },
+        created() {
+            // this.apiJobs = store.jobs
+            // console.log('form created')
+        },
         mounted(){
-            axios.post('/get-jobs-api')
-                .then((response) => {
-                    this.apiJobs = response.data
-            })
+
+            // console.log(store);
+            // this.apiJobs = store.jobs
+            // console.log('form mounted')
+            // axios.post('/get-jobs-api')
+            //     .then((response) => {
+            //         this.apiJobs = response.data
+            // })
+            
         },
     }
 </script>

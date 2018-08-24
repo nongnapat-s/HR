@@ -11,7 +11,7 @@
 @endsection
 
 @if (isset($data))
-@section('store-json')
-<script>const store = {!! json_encode($data) !!} </script>
-@endsection
+    @section('store-json')
+        <script>const store = {!! json_encode($data) !!} </script>
+    @endsection
 @endif

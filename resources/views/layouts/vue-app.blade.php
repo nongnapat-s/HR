@@ -12,9 +12,9 @@
      <div id="app">
         @yield('body')
      </div>
-
     <script src = "{{ mix('/js/manifest.js') }}"></script>
     <script src = "{{ mix('/js/vendor.js') }}"></script>
+     @yield('store-json')
      @yield('app-js')
 </body>
 </html>
