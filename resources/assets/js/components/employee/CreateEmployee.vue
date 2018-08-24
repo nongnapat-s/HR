@@ -1,70 +1,100 @@
 <template>
     <div class = "container fuild">
         <br>
-            <panel 
-                title = "ประวัติส่วนตัว">
+            <panel title = "ประวัติบุคลากร">
                 <div class = "row">
-                    <div class ="col-md-6">
+
+                    <div class ="col-md-12">
                         <input-text 
                             label = "รหัสพนักงาน :"
                             v-model = "ref_id"
                         ></input-text>
                     </div>
-                    <div class ="col-md-6">
+
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "คำนำหน้า : "
+                        ></input-text>
+                    </div>
+
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "ยศ/ตำแหน่ง :"
+                        ></input-text>
+                    </div>
+
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "ชื่อ (ภาษาไทย) :"
+                        ></input-text>
+                    </div>
+
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "นามสกุล (ภาษาไทย) : "
+                        ></input-text>
+                    </div>
+
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "ชื่อ (ภาษาอังกฤษ) :"
+                        ></input-text>
+                    </div>
+
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "นามสกุล (ภาษาอังกฤษ) : "
+                        ></input-text>
+                    </div>
+                    
+                </div>
+            </panel>
+            <panel 
+                title = "ประวัติส่วนตัว">
+                <div class = "row">
+                    <!-- <div class ="col-md-12">
+                        <input-text 
+                            label = "รหัสพนักงาน :"
+                            v-model = "ref_id"
+                        ></input-text>
+                    </div> -->
+                    <div class ="col-md-12">
                         <input-text 
                             label = "เลขประจำตัวประชาชน :"
                             v-model = "id_card"
                         ></input-text>
                     </div>
-                </div>
-                
-                <div class = "row">
-                    <div class ="col-md-6">
+                    <div class ="col-md-12">
                         <input-text 
                             label = "ชื่อ-นามสกุล (ภาษาไทย) :"
                             v-model = "full_name_thai"
                         ></input-text>
                     </div>
-                    <div class ="col-md-6">
+                    <div class ="col-md-12">
                         <input-text 
                             label = "ชื่อ-นามสกุล (ภาษาอังกฤษ) :"
                             v-model = "full_name_english"
                         ></input-text>
                     </div>
-                </div>
-
-                <div class = "row">
-                    <div class ="col-md-6">
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "ชื่อเล่น :"
+                            v-model = "nickname"
+                        ></input-text>
+                    </div>
+                    <div class ="col-md-12">
                         <input-date 
                             label = "วัน/เดือน/ปีเกิด :"
                             v-model = "date_of_birth"
                             format="DD/MM/YYYY"
                         ></input-date>
                     </div>
-                    <div class ="col-md-6">
+                    <div class ="col-md-12">
                         <input-text 
                             label = "อายุ :"
                             v-model = "age"
                         ></input-text>
                     </div>
-                </div>
-
-                <div class = "row">
-                    <div class ="col-md-6">
-                        <input-text 
-                            label = "เชื้อชาติ :"
-                            v-model = "race"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-6">
-                        <input-text 
-                            label = "สัญชาติ :"
-                            v-model = "nationality"
-                        ></input-text>
-                    </div>
-                </div>
-            
-                <div class = "row">   
                     <div class = "col-md-6">     
                         <input-radio 
                             label = "หมู่เลือด :" 
@@ -82,10 +112,25 @@
                             default-label= "เพศ"
                         ></input-toggle>
                     </div>
-                </div>
-
-                <div class = "row">
-                    <div class = "col-md-6">
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "เชื้อชาติ :"
+                            v-model = "race"
+                        ></input-text>
+                    </div>
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "สัญชาติ :"
+                            v-model = "nationality"
+                        ></input-text>
+                    </div>
+                    <div class ="col-md-12">
+                        <input-text 
+                            label = "ศาสนา :"
+                            v-model = "religion"
+                        ></input-text>
+                    </div>
+                    <div class = "col-md-12">
                         <input-select
                             label = "อาชีพ : "
                             option_start_name = "เลือกอาชีพ"
@@ -121,10 +166,12 @@
                 id_card : '',
                 full_name_thai : '',
                 full_name_english : '',
+                nickname: '',
                 date_of_birth : '',
                 age : '',
                 race: '',
                 nationality: '',
+                religion : '',
                 gender : false,
                 blood_group : '',
                 blood_groups : [
