@@ -49,6 +49,7 @@
                     
                 </div>
             </panel>
+            <form action="/test-form" method="POST">
             <panel 
                 title = "ประวัติส่วนตัว">
                 <div class = "row">
@@ -138,8 +139,20 @@
                             :options = "apiJobs"
                         ></input-select>
                     </div>
+                     <!-- <div class = "col-md-12">
+                           <div>
+                                <input type="radio" id="dewey" name="drone"  value = "1" checked/>
+                                <label for="dewey">Dewey</label>
+                             </div>
+                            <div>
+                                <input type="radio" id="louie" value = "2" name="drone" />
+                                <label for="louie">Louie</label>
+                            </div>
+                    </div> -->
                 </div>
             </panel>
+            <button type = "submit">submit</button>
+        </form>
     </div>
 </template>
 
@@ -173,12 +186,12 @@
                 nationality: '',
                 religion : '',
                 gender : false,
-                blood_group : '',
+                blood_group : '1',
                 blood_groups : [
-                    { index : '0' , type : 'A' },
-                    { index : '1' , type : 'B' },
-                    { index : '2' , type : 'O' },
-                    { index : '3' , type : 'AB' },
+                    { value : '0' , label : 'A' },
+                    { value : '1' , label : 'B' },
+                    { value : '2' , label : 'O' },
+                    { value : '3' , label : 'AB' },
                 ],
                 job : '',
                 apiJobs: null,

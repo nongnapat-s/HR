@@ -28,3 +28,7 @@ Route::get('/create-employee',function() {
 });
 
 Route::post('/get-jobs-api','EmployeeController@getJobsApi');
+
+Route::post('/test-form',function(Illuminate\Http\Request $request){
+    return $request->all();
+});

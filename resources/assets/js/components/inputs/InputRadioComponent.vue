@@ -1,13 +1,17 @@
 <template>
     <div class="form-group col-xs-12">
         <label v-text = "label"></label>
-        <div v-for = "option in options" :key = "option.index" class="pretty p-default p-round">
+        <div v-for = "(option,index) in options" :key = "index" class="pretty p-default p-round">
             <input 
-                type="radio" 
-                name="name"
-                @click = "$emit('input',option.type)">  
+                type="radio"
+                :name="name"
+                @click = "$emit('input',option.value)"
+                :value = "option.value"
+                :checked = "option.value === value"/>  
             <div class="state">
-                <label v-text = "option.type"></label>
+                <label 
+                    v-text = "option.label">
+                </label>
             </div>
         </div>
     </div>
@@ -15,10 +19,10 @@
 <script>
     import 'pretty-checkbox/src/pretty-checkbox.scss';
     export default {
-        props: ['name', 'label', 'options'],
+        props: ['name', 'label', 'options','value'],
         // methods: {
-        //     radio(option) {
-        //         this.$emit('input',option)
+        //     checked() {
+                
         //     }
         // }   
     }
