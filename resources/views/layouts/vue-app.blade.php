@@ -9,12 +9,17 @@
     <title>@yield('title')</title>
 </head>
 <body>
-     <div id="app">
-        @yield('body')
-     </div>
+    {{-- main app component --}}
+    <div id="app">@yield('body')</div>
+
+    {{-- vendor --}}
     <script src = "{{ mix('/js/manifest.js') }}"></script>
     <script src = "{{ mix('/js/vendor.js') }}"></script>
-     @yield('store-json')
-     @yield('app-js')
+
+    {{-- optional, data PHP => JS --}}
+    @yield('store-json')
+
+    {{-- main app js file --}}
+    @yield('app-js')
 </body>
 </html>
