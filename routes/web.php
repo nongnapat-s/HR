@@ -12,6 +12,6 @@
 */
 Route::get('/create-employee', 'EmployeeController@showMainForm');
 
-Route::post('/test-form',function(Illuminate\Http\Request $request){
+Route::post('/test-form', function(Illuminate\Http\Request $request) {
     return $request->all();
 });
