@@ -7,7 +7,7 @@ $factory->define(App\Person::class, function (Faker $faker) {
         'id' => $faker->unique()->uuid(),
         
         'title_id' => function (array $person) {
-            $titles = App\Title::where('gender', '!=', $person['gender'])->get();
+            $titles = App\Title::where('gender', '!=', $person['gender'] ? 0:1)->get();
             return $titles[rand(0, count($titles) - 1)]->id;
         },
         'first_name' => $faker->firstName(),
