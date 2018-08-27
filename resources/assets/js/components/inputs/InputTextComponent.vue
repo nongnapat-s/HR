@@ -6,6 +6,7 @@
             
             <input
                 type="text"
+                :name = "name"
                 class="form-control"
                 :value = "value"
                 @input="$emit('input', $refs.input.value)"
@@ -14,7 +15,7 @@
 </template>
 <script>
 export default {
-    props : ['label','value'] 
+    props : ['label','value','name'] 
     // ,
     // methods : {
     //     OnInput(){
