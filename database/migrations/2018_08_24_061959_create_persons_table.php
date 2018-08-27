@@ -38,6 +38,7 @@ class CreatePersonsTable extends Migration
             $table->unsignedSmallInteger('contact_postcode_id')->nullable();
             $table->foreign('contact_postcode_id')->references('id')->on('postcodes');
             $table->string('contact_phone_no')->nullable();                         // encrypt
+            $$table->string('potrait')->nullable();
             $table->boolean('alive')->default(true);
             $table->timestamps(3);
         });
