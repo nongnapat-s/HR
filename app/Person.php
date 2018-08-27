@@ -3,10 +3,22 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Contracts\AutoId;
+use App\Traits\AutoIdInsertable;
 
-class Person extends Model
+class Person extends Model implements AutoId
 {
+    use AutoIdInsertable;
+
     protected $table = "persons";
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = ['id' => 'UUID'];
+
     protected $fillable = [
         'id',
         'title_id',
@@ -32,4 +44,8 @@ class Person extends Model
         'potrait',
         'alive',
     ];
+
+    public function title() {
+        return $this->belongsTo(Title::class);
+    }
 }

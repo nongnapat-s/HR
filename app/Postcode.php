@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Province;
 use App\Contracts\AutoId;
 use App\Traits\AutoIdInsertable;
 

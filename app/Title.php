@@ -20,4 +20,8 @@ class Title extends Model implements AutoId
     ];
 
     public $incrementing = false;
+
+    public function persons() {
+        return $this->hasMany(Person::class);
+    }
 }
