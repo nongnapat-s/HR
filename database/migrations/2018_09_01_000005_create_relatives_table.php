@@ -14,12 +14,11 @@ class CreateRelativesTable extends Migration
     public function up()
     {
         Schema::create('relatives', function (Blueprint $table) {
-            $table->uuid('person_id');
+            $table->uuid('person_id')->index();
             $table->foreign('person_id')->references('id')->on('persons');
-            $table->uuid('relative_id');
+            $table->uuid('relative_id')->index();
             $table->foreign('relative_id')->references('id')->on('persons');
-            $table->unsignedTinyInteger('relation')->index();
-            $table->primary(['person_id', 'relative_id', 'relation']);
+            $table->unsignedTinyInteger('relation')->index()->default(0);
             $table->timestamps();
         });
     }
