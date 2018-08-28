@@ -17,19 +17,15 @@ trait AutoIdInsertable
         switch (static::getIdType()) {
             case 'id':
                 $data['id'] = static::count() + 1;
-                static::create($data);
-                return static::find($data['id']);
+                return static::create($data);
             case 'time_based_uuid':
                 $data['id'] = Uuid::uuid1()->toString();
                 break;
-
             case 'random_uuid':
                 $data['id'] = Uuid::uuid4()->toString();
                 break;
         }
-
-        static::create($data);
-        return static::find($data['id']);
+        return static::create($data);
     }
 
     /**
