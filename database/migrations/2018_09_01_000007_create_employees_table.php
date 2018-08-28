@@ -15,7 +15,7 @@ class CreateEmployeesTable extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->unsignedSmallInteger('id');
             $table->primary('id');
             $table->foreign('id')->references('id')->on('persons');
             $table->string('org_id');                                               // encrypt

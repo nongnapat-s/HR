@@ -14,7 +14,7 @@ class CreatePersonsTable extends Migration
     public function up()
     {
         Schema::create('persons', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->unsignedSmallInteger('id');
             $table->primary('id');
             $table->unsignedTinyInteger('title_id')->index()->default(0);           // default คุณ
             $table->foreign('title_id')->references('id')->on('titles');

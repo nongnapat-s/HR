@@ -7,13 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = ['id' => 'UUID'];
-
-    /**
      * Config model not using auto id so, create() will return id value.
      */
     public $incrementing = false;
@@ -31,8 +24,16 @@ class Employee extends Model
         'status_id'
     ];
 
+    /**=========================*
+     * Model's relations
+     *==========================*/
     public function personality()
     {
         return $this->hasOne(Person::class, 'id');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
     }
 }

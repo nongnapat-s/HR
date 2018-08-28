@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Contracts\AutoId;
 use App\Traits\AutoIdInsertable;
+use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model implements AutoId
 {
@@ -16,13 +16,6 @@ class Person extends Model implements AutoId
      * @var string
      */
     protected $table = "persons";
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = ['id' => 'UUID'];
 
     /**
      * Config model not using auto id so, create() will return id value.
@@ -59,16 +52,6 @@ class Person extends Model implements AutoId
         'potrait',
         'alive',
     ];
-
-    /**
-     * Get Id type of the model.
-     *
-     * @return stirng
-     */
-    public static function getIdType()
-    {
-        return 'time_based_uuid';
-    }
 
     /**=========================*
      * Model's relations

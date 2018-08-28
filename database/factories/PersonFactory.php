@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Person::class, function (Faker $faker) {
     return [
-        'id' => $faker->unique()->uuid(),
+        'id' => $faker->unique()->numberBetween(1, 20000),
         
         'title_id' => function (array $person) {
             $titles = App\Title::where('gender', '!=', $person['gender'] ? 0:1)->get();
