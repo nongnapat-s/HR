@@ -18,6 +18,7 @@ class CreateStatusesTable extends Migration
             $table->primary('id');
             $table->string('name', 120);
             $table->boolean('active')->default(false);
+            $table->string('category', 60)->index()->default('regular');
             $table->timestamps(3);
         });
     }

@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             ProvincesTableSeeder::class,
             PostcodesTableSeeder::class,
             PersonsTableSeeder::class,
-            StatusesTableSeeder::class
+            StatusesTableSeeder::class,
+            SelectItemsTableSeeder::class
         ]);
     }
 }
