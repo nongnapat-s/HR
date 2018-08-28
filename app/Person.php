@@ -10,6 +10,11 @@ class Person extends Model implements AutoId
 {
     use AutoIdInsertable;
 
+    /**
+     * Set table name for the Model. Default => people
+     *
+     * @var string
+     */
     protected $table = "persons";
 
     /**
@@ -19,6 +24,16 @@ class Person extends Model implements AutoId
      */
     protected $casts = ['id' => 'UUID'];
 
+    /**
+     * Config model not using auto id so, create() will return id value.
+     */
+    public $incrementing = false;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'id',
         'title_id',
@@ -45,7 +60,26 @@ class Person extends Model implements AutoId
         'alive',
     ];
 
-    public function title() {
+    /**
+     * Get Id type of the model.
+     *
+     * @return stirng
+     */
+    public static function getIdType()
+    {
+        return 'time_based_uuid';
+    }
+
+    /**=========================*
+     * Model's relations
+     *==========================*/
+    public function title()
+    {
         return $this->belongsTo(Title::class);
+    }
+
+    public function postcode()
+    {
+        return $this->belongsTo(Postcode::class, 'contact_postcode_id');
     }
 }

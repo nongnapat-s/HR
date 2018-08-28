@@ -10,6 +10,16 @@ class Postcode extends Model implements AutoId
 {
     use AutoIdInsertable;
 
+    /**
+     * Config model not using auto id so, create() will return id value.
+     */
+    public $incrementing = false;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'id',
         'postcode',
@@ -17,9 +27,11 @@ class Postcode extends Model implements AutoId
         'location'
     ];
 
-    public $incrementing = false;
-
-    public function province() {
+    /**=========================*
+     * Model's relations
+     *==========================*/
+    public function province()
+    {
         return $this->belongsTo(Province::class);
     }
 }

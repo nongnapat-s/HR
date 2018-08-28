@@ -10,15 +10,27 @@ class Province extends Model implements AutoId
 {
     use AutoIdInsertable;
 
+    /**
+     * Config model not using auto id so, create() will return id value.
+     */
+    public $incrementing = false;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'id',
         'name',
         'region'
     ];
 
-    public $incrementing = false;
-
-    public function postcodes() {
+    /**=========================*
+     * Model's relations
+     *==========================*/
+    public function postcodes()
+    {
         return $this->hasMany(Postcode::class);
     }
 }
