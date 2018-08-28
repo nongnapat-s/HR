@@ -29,10 +29,11 @@ class StatusesTableSeeder extends Seeder
             ['id' => 15, 'active' => false, 'name' => 'ถูกให้ออก'],
             ['id' => 16, 'active' => false, 'name' => 'ถึงแก่กรรม'],
             ['id' => 17, 'active' => false, 'name' => 'กลับต้นสังกัด (ยืมตัว)'],
+            ['id' => 18, 'active' => false, 'name' => 'โอนย้ายออก']
         ];
 
-        foreach ($statuses as $item) {
-            App\Status::create($item);
+        foreach ($statuses as $status) {
+            App\Status::create($status);
         }
     }
 }
