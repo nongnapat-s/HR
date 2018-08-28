@@ -24,7 +24,7 @@ class CreateEmployeesTable extends Migration
             $table->unsignedTinyInteger('academic_title_id')->index()->default(0);  // default คุณ
             $table->foreign('academic_title_id')->references('id')->on('titles');
             $table->unsignedTinyInteger('status_id')->index();
-            $table->foreign('status_id')->references('id')->on('status');
+            $table->foreign('status_id')->references('id')->on('statuses');
             $table->timestamps(3);
         });
     }
