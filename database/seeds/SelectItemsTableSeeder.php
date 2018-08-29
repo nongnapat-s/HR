@@ -22,17 +22,17 @@ class SelectItemsTableSeeder extends Seeder
             ['field' => 'blood_group', 'value' =>  5, 'order' =>  7, 'label' => 'O Rh-'],
             ['field' => 'blood_group', 'value' =>  7, 'order' =>  8, 'label' => 'AB Rh-'],
 
-            // Race
-            ['field' => 'race', 'value' =>  1, 'order' =>  1, 'label' => 'ไทย'],
-            ['field' => 'race', 'value' =>  2, 'order' =>  2, 'label' => 'จีน'],
-            ['field' => 'race', 'value' =>  3, 'order' =>  3, 'label' => 'พม่า'],
-            ['field' => 'race', 'value' =>  4, 'order' =>  4, 'label' => 'ลาว'],
-            ['field' => 'race', 'value' =>  5, 'order' =>  5, 'label' => 'กัมพูชา'],
-            ['field' => 'race', 'value' =>  6, 'order' =>  6, 'label' => 'มาเลเซีย'],
-            ['field' => 'race', 'value' =>  7, 'order' =>  7, 'label' => 'สิงคโปร์'],
-            ['field' => 'race', 'value' =>  8, 'order' =>  8, 'label' => 'บรูไน'],
-            ['field' => 'race', 'value' =>  9, 'order' =>  9, 'label' => 'ญี่ปุ่น'],
-            ['field' => 'race', 'value' => 10, 'order' => 10, 'label' => 'เซียรา ลีโอน'],
+            // Race and Nation
+            ['field' => 'nation', 'value' =>  1, 'order' =>  1, 'label' => 'ไทย'],
+            ['field' => 'nation', 'value' =>  2, 'order' =>  2, 'label' => 'จีน'],
+            ['field' => 'nation', 'value' =>  3, 'order' =>  3, 'label' => 'พม่า'],
+            ['field' => 'nation', 'value' =>  4, 'order' =>  4, 'label' => 'ลาว'],
+            ['field' => 'nation', 'value' =>  5, 'order' =>  5, 'label' => 'กัมพูชา'],
+            ['field' => 'nation', 'value' =>  6, 'order' =>  6, 'label' => 'มาเลเซีย'],
+            ['field' => 'nation', 'value' =>  7, 'order' =>  7, 'label' => 'สิงคโปร์'],
+            ['field' => 'nation', 'value' =>  8, 'order' =>  8, 'label' => 'บรูไน'],
+            ['field' => 'nation', 'value' =>  9, 'order' =>  9, 'label' => 'ญี่ปุ่น'],
+            ['field' => 'nation', 'value' => 10, 'order' => 10, 'label' => 'เซียรา ลีโอน'],
 
             // Religion
             ['field' => 'religion', 'value' =>  1, 'order' =>  1, 'label' => 'พุทธ'],
