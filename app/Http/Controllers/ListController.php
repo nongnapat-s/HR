@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Title;
 use App\Status;
+use App\Postcode;
+use App\Province;
 use App\SelectItem;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,7 @@ class ListController extends Controller
      *
      * @var string
      */
-    public function getList($name)
+    public function getList(Request $request, $name)
     {
         switch ($name) {
             case 'race':
@@ -44,6 +46,25 @@ class ListController extends Controller
                                     'name_eng_short',
                                     'gender')
                                     ->get();
+            case 'postcode':
+                return Postcode::select(
+                                        'id as value',
+                                        'postcode as lable',
+                                        'province_id',
+                                        'location')
+                                        ->where('location', 'like', '%' . $request->search . '%')
+                                        ->limit(20)
+                                        ->orderBy('location')
+                                        ->get();
+            case 'province':
+                return Province::select(
+                                        'id as value',
+                                        'name as lable',
+                                        'region')
+                                        ->where('name', 'like', '%' . $request->search . '%')
+                                        ->limit(20)
+                                        ->orderBy('name')
+                                        ->get();
             default:
                 return [];
         }
