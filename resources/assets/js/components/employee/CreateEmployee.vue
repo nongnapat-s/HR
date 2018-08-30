@@ -99,11 +99,18 @@
                 </div>
                 <div class="row">
                      <div class ="col-md-4">
-                        <input-text 
+                        <!-- <input-text 
                             name = "race"
                             label = "เชื้อชาติ :"
                             v-model = "race"
-                        ></input-text>
+                        ></input-text> -->
+                        <input-select
+                            label = "เชื้อชาติ : "
+                            option_start_name = "เลือกเชื้อชาติ"
+                            v-model = "race"
+                            name = "race"
+                            :options = "apiRaces"
+                        ></input-select>
                     </div>
                     <div class ="col-md-4">
                         <input-text 
@@ -130,7 +137,7 @@
                                 :options = "genders"
                             />
                         </div> 
-                        <div class = "col-md-4">     
+                        <div class = "col-md-6">     
                             <input-radio 
                                 name = "blood_group"
                                 label = "หมู่เลือด :" 
@@ -292,7 +299,6 @@
                         ></input-text>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class ="col-md-12">
                         <input-line-label 
@@ -383,9 +389,10 @@
                 dob : '',
                 age : '',
                 race: '',
+                apiRaces : null,
                 nation: '',
                 religion : '',
-                gender : false,
+                gender : '',
                 genders : [
                     { value : '0' , label : 'หญิง' },
                     { value : '1' , label : 'ชาย' },
@@ -447,9 +454,14 @@
             // axios.post('/get-jobs-api')
             //     .then((response) => {
             //         this.apiJobs = response.data
-            // })
-            
-        },
-    }
+            // })  
+            axios.get('/get-list/race')
+                .then((response) => {
+                    console.log(response.data);
+                    this.apiRaces = response.data;
+                    console.log(this.apiRaces);
+                });
+            },
+        }
 </script>
 

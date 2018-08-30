@@ -14,12 +14,20 @@
                 </label>
             </div>
         </div>
+        <fa-icon style = "color:#229954; cursor:pointer;" name="fa-refresh" @click = "uncheck"></fa-icon>
     </div>
 </template>
 <script>
     import 'pretty-checkbox/src/pretty-checkbox.scss';
+    import "fa-icon-element";
     export default {
         props: ['name', 'label', 'options','value'],
+        methods : {
+            uncheck: function() {
+                this.checked = false;
+                this.$emit('input','');
+            },
+        }
     }
 </script>
 

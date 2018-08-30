@@ -19,6 +19,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "fa-icon-element": "^1.0.1",
         "pretty-checkbox": "^3.0.3",
         "vue-pikaday": "^0.1.1",
         "w3-css": "^4.1.0"
