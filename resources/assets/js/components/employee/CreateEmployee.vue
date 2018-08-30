@@ -285,11 +285,12 @@
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
-                            name = "contact_postcode_id"
-                            label = "รหัสไปรษณีย์ :"
-                            v-model = "contact_postcode_id"
-                        ></input-text>
+                        <auto-complete
+                            name = "helloAuto"
+                            label = "รหัสไปรษณีย์ auto :"
+                            v-model = "autoComplete"
+                        ></auto-complete>
+                        
                     </div>
                     <div class ="col-md-4">
                         <input-text 
@@ -336,8 +337,13 @@
                     </div> -->
             </panel>
             <button type = "submit">submit</button>
+            <div>
+        <input type="text" name="q">
+
+    </div>
         </form>
     </div>
+    
 </template>
 <style>
     .padding{
@@ -357,6 +363,7 @@
 </style>
 <script>
     //components
+    import autoComplete from 'javascript-autocomplete';
     import Panel from '../panels/PanelComponent.vue'
     import InputText from '../inputs/InputTextComponent.vue'
     import InputDate from '../inputs/InputDateComponent.vue'
@@ -364,6 +371,7 @@
     import InputRadio from '../inputs/InputRadioComponent.vue'
     import InputSelect from '../inputs/InputSelectComponent.vue'
     import InputLineLabel from '../inputs/InputLineLabelComponent.vue'
+    import AutoComplete from '../inputs/AutoCompleteComponent.vue'
     export default {
         components: {
             Panel,
@@ -373,6 +381,7 @@
             InputRadio,
             InputSelect,
             InputLineLabel,
+            AutoComplete,
         },
         data() {
             return {
@@ -440,11 +449,33 @@
                 contact_telephone : '',
                 job : '4',
                 apiJobs: store.jobs,
+                autoComplete: null
             }
         },
         created() {
+            axios.get('/get-list/race')
+                .then((response) => {
+                    this.apiRaces = response.data;
+                    console.log(response.data);
+                    console.log(this.apiRaces);
+                });
+            // /get-list/postcode?search=กรุง url สำหรับ search
+
+
             // this.apiJobs = store.jobs
             // console.log('form created')
+            var hello = new autoComplete({
+                        selector: 'input[name="q"]',
+                        minChars: 2,
+                        source: function(term, suggest){
+                            term = term.toLowerCase();
+                            var choices = ['ActionScript', 'AppleScript', 'Asp', 'PHP'];
+                            var matches = [];
+                            for (var i=0; i<choices.length; i++)
+                                if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
+                            suggest(matches);
+                        }
+            });
         },
         mounted(){
 
@@ -455,12 +486,6 @@
             //     .then((response) => {
             //         this.apiJobs = response.data
             // })  
-            axios.get('/get-list/race')
-                .then((response) => {
-                    console.log(response.data);
-                    this.apiRaces = response.data;
-                    console.log(this.apiRaces);
-                });
             },
         }
 </script>

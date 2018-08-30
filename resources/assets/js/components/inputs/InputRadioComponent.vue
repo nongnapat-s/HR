@@ -19,7 +19,7 @@
 </template>
 <script>
     import 'pretty-checkbox/src/pretty-checkbox.scss';
-    import "fa-icon-element";
+    // import "fa-icon-element";
     export default {
         props: ['name', 'label', 'options','value'],
         methods : {

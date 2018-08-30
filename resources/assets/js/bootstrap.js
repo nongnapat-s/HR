@@ -57,3 +57,4 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+import "fa-icon-element";

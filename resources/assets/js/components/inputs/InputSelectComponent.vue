@@ -12,10 +12,10 @@
 
                 <option 
                     v-for = "(option,index) in options" 
-                    :value = "option.id"
+                    :value = "option.value"
                     :key = "index"
-                    v-text = "option.name"
-                    :selected  = "option.id == value"
+                    v-text = "option.label"
+                    :selected  = "option.value == value"
                 ></option>
 
             </select>

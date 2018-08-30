@@ -22,7 +22,7 @@ import 'pikaday/css/pikaday.css';
 import Pikaday from 'pikaday';
 export default {
     // props : ['label','id'],
-     props : ['label', 'value','format'],
+    props : ['label', 'value','format'],
     mounted() {
         var pikaday = new Pikaday({ 
             // field : document.getElementById(this.id)
