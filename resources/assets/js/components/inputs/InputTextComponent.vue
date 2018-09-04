@@ -1,5 +1,5 @@
 <template>
-        <div class="form-group col-xs-12">
+        <div class="form-group col-xs-10">
             <label 
                 v-text = "label" 
             ></label>

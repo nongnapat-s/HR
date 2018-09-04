@@ -6,11 +6,12 @@
                 title = "ประวัติส่วนตัว">
                 <div class = "row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <!-- <input-text 
                             name = "document_no"
                             label = "เลขบัตรประชาชน :"
                             v-model = "document_no"
-                        ></input-text>
+                        ></input-text> -->
+                        <auto-complete></auto-complete>
                     </div>
                     <div class ="col-md-4">
                         <input-text 
@@ -285,11 +286,12 @@
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <auto-complete
+                        <!-- <auto-complete
+                            id = "helloAuto"
                             name = "helloAuto"
                             label = "รหัสไปรษณีย์ auto :"
                             v-model = "autoComplete"
-                        ></auto-complete>
+                        ></auto-complete> -->
                         
                     </div>
                     <div class ="col-md-4">
@@ -363,7 +365,6 @@
 </style>
 <script>
     //components
-    import autoComplete from 'javascript-autocomplete';
     import Panel from '../panels/PanelComponent.vue'
     import InputText from '../inputs/InputTextComponent.vue'
     import InputDate from '../inputs/InputDateComponent.vue'
@@ -453,32 +454,13 @@
             }
         },
         created() {
-            axios.get('/get-list/race')
-                .then((response) => {
-                    this.apiRaces = response.data;
-                    console.log(response.data);
-                    console.log(this.apiRaces);
-                });
             // /get-list/postcode?search=กรุง url สำหรับ search
 
 
             // this.apiJobs = store.jobs
             // console.log('form created')
-            var hello = new autoComplete({
-                        selector: 'input[name="q"]',
-                        minChars: 2,
-                        source: function(term, suggest){
-                            term = term.toLowerCase();
-                            var choices = ['ActionScript', 'AppleScript', 'Asp', 'PHP'];
-                            var matches = [];
-                            for (var i=0; i<choices.length; i++)
-                                if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
-                            suggest(matches);
-                        }
-            });
         },
         mounted(){
-
             // console.log(store);
             // this.apiJobs = store.jobs
             // console.log('form mounted')

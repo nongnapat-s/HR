@@ -17,5 +17,8 @@ Route::get('/get-list/{name}', 'ListController@getList');
 Route::get('/create-employee', 'EmployeeController@showMainForm');
 
 Route::get('/test', function(){
-    return view('test');
+//    $data = [ 'name' => 'test' ,
+//              'name' => 'php'];
+//     return $data;
+return view('test');
 });

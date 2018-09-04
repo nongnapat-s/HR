@@ -20,7 +20,11 @@
     },
     "dependencies": {
         "fa-icon-element": "^1.0.1",
+        "npm": "^6.4.1",
         "pretty-checkbox": "^3.0.3",
+        "to": "^0.2.9",
+        "update": "^0.7.4",
+        "vue-bootstrap-typeahead": "^0.1.2",
         "vue-pikaday": "^0.1.1",
         "w3-css": "^4.1.0"
     }
