@@ -36,7 +36,7 @@
         }
     },
     watch: {
-        addressSearch: _.debounce(function(addr) { this.getAddresses(addr) }, 500)
+        addressSearch: _.debounce(function(addr) { this.getAddresses(addr) }, 1000)
     }
 }
 </script>
