@@ -49,9 +49,8 @@ class ListController extends Controller
             case 'postcode':
                 return Postcode::select(
                                         'id as value',
-                                        'postcode as lable',
                                         'province_id',
-                                        'location')
+                                        'location as label')
                                         ->where('location', 'like', '%' . $request->search . '%')
                                         ->limit(20)
                                         ->orderBy('location')

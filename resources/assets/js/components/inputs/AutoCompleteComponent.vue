@@ -12,11 +12,12 @@
                 v-model="itemSearch"
                 placeholder=""
                 :value = "value"
-                @hit="selectedItem = $event"
-                @change="$emit('input', $refs.input.value)"
+                @hit = "$emit('input',items[0].value)"
                 @input="oninput"
                 ref = "input"
           />
+                <!-- @hit="selectedItem = $event" -->
+                <!-- @change="$emit('input', $refs.input.value)" -->
           </div>
   </div>
 </template>
@@ -30,7 +31,7 @@
             name : { default : ''},
             url : { default : ''},
             data : { default : ''},
-            value : { default : ''},
+            value : { required : true },
             minChars: { default : 2}
         },
         components: {
@@ -49,15 +50,20 @@
             if ( itemSearch.length >= this.minChars) {
                 axios.get(this.url.replace(':query', itemSearch))
                 .then((response) => {
-                    this.dataApi = response.data.map( (postcode) => { return postcode.location } )
+                    console.log(response)
+                    this.items = response.data
+                    this.dataApi = this.items.map( (postcode) => { return postcode.label } )
                 })
             }
         }
     },
     methods: {
         oninput(payload) {
-            this.$emit('input', payload)
-        }
+            // this.$emit('input', payload)
+        },
+        // onhit(data){
+        //     this.$emit('input',this.items[0].value)
+        // }
     }
 }
 </script>

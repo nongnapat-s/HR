@@ -214,12 +214,17 @@
                             label = "รหัสไปรษณีย์ :"
                             v-model = "postcode_id"
                         ></input-text> -->
+
+                        <!-- @input="(payload) => { postcode_id = payload }" -->
                         <auto-complete
-                            @input="(payload) => { postcode_id = payload }"
+                            v-model = "postcode_id"
                             label = "รหัสไปรษณีย์"
                             name = "postcode_id"
                             url = "/get-list/postcode?search=:query">
                         </auto-complete>
+
+                       <!-- การบ้าน v-mode ทำให้เป็น id ของ postcode -->
+
                     </div>
                     <div class ="col-md-4">
                         <input-text
