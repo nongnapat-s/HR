@@ -6,12 +6,11 @@
                 title = "ประวัติส่วนตัว">
                 <div class = "row">
                     <div class ="col-md-4">
-                        <!-- <input-text 
+                        <input-text 
                             name = "document_no"
                             label = "เลขบัตรประชาชน :"
                             v-model = "document_no"
-                        ></input-text> -->
-                        <auto-complete></auto-complete>
+                        ></input-text>
                     </div>
                     <div class ="col-md-4">
                         <input-text 
@@ -210,11 +209,16 @@
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <!-- <input-text 
                             name = "postcode_id"
                             label = "รหัสไปรษณีย์ :"
                             v-model = "postcode_id"
-                        ></input-text>
+                        ></input-text> -->
+                        <auto-complete
+                            label = "รหัสไปรษณีย์"
+                            name = "postcode_id"
+                            url = "/get-list/postcode?search=:query">
+                        </auto-complete>
                     </div>
                     <div class ="col-md-4">
                         <input-text 

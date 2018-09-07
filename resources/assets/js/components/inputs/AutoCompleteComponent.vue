@@ -1,13 +1,20 @@
 <template>
   <div>
+        <div class="form-group col-xs-10">
+            <label 
+                v-text = "label" 
+            ></label>
           <vue-bootstrap-typeahead
-                :data="data"
+                :name = "name"
+                :url = "url"
+                :data="dataApi"
                 v-model="addressSearch"
-                size="lg"
-                placeholder="Type an address..."
+                placeholder=""
+                :value = "value"
                 @hit="selectedAddress = $event"
+                @change="$emit('input', $refs.input.value)"
+                ref = "input"
           />
-
           <!-- <vue-bootstrap-typeahead
                 :data="addresses"
                 v-model="addressSearch"
@@ -16,16 +23,23 @@
                 placeholder="Type an address..."
                 @hit="selectedAddress = $event"
           /> -->
+          </div>
   </div>
 </template>
 
 <script>
     import _ from 'underscore'
-    import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
-
-    // const API_URL = 'https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?f=json&maxSuggestions=5&text=:query'
-    const API_URL = '/get-list/postcode?search=:query'
+    // import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
+    import VueBootstrapTypeahead from './VueBootstrapTypeahead.vue'
+ 
     export default {
+        props : {
+            label : { default : ''},
+            name : { default : ''},
+            url : { default : ''},
+            data : { default : ''},
+            value : { default : ''}
+        },
         components: {
             VueBootstrapTypeahead
         },
@@ -34,15 +48,22 @@
             addressSearch: '',
             addresses: [],
             selectedAddress: {},
-            data: ''
+            dataApi : [],
         }
     },
     methods: {
-        async getAddresses(query) {
-        const res = await fetch(API_URL.replace(':query', query))
-        const suggestions = await res.json()
-        this.data = suggestions.map( function (postcode) { return postcode.location } )
- 
+        // async getAddresses(query) {
+        // const res = await fetch(this.url.replace(':query', query))
+        // const suggestions = await res.json()
+        // this.dataApi = suggestions.map( function (postcode) { return postcode.location } )
+        getAddresses(query) {
+            axios.get(this.url.replace(':query', query))
+            .then((response) => {
+                console.log (response)
+                this.dataApi = response.data.map( function (postcode) { return postcode.location } )
+            })
+  
+      
         }
     },
     watch: {
