@@ -1,73 +1,63 @@
 <template>
   <div>
         <div class="form-group col-xs-10">
-            <label 
-                v-text = "label" 
+            <label
+                v-text = "label"
             ></label>
+        <!-- minMatchingChars="5" -->
           <vue-bootstrap-typeahead
                 :name = "name"
                 :url = "url"
                 :data="dataApi"
-                v-model="addressSearch"
+                v-model="itemSearch"
                 placeholder=""
                 :value = "value"
-                @hit="selectedAddress = $event"
+                @hit="selectedItem = $event"
                 @change="$emit('input', $refs.input.value)"
+                @input="oninput"
                 ref = "input"
           />
-          <!-- <vue-bootstrap-typeahead
-                :data="addresses"
-                v-model="addressSearch"
-                size="lg"
-                :serializer="s => s.text"
-                placeholder="Type an address..."
-                @hit="selectedAddress = $event"
-          /> -->
           </div>
   </div>
 </template>
 
 <script>
-    import _ from 'underscore'
-    // import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
-    import VueBootstrapTypeahead from './VueBootstrapTypeahead.vue'
- 
+    import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
+
     export default {
         props : {
             label : { default : ''},
             name : { default : ''},
             url : { default : ''},
             data : { default : ''},
-            value : { default : ''}
+            value : { default : ''},
+            minChars: { default : 2}
         },
         components: {
             VueBootstrapTypeahead
         },
     data() {
         return {
-            addressSearch: '',
-            addresses: [],
-            selectedAddress: {},
+            itemSearch: '',
+            items: [],
+            selectedItem: {},
             dataApi : [],
         }
     },
-    methods: {
-        // async getAddresses(query) {
-        // const res = await fetch(this.url.replace(':query', query))
-        // const suggestions = await res.json()
-        // this.dataApi = suggestions.map( function (postcode) { return postcode.location } )
-        getAddresses(query) {
-            axios.get(this.url.replace(':query', query))
-            .then((response) => {
-                console.log (response)
-                this.dataApi = response.data.map( function (postcode) { return postcode.location } )
-            })
-  
-      
+    watch: {
+        itemSearch(itemSearch) {
+            if ( itemSearch.length >= this.minChars) {
+                axios.get(this.url.replace(':query', itemSearch))
+                .then((response) => {
+                    this.dataApi = response.data.map( (postcode) => { return postcode.location } )
+                })
+            }
         }
     },
-    watch: {
-        addressSearch: _.debounce(function(addr) { this.getAddresses(addr) }, 300)
+    methods: {
+        oninput(payload) {
+            this.$emit('input', payload)
+        }
     }
 }
 </script>

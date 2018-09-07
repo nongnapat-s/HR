@@ -2,25 +2,25 @@
     <div class = "container">
         <br>
             <form action="/test-form" method="POST">
-            <panel 
+            <panel
                 title = "ประวัติส่วนตัว">
                 <div class = "row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "document_no"
                             label = "เลขบัตรประชาชน :"
                             v-model = "document_no"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "title_id"
                             label = "คำนำหน้าชื่อ :"
                             v-model = "title_id"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "extra_title_id"
                             label = "ยศ/ตำแหน่ง :"
                             v-model = "extra_title_id"
@@ -29,44 +29,44 @@
                 </div>
                 <div class="row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "first_name"
                             label = "ชื่อ :"
                             v-model = "first_name"
                         ></input-text>
                     </div>
                      <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "middle_name"
                             label = "ชื่อกลาง :"
                             v-model = "middle_name"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "last_name"
                             label = "นามสกุล :"
                             v-model = "last_name"
                         ></input-text>
-                    </div>         
+                    </div>
                 </div>
                 <div class="row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "first_name_eng"
                             label = "First name :"
                             v-model = "first_name_eng"
                         ></input-text>
                     </div>
                      <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "middle_name_eng"
                             label = "Middle name :"
                             v-model = "middle_name_eng"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "last_name_eng"
                             label = "Last name :"
                             v-model = "last_name_eng"
@@ -75,14 +75,14 @@
                 </div>
                 <div class="row">
                      <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "nickname"
                             label = "ชื่อเล่น :"
                             v-model = "nickname"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-date 
+                        <input-date
                             name = "dob"
                             label = "วัน/เดือน/ปีเกิด :"
                             v-model = "dob"
@@ -90,7 +90,7 @@
                         ></input-date>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "age"
                             label = "อายุ :"
                             v-model = "age"
@@ -99,7 +99,7 @@
                 </div>
                 <div class="row">
                      <div class ="col-md-4">
-                        <!-- <input-text 
+                        <!-- <input-text
                             name = "race"
                             label = "เชื้อชาติ :"
                             v-model = "race"
@@ -113,14 +113,14 @@
                         ></input-select>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "nation"
                             label = "สัญชาติ :"
                             v-model = "nation"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "religion"
                             label = "ศาสนา :"
                             v-model = "religion"
@@ -129,48 +129,48 @@
                 </div>
                 <div class="row">
                     <div class = "padding">
-                        <div class = "col-md-4">     
-                            <input-radio 
+                        <div class = "col-md-4">
+                            <input-radio
                                 name = "gender"
-                                label = "เพศ :"   
-                                v-model = "gender" 
+                                label = "เพศ :"
+                                v-model = "gender"
                                 :options = "genders"
                             />
-                        </div> 
-                        <div class = "col-md-6">     
-                            <input-radio 
+                        </div>
+                        <div class = "col-md-6">
+                            <input-radio
                                 name = "blood_group"
-                                label = "หมู่เลือด :" 
-                                v-model = "blood_group"  
+                                label = "หมู่เลือด :"
+                                v-model = "blood_group"
                                 :options = "blood_groups"
                             />
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class ="col-md-12">
-                        <input-line-label 
+                        <input-line-label
                             label = "ที่อยู่ตามทะเบียนบ้าน"
                         ></input-line-label>
                     </div>
                 </div>
                 <div class = "row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "house_no"
                             label = "บ้านเลขที่ :"
                             v-model = "house_no"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "village_no"
                             label = "หมู่ที่ :"
                             v-model = "village_no"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "lane"
                             label = "ซอย :"
                             v-model = "lane"
@@ -179,21 +179,21 @@
                 </div>
                 <div class = "row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "road"
                             label = "ถนน :"
                             v-model = "road"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "sub_district"
                             label = "ตำบล/แขวง :"
                             v-model = "sub_district"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "district"
                             label = "อำเภอ :"
                             v-model = "district"
@@ -202,26 +202,27 @@
                 </div>
                 <div class = "row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "province"
                             label = "จังหวัด :"
                             v-model = "province"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <!-- <input-text 
+                        <!-- <input-text
                             name = "postcode_id"
                             label = "รหัสไปรษณีย์ :"
                             v-model = "postcode_id"
                         ></input-text> -->
                         <auto-complete
+                            @input="(payload) => { postcode_id = payload }"
                             label = "รหัสไปรษณีย์"
                             name = "postcode_id"
                             url = "/get-list/postcode?search=:query">
                         </auto-complete>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "telephone"
                             label = "โทรศัพท์บ้าน :"
                             v-model = "telephone"
@@ -230,28 +231,28 @@
                 </div>
                 <div class="row">
                     <div class ="col-md-12">
-                        <input-line-label 
+                        <input-line-label
                             label = "ที่อยู่ปัจจุบัน"
                         ></input-line-label>
                     </div>
                 </div>
                 <div class = "row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "contact_house_no"
                             label = "บ้านเลขที่ :"
                             v-model = "contact_house_no"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "contact_village_no"
                             label = "หมู่ที่ :"
                             v-model = "contact_village_no"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "contact_lane"
                             label = "ซอย :"
                             v-model = "contact_lane"
@@ -260,21 +261,21 @@
                 </div>
                 <div class = "row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "contact_road"
                             label = "ถนน :"
                             v-model = "contact_road"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "contact_sub_district"
                             label = "ตำบล/แขวง :"
                             v-model = "contact_sub_district"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "contact_district"
                             label = "อำเภอ :"
                             v-model = "contact_district"
@@ -283,7 +284,7 @@
                 </div>
                 <div class = "row">
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "contact_province"
                             label = "จังหวัด :"
                             v-model = "contact_province"
@@ -296,10 +297,10 @@
                             label = "รหัสไปรษณีย์ auto :"
                             v-model = "autoComplete"
                         ></auto-complete> -->
-                        
+
                     </div>
                     <div class ="col-md-4">
-                        <input-text 
+                        <input-text
                             name = "contact_telephone"
                             label = "โทรศัพท์บ้าน :"
                             v-model = "contact_telephone"
@@ -308,7 +309,7 @@
                 </div>
                 <div class="row">
                     <div class ="col-md-12">
-                        <input-line-label 
+                        <input-line-label
                             label = "ช่องทางการติดต่อ"
                         ></input-line-label>
                     </div>
@@ -344,12 +345,14 @@
             </panel>
             <button type = "submit">submit</button>
             <div>
-        <input type="text" name="q">
 
     </div>
         </form>
+
+    <div>
+    </div><br><br><br><br><br><br>
     </div>
-    
+
 </template>
 <style>
     .padding{
@@ -357,13 +360,13 @@
         padding-bottom: 10px;
     }
     .hr{
-        width: 100%; 
-        height: 15px; 
-        border-bottom: 1px solid #d9d9d9; 
-        text-align: left; 
+        width: 100%;
+        height: 15px;
+        border-bottom: 1px solid #d9d9d9;
+        text-align: left;
     }
     .hr-label{
-        background-color: white; 
+        background-color: white;
         padding: 0 0px;
     }
 </style>
@@ -377,6 +380,8 @@
     import InputSelect from '../inputs/InputSelectComponent.vue'
     import InputLineLabel from '../inputs/InputLineLabelComponent.vue'
     import AutoComplete from '../inputs/AutoCompleteComponent.vue'
+
+    import AutoCompleteX from '../inputs/InputAutoComplete.vue'
     export default {
         components: {
             Panel,
@@ -387,6 +392,7 @@
             InputSelect,
             InputLineLabel,
             AutoComplete,
+            AutoCompleteX
         },
         data() {
             return {
@@ -471,8 +477,13 @@
             // axios.post('/get-jobs-api')
             //     .then((response) => {
             //         this.apiJobs = response.data
-            // })  
+            // })
             },
+            methods: {
+                postcodeInput(data) {
+                    console.log(data)
+                }
+
+            }
         }
 </script>
-
