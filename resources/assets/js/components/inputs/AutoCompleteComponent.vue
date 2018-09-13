@@ -25,7 +25,7 @@ export default {
     },
     mounted () {
         $('#' + this.$refs.input.name).autocomplete({
-            serviceUrl: this.url.replace('&query=', this.$refs.input.value),
+            serviceUrl: '/get-autocomplete/postcode' + this.$refs.input.value,
             onSelect: function (suggestion) {
                 alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
             }
