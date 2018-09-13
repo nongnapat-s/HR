@@ -1,4 +1,5 @@
 <template>
+
     <div class = "container">
         <br>
             <form action="/test-form" method="POST">
@@ -220,7 +221,7 @@
                             v-model = "postcode_id"
                             label = "รหัสไปรษณีย์"
                             name = "postcode_id"
-                            url = "/get-list/postcode?search=:query">
+                            url = "/get-list/postcode?search=">
                         </auto-complete>
 
                        <!-- การบ้าน v-mode ทำให้เป็น id ของ postcode -->
@@ -376,7 +377,7 @@
     }
 </style>
 <script>
-    //components
+   //components
     import Panel from '../panels/PanelComponent.vue'
     import InputText from '../inputs/InputTextComponent.vue'
     import InputDate from '../inputs/InputDateComponent.vue'
@@ -385,8 +386,6 @@
     import InputSelect from '../inputs/InputSelectComponent.vue'
     import InputLineLabel from '../inputs/InputLineLabelComponent.vue'
     import AutoComplete from '../inputs/AutoCompleteComponent.vue'
-
-    import AutoCompleteX from '../inputs/InputAutoComplete.vue'
     export default {
         components: {
             Panel,
@@ -397,7 +396,6 @@
             InputSelect,
             InputLineLabel,
             AutoComplete,
-            AutoCompleteX
         },
         data() {
             return {

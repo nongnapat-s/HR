@@ -22,7 +22,6 @@
     </div>
 </template>
 <script>
-    import 'w3-css/w3.css';
     export default {
         props : ['title']
     }

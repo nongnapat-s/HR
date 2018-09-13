@@ -8,7 +8,7 @@ use App\Postcode;
 use App\Province;
 use App\SelectItem;
 use Illuminate\Http\Request;
-
+// use Log;
 class ListController extends Controller
 {
     /**
@@ -18,6 +18,7 @@ class ListController extends Controller
      */
     public function getList(Request $request, $name)
     {
+        Log::info($request->search);
         switch ($name) {
             case 'race':
                 $name = 'nation';

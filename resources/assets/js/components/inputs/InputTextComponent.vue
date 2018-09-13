@@ -1,5 +1,5 @@
 <template>
-        <div class="form-group col-xs-10">
+        <div class="form-group col-xs-12">
             <label 
                 v-text = "label" 
             ></label>
@@ -10,7 +10,8 @@
                 class="form-control"
                 :value = "value"
                 @input="$emit('input', $refs.input.value)"
-                ref="input">         
+                ref="input"
+                >         
         </div>
 </template>
 <script>
