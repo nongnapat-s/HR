@@ -221,7 +221,8 @@
                             v-model = "postcode_id"
                             label = "รหัสไปรษณีย์"
                             name = "postcode_id"
-                            url = "/get-list/postcode?search=">
+                            id = "postcode_id"
+                            url = "/get-autocomplete/postcode">
                         </auto-complete>
 
                        <!-- การบ้าน v-mode ทำให้เป็น id ของ postcode -->
