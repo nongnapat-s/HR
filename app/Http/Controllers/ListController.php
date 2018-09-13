@@ -69,4 +69,37 @@ class ListController extends Controller
                 return [];
         }
     }
+
+    /**
+     * Response Autocomplate request
+     *
+     * @var string
+     */
+    public function getAutocomplete(Request $request, $name)
+    {
+        switch ($name) {
+            case 'postcode':
+                return ['suggestions' => Postcode::select(
+                                                    'id as data',
+                                                    'province_id',
+                                                    'location as value'
+                                                  )
+                                                  ->where('location', 'like', '%' . $request->input('query') . '%')
+                                                  ->limit(20)
+                                                  ->orderBy('location')
+                                                  ->get()];
+            case 'province':
+                return ['suggestions' => Province::select(
+                                                    'id as data',
+                                                    'name as value',
+                                                    'region'
+                                                  )
+                                                  ->where('name', 'like', '%' . $request->input('query') . '%')
+                                                  ->limit(20)
+                                                  ->orderBy('name')
+                                                  ->get()];
+            default:
+                return [];
+        }
+    }
 }
