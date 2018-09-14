@@ -217,12 +217,13 @@
                         ></input-text> -->
 
                         <!-- @input="(payload) => { postcode_id = payload }" -->
+                          <!-- @update="(itemId) => postcode_id = itemId" -->
                         <auto-complete
-                            v-model = "postcode_id"
-                            label = "รหัสไปรษณีย์"
-                            name = "postcode_id"
-                            id = "postcode_id"
-                            url = "/get-autocomplete/postcode">
+                            @update="(item) => updateAutocompleteId(item)"
+                            v-model = "postcode"
+                            label = "รหัสไปรษณีย์ :"
+                            name = "postcode"
+                            >
                         </auto-complete>
 
                        <!-- การบ้าน v-mode ทำให้เป็น id ของ postcode -->
@@ -286,6 +287,7 @@
                             name = "contact_district"
                             label = "อำเภอ :"
                             v-model = "contact_district"
+                            
                         ></input-text>
                     </div>
                 </div>
@@ -444,6 +446,7 @@
                 district : '',
                 province : '',
                 postcode_id : '',
+                postcode : '',
                 telephone : '',
                 contact_house_no : '',
                 contact_village_no : '',
@@ -486,8 +489,15 @@
             methods: {
                 postcodeInput(data) {
                     console.log(data)
+                },
+                updateAutocompleteId(item){
+                    this.postcode_id = item.data;
+                    let location = item.value.split(' ');
+                    this.province = location[3];
+                    this.district = location[2];
+                    this.sub_district = location[1];
+                    this.postcode = location[0];
                 }
-
             }
         }
 </script>

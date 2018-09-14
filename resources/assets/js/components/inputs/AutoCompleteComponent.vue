@@ -1,13 +1,15 @@
 <template>
     <div class="form-group col-xs-12">
+        <label 
+            v-text = "label" 
+        ></label>
          <input
-            class = "form-control"
-            type = "text"
-            :id = "id"
-            :name = "name"
-            :value = "value"
-            :url = "url"
-            ref="input" />
+            class="form-control"
+            type="text"
+            :name="name"
+            :value="value"
+            :url="url"
+          />
     </div>
 </template>
 <style>
@@ -23,17 +25,32 @@
 require("devbridge-autocomplete/dist/jquery.autocomplete.min.js");
 export default {
     props: {
-        id : { required : true },
-        name : { default : ''},
+        // id : { required : true },
+        name : {required : true },
         label: { default: null },
         value: { required: true },
-        url: { default: '' },
+        url: { require :false  },
+    },
+    computed:{
+        serviceUrl(){
+            // if (this.url === undefined ){
+            //     return '/get-autocomplete/'+this.name;
+            // }
+            // else{
+            //     return this.url
+            // }
+            return this.url === undefined ? ('/get-autocomplete/'+this.name) : this.url;
+        }
     },
     mounted () {
-        $('#' + this.$refs.input.name).autocomplete({
-            serviceUrl: '/get-autocomplete/postcode' + this.$refs.input.value,
+        console.log (this.serviceUrl);
+        $('input[name='+ this.name + ']').autocomplete({
+        // $('#' + this.$refs.input.id).autocomplete({
+            serviceUrl: this.serviceUrl + this.value,
             onSelect: (suggestion) => {
-                this.$emit('input',suggestion.value)
+                this.$emit('input',suggestion.value);
+                this.$emit('update',suggestion);
+
             },
         })
     }
