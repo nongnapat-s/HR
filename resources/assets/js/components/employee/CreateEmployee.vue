@@ -100,11 +100,6 @@
                 </div>
                 <div class="row">
                      <div class ="col-md-4">
-                        <!-- <input-text
-                            name = "race"
-                            label = "เชื้อชาติ :"
-                            v-model = "race"
-                        ></input-text> -->
                         <input-select
                             label = "เชื้อชาติ : "
                             option_start_name = "เลือกเชื้อชาติ"
@@ -210,14 +205,6 @@
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <!-- <input-text
-                            name = "postcode_id"
-                            label = "รหัสไปรษณีย์ :"
-                            v-model = "postcode_id"
-                        ></input-text> -->
-
-                        <!-- @input="(payload) => { postcode_id = payload }" -->
-                          <!-- @update="(itemId) => postcode_id = itemId" -->
                         <auto-complete
                             @update="(item) => updateAutocompleteId(item)"
                             v-model = "postcode"
@@ -225,9 +212,6 @@
                             name = "postcode"
                             >
                         </auto-complete>
-
-                       <!-- การบ้าน v-mode ทำให้เป็น id ของ postcode -->
-
                     </div>
                     <div class ="col-md-4">
                         <input-text
@@ -300,13 +284,6 @@
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <!-- <auto-complete
-                            id = "helloAuto"
-                            name = "helloAuto"
-                            label = "รหัสไปรษณีย์ auto :"
-                            v-model = "autoComplete"
-                        ></auto-complete> -->
-
                     </div>
                     <div class ="col-md-4">
                         <input-text
@@ -323,38 +300,10 @@
                         ></input-line-label>
                     </div>
                 </div>
-                    <!-- <div class = "col-md-12">
-                        <input-select
-                            label = "อาชีพ : "
-                            option_start_name = "เลือกอาชีพ"
-                            v-model = "job"
-                            name = "job"
-                            :options = "apiJobs"
-                        ></input-select>
-                    </div> -->
-                     <!-- <div class = "col-md-12">
-                           <div>
-                                <input type="radio" id="dewey" name="drone"  value = "1" checked/>
-                                <label for="dewey">Dewey</label>
-                             </div>
-                            <div>
-                                <input type="radio" id="louie" value = "2" name="drone" />
-                                <label for="louie">Louie</label>
-                            </div>
-                    </div> -->
-                    <!-- <div class = "col-md-6"> // gender toggle
-                        <input-toggle
-                            id = "gender"
-                            v-model = "gender"
-                            true-label= "ชาย"
-                            false-label= "หญิง"
-                            default-label= "เพศ"
-                        ></input-toggle>
-                    </div> -->
             </panel>
+            
             <button type = "submit">submit</button>
-            <div>
-
+        <div>
     </div>
         </form>
 
@@ -471,20 +420,8 @@
             }
         },
         created() {
-            // /get-list/postcode?search=กรุง url สำหรับ search
-
-
-            // this.apiJobs = store.jobs
-            // console.log('form created')
         },
         mounted(){
-            // console.log(store);
-            // this.apiJobs = store.jobs
-            // console.log('form mounted')
-            // axios.post('/get-jobs-api')
-            //     .then((response) => {
-            //         this.apiJobs = response.data
-            // })
             },
             methods: {
                 postcodeInput(data) {
