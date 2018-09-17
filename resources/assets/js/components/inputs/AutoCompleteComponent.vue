@@ -25,27 +25,19 @@
 require("devbridge-autocomplete/dist/jquery.autocomplete.min.js");
 export default {
     props: {
-        // id : { required : true },
         name : {required : true },
-        label: { default: null },
-        value: { required: true },
-        url: { require :false  },
+        label: { default : null },
+        value: { required : true },
+        url: { require : false  },
     },
     computed:{
         serviceUrl(){
-            // if (this.url === undefined ){
-            //     return '/get-autocomplete/'+this.name;
-            // }
-            // else{
-            //     return this.url
-            // }
             return this.url === undefined ? ('/get-autocomplete/'+this.name) : this.url;
         }
     },
     mounted () {
         console.log (this.serviceUrl);
         $('input[name='+ this.name + ']').autocomplete({
-        // $('#' + this.$refs.input.id).autocomplete({
             serviceUrl: this.serviceUrl + this.value,
             onSelect: (suggestion) => {
                 this.$emit('input',suggestion.value);
