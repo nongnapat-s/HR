@@ -11,17 +11,27 @@
                 :value = "value"
                 @input="$emit('input', $refs.input.value)"
                 ref="input"
+                :readonly="readonly"
+
                 >         
+                <!-- pattern="^100([0-9]{5})$" -->
         </div>
 </template>
+<style>
+input:read-only {
+    background-color: yellow;
+}
+</style>
+
 <script>
 export default {
-    props : ['label','value','name'] 
-    // ,
-    // methods : {
-    //     OnInput(){
-    //         this.$emit('input',this.$refs.input.value)
-    //     }
-    // } 
-}
+    props: {
+        name : { required : true },
+        label: { default : null },
+        value: { default : null },
+        label: { default : null },
+        readonly : { default : false},
+        pattern : { default : null }
+    },
+}   
 </script>

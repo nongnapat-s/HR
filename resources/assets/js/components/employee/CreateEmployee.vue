@@ -8,6 +8,17 @@
                 <div class = "row">
                     <div class ="col-md-4">
                         <input-text
+                            name = "ref_id"
+                            label = "รหัสพนักงาน :"
+                            v-model = "ref_id"
+                        ></input-text>
+                    </div>
+                    <div class ="col-md-8">
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class ="col-md-4">
+                        <input-text
                             name = "document_no"
                             label = "เลขบัตรประชาชน :"
                             v-model = "document_no"
@@ -182,37 +193,41 @@
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
-                        <input-text
-                            name = "sub_district"
-                            label = "ตำบล/แขวง :"
-                            v-model = "sub_district"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "district"
-                            label = "อำเภอ :"
-                            v-model = "district"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "province"
-                            label = "จังหวัด :"
-                            v-model = "province"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
                         <auto-complete
-                            @update="(item) => updateAutocompleteId(item)"
+                            @update="(item) => updatePostcodeId(item)"
                             v-model = "postcode"
                             label = "รหัสไปรษณีย์ :"
                             name = "postcode"
                             >
                         </auto-complete>
                     </div>
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "sub_district"
+                            label = "ตำบล/แขวง :"
+                            v-model = "sub_district"
+                            readonly=true
+                        ></input-text>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "district"
+                            label = "อำเภอ :"
+                            v-model = "district"
+                            readonly=true
+                        ></input-text>
+                    </div>
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "province"
+                            label = "จังหวัด :"
+                            v-model = "province"
+                            readonly=true
+                        ></input-text>
+                    </div>
+
                     <div class ="col-md-4">
                         <input-text
                             name = "telephone"
@@ -260,22 +275,31 @@
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
+                        <auto-complete
+                            @update="(item) => updateContractPostcodeId(item)"
+                            v-model = "contact_postcode"
+                            label = "รหัสไปรษณีย์ :"
+                            name = "contact_postcode"
+                            url = "/get-autocomplete/postcode"
+                            >
+                        </auto-complete>
+                    </div>
+                    <div class ="col-md-4">
                         <input-text
                             name = "contact_sub_district"
                             label = "ตำบล/แขวง :"
                             v-model = "contact_sub_district"
                         ></input-text>
                     </div>
+                </div>
+                <div class = "row">
                     <div class ="col-md-4">
                         <input-text
                             name = "contact_district"
                             label = "อำเภอ :"
-                            v-model = "contact_district"
-                            
+                            v-model = "contact_district"    
                         ></input-text>
                     </div>
-                </div>
-                <div class = "row">
                     <div class ="col-md-4">
                         <input-text
                             name = "contact_province"
@@ -351,6 +375,7 @@
         },
         data() {
             return {
+                ref_id : '',
                 document_no : '',
                 title_id : '',
                 extra_title_id : '',
@@ -405,6 +430,7 @@
                 contact_district : '',
                 contact_province : '',
                 contact_postcode_id : '',
+                contact_postcode : '',
                 contact_house_no : '',
                 contact_village_no : '',
                 contact_lane : '',
@@ -421,20 +447,26 @@
         },
         created() {
         },
-        mounted(){
+        methods: {
+            refIdSearch(person){
+
             },
-            methods: {
-                postcodeInput(data) {
-                    console.log(data)
-                },
-                updateAutocompleteId(item){
-                    this.postcode_id = item.data;
-                    let location = item.value.split(' ');
-                    this.province = location[3];
-                    this.district = location[2];
-                    this.sub_district = location[1];
-                    this.postcode = location[0];
-                }
-            }
+            updatePostcodeId(item){
+	            this.postcode_id = item.data;
+	            let location = item.value.split(' ');
+	            this.province = location[3];
+	            this.district = location[2];
+                this.sub_district = location[1];
+	            this.postcode = location[0];
+            },
+            updateContractPostcodeId(item){
+                this.contact_postcode_id = item.data;
+	            let location = item.value.split(' ');
+	            this.contact_province = location[3];
+	            this.contact_district = location[2];
+                this.contact_sub_district = location[1];
+	            this.contact_postcode = location[0];
+            },
         }
+    }
 </script>

@@ -9,6 +9,7 @@
             :name="name"
             :value="value"
             :url="url"
+            ref = "input"
           />
     </div>
 </template>
@@ -36,13 +37,11 @@ export default {
         }
     },
     mounted () {
-        console.log (this.serviceUrl);
         $('input[name='+ this.name + ']').autocomplete({
             serviceUrl: this.serviceUrl + this.value,
             onSelect: (suggestion) => {
-                this.$emit('input',suggestion.value);
                 this.$emit('update',suggestion);
-
+                this.$refs.input.value = suggestion.value.split(" ")[0]
             },
         })
     }
