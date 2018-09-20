@@ -177,6 +177,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        App\Providers\UserServiceProvider::class,
+
     ],
 
     /*
@@ -227,5 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+    'user_provider' => env('USER_PROVIDER', 'App\APIs\FakeUser')
 
 ];

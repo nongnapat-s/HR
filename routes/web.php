@@ -23,3 +23,5 @@ Route::get('/test', function(){
 //     return $data;
 return view('test');
 });
+
+Route::post('/get-user', 'EmployeeController@getUser');

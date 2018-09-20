@@ -26,4 +26,9 @@ class EmployeeController extends Controller
                 ]
         ]);
     }
+
+    public function getUser(Request $request)
+    {
+        return \App\Services\EmployeeManager::getUser($request->id);
+    }
 }
