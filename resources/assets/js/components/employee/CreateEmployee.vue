@@ -11,6 +11,9 @@
                             name = "ref_id"
                             label = "รหัสพนักงาน :"
                             v-model = "ref_id"
+                            pattern= "^100([0-9]{5})$"
+                            error-text = "รหัสพนักงานไม่ถูกต้อง"
+                            :required="true"
                         ></input-text>
                     </div>
                     <div class ="col-md-8">
@@ -22,6 +25,9 @@
                             name = "document_no"
                             label = "เลขบัตรประชาชน :"
                             v-model = "document_no"
+                            pattern= "^([0-9]{13})$"
+                            error-text="เลขบัตรประชาชนไม่ถูกต้องนะจ๊ะ"
+                            :required="false"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">

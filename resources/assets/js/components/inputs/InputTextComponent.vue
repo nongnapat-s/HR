@@ -9,12 +9,13 @@
                 :name = "name"
                 class="form-control"
                 :value = "value"
-                @input="$emit('input', $refs.input.value)"
+                @change="OnChange()"
+                @input="OnInput()"
                 ref="input"
                 :readonly="readonly"
-
+                :style="inputStyle"
                 >         
-                <!-- pattern="^100([0-9]{5})$" -->
+            <p class="text-danger" v-if="error">{{ errorText }}</p>
         </div>
 </template>
 <style>
@@ -31,7 +32,48 @@ export default {
         value: { default : null },
         label: { default : null },
         readonly : { default : false},
-        pattern : { default : null }
+        pattern : { default : '.' },
+        errorText : { default : 'ข้อมูลไม่ถูกต้อง' },
+        required : { default : false }
     },
+    data(){
+        return {
+            inputStyle : '',
+            error : false,
+        }
+    },
+    computed :{
+        validator() {
+            return new RegExp(this.pattern);
+        }
+    },
+    methods :{
+        OnInput(){
+            if(this.$refs.input.value == ''){
+                this.inputStyle = '';
+                this.error = this.required;
+            }
+            this.$emit('input',this.$refs.input.value)
+        },
+        OnChange(){
+            // var regex = new RegExp(this.pattern);
+            // var result = regex.test(this.$refs.input.value)
+            // if (result == true) {
+            //     this.inputStyle = '';
+            //     this.error = false;
+            // }else if (this.required){
+            //     this.error = true ;
+            // }
+            this.inputStyle = this.validator.test(this.$refs.input.value) || this.$refs.input.value == '' ? 
+                              '' : 'background-color: #FF5533;'
+            if (this.required){
+                this.error = (!this.validator.test(this.$refs.input.value) || (this.$refs.input.value == ''))
+            }else{
+                this.error = this.inputStyle == ''
+            }
+            // ให้หาทางเอาค่า error ไปใช้กับตัว app 
+        },
+
+    }
 }   
 </script>

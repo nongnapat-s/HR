@@ -17,11 +17,11 @@ Route::get('/get-autocomplete/{name}', 'ListController@getAutocomplete');
  */
 Route::get('/create-employee', 'EmployeeController@showMainForm');
 
-Route::get('/test', function(){
+Route::get('/test-form', function(){
 //    $data = [ 'name' => 'test' ,
 //              'name' => 'php'];
 //     return $data;
-return view('test');
+return "test";
 });
 
 Route::post('/get-user', 'EmployeeController@getUser');
