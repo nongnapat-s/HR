@@ -69,7 +69,7 @@ export default {
             if (this.required){
                 this.error = (!this.validator.test(this.$refs.input.value) || (this.$refs.input.value == ''))
             }else{
-                this.error = this.inputStyle == ''
+                this.error = this.inputStyle != ''
             }
             // ให้หาทางเอาค่า error ไปใช้กับตัว app 
         },
