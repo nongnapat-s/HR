@@ -19,9 +19,9 @@
         </div>
 </template>
 <style>
-input:read-only {
-    background-color: yellow;
-}
+    input:read-only {
+        background-color: yellow;
+    }
 </style>
 
 <script>
@@ -56,22 +56,18 @@ export default {
             this.$emit('input',this.$refs.input.value)
         },
         OnChange(){
-            // var regex = new RegExp(this.pattern);
-            // var result = regex.test(this.$refs.input.value)
-            // if (result == true) {
-            //     this.inputStyle = '';
-            //     this.error = false;
-            // }else if (this.required){
-            //     this.error = true ;
-            // }
             this.inputStyle = this.validator.test(this.$refs.input.value) || this.$refs.input.value == '' ? 
                               '' : 'background-color: #FF5533;'
             if (this.required){
                 this.error = (!this.validator.test(this.$refs.input.value) || (this.$refs.input.value == ''))
             }else{
+             
                 this.error = this.inputStyle != ''
             }
-            // ให้หาทางเอาค่า error ไปใช้กับตัว app 
+
+            if (this.inputStyle == '' && !this.error ){
+                this.$emit('update',this.$refs.input.value)
+            }
         },
 
     }

@@ -8,6 +8,7 @@
                 <div class = "row">
                     <div class ="col-md-4">
                         <input-text
+                            @update="(value) => employeeApi(value)"
                             name = "ref_id"
                             label = "รหัสพนักงาน :"
                             v-model = "ref_id"
@@ -26,7 +27,7 @@
                             label = "เลขบัตรประชาชน :"
                             v-model = "document_no"
                             pattern= "^([0-9]{13})$"
-                            error-text="เลขบัตรประชาชนไม่ถูกต้องนะจ๊ะ"
+                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
                             :required="false"
                         ></input-text>
                     </div>
@@ -212,7 +213,7 @@
                             name = "sub_district"
                             label = "ตำบล/แขวง :"
                             v-model = "sub_district"
-                            readonly=true
+                            :readonly="true"
                         ></input-text>
                     </div>
                 </div>
@@ -248,6 +249,15 @@
                             label = "ที่อยู่ปัจจุบัน"
                         ></input-line-label>
                     </div>
+                </div>
+                <div class="row">
+                    <div class ="col-md-4">
+                        <input-checkbox
+                            @update="(checked) => updateContactAddress(checked)"
+                            label = "ใช้ที่อยู่เดียวกันกับที่อยู่ตามทะเบียนบ้าน"
+                        ></input-checkbox>
+                    </div>
+
                 </div>
                 <div class = "row">
                     <div class ="col-md-4">
@@ -366,6 +376,7 @@
     import InputToggle from '../inputs/InputToggleComponent.vue'
     import InputRadio from '../inputs/InputRadioComponent.vue'
     import InputSelect from '../inputs/InputSelectComponent.vue'
+    import InputCheckbox from '../inputs/InputCheckboxComponent.vue'
     import InputLineLabel from '../inputs/InputLineLabelComponent.vue'
     import AutoComplete from '../inputs/AutoCompleteComponent.vue'
     export default {
@@ -374,6 +385,7 @@
             InputText,
             InputDate,
             InputToggle,
+            InputCheckbox,
             InputRadio,
             InputSelect,
             InputLineLabel,
@@ -446,7 +458,6 @@
                 contact_province : '',
                 contact_postcode_id : '',
                 contact_telephone : '',
-                job : '4',
                 apiJobs: store.jobs,
                 autoComplete: null
             }
@@ -454,9 +465,6 @@
         created() {
         },
         methods: {
-            refIdSearch(person){
-
-            },
             updatePostcodeId(item){
 	            this.postcode_id = item.data;
 	            let location = item.value.split(' ');
@@ -473,6 +481,62 @@
                 this.contact_sub_district = location[1];
 	            this.contact_postcode = location[0];
             },
+            employeeApi(value){
+               this.ref_id = value
+               axios.post('/get-user',{
+                   id : this.ref_id
+               })
+               .then((response) => {
+                    console.log(response);
+                    this.document_no = response.data.document_id;
+                    let name = response.data.name.split(' ');
+                    if (name.length == 3 ){
+                        this.first_name = name[0];
+                        this.middle_name = name[1];
+                        this.middle_name = name[2];
+                    }else{
+                        this.first_name = name[0];
+                        this.last_name = name[1];
+                    }
+                   
+                    let name_en = response.data.name_en.split(' ');
+                    if (name_en.length == 3 ){
+                        this.first_name = name_en[0];
+                        this.middle_name = name_en[1];
+                        this.middle_name = name_en[2];
+                    }else{
+                        this.first_name = name_en[0];
+                        this.last_name = name_en[1];
+                    }
+               })
+               .catch((error) => {
+                    console.log(error);
+                })
+            },
+            updateContactAddress(checked) {
+                if(checked){
+                    this.contact_house_no = this.house_no;
+                    this.contact_village_no = this.village_no;
+                    this.contact_lane = this.lane;
+                    this.contact_road = this.road;
+                    this.contact_sub_district = this.sub_district;
+                    this.contact_district = this.district;
+                    this.contact_province = this.province;
+                    this.contact_postcode = this.postcode;
+                    this.contact_postcode_id = this.postcode_id;
+                }else{
+                    this.contact_house_no = '';
+                    this.contact_village_no = '';
+                    this.contact_lane = '';
+                    this.contact_road = '';
+                    this.contact_sub_district = '';
+                    this.contact_district = '';
+                    this.contact_province = '';
+                    this.contact_postcode = '';
+                    this.contact_postcode_id = '';
+                }
+            }
+
         }
     }
 </script>
