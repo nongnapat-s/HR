@@ -15,10 +15,10 @@ Route::get('/get-autocomplete/{name}', 'ListController@getAutocomplete');
 |--------------------------------------------------------------------------
 |
  */
-Route::get('/create-employee', 'EmployeeController@showMainForm');
-
-Route::get('/test', function(){
-    return view('test');
+Route::get('/', function(){
+    return "dev branch";
 });
+
+Route::get('/create-employee', 'EmployeeController@showMainForm');
 
 Route::post('/get-user', 'EmployeeController@getUser');
