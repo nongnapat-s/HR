@@ -272,6 +272,48 @@
                         ></input-text>
                     </div>
                 </div>
+                 <div class = "row">
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "father_document_no"
+                            label = "เลขบัตรประชาชน :"
+                            v-model = "father_document_no"
+                            pattern= "^([0-9]{13})$"
+                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                            :required="false"
+                        ></input-text>
+                    </div>
+                    <div class = "col-md-4">
+                        <input-select
+                            label = "อาชีพ : "
+                            option_start_name = "เลือกอาชีพ"
+                            v-model = "job"
+                            :options = "jobs"
+                        ></input-select>
+                    </div>
+                    <div class = "col-md-4">
+                        <div class = "paddings">
+                            <input-radio
+                                name = "spouse_status"
+                                label = "สถานะ :"
+                                v-model = "spouse_status"
+                                :options = "statuses"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class = "col-md-5">
+                        <div class = "padding">
+                            <input-radio
+                                name = "spouse_marital_status"
+                                label = "สถานภาพ :"
+                                v-model = "spouse_marital_status"
+                                :options = "marital_statuses"
+                            />
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class ="col-md-12">
                         <input-line-label
@@ -557,9 +599,10 @@
                     { value : '1' , label : 'ถึงแก่กรรม' },
                 ],
                 spouse_marital_status: '',
-                // father_title_id : '',
-                // father_first_name : '',
-                // father_last_name : '',
+                father_title_id : '',
+                father_first_name : '',
+                father_last_name : '',
+                father_document_no : '',
                 jobs : [
                     { value : '0' , label : 'รับราชการ' },
                     { value : '1' , label : 'ข้าราชการบำนาญ' },
