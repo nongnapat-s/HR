@@ -215,7 +215,7 @@
                         <input-select
                             label = "อาชีพ : "
                             option_start_name = "เลือกอาชีพ"
-                            v-model = "job"
+                            v-model = "spouse_job"
                             :options = "jobs"
                         ></input-select>
                     </div>
@@ -287,16 +287,16 @@
                         <input-select
                             label = "อาชีพ : "
                             option_start_name = "เลือกอาชีพ"
-                            v-model = "job"
+                            v-model = "father_job"
                             :options = "jobs"
                         ></input-select>
                     </div>
                     <div class = "col-md-4">
                         <div class = "paddings">
                             <input-radio
-                                name = "spouse_status"
+                                name = "father_status"
                                 label = "สถานะ :"
-                                v-model = "spouse_status"
+                                v-model = "father_status"
                                 :options = "statuses"
                             />
                         </div>
@@ -306,9 +306,9 @@
                     <div class = "col-md-5">
                         <div class = "padding">
                             <input-radio
-                                name = "spouse_marital_status"
+                                name = "father_marital_status"
                                 label = "สถานภาพ :"
-                                v-model = "spouse_marital_status"
+                                v-model = "father_marital_status"
                                 :options = "marital_statuses"
                             />
                         </div>
@@ -598,11 +598,15 @@
                     { value : '0' , label : 'ยังมีชีวิตอยู่' },
                     { value : '1' , label : 'ถึงแก่กรรม' },
                 ],
+                spouse_job: '',
                 spouse_marital_status: '',
                 father_title_id : '',
                 father_first_name : '',
                 father_last_name : '',
                 father_document_no : '',
+                father_job : '',
+                father_status : '',
+                father_marital_status :  '',
                 jobs : [
                     { value : '0' , label : 'รับราชการ' },
                     { value : '1' , label : 'ข้าราชการบำนาญ' },
