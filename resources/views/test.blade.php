@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
-</head>
-<body>
-    <i class = "fa fa-remove"></i>
-</body>
-</html>
+<?php
+  //date in mm/dd/yyyy format; or it can be in other formats as well
+  $birthDate = "12/17/1994";
+  //explode the date to get month, day and year
+  $birthDate = explode("/", $birthDate);
+  //get age from date or birthdate
+  $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+    ? ((date("Y") - $birthDate[2]))
+    : (date("Y") - $birthDate[2]));
+  echo "Age is:" . $age;
+?>

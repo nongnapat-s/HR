@@ -106,6 +106,7 @@
                             label = "วัน/เดือน/ปีเกิด :"
                             v-model = "dob"
                             format="DD/MM/YYYY"
+                            @input="test"
                         ></input-date>
                     </div>
                     <div class ="col-md-4">
@@ -151,12 +152,92 @@
                                 :options = "genders"
                             />
                         </div>
-                        <div class = "col-md-6">
+                        <div class = "col-md-4">
                             <input-radio
                                 name = "blood_group"
                                 label = "หมู่เลือด :"
                                 v-model = "blood_group"
                                 :options = "blood_groups"
+                            />
+                        </div>
+                        <div class = "col-md-4">
+                            <input-radio
+                                name = "marital_status"
+                                label = "สถานภาพ :"
+                                v-model = "marital_status"
+                                :options = "marital_statuses"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class ="col-md-12">
+                        <input-line-label
+                            label = "คู่สมรส"
+                        ></input-line-label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "spouse_title_id"
+                            label = "คำนำหน้าชื่อ :"
+                            v-model = "spouse_title_id"
+                        ></input-text>
+                    </div>
+                     <div class ="col-md-4">
+                        <input-text
+                            name = "spouse_first_name"
+                            label = "ชื่อ :"
+                            v-model = "spouse_first_name"
+                        ></input-text>
+                    </div>
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "spouse_last_name"
+                            label = "นามสกุล :"
+                            v-model = "spouse_last_name"
+                        ></input-text>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "spouse_document_no"
+                            label = "เลขบัตรประชาชน :"
+                            v-model = "spouse_document_no"
+                            pattern= "^([0-9]{13})$"
+                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                            :required="true"
+                        ></input-text>
+                    </div>
+                    <div class = "col-md-4">
+                        <input-select
+                            label = "อาชีพ : "
+                            option_start_name = "เลือกอาชีพ"
+                            v-model = "job"
+                            :options = "jobs"
+                        ></input-select>
+                    </div>
+                    <div class = "col-md-4">
+                        <div class = "paddings">
+                            <input-radio
+                                name = "spouse_status"
+                                label = "สถานะ :"
+                                v-model = "spouse_status"
+                                :options = "statuses"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class = "padding">
+                        <div class = "col-md-6">
+                            <input-radio
+                                name = "spouse_marital_status"
+                                label = "สถานภาพ :"
+                                v-model = "spouse_marital_status"
+                                :options = "marital_statuses"
                             />
                         </div>
                     </div>
@@ -223,7 +304,7 @@
                             name = "district"
                             label = "อำเภอ :"
                             v-model = "district"
-                            readonly=true
+                            :readonly="true"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
@@ -231,7 +312,7 @@
                             name = "province"
                             label = "จังหวัด :"
                             v-model = "province"
-                            readonly=true
+                            :readonly="true"
                         ></input-text>
                     </div>
 
@@ -305,6 +386,7 @@
                             name = "contact_sub_district"
                             label = "ตำบล/แขวง :"
                             v-model = "contact_sub_district"
+                            :readonly="true"
                         ></input-text>
                     </div>
                 </div>
@@ -313,7 +395,8 @@
                         <input-text
                             name = "contact_district"
                             label = "อำเภอ :"
-                            v-model = "contact_district"    
+                            v-model = "contact_district" 
+                            :readonly="true"   
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
@@ -321,6 +404,7 @@
                             name = "contact_province"
                             label = "จังหวัด :"
                             v-model = "contact_province"
+                            :readonly="true"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
@@ -366,6 +450,10 @@
     .hr-label{
         background-color: white;
         padding: 0 0px;
+    }
+    .paddings{
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 </style>
 <script>
@@ -421,6 +509,35 @@
                     { value : '1' , label : 'B' },
                     { value : '2' , label : 'O' },
                     { value : '3' , label : 'AB' },
+                ],
+                marital_status : '',
+                marital_statuses : [
+                    { value : '0' , label : 'โสด' },
+                    { value : '1' , label : 'สมรส' },
+                    { value : '2' , label : 'หย่าร้าง' },
+                    { value : '3' , label : 'หม้าย' },
+                ],
+                spouse_title_id : '',
+                spouse_first_name : '',
+                spouse_last_name : '',
+                spouse_document_no : '',
+                spouse_status : '',
+                statuses : [
+                    { value : '0' , label : 'ยังมีชีวิตอยู่' },
+                    { value : '1' , label : 'ถึงแก่กรรม' },
+                ],
+                spouse_marital_status: '',
+
+                jobs : [
+                    { value : '0' , label : 'รับราชการ' },
+                    { value : '1' , label : 'ข้าราชการบำนาญ' },
+                    { value : '2' , label : 'พนักงานของรัฐ' },
+                    { value : '3' , label : 'รัฐวิสาหกิจ' },
+                    { value : '4' , label : 'พนักงานเอกชน' },
+                    { value : '5' , label : 'ธุรกิจส่วนตัว' },
+                    { value : '6' , label : 'ค้าขาย' },
+                    { value : '7' , label : 'รับจ้าง' },
+                    { value : '8' , label : 'ว่างงาน' },
                 ],
                 house_no : '',
                 village_no : '',
@@ -501,12 +618,12 @@
                    
                     let name_en = response.data.name_en.split(' ');
                     if (name_en.length == 3 ){
-                        this.first_name = name_en[0];
-                        this.middle_name = name_en[1];
-                        this.middle_name = name_en[2];
+                        this.first_name_eng = name_en[0];
+                        this.middle_name_eng = name_en[1];
+                        this.middle_name_eng = name_en[2];
                     }else{
-                        this.first_name = name_en[0];
-                        this.last_name = name_en[1];
+                        this.first_name_eng = name_en[0];
+                        this.last_name_eng = name_en[1];
                     }
                })
                .catch((error) => {
@@ -535,8 +652,10 @@
                     this.contact_postcode = '';
                     this.contact_postcode_id = '';
                 }
+            },
+            test : function(){
+                console.log(this.dob);
             }
-
         }
     }
 </script>
