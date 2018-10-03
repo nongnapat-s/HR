@@ -16,7 +16,7 @@ Route::get('/get-autocomplete/{name}', 'ListController@getAutocomplete');
 |
  */
 Route::get('/', function(){
-    return "dev branch";
+    return "master branch";
 });
 
 Route::get('/create-employee', 'EmployeeController@showMainForm');
