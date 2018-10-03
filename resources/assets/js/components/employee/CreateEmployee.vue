@@ -4,7 +4,7 @@
         <br>
             <form action="/test-form" method="POST">
             <panel
-                title = "ประวัติส่วนตัว">
+                title = "Personal data">
                 <div class = "row">
                     <div class ="col-md-4">
                         <input-text
