@@ -60,8 +60,7 @@ export default {
                               '' : 'background-color: #FF5533;'
             if (this.required){
                 this.error = (!this.validator.test(this.$refs.input.value) || (this.$refs.input.value == ''))
-            }else{
-             
+            }else{   
                 this.error = this.inputStyle != ''
             }
 
