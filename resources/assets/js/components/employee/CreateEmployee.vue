@@ -245,6 +245,36 @@
                 <div class="row">
                     <div class ="col-md-12">
                         <input-line-label
+                            label = "บิดา"
+                        ></input-line-label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "father_title_id"
+                            label = "คำนำหน้าชื่อ :"
+                            v-model = "father_title_id"
+                        ></input-text>
+                    </div>
+                     <div class ="col-md-4">
+                        <input-text
+                            name = "father_first_name"
+                            label = "ชื่อ :"
+                            v-model = "father_first_name"
+                        ></input-text>
+                    </div>
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "father_last_name"
+                            label = "นามสกุล :"
+                            v-model = "father_last_name"
+                        ></input-text>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class ="col-md-12">
+                        <input-line-label
                             label = "ที่อยู่ตามทะเบียนบ้าน"
                         ></input-line-label>
                     </div>
@@ -527,7 +557,9 @@
                     { value : '1' , label : 'ถึงแก่กรรม' },
                 ],
                 spouse_marital_status: '',
-
+                // father_title_id : '',
+                // father_first_name : '',
+                // father_last_name : '',
                 jobs : [
                     { value : '0' , label : 'รับราชการ' },
                     { value : '1' , label : 'ข้าราชการบำนาญ' },
