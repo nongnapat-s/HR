@@ -1,504 +1,571 @@
 <template>
 
-    <div class = "container">
+    <div class = "container-fuild col-md-12">
         <br>
             <form action="/test-form" method="POST">
             <panel
                 title = "ประวัติส่วนตัว">
                 <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            @update="(value) => employeeApi(value)"
-                            name = "ref_id"
-                            label = "รหัสพนักงาน :"
-                            v-model = "ref_id"
-                            pattern= "^100([0-9]{5})$"
-                            error-text = "รหัสพนักงานไม่ถูกต้อง"
-                            :required="true"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-8">
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "document_no"
-                            label = "เลขบัตรประชาชน :"
-                            v-model = "document_no"
-                            pattern= "^([0-9]{13})$"
-                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
-                            :required="false"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "title_id"
-                            label = "คำนำหน้าชื่อ :"
-                            v-model = "title_id"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "extra_title_id"
-                            label = "ยศ/ตำแหน่ง :"
-                            v-model = "extra_title_id"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "first_name"
-                            label = "ชื่อ :"
-                            v-model = "first_name"
-                        ></input-text>
-                    </div>
-                     <div class ="col-md-4">
-                        <input-text
-                            name = "middle_name"
-                            label = "ชื่อกลาง :"
-                            v-model = "middle_name"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "last_name"
-                            label = "นามสกุล :"
-                            v-model = "last_name"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "first_name_eng"
-                            label = "First name :"
-                            v-model = "first_name_eng"
-                        ></input-text>
-                    </div>
-                     <div class ="col-md-4">
-                        <input-text
-                            name = "middle_name_eng"
-                            label = "Middle name :"
-                            v-model = "middle_name_eng"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "last_name_eng"
-                            label = "Last name :"
-                            v-model = "last_name_eng"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class="row">
-                     <div class ="col-md-4">
-                        <input-text
-                            name = "nickname"
-                            label = "ชื่อเล่น :"
-                            v-model = "nickname"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-date
-                            name = "dob"
-                            label = "วัน/เดือน/ปีเกิด :"
-                            v-model = "dob"
-                            format="DD/MM/YYYY"
-                            @input="test"
-                        ></input-date>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "age"
-                            label = "อายุ :"
-                            v-model = "age"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class="row">
-                     <div class ="col-md-4">
-                        <input-select
-                            label = "เชื้อชาติ : "
-                            option_start_name = "เลือกเชื้อชาติ"
-                            v-model = "race"
-                            name = "race"
-                            :options = "apiRaces"
-                        ></input-select>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "nation"
-                            label = "สัญชาติ :"
-                            v-model = "nation"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "religion"
-                            label = "ศาสนา :"
-                            v-model = "religion"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class = "padding">
-                        <div class = "col-md-4">
-                            <input-radio
-                                name = "gender"
-                                label = "เพศ :"
-                                v-model = "gender"
-                                :options = "genders"
-                            />
-                        </div>
-                        <div class = "col-md-4">
-                            <input-radio
-                                name = "blood_group"
-                                label = "หมู่เลือด :"
-                                v-model = "blood_group"
-                                :options = "blood_groups"
-                            />
-                        </div>
-                        <div class = "col-md-4">
-                            <input-radio
-                                name = "marital_status"
-                                label = "สถานภาพ :"
-                                v-model = "marital_status"
-                                :options = "marital_statuses"
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
                     <div class ="col-md-12">
-                        <input-line-label
-                            label = "คู่สมรส"
-                        ></input-line-label>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#profile_menu"><i class="fa fa-user-circle-o"></i> ประวัติส่วนตัว</a></li>
+                            <li><a data-toggle="tab" href="#marital_menu"><i class="fa fa-diamond"></i> สถานภาพการสมรส</a></li>
+                            <li><a data-toggle="tab" href="#parents_menu"><i class="fa fa-heartbeat"></i>  ประวัติบิดา - มารดา</a></li>
+                            <li><a data-toggle="tab" href="#contact_menu"><i class="fa fa-phone"></i> ข้อมูลการติดต่อ</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "spouse_title_id"
-                            label = "คำนำหน้าชื่อ :"
-                            v-model = "spouse_title_id"
-                        ></input-text>
-                    </div>
-                     <div class ="col-md-4">
-                        <input-text
-                            name = "spouse_first_name"
-                            label = "ชื่อ :"
-                            v-model = "spouse_first_name"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "spouse_last_name"
-                            label = "นามสกุล :"
-                            v-model = "spouse_last_name"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "spouse_document_no"
-                            label = "เลขบัตรประชาชน :"
-                            v-model = "spouse_document_no"
-                            pattern= "^([0-9]{13})$"
-                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
-                            :required="true"
-                        ></input-text>
-                    </div>
-                    <div class = "col-md-4">
-                        <input-select
-                            label = "อาชีพ : "
-                            option_start_name = "เลือกอาชีพ"
-                            v-model = "spouse_job"
-                            :options = "jobs"
-                        ></input-select>
-                    </div>
-                    <div class = "col-md-4">
-                        <div class = "paddings">
-                            <input-radio
-                                name = "spouse_status"
-                                label = "สถานะ :"
-                                v-model = "spouse_status"
-                                :options = "statuses"
-                            />
+                <div class="tab-content">
+                    <div id="profile_menu" class="tab-pane fade in active">
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    @update="(value) => employeeApi(value)"
+                                    name = "ref_id"
+                                    label = "รหัสพนักงาน :"
+                                    v-model = "ref_id"
+                                    pattern= "^100([0-9]{5})$"
+                                    error-text = "รหัสพนักงานไม่ถูกต้อง"
+                                    :required="true"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "document_no"
+                                    label = "เลขบัตรประชาชน :"
+                                    v-model = "document_no"
+                                    pattern= "^([0-9]{13})$"
+                                    error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                    :required="false"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "pln"
+                                    label = "เลขใบประกอบโรคศิลป์ :"
+                                    v-model = "pln"
+                                    :required="false"
+                                ></input-text>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class = "padding">
-                        <div class = "col-md-6">
-                            <input-radio
-                                name = "spouse_marital_status"
-                                label = "สถานภาพ :"
-                                v-model = "spouse_marital_status"
-                                :options = "marital_statuses"
-                            />
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "title_id"
+                                    label = "คำนำหน้าชื่อ :"
+                                    v-model = "title_id"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "extra_title_id"
+                                    label = "ยศ/ตำแหน่ง :"
+                                    v-model = "extra_title_id"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "position_id"
+                                    label = "ตำแหน่งทางวิชาการ :"
+                                    v-model = "position_id"
+                                    :required="false"
+                                ></input-text>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class ="col-md-12">
-                        <input-line-label
-                            label = "บิดา"
-                        ></input-line-label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "father_title_id"
-                            label = "คำนำหน้าชื่อ :"
-                            v-model = "father_title_id"
-                        ></input-text>
-                    </div>
-                     <div class ="col-md-4">
-                        <input-text
-                            name = "father_first_name"
-                            label = "ชื่อ :"
-                            v-model = "father_first_name"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "father_last_name"
-                            label = "นามสกุล :"
-                            v-model = "father_last_name"
-                        ></input-text>
-                    </div>
-                </div>
-                 <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "father_document_no"
-                            label = "เลขบัตรประชาชน :"
-                            v-model = "father_document_no"
-                            pattern= "^([0-9]{13})$"
-                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
-                            :required="false"
-                        ></input-text>
-                    </div>
-                    <div class = "col-md-4">
-                        <input-select
-                            label = "อาชีพ : "
-                            option_start_name = "เลือกอาชีพ"
-                            v-model = "father_job"
-                            :options = "jobs"
-                        ></input-select>
-                    </div>
-                    <div class = "col-md-4">
-                        <div class = "paddings">
-                            <input-radio
-                                name = "father_status"
-                                label = "สถานะ :"
-                                v-model = "father_status"
-                                :options = "statuses"
-                            />
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "first_name"
+                                    label = "ชื่อ :"
+                                    v-model = "first_name"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "middle_name"
+                                    label = "ชื่อกลาง :"
+                                    v-model = "middle_name"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "last_name"
+                                    label = "นามสกุล :"
+                                    v-model = "last_name"
+                                ></input-text>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class = "col-md-5">
-                        <div class = "padding">
-                            <input-radio
-                                name = "father_marital_status"
-                                label = "สถานภาพ :"
-                                v-model = "father_marital_status"
-                                :options = "marital_statuses"
-                            />
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "title_eng_id"
+                                    label = "Title name :"
+                                    v-model = "title_eng_id"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "extra_title_eng_id"
+                                    label = "Rank / Position :"
+                                    v-model = "extra_title_id"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "position_eng_id"
+                                    label = "Academic position :"
+                                    v-model = "position_eng_id"
+                                    :required="false"
+                                ></input-text>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class ="col-md-12">
-                        <input-line-label
-                            label = "ที่อยู่ตามทะเบียนบ้าน"
-                        ></input-line-label>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "house_no"
-                            label = "บ้านเลขที่ :"
-                            v-model = "house_no"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "village_no"
-                            label = "หมู่ที่ :"
-                            v-model = "village_no"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "lane"
-                            label = "ซอย :"
-                            v-model = "lane"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "road"
-                            label = "ถนน :"
-                            v-model = "road"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <auto-complete
-                            @update="(item) => updatePostcodeId(item)"
-                            v-model = "postcode"
-                            label = "รหัสไปรษณีย์ :"
-                            name = "postcode"
-                            >
-                        </auto-complete>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "sub_district"
-                            label = "ตำบล/แขวง :"
-                            v-model = "sub_district"
-                            :readonly="true"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "district"
-                            label = "อำเภอ :"
-                            v-model = "district"
-                            :readonly="true"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "province"
-                            label = "จังหวัด :"
-                            v-model = "province"
-                            :readonly="true"
-                        ></input-text>
-                    </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "first_name_eng"
+                                    label = "First name :"
+                                    v-model = "first_name_eng"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "middle_name_eng"
+                                    label = "Middle name :"
+                                    v-model = "middle_name_eng"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "last_name_eng"
+                                    label = "Last name :"
+                                    v-model = "last_name_eng"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "nickname"
+                                    label = "ชื่อเล่น :"
+                                    v-model = "nickname"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-date
+                                    name = "dob"
+                                    label = "วัน/เดือน/ปีเกิด :"
+                                    v-model = "dob"
+                                    format="DD/MM/YYYY"
+                                    @input="test"
+                                ></input-date>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "age"
+                                    label = "อายุ :"
+                                    v-model = "age"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-select
+                                    label = "เชื้อชาติ : "
+                                    option_start_name = "เลือกเชื้อชาติ"
+                                    v-model = "race"
+                                    name = "race"
+                                    :options = "apiRaces"
+                                ></input-select>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "nation"
+                                    label = "สัญชาติ :"
+                                    v-model = "nation"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "religion"
+                                    label = "ศาสนา :"
+                                    v-model = "religion"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class = "padding">
+                                <div class = "col-md-4">
+                                    <input-radio
+                                        name = "gender"
+                                        label = "เพศ :"
+                                        v-model = "gender"
+                                        :options = "genders"
+                                    />
+                                </div>
+                                <div class = "col-md-4">
+                                    <input-radio
+                                        name = "blood_group"
+                                        label = "หมู่เลือด :"
+                                        v-model = "blood_group"
+                                        :options = "blood_groups"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-12">
+                                <input-line-label
+                                    label = "ที่อยู่ตามทะเบียนบ้าน"
+                                ></input-line-label>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "house_no"
+                                    label = "บ้านเลขที่ :"
+                                    v-model = "house_no"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "village_no"
+                                    label = "หมู่ที่ :"
+                                    v-model = "village_no"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "lane"
+                                    label = "ซอย :"
+                                    v-model = "lane"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "road"
+                                    label = "ถนน :"
+                                    v-model = "road"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <auto-complete
+                                    @update="(item) => updatePostcodeId(item)"
+                                    v-model = "postcode"
+                                    label = "รหัสไปรษณีย์ :"
+                                    name = "postcode"
+                                    >
+                                </auto-complete>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "sub_district"
+                                    label = "ตำบล/แขวง :"
+                                    v-model = "sub_district"
+                                    :readonly="true"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "district"
+                                    label = "อำเภอ :"
+                                    v-model = "district"
+                                    :readonly="true"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "province"
+                                    label = "จังหวัด :"
+                                    v-model = "province"
+                                    :readonly="true"
+                                ></input-text>
+                            </div>
 
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "telephone"
-                            label = "โทรศัพท์บ้าน :"
-                            v-model = "telephone"
-                        ></input-text>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "telephone"
+                                    label = "โทรศัพท์บ้าน :"
+                                    v-model = "telephone"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-12">
+                                <input-line-label
+                                    label = "เอกสารแนบ"
+                                ></input-line-label>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class ="col-md-12">
-                        <input-line-label
-                            label = "ที่อยู่ปัจจุบัน"
-                        ></input-line-label>
+                    <div id="marital_menu" class="tab-pane fade">
+                        <div class="row">
+                            <div class = "col-md-6">
+                                <input-radio
+                                    name = "marital_status"
+                                    label = "สถานภาพของพนักงาน : "
+                                    v-model = "marital_status"
+                                    :options = "marital_statuses"
+                                />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-12">
+                                <input-line-label
+                                    label = "คู่สมรส"
+                                ></input-line-label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "spouse_title_id"
+                                    label = "คำนำหน้าชื่อ :"
+                                    v-model = "spouse_title_id"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "spouse_first_name"
+                                    label = "ชื่อ :"
+                                    v-model = "spouse_first_name"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "spouse_last_name"
+                                    label = "นามสกุล :"
+                                    v-model = "spouse_last_name"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "spouse_document_no"
+                                    label = "เลขบัตรประชาชน :"
+                                    v-model = "spouse_document_no"
+                                    pattern= "^([0-9]{13})$"
+                                    error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                    :required="true"
+                                ></input-text>
+                            </div>
+                            <div class = "col-md-4">
+                                <input-select
+                                    label = "อาชีพ : "
+                                    option_start_name = "เลือกอาชีพ"
+                                    v-model = "spouse_job"
+                                    :options = "jobs"
+                                ></input-select>
+                            </div>
+                            <div class = "col-md-4">
+                                <div class = "paddings">
+                                    <input-radio
+                                        name = "spouse_status"
+                                        label = "สถานะ :"
+                                        v-model = "spouse_status"
+                                        :options = "statuses"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class = "padding">
+                                <div class = "col-md-6">
+                                    <input-radio
+                                        name = "spouse_marital_status"
+                                        label = "สถานภาพ :"
+                                        v-model = "spouse_marital_status"
+                                        :options = "marital_statuses"
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class ="col-md-4">
-                        <input-checkbox
-                            @update="(checked) => updateContactAddress(checked)"
-                            label = "ใช้ที่อยู่เดียวกันกับที่อยู่ตามทะเบียนบ้าน"
-                        ></input-checkbox>
+                    <div id="parents_menu" class="tab-pane fade">
+                        <div class="row">
+                            <div class ="col-md-12">
+                                <input-line-label
+                                    label = "บิดา"
+                                ></input-line-label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "father_title_id"
+                                    label = "คำนำหน้าชื่อ :"
+                                    v-model = "father_title_id"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "father_first_name"
+                                    label = "ชื่อ :"
+                                    v-model = "father_first_name"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "father_last_name"
+                                    label = "นามสกุล :"
+                                    v-model = "father_last_name"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "father_document_no"
+                                    label = "เลขบัตรประชาชน :"
+                                    v-model = "father_document_no"
+                                    pattern= "^([0-9]{13})$"
+                                    error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                    :required="false"
+                                ></input-text>
+                            </div>
+                            <div class = "col-md-4">
+                                <input-select
+                                    label = "อาชีพ : "
+                                    option_start_name = "เลือกอาชีพ"
+                                    v-model = "father_job"
+                                    :options = "jobs"
+                                ></input-select>
+                            </div>
+                            <div class = "col-md-4">
+                                <div class = "paddings">
+                                    <input-radio
+                                        name = "father_status"
+                                        label = "สถานะ :"
+                                        v-model = "father_status"
+                                        :options = "statuses"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class = "col-md-5">
+                                <div class = "padding">
+                                    <input-radio
+                                        name = "father_marital_status"
+                                        label = "สถานภาพ :"
+                                        v-model = "father_marital_status"
+                                        :options = "marital_statuses"
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div id="contact_menu" class="tab-pane fade">
+                        <div class="row">
+                            <div class ="col-md-12">
+                                <input-line-label
+                                    label = "ที่อยู่ปัจจุบัน"
+                                ></input-line-label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-checkbox
+                                    @update="(checked) => updateContactAddress(checked)"
+                                    label = "ใช้ที่อยู่เดียวกันกับที่อยู่ตามทะเบียนบ้าน"
+                                ></input-checkbox>
+                            </div>
 
-                </div>
-                <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "contact_house_no"
-                            label = "บ้านเลขที่ :"
-                            v-model = "contact_house_no"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "contact_village_no"
-                            label = "หมู่ที่ :"
-                            v-model = "contact_village_no"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "contact_lane"
-                            label = "ซอย :"
-                            v-model = "contact_lane"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "contact_road"
-                            label = "ถนน :"
-                            v-model = "contact_road"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <auto-complete
-                            @update="(item) => updateContractPostcodeId(item)"
-                            v-model = "contact_postcode"
-                            label = "รหัสไปรษณีย์ :"
-                            name = "contact_postcode"
-                            url = "/get-autocomplete/postcode"
-                            >
-                        </auto-complete>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "contact_sub_district"
-                            label = "ตำบล/แขวง :"
-                            v-model = "contact_sub_district"
-                            :readonly="true"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "contact_district"
-                            label = "อำเภอ :"
-                            v-model = "contact_district" 
-                            :readonly="true"   
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "contact_province"
-                            label = "จังหวัด :"
-                            v-model = "contact_province"
-                            :readonly="true"
-                        ></input-text>
-                    </div>
-                    <div class ="col-md-4">
-                    </div>
-                    <div class ="col-md-4">
-                        <input-text
-                            name = "contact_telephone"
-                            label = "โทรศัพท์บ้าน :"
-                            v-model = "contact_telephone"
-                        ></input-text>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class ="col-md-12">
-                        <input-line-label
-                            label = "ช่องทางการติดต่อ"
-                        ></input-line-label>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "contact_house_no"
+                                    label = "บ้านเลขที่ :"
+                                    v-model = "contact_house_no"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "contact_village_no"
+                                    label = "หมู่ที่ :"
+                                    v-model = "contact_village_no"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "contact_lane"
+                                    label = "ซอย :"
+                                    v-model = "contact_lane"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "contact_road"
+                                    label = "ถนน :"
+                                    v-model = "contact_road"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <auto-complete
+                                    @update="(item) => updateContractPostcodeId(item)"
+                                    v-model = "contact_postcode"
+                                    label = "รหัสไปรษณีย์ :"
+                                    name = "contact_postcode"
+                                    url = "/get-autocomplete/postcode"
+                                    >
+                                </auto-complete>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "contact_sub_district"
+                                    label = "ตำบล/แขวง :"
+                                    v-model = "contact_sub_district"
+                                    :readonly="true"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "contact_district"
+                                    label = "อำเภอ :"
+                                    v-model = "contact_district" 
+                                    :readonly="true"   
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "contact_province"
+                                    label = "จังหวัด :"
+                                    v-model = "contact_province"
+                                    :readonly="true"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "contact_telephone"
+                                    label = "โทรศัพท์บ้าน :"
+                                    v-model = "contact_telephone"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-12">
+                                <input-line-label
+                                    label = "ช่องทางการติดต่อ"
+                                ></input-line-label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </panel>
             
-            <button type = "submit">submit</button>
+            <!-- <button type = "submit">submit</button> -->
         <div>
     </div>
         </form>
@@ -526,6 +593,10 @@
     .paddings{
         padding-top: 30px;
         padding-bottom: 30px;
+    }
+    .tab-pane{
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
 </style>
 <script>
@@ -555,8 +626,13 @@
             return {
                 ref_id : '',
                 document_no : '',
+                pln : '',
                 title_id : '',
+                title_eng_id: '',
                 extra_title_id : '',
+                extra_title_eng_id : '',
+                position_id : '',
+                position_eng_id : '',
                 first_name : '',
                 first_name_eng : '',
                 last_name : '',
