@@ -6,6 +6,9 @@
 |--------------------------------------------------------------------------
 |
 */
+Route::get('/',function(){
+    return view('test');
+    });
 Route::get('/get-list/{name}', 'ListController@getList');
 Route::get('/get-autocomplete/{name}', 'ListController@getAutocomplete');
 

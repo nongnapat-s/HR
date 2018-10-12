@@ -14,6 +14,7 @@
                 </div>
                 <div class="tab-content">
                     <div id="profile_menu" class="tab-pane fade in active">
+                               <file-input></file-input>
                         <div class = "row">
                             <div class ="col-md-4">
                                 <input-text
@@ -608,6 +609,7 @@
     import InputLineLabel from '../inputs/InputLineLabelComponent.vue'
     import AutoComplete from '../inputs/AutoCompleteComponent.vue'
     import NavbarTabs from '../inputs/NavbarTabsComponent.vue'
+    import FileInput from '../inputs/FileInputComponent.vue'
     export default {
         components: {
             Panel,
@@ -620,6 +622,7 @@
             InputLineLabel,
             AutoComplete,
             NavbarTabs,
+            FileInput
         },
         data() {
             return {
@@ -735,7 +738,7 @@
                     { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
                     { value : '#marital_menu' , label : 'สถานภาพการสมรส', icon : 'fa fa-diamond', class : ''},
                     { value : '#parents_menu' , label : 'ประวัติบิดา - มารดา', icon : 'fa fa-heartbeat', class : '' },
-                    { value : '#parents_menu' , label : 'ข้อมูลการติดต่อ', icon : 'fa fa-phone', class : ''},
+                    { value : '#contact_menu' , label : 'ข้อมูลการติดต่อ', icon : 'fa fa-phone', class : ''},
                 ],
             }
         },
