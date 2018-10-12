@@ -4,15 +4,12 @@
         <br>
             <form action="/test-form" method="POST">
             <panel
-                title = "Personal data">
+                title = "ประวัติส่วนตัว">
                 <div class = "row">
                     <div class ="col-md-12">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#profile_menu"><i class="fa fa-user-circle-o"></i> ประวัติส่วนตัว</a></li>
-                            <li><a data-toggle="tab" href="#marital_menu"><i class="fa fa-diamond"></i> สถานภาพการสมรส</a></li>
-                            <li><a data-toggle="tab" href="#parents_menu"><i class="fa fa-heartbeat"></i>  ประวัติบิดา - มารดา</a></li>
-                            <li><a data-toggle="tab" href="#contact_menu"><i class="fa fa-phone"></i> ข้อมูลการติดต่อ</a></li>
-                        </ul>
+                        <navbar-tabs
+                            :options = 'profile_nav'
+                        ></navbar-tabs>
                     </div>
                 </div>
                 <div class="tab-content">
@@ -610,6 +607,7 @@
     import InputCheckbox from '../inputs/InputCheckboxComponent.vue'
     import InputLineLabel from '../inputs/InputLineLabelComponent.vue'
     import AutoComplete from '../inputs/AutoCompleteComponent.vue'
+    import NavbarTabs from '../inputs/NavbarTabsComponent.vue'
     export default {
         components: {
             Panel,
@@ -621,6 +619,7 @@
             InputSelect,
             InputLineLabel,
             AutoComplete,
+            NavbarTabs,
         },
         data() {
             return {
@@ -731,7 +730,13 @@
                 contact_postcode_id : '',
                 contact_telephone : '',
                 apiJobs: store.jobs,
-                autoComplete: null
+                autoComplete: null,
+                profile_nav : [
+                    { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
+                    { value : '#marital_menu' , label : 'สถานภาพการสมรส', icon : 'fa fa-diamond', class : ''},
+                    { value : '#parents_menu' , label : 'ประวัติบิดา - มารดา', icon : 'fa fa-heartbeat', class : '' },
+                    { value : '#parents_menu' , label : 'ข้อมูลการติดต่อ', icon : 'fa fa-phone', class : ''},
+                ],
             }
         },
         created() {
