@@ -4,7 +4,7 @@
         <br>
             <form action="/test-form" method="POST">
             <panel
-                title = "ประวัติส่วนตัว">
+                title = "ประวัติส่วนตัววววว">
                 <div class = "row">
                     <div class ="col-md-12">
                         <navbar-tabs
