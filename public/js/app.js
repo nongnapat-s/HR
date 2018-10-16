@@ -129,7 +129,7 @@ module.exports = __webpack_require__(171);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(7);
+__webpack_require__(8);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -274,13 +274,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 7:
+/***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {
-window.Vue = __webpack_require__(8);
+window.Vue = __webpack_require__(9);
 
-window._ = __webpack_require__(9);
+window._ = __webpack_require__(10);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -291,7 +291,7 @@ window._ = __webpack_require__(9);
 try {
   window.$ = __webpack_provided_window_dot_jQuery = __webpack_require__(3);
 
-  __webpack_require__(10);
+  __webpack_require__(11);
 } catch (e) {}
 
 /**
@@ -300,7 +300,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(11);
+window.axios = __webpack_require__(12);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
