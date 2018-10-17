@@ -2,9 +2,9 @@
 
     <div class = "container-fuild col-md-12">
         <br>
-            <form action="/test-form" method="POST">
+            <form action="/test-form" method="POST" enctype="multipart/form-data">
             <panel
-                title = "ประวัติส่วนตัววววว">
+                title = "ประวัติส่วนตัว">
                 <div class = "row">
                     <div class ="col-md-12">
                         <navbar-tabs
@@ -14,7 +14,6 @@
                 </div>
                 <div class="tab-content">
                     <div id="profile_menu" class="tab-pane fade in active">
-                               <file-input></file-input>
                         <div class = "row">
                             <div class ="col-md-4">
                                 <input-text
@@ -295,20 +294,74 @@
                         <div class="row">
                             <div class ="col-md-12">
                                 <input-line-label
-                                    label = "เอกสารแนบ"
+                                    label = "เอกสารประจำตัว"
                                 ></input-line-label>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "id_card_file"
+                                    label = "สำเนาบัตรประชาชน :"
+                                    v-model= "id_card_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "house_file"
+                                    label = "สำเนาทะเบียนบ้าน :"
+                                    v-model= "house_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "rename_file"
+                                    label = "สำเนาใบเปลี่ยนชื่อ :"
+                                    v-model= "rename_file"
+                                >
+                                </file-input>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "medicine_file"
+                                    label = "สำเนาใบอนุญาตประกอบโรคศิลป์ :"
+                                    v-model= "medicine_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "soldier_file"
+                                    label = "สำเนาเอกสารทางทหาร :"
+                                    v-model= "soldier_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "alien_file"
+                                    label = "สำเนาเอกสารใบต่างด้าว :"
+                                    v-model= "alien_file"
+                                >
+                                </file-input>
                             </div>
                         </div>
                     </div>
                     <div id="marital_menu" class="tab-pane fade">
                         <div class="row">
                             <div class = "col-md-6">
-                                <input-radio
-                                    name = "marital_status"
-                                    label = "สถานภาพของพนักงาน : "
-                                    v-model = "marital_status"
-                                    :options = "marital_statuses"
-                                />
+                                <div class = "padding">
+                                    <input-radio
+                                        name = "marital_status"
+                                        label = "สถานภาพของพนักงาน : "
+                                        v-model = "marital_status"
+                                        :options = "marital_statuses"
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -360,8 +413,44 @@
                                     :options = "jobs"
                                 ></input-select>
                             </div>
-                            <div class = "col-md-4">
-                                <div class = "paddings">
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "spouse_id_card_file"
+                                    label = "สำเนาบัตรประชาชน :"
+                                    v-model= "spouse_id_card_file"
+                                >
+                                </file-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "spouse_house_file"
+                                    label = "สำเนาทะเบียนบ้าน :"
+                                    v-model= "spouse_house_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "spouse_rename_file"
+                                    label = "สำเนาใบเปลี่ยนชื่อ :"
+                                    v-model= "spouse_rename_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "marriage_file"
+                                    label = "สำเนาทะเบียนสมรส/หย่าร้าง :"
+                                    v-model= "marriage_file"
+                                >
+                                </file-input>
+                            </div>
+                        </div>
+                         <div class="row">
+                              <div class = "col-md-4">
+                                <div class = "padding-row">
                                     <input-radio
                                         name = "spouse_status"
                                         label = "สถานะ :"
@@ -370,10 +459,8 @@
                                     />
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class = "padding">
-                                <div class = "col-md-6">
+                            <div class = "col-md-4">
+                                <div class = "padding-row">
                                     <input-radio
                                         name = "spouse_marital_status"
                                         label = "สถานภาพ :"
@@ -434,7 +521,51 @@
                                     :options = "jobs"
                                 ></input-select>
                             </div>
-                            <div class = "col-md-4">
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "father_id_card_file"
+                                    label = "สำเนาบัตรประชาชน :"
+                                    v-model= "father_id_card_file"
+                                >
+                                </file-input>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "father_house_file"
+                                    label = "สำเนาทะเบียนบ้าน :"
+                                    v-model= "father_house_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "father_rename_file"
+                                    label = "สำเนาใบเปลี่ยนชื่อ :"
+                                    v-model= "father_rename_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "father_marriage_file"
+                                    label = "สำเนาทะเบียนสมรส/หย่าร้าง :"
+                                    v-model= "father_marriage_file"
+                                >
+                                </file-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "child_file"
+                                    label = "สำเนาใบรับรองบุตร :"
+                                    v-model= "child_file"
+                                >
+                                </file-input>
+                            </div>
+                              <div class = "col-md-4">
                                 <div class = "paddings">
                                     <input-radio
                                         name = "father_status"
@@ -444,14 +575,118 @@
                                     />
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class = "col-md-5">
-                                <div class = "padding">
+                            <div class = "col-md-4">
+                                <div class = "paddings">
                                     <input-radio
                                         name = "father_marital_status"
                                         label = "สถานภาพ :"
                                         v-model = "father_marital_status"
+                                        :options = "marital_statuses"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-12">
+                                <input-line-label
+                                    label = "มารดา"
+                                ></input-line-label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "mother_title_id"
+                                    label = "คำนำหน้าชื่อ :"
+                                    v-model = "mother_title_id"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "mother_first_name"
+                                    label = "ชื่อ :"
+                                    v-model = "mother_first_name"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "mother_last_name"
+                                    label = "นามสกุล :"
+                                    v-model = "mother_last_name"
+                                ></input-text>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "mother_document_no"
+                                    label = "เลขบัตรประชาชน :"
+                                    v-model = "mother_document_no"
+                                    pattern= "^([0-9]{13})$"
+                                    error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                    :required="false"
+                                ></input-text>
+                            </div>
+                            <div class = "col-md-4">
+                                <input-select
+                                    label = "อาชีพ : "
+                                    option_start_name = "เลือกอาชีพ"
+                                    v-model = "mother_job"
+                                    :options = "jobs"
+                                ></input-select>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "mother_id_card_file"
+                                    label = "สำเนาบัตรประชาชน :"
+                                    v-model= "mother_id_card_file"
+                                >
+                                </file-input>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "mother_house_file"
+                                    label = "สำเนาทะเบียนบ้าน :"
+                                    v-model= "mother_house_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "mother_rename_file"
+                                    label = "สำเนาใบเปลี่ยนชื่อ :"
+                                    v-model= "mother_rename_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
+                                    name = "mother_marriage_file"
+                                    label = "สำเนาทะเบียนสมรส/หย่าร้าง :"
+                                    v-model= "mother_marriage_file"
+                                >
+                                </file-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                              <div class = "col-md-4">
+                                <div class = "padding-row">
+                                    <input-radio
+                                        name = "mother_status"
+                                        label = "สถานะ :"
+                                        v-model = "mother_status"
+                                        :options = "statuses"
+                                    />
+                                </div>
+                            </div>
+                            <div class = "col-md-4">
+                                <div class = "padding-row">
+                                    <input-radio
+                                        name = "mother_marital_status"
+                                        label = "สถานภาพ :"
+                                        v-model = "mother_marital_status"
                                         :options = "marital_statuses"
                                     />
                                 </div>
@@ -563,7 +798,7 @@
                 </div>
             </panel>
             
-            <!-- <button type = "submit">submit</button> -->
+            <button type = "submit">submit</button>
         <div>
     </div>
         </form>
@@ -574,9 +809,9 @@
 
 </template>
 <style>
-    .padding{
-        padding-top: 10px;
-        padding-bottom: 10px;
+    .padding-row{
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
     .hr{
         width: 100%;
@@ -737,9 +972,35 @@
                 profile_nav : [
                     { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
                     { value : '#marital_menu' , label : 'สถานภาพการสมรส', icon : 'fa fa-diamond', class : ''},
-                    { value : '#parents_menu' , label : 'ประวัติบิดา - มารดา', icon : 'fa fa-heartbeat', class : '' },
+                    { value : '#parents_menu' , label : 'ประวัติบิดา - มารดา', icon : 'fa fa-heart', class : '' },
                     { value : '#contact_menu' , label : 'ข้อมูลการติดต่อ', icon : 'fa fa-phone', class : ''},
                 ],
+                id_card_file : '',
+                house_file : '',
+                rename_file : '',
+                medicine_file : '',
+                soldier_file : '',
+                alien_file : '',
+                spouse_id_card_file : '',
+                spouse_house_file : '',
+                spouse_rename_file : '',
+                marriage_file : '',
+                father_id_card_file : '',
+                father_house_file : '',
+                father_rename_file : '',
+                father_marriage_file : '',
+                child_file : '',
+                mother_title_id : '',
+                mother_first_name : '',
+                mother_last_name : '',
+                mother_document_no : '',
+                mother_job : '',
+                mother_status : '',
+                mother_id_card_file : '',
+                mother_house_file : '',
+                mother_rename_file : '',
+                mother_marriage_file : '',
+                mother_marital_status :  '',
             }
         },
         created() {

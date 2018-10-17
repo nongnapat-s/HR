@@ -6,7 +6,8 @@
             <input 
                 type="radio"
                 :name="name"
-                @click="onClick(option.value)"
+                @click="onClick"
+                @dblclick="unClick"
                 :value = "option.value"
                 :checked = "option.value === value"/>  
             <div class="state">
@@ -15,7 +16,6 @@
                 </label>
             </div>
         </div>
-            <i style = "color:#229954; cursor:pointer;display:none;" class="fa fa-refresh" :id = "name" @click = "uncheck"></i>
     </div>
 </template>
 <script>
@@ -23,14 +23,11 @@
     export default {
         props: ['name', 'label', 'options','value'],
         methods : {
-            uncheck: function() {
-                this.checked = false;
-                this.$emit('input','');
-                 $('#'+ this.name).fadeOut();
+            onClick: function($event){
+                this.$emit('input', $event.target.value)
             },
-            onClick: function(value){
-                this.$emit('input',value);
-                $('#'+ this.name).fadeIn();
+            unClick:function(){
+                this.$emit('input','');
             }
         }
     }
