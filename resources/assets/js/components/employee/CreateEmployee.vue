@@ -971,8 +971,8 @@
                 autoComplete: null,
                 profile_nav : [
                     { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
-                    { value : '#marital_menu' , label : 'สถานภาพการสมรส', icon : 'fa fa-diamond', class : ''},
-                    { value : '#parents_menu' , label : 'ประวัติบิดา - มารดา', icon : 'fa fa-heart', class : '' },
+                    { value : '#marital_menu' , label : 'สถานภาพการสมรส', icon : 'fa fa-heart', class : ''},
+                    { value : '#parents_menu' , label : 'ประวัติบิดา - มารดา', icon : 'fa fa-group', class : '' },
                     { value : '#contact_menu' , label : 'ข้อมูลการติดต่อ', icon : 'fa fa-phone', class : ''},
                 ],
                 id_card_file : '',
