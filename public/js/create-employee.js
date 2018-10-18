@@ -17509,7 +17509,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.padding-row{\n    padding-top: 20px;\n    padding-bottom: 20px;\n}\n.hr{\n    width: 100%;\n    height: 15px;\n    border-bottom: 1px solid #d9d9d9;\n    text-align: left;\n}\n.hr-label{\n    background-color: white;\n    padding: 0 0px;\n}\n.paddings{\n    padding-top: 30px;\n    padding-bottom: 30px;\n}\n.tab-pane{\n    padding-top: 25px;\n    padding-bottom: 25px;\n}\n", ""]);
+exports.push([module.i, "\n.col-centered{\n    top : 15px;\n    float: none;\n    margin: 0 auto;\n}\n.padding-row{\n    padding-top: 15px;\n    padding-bottom: 15px;\n}\n.hr{\n    width: 100%;\n    height: 15px;\n    border-bottom: 1px solid #d9d9d9;\n    text-align: left;\n}\n.hr-label{\n    background-color: white;\n    padding: 0 0px;\n}\n.paddings{\n    padding-top: 30px;\n    padding-bottom: 30px;\n}\n.tab-pane{\n    padding-top: 25px;\n    padding-bottom: 25px;\n}\n", ""]);
 
 // exports
 
@@ -17577,6 +17577,154 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__inputs_FileInputComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__inputs_FileInputComponent_vue__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -18494,7 +18642,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             district: '',
             province: '',
             postcode_id: ''
-        }, _defineProperty(_ref, 'house_no', ''), _defineProperty(_ref, 'village_no', ''), _defineProperty(_ref, 'lane', ''), _defineProperty(_ref, 'road', ''), _defineProperty(_ref, 'sub_district', ''), _defineProperty(_ref, 'district', ''), _defineProperty(_ref, 'province', ''), _defineProperty(_ref, 'postcode_id', ''), _defineProperty(_ref, 'postcode', ''), _defineProperty(_ref, 'telephone', ''), _defineProperty(_ref, 'contact_house_no', ''), _defineProperty(_ref, 'contact_village_no', ''), _defineProperty(_ref, 'contact_lane', ''), _defineProperty(_ref, 'contact_road', ''), _defineProperty(_ref, 'contact_sub_district', ''), _defineProperty(_ref, 'contact_district', ''), _defineProperty(_ref, 'contact_province', ''), _defineProperty(_ref, 'contact_postcode_id', ''), _defineProperty(_ref, 'contact_postcode', ''), _defineProperty(_ref, 'contact_house_no', ''), _defineProperty(_ref, 'contact_village_no', ''), _defineProperty(_ref, 'contact_lane', ''), _defineProperty(_ref, 'contact_road', ''), _defineProperty(_ref, 'contact_sub_district', ''), _defineProperty(_ref, 'contact_district', ''), _defineProperty(_ref, 'contact_province', ''), _defineProperty(_ref, 'contact_postcode_id', ''), _defineProperty(_ref, 'contact_telephone', ''), _defineProperty(_ref, 'apiJobs', store.jobs), _defineProperty(_ref, 'autoComplete', null), _defineProperty(_ref, 'profile_nav', [{ value: '#profile_menu', label: 'ประวัติส่วนตัว', icon: 'fa fa-user-circle-o', class: 'active' }, { value: '#marital_menu', label: 'สถานภาพการสมรส', icon: 'fa fa-diamond', class: '' }, { value: '#parents_menu', label: 'ประวัติบิดา - มารดา', icon: 'fa fa-heart', class: '' }, { value: '#contact_menu', label: 'ข้อมูลการติดต่อ', icon: 'fa fa-phone', class: '' }]), _defineProperty(_ref, 'id_card_file', ''), _defineProperty(_ref, 'house_file', ''), _defineProperty(_ref, 'rename_file', ''), _defineProperty(_ref, 'medicine_file', ''), _defineProperty(_ref, 'soldier_file', ''), _defineProperty(_ref, 'alien_file', ''), _defineProperty(_ref, 'spouse_id_card_file', ''), _defineProperty(_ref, 'spouse_house_file', ''), _defineProperty(_ref, 'spouse_rename_file', ''), _defineProperty(_ref, 'marriage_file', ''), _defineProperty(_ref, 'father_id_card_file', ''), _defineProperty(_ref, 'father_house_file', ''), _defineProperty(_ref, 'father_rename_file', ''), _defineProperty(_ref, 'father_marriage_file', ''), _defineProperty(_ref, 'child_file', ''), _defineProperty(_ref, 'mother_title_id', ''), _defineProperty(_ref, 'mother_first_name', ''), _defineProperty(_ref, 'mother_last_name', ''), _defineProperty(_ref, 'mother_document_no', ''), _defineProperty(_ref, 'mother_job', ''), _defineProperty(_ref, 'mother_status', ''), _defineProperty(_ref, 'mother_id_card_file', ''), _defineProperty(_ref, 'mother_house_file', ''), _defineProperty(_ref, 'mother_rename_file', ''), _defineProperty(_ref, 'mother_marriage_file', ''), _defineProperty(_ref, 'mother_marital_status', ''), _ref;
+        }, _defineProperty(_ref, 'house_no', ''), _defineProperty(_ref, 'village_no', ''), _defineProperty(_ref, 'lane', ''), _defineProperty(_ref, 'road', ''), _defineProperty(_ref, 'sub_district', ''), _defineProperty(_ref, 'district', ''), _defineProperty(_ref, 'province', ''), _defineProperty(_ref, 'postcode_id', ''), _defineProperty(_ref, 'postcode', ''), _defineProperty(_ref, 'telephone', ''), _defineProperty(_ref, 'contact_house_no', ''), _defineProperty(_ref, 'contact_village_no', ''), _defineProperty(_ref, 'contact_lane', ''), _defineProperty(_ref, 'contact_road', ''), _defineProperty(_ref, 'contact_sub_district', ''), _defineProperty(_ref, 'contact_district', ''), _defineProperty(_ref, 'contact_province', ''), _defineProperty(_ref, 'contact_postcode_id', ''), _defineProperty(_ref, 'contact_postcode', ''), _defineProperty(_ref, 'contact_house_no', ''), _defineProperty(_ref, 'contact_village_no', ''), _defineProperty(_ref, 'contact_lane', ''), _defineProperty(_ref, 'contact_road', ''), _defineProperty(_ref, 'contact_sub_district', ''), _defineProperty(_ref, 'contact_district', ''), _defineProperty(_ref, 'contact_province', ''), _defineProperty(_ref, 'contact_postcode_id', ''), _defineProperty(_ref, 'contact_telephone', ''), _defineProperty(_ref, 'apiJobs', store.jobs), _defineProperty(_ref, 'autoComplete', null), _defineProperty(_ref, 'profile_nav', [{ value: '#profile_menu', label: 'ประวัติส่วนตัว', icon: 'fa fa-user-circle-o', class: 'active' }, { value: '#marital_menu', label: 'สถานภาพการสมรส', icon: 'fa fa-heart', class: '' }, { value: '#parents_menu', label: 'ประวัติบิดา - มารดา', icon: 'fa fa-group', class: '' }, { value: '#contact_menu', label: 'ข้อมูลการติดต่อ', icon: 'fa fa-phone', class: '' }]), _defineProperty(_ref, 'id_card_file', ''), _defineProperty(_ref, 'house_file', ''), _defineProperty(_ref, 'rename_file', ''), _defineProperty(_ref, 'medicine_file', ''), _defineProperty(_ref, 'soldier_file', ''), _defineProperty(_ref, 'alien_file', ''), _defineProperty(_ref, 'spouse_id_card_file', ''), _defineProperty(_ref, 'spouse_house_file', ''), _defineProperty(_ref, 'spouse_rename_file', ''), _defineProperty(_ref, 'marriage_file', ''), _defineProperty(_ref, 'father_id_card_file', ''), _defineProperty(_ref, 'father_house_file', ''), _defineProperty(_ref, 'father_rename_file', ''), _defineProperty(_ref, 'father_marriage_file', ''), _defineProperty(_ref, 'child_file', ''), _defineProperty(_ref, 'mother_title_id', ''), _defineProperty(_ref, 'mother_first_name', ''), _defineProperty(_ref, 'mother_last_name', ''), _defineProperty(_ref, 'mother_document_no', ''), _defineProperty(_ref, 'mother_job', ''), _defineProperty(_ref, 'mother_status', ''), _defineProperty(_ref, 'mother_id_card_file', ''), _defineProperty(_ref, 'mother_house_file', ''), _defineProperty(_ref, 'mother_rename_file', ''), _defineProperty(_ref, 'mother_marriage_file', ''), _defineProperty(_ref, 'mother_marital_status', ''), _defineProperty(_ref, 'employee_file', ''), _defineProperty(_ref, 'phone', ''), _defineProperty(_ref, 'office_telephone', ''), _defineProperty(_ref, 'mahidol_email', ''), _defineProperty(_ref, 'first_email', ''), _defineProperty(_ref, 'second_email', ''), _defineProperty(_ref, 'child_title_id', ''), _defineProperty(_ref, 'child_first_name', ''), _defineProperty(_ref, 'child_last_name', ''), _defineProperty(_ref, 'child_document_no', ''), _defineProperty(_ref, 'child_dob', ''), _defineProperty(_ref, 'child_marital_status', ''), _ref;
     },
     created: function created() {},
 
@@ -18573,6 +18721,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         test: function test() {
             console.log(this.dob);
+        },
+        addChild: function addChild() {
+            var table = document.getElementById("childs");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            cell1.innerHTML = "<center>3</center>";
+            cell2.innerHTML = "<center>3</center>";
+            cell3.innerHTML = "<center>3</center>";
+            cell4.innerHTML = this.child_dob;
+            cell5.innerHTML = "<center>3</center>";
+            cell6.innerHTML = "<center>3</center>";
         }
     }
 });
@@ -26444,27 +26608,29 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "pln",
-                          label: "เลขใบประกอบโรคศิลป์ :",
-                          required: false
-                        },
-                        model: {
-                          value: _vm.pln,
-                          callback: function($$v) {
-                            _vm.pln = $$v
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c(
+                      "div",
+                      { staticClass: "paddings" },
+                      [
+                        _c("input-radio", {
+                          attrs: {
+                            name: "gender",
+                            label: "เพศ :",
+                            options: _vm.genders
                           },
-                          expression: "pln"
-                        }
-                      })
-                    ],
-                    1
-                  )
+                          model: {
+                            value: _vm.gender,
+                            callback: function($$v) {
+                              _vm.gender = $$v
+                            },
+                            expression: "gender"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
@@ -26515,7 +26681,8 @@ var render = function() {
                         attrs: {
                           name: "position_id",
                           label: "ตำแหน่งทางวิชาการ :",
-                          required: false
+                          required: false,
+                          readonly: true
                         },
                         model: {
                           value: _vm.position_id,
@@ -26800,8 +26967,13 @@ var render = function() {
                     "div",
                     { staticClass: "col-md-4" },
                     [
-                      _c("input-text", {
-                        attrs: { name: "nation", label: "สัญชาติ :" },
+                      _c("input-select", {
+                        attrs: {
+                          label: "สัญชาติ : ",
+                          option_start_name: "เลือกสัญชาติ",
+                          name: "nation",
+                          options: _vm.apiRaces
+                        },
                         model: {
                           value: _vm.nation,
                           callback: function($$v) {
@@ -26818,8 +26990,13 @@ var render = function() {
                     "div",
                     { staticClass: "col-md-4" },
                     [
-                      _c("input-text", {
-                        attrs: { name: "religion", label: "ศาสนา :" },
+                      _c("input-select", {
+                        attrs: {
+                          label: "ศาสนา : ",
+                          option_start_name: "เลือกศาสนา",
+                          name: "religion",
+                          options: _vm.apiRaces
+                        },
                         model: {
                           value: _vm.religion,
                           callback: function($$v) {
@@ -26834,32 +27011,32 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "padding" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-md-4" },
-                      [
-                        _c("input-radio", {
-                          attrs: {
-                            name: "gender",
-                            label: "เพศ :",
-                            options: _vm.genders
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "pln",
+                          label: "เลขใบประกอบโรคศิลป์ :",
+                          required: false
+                        },
+                        model: {
+                          value: _vm.pln,
+                          callback: function($$v) {
+                            _vm.pln = $$v
                           },
-                          model: {
-                            value: _vm.gender,
-                            callback: function($$v) {
-                              _vm.gender = $$v
-                            },
-                            expression: "gender"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
+                          expression: "pln"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
                     _c(
                       "div",
-                      { staticClass: "col-md-4" },
+                      { staticClass: "paddings" },
                       [
                         _c("input-radio", {
                           attrs: {
@@ -26878,200 +27055,23 @@ var render = function() {
                       ],
                       1
                     )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-12" },
-                    [
-                      _c("input-line-label", {
-                        attrs: { label: "ที่อยู่ตามทะเบียนบ้าน" }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "house_no", label: "บ้านเลขที่ :" },
-                        model: {
-                          value: _vm.house_no,
-                          callback: function($$v) {
-                            _vm.house_no = $$v
-                          },
-                          expression: "house_no"
-                        }
-                      })
-                    ],
-                    1
-                  ),
+                  ]),
                   _vm._v(" "),
                   _c(
                     "div",
                     { staticClass: "col-md-4" },
                     [
-                      _c("input-text", {
-                        attrs: { name: "village_no", label: "หมู่ที่ :" },
-                        model: {
-                          value: _vm.village_no,
-                          callback: function($$v) {
-                            _vm.village_no = $$v
-                          },
-                          expression: "village_no"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "lane", label: "ซอย :" },
-                        model: {
-                          value: _vm.lane,
-                          callback: function($$v) {
-                            _vm.lane = $$v
-                          },
-                          expression: "lane"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "road", label: "ถนน :" },
-                        model: {
-                          value: _vm.road,
-                          callback: function($$v) {
-                            _vm.road = $$v
-                          },
-                          expression: "road"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("auto-complete", {
-                        attrs: { label: "รหัสไปรษณีย์ :", name: "postcode" },
-                        on: {
-                          update: function(item) {
-                            return _vm.updatePostcodeId(item)
-                          }
-                        },
-                        model: {
-                          value: _vm.postcode,
-                          callback: function($$v) {
-                            _vm.postcode = $$v
-                          },
-                          expression: "postcode"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
+                      _c("file-input", {
                         attrs: {
-                          name: "sub_district",
-                          label: "ตำบล/แขวง :",
-                          readonly: true
+                          name: "employee_file",
+                          label: "รูปถ่ายพนักงาน :"
                         },
                         model: {
-                          value: _vm.sub_district,
+                          value: _vm.employee_file,
                           callback: function($$v) {
-                            _vm.sub_district = $$v
+                            _vm.employee_file = $$v
                           },
-                          expression: "sub_district"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "district",
-                          label: "อำเภอ :",
-                          readonly: true
-                        },
-                        model: {
-                          value: _vm.district,
-                          callback: function($$v) {
-                            _vm.district = $$v
-                          },
-                          expression: "district"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "province",
-                          label: "จังหวัด :",
-                          readonly: true
-                        },
-                        model: {
-                          value: _vm.province,
-                          callback: function($$v) {
-                            _vm.province = $$v
-                          },
-                          expression: "province"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "telephone", label: "โทรศัพท์บ้าน :" },
-                        model: {
-                          value: _vm.telephone,
-                          callback: function($$v) {
-                            _vm.telephone = $$v
-                          },
-                          expression: "telephone"
+                          expression: "employee_file"
                         }
                       })
                     ],
@@ -27504,6 +27504,232 @@ var render = function() {
                       1
                     )
                   ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-12" },
+                    [_c("input-line-label", { attrs: { label: "บุตร/ธิดา" } })],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "child_title_id",
+                          label: "คำนำหน้าชื่อ :"
+                        },
+                        model: {
+                          value: _vm.child_title_id,
+                          callback: function($$v) {
+                            _vm.child_title_id = $$v
+                          },
+                          expression: "child_title_id"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: { name: "child_first_name", label: "ชื่อ :" },
+                        model: {
+                          value: _vm.child_first_name,
+                          callback: function($$v) {
+                            _vm.child_first_name = $$v
+                          },
+                          expression: "child_first_name"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: { name: "child_last_name", label: "นามสกุล :" },
+                        model: {
+                          value: _vm.child_last_name,
+                          callback: function($$v) {
+                            _vm.child_last_name = $$v
+                          },
+                          expression: "child_last_name"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "child_document_no",
+                          label: "เลขบัตรประชาชน :",
+                          pattern: "^([0-9]{13})$",
+                          "error-text": "เลขบัตรประชาชนไม่ถูกต้อง",
+                          required: true
+                        },
+                        model: {
+                          value: _vm.child_document_no,
+                          callback: function($$v) {
+                            _vm.child_document_no = $$v
+                          },
+                          expression: "child_document_no"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-date", {
+                        attrs: {
+                          name: "child_dob",
+                          label: "วัน/เดือน/ปีเกิด :",
+                          format: "DD/MM/YYYY"
+                        },
+                        on: { input: _vm.test },
+                        model: {
+                          value: _vm.child_dob,
+                          callback: function($$v) {
+                            _vm.child_dob = $$v
+                          },
+                          expression: "child_dob"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c(
+                      "div",
+                      { staticClass: "paddings" },
+                      [
+                        _c("input-radio", {
+                          attrs: {
+                            name: "child_marital_status",
+                            label: "สถานภาพ :",
+                            options: _vm.marital_statuses
+                          },
+                          model: {
+                            value: _vm.child_marital_status,
+                            callback: function($$v) {
+                              _vm.child_marital_status = $$v
+                            },
+                            expression: "child_marital_status"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-12 " },
+                    [
+                      _c("center", [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-primary",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.addChild()
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "fa fa-plus-circle" }),
+                            _vm._v(" เพิ่มข้อมูลบุตร/ธิดา")
+                          ]
+                        )
+                      ])
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-12 col-centered" }, [
+                  _c(
+                    "table",
+                    {
+                      staticClass: "table table-bordered",
+                      attrs: { id: "childs" }
+                    },
+                    [
+                      _c("thead", [
+                        _c("tr", [
+                          _c("th", [_c("center", [_vm._v("คนที่")])], 1),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("ชื่อ - นามสกุล")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("เลขบัตรประชาชน")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("วัน/เดือน/ปีเกิด")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("อายุ")]),
+                          _vm._v(" "),
+                          _c("th", [_vm._v("สถานภาพ")])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("tbody", [
+                        _c("tr", [
+                          _c("td", [_c("center", [_vm._v("1")])], 1),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("John Doe")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("1234567890123")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("10/11/1990")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("28 ปี ")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("สมรส ")])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("td", [_c("center", [_vm._v("2")])], 1),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("July Doe")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("1234567890124")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("10/11/1994")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("24 ปี ")]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v("โสด ")])
+                        ])
+                      ])
+                    ]
+                  )
                 ])
               ]
             ),
@@ -28049,7 +28275,187 @@ var render = function() {
                     { staticClass: "col-md-12" },
                     [
                       _c("input-line-label", {
-                        attrs: { label: "ที่อยู่ปัจจุบัน" }
+                        attrs: { label: "ที่อยู่ตามทะเบียนบ้าน" }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: { name: "house_no", label: "บ้านเลขที่ :" },
+                        model: {
+                          value: _vm.house_no,
+                          callback: function($$v) {
+                            _vm.house_no = $$v
+                          },
+                          expression: "house_no"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: { name: "village_no", label: "หมู่ที่ :" },
+                        model: {
+                          value: _vm.village_no,
+                          callback: function($$v) {
+                            _vm.village_no = $$v
+                          },
+                          expression: "village_no"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: { name: "lane", label: "ซอย :" },
+                        model: {
+                          value: _vm.lane,
+                          callback: function($$v) {
+                            _vm.lane = $$v
+                          },
+                          expression: "lane"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: { name: "road", label: "ถนน :" },
+                        model: {
+                          value: _vm.road,
+                          callback: function($$v) {
+                            _vm.road = $$v
+                          },
+                          expression: "road"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("auto-complete", {
+                        attrs: { label: "รหัสไปรษณีย์ :", name: "postcode" },
+                        on: {
+                          update: function(item) {
+                            return _vm.updatePostcodeId(item)
+                          }
+                        },
+                        model: {
+                          value: _vm.postcode,
+                          callback: function($$v) {
+                            _vm.postcode = $$v
+                          },
+                          expression: "postcode"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "sub_district",
+                          label: "ตำบล/แขวง :",
+                          readonly: true
+                        },
+                        model: {
+                          value: _vm.sub_district,
+                          callback: function($$v) {
+                            _vm.sub_district = $$v
+                          },
+                          expression: "sub_district"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "district",
+                          label: "อำเภอ :",
+                          readonly: true
+                        },
+                        model: {
+                          value: _vm.district,
+                          callback: function($$v) {
+                            _vm.district = $$v
+                          },
+                          expression: "district"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "province",
+                          label: "จังหวัด :",
+                          readonly: true
+                        },
+                        model: {
+                          value: _vm.province,
+                          callback: function($$v) {
+                            _vm.province = $$v
+                          },
+                          expression: "province"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-12" },
+                    [
+                      _c("input-line-label", {
+                        attrs: { label: "ที่อยู่ที่สามารถติดต่อได้" }
                       })
                     ],
                     1
@@ -28250,29 +28656,6 @@ var render = function() {
                       })
                     ],
                     1
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "contact_telephone",
-                          label: "โทรศัพท์บ้าน :"
-                        },
-                        model: {
-                          value: _vm.contact_telephone,
-                          callback: function($$v) {
-                            _vm.contact_telephone = $$v
-                          },
-                          expression: "contact_telephone"
-                        }
-                      })
-                    ],
-                    1
                   )
                 ]),
                 _vm._v(" "),
@@ -28287,13 +28670,132 @@ var render = function() {
                     ],
                     1
                   )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: { name: "telephone", label: "โทรศัพท์บ้าน :" },
+                        model: {
+                          value: _vm.telephone,
+                          callback: function($$v) {
+                            _vm.telephone = $$v
+                          },
+                          expression: "telephone"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: { name: "phone", label: "โทรศัพท์มือถือ :" },
+                        model: {
+                          value: _vm.phone,
+                          callback: function($$v) {
+                            _vm.phone = $$v
+                          },
+                          expression: "phone"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "office_telephone",
+                          label: "โทรศัพท์ที่ทำงาน :"
+                        },
+                        model: {
+                          value: _vm.office_telephone,
+                          callback: function($$v) {
+                            _vm.office_telephone = $$v
+                          },
+                          expression: "office_telephone"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "mahidol_email",
+                          label: "Email มหิดล :"
+                        },
+                        model: {
+                          value: _vm.mahidol_email,
+                          callback: function($$v) {
+                            _vm.mahidol_email = $$v
+                          },
+                          expression: "mahidol_email"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: { name: "first_email", label: "Email อื่นๆ :" },
+                        model: {
+                          value: _vm.first_email,
+                          callback: function($$v) {
+                            _vm.first_email = $$v
+                          },
+                          expression: "first_email"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "second_email",
+                          label: "Email อื่นๆ  :"
+                        },
+                        model: {
+                          value: _vm.second_email,
+                          callback: function($$v) {
+                            _vm.second_email = $$v
+                          },
+                          expression: "second_email"
+                        }
+                      })
+                    ],
+                    1
+                  )
                 ])
               ]
             )
           ])
         ]),
-        _vm._v(" "),
-        _c("button", { attrs: { type: "submit" } }, [_vm._v("submit")]),
         _vm._v(" "),
         _c("div")
       ],
