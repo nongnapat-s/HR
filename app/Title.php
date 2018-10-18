@@ -26,6 +26,7 @@ class Title extends Model implements AutoId
         'name_short',
         'name_eng',
         'name_eng_short',
+        'titled',
         'gender'
     ];
 

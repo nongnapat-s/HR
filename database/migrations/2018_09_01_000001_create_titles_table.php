@@ -21,6 +21,7 @@ class CreateTitlesTable extends Migration
             $table->string('name_eng', 120);
             $table->string('name_eng_short', 60);
             $table->unsignedTinyInteger('gender')->default(2); // 0:female, 1:male, 2:both
+            $table->boolean('titled')->default(0);
             $table->timestamps(3);
         });
     }
