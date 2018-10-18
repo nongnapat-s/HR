@@ -176,7 +176,7 @@ class TitlesTableSeeder extends Seeder
             ],
         ];
         foreach ($titles as $title) {
-            App\Title::create($title);
+            App\Models\Lists\Title::create($title);
         }
     }
 }

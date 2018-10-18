@@ -34,7 +34,7 @@ class StatusesTableSeeder extends Seeder
         ];
 
         foreach ($statuses as $status) {
-            App\Status::create($status);
+            App\Models\Lists\Status::create($status);
         }
     }
 }

@@ -92,7 +92,7 @@ class ProvincesTableSeeder extends Seeder
         ];
 
         foreach ($provinces as $province) {
-            App\Province::create($province);
+            App\Models\Lists\Province::create($province);
         }
     }
 }

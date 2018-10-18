@@ -7599,7 +7599,7 @@ class PostcodesTableSeeder extends Seeder
             ];
 
             foreach ($postcodes as $postcode) {
-                  App\Postcode::create($postcode);
+                  App\Models\Lists\Postcode::create($postcode);
             }
       }
 }
