@@ -52,7 +52,7 @@ class SelectItemsTableSeeder extends Seeder
         ];
 
         foreach($items as $item) {
-            App\SelectItem::create($item);
+            App\Models\Lists\SelectItem::create($item);
         }
     }
 }

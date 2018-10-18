@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models\Lists;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Contracts\AutoId;
 use App\Traits\AutoIdInsertable;
 
-class Title extends Model implements AutoId
+class Postcode extends Model implements AutoId
 {
     use AutoIdInsertable;
 
@@ -22,18 +22,16 @@ class Title extends Model implements AutoId
      */
     protected $fillable = [
         'id',
-        'name',
-        'name_short',
-        'name_eng',
-        'name_eng_short',
-        'gender'
+        'postcode',
+        'province_id',
+        'location'
     ];
 
     /**=========================*
      * Model's relations
      *==========================*/
-    public function persons()
+    public function province()
     {
-        return $this->hasMany(Person::class);
+        return $this->belongsTo(Province::class);
     }
 }

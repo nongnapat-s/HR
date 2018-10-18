@@ -29,7 +29,7 @@ class Person extends Model implements AutoId
      */
     protected $fillable = [
         'id',
-        'title_id',
+        'prefix_id',
         'first_name',
         'first_name_eng',
         'last_name',
@@ -56,7 +56,7 @@ class Person extends Model implements AutoId
     /**=========================*
      * Model's relations
      *==========================*/
-    public function title()
+    public function prefix()
     {
         return $this->belongsTo(Title::class);
     }
