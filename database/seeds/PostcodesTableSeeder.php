@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Lists\Postcode;
 use Illuminate\Database\Seeder;
 
 class PostcodesTableSeeder extends Seeder
@@ -11,6 +12,10 @@ class PostcodesTableSeeder extends Seeder
        */
       public function run()
       {
+            DB::statement('SET foreign_key_checks=0');
+            Postcode::truncate();
+            DB::statement('SET foreign_key_checks=1');
+
             $postcodes = [
                   ['id' =>    1   , 'postcode' => 10200, 'province_id' => 10, 'location' => '10200 พระบรมมหาราชวัง พระนคร กรุงเทพมหานคร'],
                   ['id' =>    2   , 'postcode' => 10200, 'province_id' => 10, 'location' => '10200 วังบูรพาภิรมย์ พระนคร กรุงเทพมหานคร'],
@@ -7599,7 +7604,7 @@ class PostcodesTableSeeder extends Seeder
             ];
 
             foreach ($postcodes as $postcode) {
-                  App\Models\Lists\Postcode::create($postcode);
+                  Postcode::create($postcode);
             }
       }
 }

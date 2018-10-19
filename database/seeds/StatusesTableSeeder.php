@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Lists\Status;
 use Illuminate\Database\Seeder;
 
 class StatusesTableSeeder extends Seeder
@@ -11,6 +12,10 @@ class StatusesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET foreign_key_checks=0');
+        Status::truncate();
+        DB::statement('SET foreign_key_checks=1');
+
         $statuses = [
             ['id' =>  1, 'active' => true,  'category' => 'regular',    'name' => 'ทั่วไป'],
             ['id' =>  2, 'active' => true,  'category' => 'assistant',  'name' => 'ยืมตัวสังกัดการพยาบาล'],
@@ -34,7 +39,7 @@ class StatusesTableSeeder extends Seeder
         ];
 
         foreach ($statuses as $status) {
-            App\Models\Lists\Status::create($status);
+            Status::create($status);
         }
     }
 }

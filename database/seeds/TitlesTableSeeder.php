@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Lists\Title;
 use Illuminate\Database\Seeder;
 
 class TitlesTableSeeder extends Seeder
@@ -11,6 +12,10 @@ class TitlesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET foreign_key_checks=0');
+        Title::truncate();
+        DB::statement('SET foreign_key_checks=1');
+
         $titles = [
             [
                 'id' => 1,
@@ -175,8 +180,9 @@ class TitlesTableSeeder extends Seeder
                 'titled' => false
             ],
         ];
+
         foreach ($titles as $title) {
-            App\Models\Lists\Title::create($title);
+            Title::create($title);
         }
     }
 }

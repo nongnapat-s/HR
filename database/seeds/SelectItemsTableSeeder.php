@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Lists\SelectItem;
 
 class SelectItemsTableSeeder extends Seeder
 {
@@ -11,6 +12,10 @@ class SelectItemsTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET foreign_key_checks=0');
+        SelectItem::truncate();
+        DB::statement('SET foreign_key_checks=1');
+
         $items = [
             // Blood group
             ['field' => 'blood_group', 'value' =>  2, 'order' =>  1, 'label' => 'A'],
@@ -63,7 +68,7 @@ class SelectItemsTableSeeder extends Seeder
         ];
 
         foreach($items as $item) {
-            App\Models\Lists\SelectItem::create($item);
+            SelectItem::create($item);
         }
     }
 }
