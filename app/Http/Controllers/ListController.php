@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Title;
-use App\Status;
-use App\Postcode;
-use App\Province;
-use App\SelectItem;
+use App\Models\Lists\Title;
+use App\Models\Lists\Status;
+use App\Models\Lists\Postcode;
+use App\Models\Lists\Province;
+use App\Models\Lists\SelectItem;
 use Illuminate\Http\Request;
-// use Log;
+
 class ListController extends Controller
 {
     /**
@@ -18,7 +18,6 @@ class ListController extends Controller
      */
     public function getList(Request $request, $name)
     {
-        Log::info($request->search);
         switch ($name) {
             case 'race':
                 $name = 'nation';
