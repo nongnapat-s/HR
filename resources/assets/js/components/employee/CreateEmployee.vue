@@ -1250,11 +1250,11 @@
                 var cell5 = row.insertCell(4);
                 var cell6 = row.insertCell(5);
                 cell1.innerHTML = "<center>3</center>";
-                cell2.innerHTML = "<center>3</center>";
-                cell3.innerHTML = "<center>3</center>";
-                cell4.innerHTML = this.child_dob;
-                cell5.innerHTML = "<center>3</center>";
-                cell6.innerHTML = "<center>3</center>";
+                cell2.innerHTML = "ทดสอบ เป็นลูก";
+                cell3.innerHTML = "12345678955";
+                cell4.innerHTML = "12/12/1912";
+                cell5.innerHTML = "100 ปี";
+                cell6.innerHTML = "โสด";
             },
         }
     }
