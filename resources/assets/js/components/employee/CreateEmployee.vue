@@ -3,7 +3,34 @@
         <br>
             <form action="/test-form" method="POST" enctype="multipart/form-data">
             <panel
-                title = "ประวัติส่วนตัว">
+                title = "ประวัติบุคลากร">
+                <div class="row">
+                   <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
+                        <div class="pull-right"><img 
+                            :src="'/storage/01.jpeg'" 
+                            class="img-thumbnail" 
+                            alt="รูปพนักงาน" 
+                            height="200" 
+                            width="200"/>
+                        </div>
+                    </div>
+                     <div class="col-md-5 col-md-push-0 col-sm-6 col-sm-push-0 col-xs-12 padding">
+                        <div class="paddings">
+                            <input-text
+                                label = "รหัสพนักงาน :"
+                                :disabled = "true"
+                            ></input-text>
+                            <input-text
+                                label = "ชื่อ - นามสกุล :"
+                                :disabled = "true"
+                            ></input-text>
+                            <input-text
+                                label = "ชื่อ - นามสกุล (อังกฤษ) :"
+                                :disabled = "true"
+                            ></input-text>
+                        </div>
+                    </div>
+                </div>
                 <div class = "row">
                     <div class ="col-md-12">
                         <navbar-tabs
@@ -979,6 +1006,11 @@
         padding-top: 25px;
         padding-bottom: 25px;
     }
+    @media (max-width: 1200px) {
+    .row .col-md-4 > .pull-right {
+        float: none !important;
+    }
+}
 </style>
 <script>
    //components

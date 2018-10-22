@@ -13,14 +13,15 @@
                 @input="OnInput()"
                 ref="input"
                 :readonly="readonly"
+                :disabled = "disabled"
                 :style="inputStyle"
                 >         
             <p class="text-danger" v-if="error">{{ errorText }}</p>
         </div>
 </template>
 <style>
-    input:read-only {
-        background-color: yellow;
+    input[type=text]:disabled {
+        background: white;
     }
 </style>
 
@@ -34,7 +35,8 @@ export default {
         readonly : { default : false},
         pattern : { default : '.' },
         errorText : { default : 'ข้อมูลไม่ถูกต้อง' },
-        required : { default : false }
+        required : { default : false },
+        disabled : { default :false }
     },
     data(){
         return {
