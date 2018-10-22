@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class = "row">
-                    <div class ="col-md-12">
+                    <div class ="col-md-12 col-sm-12">
                         <navbar-tabs
                             :options = 'profile_nav'
                         ></navbar-tabs>
@@ -1151,9 +1151,14 @@
                 autoComplete: null,
                 profile_nav : [
                     { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
-                    { value : '#marital_menu' , label : 'สถานภาพการสมรส', icon : 'fa fa-heart', class : ''},
-                    { value : '#parents_menu' , label : 'ประวัติบิดา - มารดา', icon : 'fa fa-group', class : '' },
-                    { value : '#contact_menu' , label : 'ข้อมูลการติดต่อ', icon : 'fa fa-phone', class : ''},
+                    { value : '#career_menu' , label : 'ประวัติการทำงาน', icon : 'fa fa-address-card', class : ''},
+                    { value : '#education_menu' , label : 'ประวัติการศึกษา', icon : 'fa fa-graduation-cap', class : '' },
+                    { value : '#taining_menu' , label : 'ประวัติการลาศึกษา/อบรม', icon : 'fa fa-plane', class : ''},
+                    { value : '#taining_menu' , label : 'ประวัติการรับราชการ', icon : 'fa fa-briefcase', class : ''},
+                    { value : '#insignia_menu' , label : 'ประวัติการรับเครื่องราชฯ', icon : 'fa fa-star', class : ''},
+                    { value : '#honor_menu' , label : 'ประวัติเกียรติยศ', icon : 'fa fa-trophy', class : ''},
+                    { value : '#manager_menu' , label : 'ตำแหน่งบริหาร', icon : 'fa fa-handshake-o', class : ''},
+                    { value : '#manager_menu' , label : 'ตำแหน่งบริหาร', icon : 'fa fa-handshake-o', class : ''},
                 ],
                 id_card_file : '',
                 house_file : '',
