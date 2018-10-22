@@ -19,14 +19,17 @@
                             <input-text
                                 label = "รหัสพนักงาน :"
                                 :disabled = "true"
+                                name = "ref_id_preview"
                             ></input-text>
                             <input-text
                                 label = "ชื่อ - นามสกุล :"
                                 :disabled = "true"
+                                name = "fullname_preview"
                             ></input-text>
                             <input-text
                                 label = "ชื่อ - นามสกุล (อังกฤษ) :"
                                 :disabled = "true"
+                                name = "fullname_en_preview"
                             ></input-text>
                         </div>
                     </div>
