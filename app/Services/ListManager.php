@@ -121,6 +121,6 @@ class ListManager
             unset($item['label']);
         });
 
-        return ['suggessions' => $items];
+        return ['suggestions' => $items];
     }
 }
