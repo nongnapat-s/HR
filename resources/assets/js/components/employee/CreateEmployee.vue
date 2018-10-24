@@ -82,16 +82,16 @@
                                 <input-select
                                     label = "คำนำหน้าชื่อ : "
                                     option_start_name = "เลือกคำนำหน้า"
-                                    v-model = "title_id"
-                                    name = "title_id"
+                                    v-model = "prefix_id"
+                                    name = "prefix_id"
                                     :options = "prefixApi"
                                 ></input-select>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "extra_title_id"
+                                    name = "extra_prefix_id"
                                     label = "ยศ/ตำแหน่ง :"
-                                    v-model = "extra_title_id"
+                                    v-model = "extra_prefix_id"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
@@ -130,17 +130,17 @@
                         <div class = "row">
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "title_eng_id"
+                                    name = "prefix_eng"
                                     label = "คำนำหน้าชื่อ (อังกฤษ):"
-                                    v-model = "title_eng_id"
+                                    v-model = "prefix_eng"
                                     :readonly="true"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "extra_title_eng_id"
+                                    name = "extra_prefix_eng"
                                     label = "ยศ/ตำแหน่ง (อังกฤษ):"
-                                    v-model = "extra_title_id"
+                                    v-model = "extra_prefix_id"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
@@ -292,6 +292,14 @@
                         <div class = "row">
                             <div class ="col-md-4">
                                 <file-input
+                                    name = "alien_file"
+                                    label = "สำเนาเอกสารใบต่างด้าว :"
+                                    v-model= "alien_file"
+                                >
+                                </file-input>
+                            </div>
+                            <div class ="col-md-4">
+                                <file-input
                                     name = "medicine_file"
                                     label = "สำเนาใบอนุญาตประกอบโรคศิลป์ :"
                                     v-model= "medicine_file"
@@ -306,28 +314,21 @@
                                 >
                                 </file-input>
                             </div>
+                        </div>
+                        <div class = "row">
                             <div class ="col-md-4">
                                 <file-input
-                                    name = "alien_file"
-                                    label = "สำเนาเอกสารใบต่างด้าว :"
-                                    v-model= "alien_file"
+                                    name = "child_chertificate_file"
+                                    label = "สำเนาใบรับรองบุตร :"
+                                    v-model= "child_chertificate_file"
                                 >
                                 </file-input>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class ="col-md-12">
-                                <input-line-label
-                                    label = "สถานภาพการสมรส"
-                                ></input-line-label>
-                            </div>
-                        </div>
-                        <div class="row">
+                            </div>                            
                             <div class = "col-md-6">
-                                <div class="padding">
+                                <div class="paddings">
                                     <input-radio
                                         name = "marital_status"
-                                        label = "สถานภาพของพนักงาน : "
+                                        label = "สถานภาพการสมรส : "
                                         v-model = "marital_status"
                                         :options = "marital_statuses"
                                     />
@@ -345,9 +346,9 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "spouse_title_id"
+                                        name = "spouse_prefix_id"
                                         label = "คำนำหน้าชื่อ :"
-                                        v-model = "spouse_title_id"
+                                        v-model = "spouse_prefix_id"
                                     ></input-text>
                                 </div>
                                 <div class ="col-md-4">
@@ -381,7 +382,7 @@
                                         label = "อาชีพ : "
                                         option_start_name = "เลือกอาชีพ"
                                         v-model = "spouse_job"
-                                        :options = "jobs"
+                                        :options = "careers"
                                     ></input-select>
                                 </div>
                                 <div class ="col-md-4">
@@ -451,9 +452,9 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "child_title_id"
+                                        name = "child_prefix_id"
                                         label = "คำนำหน้าชื่อ :"
-                                        v-model = "child_title_id"
+                                        v-model = "child_prefix_id"
                                     ></input-text>
                                 </div>
                                 <div class ="col-md-4">
@@ -552,9 +553,9 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "father_title_id"
+                                        name = "father_prefix_id"
                                         label = "คำนำหน้าชื่อ :"
-                                        v-model = "father_title_id"
+                                        v-model = "father_prefix_id"
                                     ></input-text>
                                 </div>
                                 <div class ="col-md-4">
@@ -588,7 +589,7 @@
                                         label = "อาชีพ : "
                                         option_start_name = "เลือกอาชีพ"
                                         v-model = "father_job"
-                                        :options = "jobs"
+                                        :options = "careers"
                                     ></input-select>
                                 </div>
                                 <div class ="col-md-4">
@@ -656,9 +657,9 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "mother_title_id"
+                                        name = "mother_prefix_id"
                                         label = "คำนำหน้าชื่อ :"
-                                        v-model = "mother_title_id"
+                                        v-model = "mother_prefix_id"
                                     ></input-text>
                                 </div>
                                 <div class ="col-md-4">
@@ -692,7 +693,7 @@
                                         label = "อาชีพ : "
                                         option_start_name = "เลือกอาชีพ"
                                         v-model = "mother_job"
-                                        :options = "jobs"
+                                        :options = "careers"
                                     ></input-select>
                                 </div>
                                 <div class ="col-md-4">
@@ -1036,10 +1037,10 @@
                 ref_id : '',
                 document_no : '',
                 pln : '',
-                title_id : '',
-                title_eng_id: '',
-                extra_title_id : '',
-                extra_title_eng_id : '',
+                prefix_id : '',
+                prefix_eng: '',
+                extra_prefix_id : '',
+                extra_prefix_eng : '',
                 position_id : '',
                 position_eng_id : '',
                 first_name : '',
@@ -1074,7 +1075,7 @@
                     { value : '2' , label : 'หย่าร้าง' },
                     { value : '3' , label : 'หม้าย' },
                 ],
-                spouse_title_id : '',
+                spouse_prefix_id : '',
                 spouse_first_name : '',
                 spouse_last_name : '',
                 spouse_document_no : '',
@@ -1085,14 +1086,14 @@
                 ],
                 spouse_job: '',
                 spouse_marital_status: '',
-                father_title_id : '',
+                father_prefix_id : '',
                 father_first_name : '',
                 father_last_name : '',
                 father_document_no : '',
                 father_job : '',
                 father_status : '',
                 father_marital_status :  '',
-                jobs : [
+                careers : [
                     { value : '0' , label : 'รับราชการ' },
                     { value : '1' , label : 'ข้าราชการบำนาญ' },
                     { value : '2' , label : 'พนักงานของรัฐ' },
@@ -1139,7 +1140,7 @@
                 contact_province : '',
                 contact_postcode_id : '',
                 contact_telephone : '',
-                apiJobs: store.jobs,
+                apicareers: '',
                 autoComplete: null,
                 profile_nav : [
                     { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
@@ -1166,7 +1167,7 @@
                 father_rename_file : '',
                 father_marriage_file : '',
                 child_file : '',
-                mother_title_id : '',
+                mother_prefix_id : '',
                 mother_first_name : '',
                 mother_last_name : '',
                 mother_document_no : '',
@@ -1183,7 +1184,7 @@
                 mahidol_email : '',
                 first_email : '',
                 second_email : '',
-                child_title_id: '',
+                child_prefix_id: '',
                 child_first_name : '',
                 child_last_name: '',
                 child_document_no: '',
@@ -1191,9 +1192,34 @@
                 child_marital_status: '',
                 prefixApi : '',
                 prefixUrl : '',
+                child_chertificate_file : ''
             }
         },
+        watch:{
+            prefix_id(prefix_id){
+                let title = this.prefixApi.find((item) => {
+                    return item.value == prefix_id
+                })
+                this.prefix_eng = (title.name_eng);
+            }          
+        },
         created() {
+            // get defautl prefix filter by genders
+            axios.get('get-list/prefix-female')
+            .then((response) => {
+                this.prefixApi = response.data;
+            })
+            .catch((error)=> {
+            });
+            // get careers
+            axios.get('get-list/career')
+            .then((response) => {
+                console.log(response.data)
+            })
+            .catch((error)=> {
+            });
+        },
+        mounted() {
         },
         methods: {
             updatePostcodeId(item){
@@ -1269,12 +1295,10 @@
             },
             updateGender(value){
                 this.prefixUrl = value == 0 ? 'prefix-female' : 'prefix-male';
-                console.log(this.prefixUrl);
                 axios.get('get-list/' + this.prefixUrl)
                 
                 .then((response) => {
                     this.prefixApi = response.data;
-                    console.log(this.prefixApi);
                 })
                 .catch((error) => {
                     console.log(error);

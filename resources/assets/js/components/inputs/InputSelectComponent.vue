@@ -32,8 +32,7 @@
         },
         methods : {
             selected($event) {
-                console.log($event.target.value);
-                // $emit('input', $event.target.value)
+                this.$emit('input', $event.target.value)
             }
             
         }
