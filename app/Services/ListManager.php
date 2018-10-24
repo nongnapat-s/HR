@@ -24,6 +24,7 @@ class ListManager
         switch ($this->list) {
             case 'race':
                 $this->list = 'nation';
+            case 'career':
             case 'nation':
             case 'religion':
             case 'blood_group':
@@ -121,6 +122,6 @@ class ListManager
             unset($item['label']);
         });
 
-        return ['suggessions' => $items];
+        return ['suggestions' => $items];
     }
 }
