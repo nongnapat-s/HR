@@ -3,7 +3,7 @@
         <label v-text = "label"></label>
             <select class="form-control" 
                     :name = "name" 
-                    @change = "$emit('input', $event.target.value)"
+                    @change = "selected"
             >
                 <option 
                     v-text = "option_start_name" 
@@ -29,6 +29,13 @@
         },
         mounted() {
             console.log('jobs mounted')
+        },
+        methods : {
+            selected($event) {
+                console.log($event.target.value);
+                // $emit('input', $event.target.value)
+            }
+            
         }
     }
 </script>

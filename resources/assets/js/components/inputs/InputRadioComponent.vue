@@ -25,6 +25,7 @@
         methods : {
             onClick: function($event){
                 this.$emit('input', $event.target.value)
+                this.$emit('update', $event.target.value)
             },
             unClick:function(){
                 this.$emit('input','');
