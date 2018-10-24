@@ -51,6 +51,9 @@ export default {
     },
     mounted() {
         $('.nav-tabs').scrollingTabs({});
+        setTimeout( function() {
+            $('.nav-tabs').scrollingTabs('refresh');
+        },200);
     }
 }
 </script>
