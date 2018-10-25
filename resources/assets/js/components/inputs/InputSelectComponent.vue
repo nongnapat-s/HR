@@ -6,7 +6,7 @@
                     @change = "selected"
             >
                 <option 
-                    v-text = "option_start_name" 
+                    v-text = "" 
                     hidden
                 ></option>
 
@@ -23,12 +23,33 @@
 </template>
 <script>
     export default {
-        props: ['name','label','options','value','option_start_name'],
-        created() {
-            console.log('jobs created')
+        props: {
+            name : {require :true },
+            label : { default : ''},
+            value : { default : ''},
+            option_start_name : { default : ''},
+            url: { require : false  },
         },
-        mounted() {
-            console.log('jobs mounted')
+        data (){
+            return {
+                options : '',
+            }
+        },
+        computed :{
+            serviceUrl(){
+                return this.url != undefined ? ('/get-list/'+this.url) : this.url;
+            }
+        },
+        created () { 
+            if (this.serviceUrl != undefined){
+                axios.get(this.serviceUrl)
+                .then((response) => {
+                    this.options = response.data;
+                })
+                .catch ((error) => {
+                    console.log(error);
+                })
+            }      
         },
         methods : {
             selected($event) {

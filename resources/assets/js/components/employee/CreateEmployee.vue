@@ -189,6 +189,9 @@
                                     label = "วัน/เดือน/ปีเกิด :"
                                     v-model = "dob"
                                     format="DD/MM/YYYY"
+                                    mode = "BE"
+                                    start-range= '2000'
+                                    end-range = '3000'
                                 ></input-date>
                             </div>
                             <div class ="col-md-4">
@@ -381,8 +384,8 @@
                                     <input-select
                                         label = "อาชีพ : "
                                         option_start_name = "เลือกอาชีพ"
-                                        v-model = "spouse_job"
-                                        :options = "careers"
+                                        v-model = "spouse_career"
+                                        url = "career"
                                     ></input-select>
                                 </div>
                                 <div class ="col-md-4">
@@ -588,8 +591,8 @@
                                     <input-select
                                         label = "อาชีพ : "
                                         option_start_name = "เลือกอาชีพ"
-                                        v-model = "father_job"
-                                        :options = "careers"
+                                        v-model = "father_career"
+                                        :options = "careersApi"
                                     ></input-select>
                                 </div>
                                 <div class ="col-md-4">
@@ -692,8 +695,8 @@
                                     <input-select
                                         label = "อาชีพ : "
                                         option_start_name = "เลือกอาชีพ"
-                                        v-model = "mother_job"
-                                        :options = "careers"
+                                        v-model = "mother_career"
+                                        :options = "careersApi"
                                     ></input-select>
                                 </div>
                                 <div class ="col-md-4">
@@ -1084,26 +1087,15 @@
                     { value : '0' , label : 'ยังมีชีวิตอยู่' },
                     { value : '1' , label : 'ถึงแก่กรรม' },
                 ],
-                spouse_job: '',
+                spouse_career: '',
                 spouse_marital_status: '',
                 father_prefix_id : '',
                 father_first_name : '',
                 father_last_name : '',
                 father_document_no : '',
-                father_job : '',
+                father_career : '',
                 father_status : '',
                 father_marital_status :  '',
-                careers : [
-                    { value : '0' , label : 'รับราชการ' },
-                    { value : '1' , label : 'ข้าราชการบำนาญ' },
-                    { value : '2' , label : 'พนักงานของรัฐ' },
-                    { value : '3' , label : 'รัฐวิสาหกิจ' },
-                    { value : '4' , label : 'พนักงานเอกชน' },
-                    { value : '5' , label : 'ธุรกิจส่วนตัว' },
-                    { value : '6' , label : 'ค้าขาย' },
-                    { value : '7' , label : 'รับจ้าง' },
-                    { value : '8' , label : 'ว่างงาน' },
-                ],
                 house_no : '',
                 village_no : '',
                 lane : '',
@@ -1140,7 +1132,7 @@
                 contact_province : '',
                 contact_postcode_id : '',
                 contact_telephone : '',
-                apicareers: '',
+                careersApi: '',
                 autoComplete: null,
                 profile_nav : [
                     { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
@@ -1171,7 +1163,7 @@
                 mother_first_name : '',
                 mother_last_name : '',
                 mother_document_no : '',
-                mother_job : '',
+                mother_career : '',
                 mother_status : '',
                 mother_id_card_file : '',
                 mother_house_file : '',
@@ -1204,20 +1196,6 @@
             }          
         },
         created() {
-            // get defautl prefix filter by genders
-            axios.get('get-list/prefix-female')
-            .then((response) => {
-                this.prefixApi = response.data;
-            })
-            .catch((error)=> {
-            });
-            // get careers
-            axios.get('get-list/career')
-            .then((response) => {
-                console.log(response.data)
-            })
-            .catch((error)=> {
-            });
         },
         mounted() {
         },
