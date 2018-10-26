@@ -6,11 +6,11 @@
                 title = "ประวัติบุคลากร">
                 <div class="row">
                    <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
-                        <div class="pull-right"><img 
-                            :src="'/storage/01.jpeg'" 
-                            class="img-thumbnail" 
-                            alt="รูปพนักงาน" 
-                            height="200" 
+                        <div class="pull-right"><img
+                            :src="'/storage/01.jpeg'"
+                            class="img-thumbnail"
+                            alt="รูปพนักงาน"
+                            height="200"
                             width="200"/>
                         </div>
                     </div>
@@ -189,7 +189,6 @@
                                     label = "วัน/เดือน/ปีเกิด :"
                                     v-model = "dob_preview"
                                     format="DD/MM/YYYY"
-                                    mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
                                     @update="(dob) => updateAge(dob)"
@@ -327,7 +326,7 @@
                                     v-model= "child_chertificate_file"
                                 >
                                 </file-input>
-                            </div>                            
+                            </div>
                             <div class = "col-md-6">
                                 <div class="paddings">
                                     <input-radio
@@ -476,7 +475,7 @@
                                         label = "นามสกุล :"
                                         v-model = "child_last_name"
                                     ></input-text>
-                                </div>      
+                                </div>
                             </div>
                             <div class="row">
                                 <div class ="col-md-4">
@@ -536,7 +535,7 @@
                                         <td>28 ปี </td>
                                         <td>สมรส </td>
                                     </tr>
-                                    <tr>                                        
+                                    <tr>
                                         <td><center>2</center></td>
                                         <td>July Doe</td>
                                         <td>1234567890124</td>
@@ -896,8 +895,8 @@
                                     <input-text
                                         name = "contact_district"
                                         label = "อำเภอ :"
-                                        v-model = "contact_district" 
-                                        :readonly="true"   
+                                        v-model = "contact_district"
+                                        :readonly="true"
                                     ></input-text>
                                 </div>
                                 <div class ="col-md-4">
@@ -966,7 +965,7 @@
                     </div>
                 </div>
             </panel>
-            
+
             <!-- <button type = "submit">submit</button> -->
         <div>
     </div>
@@ -1198,7 +1197,7 @@
                     return item.value == prefix_id
                 })
                 this.prefix_eng = (title.name_eng);
-            }          
+            }
         },
         created() {
               // get defautl prefix filter by genders
@@ -1252,7 +1251,7 @@
                         this.first_name = name[0];
                         this.last_name = name[1];
                     }
-                   
+
                     let name_en = response.data.name_en.split(' ');
                     if (name_en.length == 3 ){
                         this.first_name_eng = name_en[0];
@@ -1293,7 +1292,7 @@
             updateGender(value){
                 this.prefixUrl = value == 0 ? 'prefix-female' : 'prefix-male';
                 axios.get('get-list/' + this.prefixUrl)
-                
+
                 .then((response) => {
                     this.prefixApi = response.data;
                 })
