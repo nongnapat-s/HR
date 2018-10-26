@@ -381,11 +381,13 @@
                                     ></input-text>
                                 </div>
                                 <div class = "col-md-4">
+
                                     <input-select
                                         label = "อาชีพ : "
                                         option_start_name = "เลือกอาชีพ"
                                         v-model = "spouse_career"
-                                        url = "career"
+                                        name = "spouse_career"
+                                        :options = "careersApi"
                                     ></input-select>
                                 </div>
                                 <div class ="col-md-4">
@@ -1196,6 +1198,20 @@
             }          
         },
         created() {
+              // get defautl prefix filter by genders
+            axios.get('get-list/prefix-female')
+            .then((response) => {
+                this.prefixApi = response.data;
+            })
+            .catch((error)=> {
+            });
+            // get careers
+            axios.get('get-list/career')
+            .then((response) => {
+                this.careersApi = response.data;
+            })
+            .catch((error)=> {
+            });
         },
         mounted() {
         },

@@ -6,7 +6,7 @@
                     @change = "selected"
             >
                 <option 
-                    v-text = "" 
+                    v-text = "option_start_name" 
                     hidden
                 ></option>
 
@@ -29,27 +29,7 @@
             value : { default : ''},
             option_start_name : { default : ''},
             url: { require : false  },
-        },
-        data (){
-            return {
-                options : '',
-            }
-        },
-        computed :{
-            serviceUrl(){
-                return this.url != undefined ? ('/get-list/'+this.url) : this.url;
-            }
-        },
-        created () { 
-            if (this.serviceUrl != undefined){
-                axios.get(this.serviceUrl)
-                .then((response) => {
-                    this.options = response.data;
-                })
-                .catch ((error) => {
-                    console.log(error);
-                })
-            }      
+            options: { default : ''},
         },
         methods : {
             selected($event) {

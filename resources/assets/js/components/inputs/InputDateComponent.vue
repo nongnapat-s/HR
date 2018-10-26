@@ -30,12 +30,12 @@ export default {
     },
     data() {
         return {
-            value : ''
+            value : '10/10/2018'
         }
     },
     computed :{
        getValue() {
-           return this.mode == 'AD' ? moment().format('DD/MM/YYYY') : moment().add(543,'years').format('DD/MM/YYYY');
+           return this.mode == 'AD' ? moment(new Date(this.value)).format('DD/MM/YYYY') : moment(new Date(this.value)).add(543,'years').format('DD/MM/YYYY');
        },
        getYears (){
             return this.mode == 'AD' ? moment().format('YYYY') : moment().add(543,'years').format('YYYY');
