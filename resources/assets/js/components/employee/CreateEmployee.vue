@@ -190,8 +190,9 @@
                                     v-model = "dob"
                                     format="DD/MM/YYYY"
                                     mode = "BE"
-                                    start-range= '2000'
+                                    start-range= '2400'
                                     end-range = '3000'
+                                    @update="(dob) => updateAge(dob)"
                                 ></input-date>
                             </div>
                             <div class ="col-md-4">
@@ -1023,6 +1024,7 @@
     import AutoComplete from '../inputs/AutoCompleteComponent.vue'
     import NavbarTabs from '../inputs/NavbarTabsComponent.vue'
     import FileInput from '../inputs/FileInputComponent.vue'
+    import moment from 'moment';
     export default {
         components: {
             Panel,
@@ -1298,7 +1300,11 @@
                     console.log(error);
                 });
             },
-
+            updateAge(dob){
+                var current_year = moment().format('YYYY');
+                var age = dob.split('/');
+                this.age = current_year - age[2];
+            },
             addChild: function(){
                 var table = document.getElementById("childs");
                 var row = table.insertRow(-1);

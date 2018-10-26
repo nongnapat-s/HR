@@ -30,7 +30,7 @@ export default {
     },
     data() {
         return {
-            value : '10/10/2018'
+            value : ''
         }
     },
     computed :{
@@ -39,16 +39,17 @@ export default {
        },
        getYears (){
             return this.mode == 'AD' ? moment().format('YYYY') : moment().add(543,'years').format('YYYY');
-        }
+        },
     },
     mounted() {
         var pikaday = new Pikaday({ 
             field : this.$refs.input_date,
             format : this.format,
             yearRange : [this.startRange,this.endRange],
-            onSelect: () => {
+            onSelect: (getDate) => {
+                var date = this.mode == 'AD' ? moment(getDate).format('DD/MM/YYYY') : moment(getDate).add(-543,'years').format('DD/MM/YYYY');
                 this.$emit('input', this.$refs.input_date.value);
-                
+                this.$emit('update',date);  
             }
         }).gotoYear(this.getYears)
     },
