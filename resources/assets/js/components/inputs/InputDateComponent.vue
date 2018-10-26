@@ -30,7 +30,7 @@ export default {
     },
     data() {
         return {
-            value : '10/10/2018'
+            value : ''
         }
     },
     computed :{
