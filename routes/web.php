@@ -8,7 +8,7 @@
 */
 
 Route::get('/get-list/{name}', 'ListController@getList');
-Route::get('/get-autocomplete/{name}', 'ListController@getAutocomplete');
+Route::get('/get-autocomplete/{name}', 'ListController@getDevbridgeAutocomplete');
 
 
 

@@ -3,7 +3,7 @@
         <label v-text = "label"></label>
             <select class="form-control" 
                     :name = "name" 
-                    @change = "$emit('input', $event.target.value)"
+                    @change = "selected"
             >
                 <option 
                     v-text = "option_start_name" 
@@ -23,12 +23,19 @@
 </template>
 <script>
     export default {
-        props: ['name','label','options','value','option_start_name'],
-        created() {
-            console.log('jobs created')
+        props: {
+            name : {require :true },
+            label : { default : ''},
+            value : { default : ''},
+            option_start_name : { default : ''},
+            url: { require : false  },
+            options: { default : ''},
         },
-        mounted() {
-            console.log('jobs mounted')
+        methods : {
+            selected($event) {
+                this.$emit('input', $event.target.value)
+            }
+            
         }
     }
 </script>

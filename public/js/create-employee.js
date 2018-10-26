@@ -4937,74 +4937,6 @@ function applyToTag (styleElement, obj) {
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {
-window.Vue = __webpack_require__(8);
-
-window._ = __webpack_require__(9);
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {
-  window.$ = __webpack_provided_window_dot_jQuery = __webpack_require__(3);
-
-  __webpack_require__(10);
-} catch (e) {}
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-window.axios = __webpack_require__(11);
-
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-/**
- * Next we will register the CSRF Token as a common header with Axios so that
- * all outgoing HTTP requests automatically have it attached. This is just
- * a simple convenience so we don't have to attach every token manually.
- */
-
-var token = document.head.querySelector('meta[name="csrf-token"]');
-
-if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
-
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-
-// import Echo from 'laravel-echo'
-
-// window.Pusher = require('pusher-js');
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key',
-//     cluster: 'mt1',
-//     encrypted: true
-// });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
-
-/***/ }),
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -5361,6 +5293,74 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {
+window.Vue = __webpack_require__(9);
+
+window._ = __webpack_require__(10);
+
+/**
+ * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+ * for JavaScript based Bootstrap features such as modals and tabs. This
+ * code may be modified to fit the specific needs of your application.
+ */
+
+try {
+  window.$ = __webpack_provided_window_dot_jQuery = __webpack_require__(2);
+
+  __webpack_require__(11);
+} catch (e) {}
+
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
+
+window.axios = __webpack_require__(12);
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+/**
+ * Next we will register the CSRF Token as a common header with Axios so that
+ * all outgoing HTTP requests automatically have it attached. This is just
+ * a simple convenience so we don't have to attach every token manually.
+ */
+
+var token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+
+// import Echo from 'laravel-echo'
+
+// window.Pusher = require('pusher-js');
+
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: 'your-pusher-key',
+//     cluster: 'mt1',
+//     encrypted: true
+// });
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
 /* 14 */
 /***/ (function(module, exports) {
 
@@ -17233,7 +17233,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, options);
+var update = __webpack_require__(7)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -17407,7 +17407,7 @@ module.exports = __webpack_require__(175);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_employee_CreateEmployee_vue__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_employee_CreateEmployee_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_employee_CreateEmployee_vue__);
-__webpack_require__(7);
+__webpack_require__(8);
 
 
 
@@ -17436,7 +17436,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(180)
 /* template */
-var __vue_template__ = __webpack_require__(234)
+var __vue_template__ = __webpack_require__(239)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17509,7 +17509,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.padding-row{\n    padding-top: 20px;\n    padding-bottom: 20px;\n}\n.hr{\n    width: 100%;\n    height: 15px;\n    border-bottom: 1px solid #d9d9d9;\n    text-align: left;\n}\n.hr-label{\n    background-color: white;\n    padding: 0 0px;\n}\n.paddings{\n    padding-top: 30px;\n    padding-bottom: 30px;\n}\n.tab-pane{\n    padding-top: 25px;\n    padding-bottom: 25px;\n}\n", ""]);
+exports.push([module.i, "\n.col-centered{\n        top : 15px;\n        float: none;\n        margin: 0 auto;\n}\n.padding-row{\n        padding-top: 15px;\n        padding-bottom: 15px;\n}\n.hr{\n        width: 100%;\n        height: 15px;\n        border-bottom: 1px solid #d9d9d9;\n        text-align: left;\n}\n.hr-label{\n        background-color: white;\n        padding: 0 0px;\n}\n.paddings{\n        padding-top: 30px;\n        padding-bottom: 30px;\n}\n.tab-pane{\n        padding-top: 25px;\n        padding-bottom: 25px;\n}\n@media (max-width: 1200px) {\n.row .col-md-4 > .pull-right {\n        float: none !important;\n}\n}\n", ""]);
 
 // exports
 
@@ -17573,10 +17573,191 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__inputs_AutoCompleteComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__inputs_AutoCompleteComponent_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__inputs_NavbarTabsComponent_vue__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__inputs_NavbarTabsComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__inputs_NavbarTabsComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__inputs_FileInputComponent_vue__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__inputs_FileInputComponent_vue__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__inputs_FileInputComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__inputs_FileInputComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_moment__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -18424,6 +18605,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
         Panel: __WEBPACK_IMPORTED_MODULE_0__panels_PanelComponent_vue___default.a,
@@ -18445,10 +18627,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             ref_id: '',
             document_no: '',
             pln: '',
-            title_id: '',
-            title_eng_id: '',
-            extra_title_id: '',
-            extra_title_eng_id: '',
+            prefix_id: '',
+            prefix_eng: '',
+            extra_prefix_id: '',
+            extra_prefix_eng: '',
             position_id: '',
             position_eng_id: '',
             first_name: '',
@@ -18458,6 +18640,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             middle_name: '',
             middle_name_eng: '',
             nickname: '',
+            dob_preview: '',
             dob: '',
             age: '',
             race: '',
@@ -18470,22 +18653,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             blood_groups: [{ value: '0', label: 'A' }, { value: '1', label: 'B' }, { value: '2', label: 'O' }, { value: '3', label: 'AB' }],
             marital_status: '',
             marital_statuses: [{ value: '0', label: 'โสด' }, { value: '1', label: 'สมรส' }, { value: '2', label: 'หย่าร้าง' }, { value: '3', label: 'หม้าย' }],
-            spouse_title_id: '',
+            spouse_prefix_id: '',
             spouse_first_name: '',
             spouse_last_name: '',
             spouse_document_no: '',
             spouse_status: '',
             statuses: [{ value: '0', label: 'ยังมีชีวิตอยู่' }, { value: '1', label: 'ถึงแก่กรรม' }],
-            spouse_job: '',
+            spouse_career: '',
             spouse_marital_status: '',
-            father_title_id: '',
+            father_prefix_id: '',
             father_first_name: '',
             father_last_name: '',
             father_document_no: '',
-            father_job: '',
+            father_career: '',
             father_status: '',
             father_marital_status: '',
-            jobs: [{ value: '0', label: 'รับราชการ' }, { value: '1', label: 'ข้าราชการบำนาญ' }, { value: '2', label: 'พนักงานของรัฐ' }, { value: '3', label: 'รัฐวิสาหกิจ' }, { value: '4', label: 'พนักงานเอกชน' }, { value: '5', label: 'ธุรกิจส่วนตัว' }, { value: '6', label: 'ค้าขาย' }, { value: '7', label: 'รับจ้าง' }, { value: '8', label: 'ว่างงาน' }],
             house_no: '',
             village_no: '',
             lane: '',
@@ -18494,9 +18676,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             district: '',
             province: '',
             postcode_id: ''
-        }, _defineProperty(_ref, 'house_no', ''), _defineProperty(_ref, 'village_no', ''), _defineProperty(_ref, 'lane', ''), _defineProperty(_ref, 'road', ''), _defineProperty(_ref, 'sub_district', ''), _defineProperty(_ref, 'district', ''), _defineProperty(_ref, 'province', ''), _defineProperty(_ref, 'postcode_id', ''), _defineProperty(_ref, 'postcode', ''), _defineProperty(_ref, 'telephone', ''), _defineProperty(_ref, 'contact_house_no', ''), _defineProperty(_ref, 'contact_village_no', ''), _defineProperty(_ref, 'contact_lane', ''), _defineProperty(_ref, 'contact_road', ''), _defineProperty(_ref, 'contact_sub_district', ''), _defineProperty(_ref, 'contact_district', ''), _defineProperty(_ref, 'contact_province', ''), _defineProperty(_ref, 'contact_postcode_id', ''), _defineProperty(_ref, 'contact_postcode', ''), _defineProperty(_ref, 'contact_house_no', ''), _defineProperty(_ref, 'contact_village_no', ''), _defineProperty(_ref, 'contact_lane', ''), _defineProperty(_ref, 'contact_road', ''), _defineProperty(_ref, 'contact_sub_district', ''), _defineProperty(_ref, 'contact_district', ''), _defineProperty(_ref, 'contact_province', ''), _defineProperty(_ref, 'contact_postcode_id', ''), _defineProperty(_ref, 'contact_telephone', ''), _defineProperty(_ref, 'apiJobs', store.jobs), _defineProperty(_ref, 'autoComplete', null), _defineProperty(_ref, 'profile_nav', [{ value: '#profile_menu', label: 'ประวัติส่วนตัว', icon: 'fa fa-user-circle-o', class: 'active' }, { value: '#marital_menu', label: 'สถานภาพการสมรส', icon: 'fa fa-heart', class: '' }, { value: '#parents_menu', label: 'ประวัติบิดา - มารดา', icon: 'fa fa-group', class: '' }, { value: '#contact_menu', label: 'ข้อมูลการติดต่อ', icon: 'fa fa-phone', class: '' }]), _defineProperty(_ref, 'id_card_file', ''), _defineProperty(_ref, 'house_file', ''), _defineProperty(_ref, 'rename_file', ''), _defineProperty(_ref, 'medicine_file', ''), _defineProperty(_ref, 'soldier_file', ''), _defineProperty(_ref, 'alien_file', ''), _defineProperty(_ref, 'spouse_id_card_file', ''), _defineProperty(_ref, 'spouse_house_file', ''), _defineProperty(_ref, 'spouse_rename_file', ''), _defineProperty(_ref, 'marriage_file', ''), _defineProperty(_ref, 'father_id_card_file', ''), _defineProperty(_ref, 'father_house_file', ''), _defineProperty(_ref, 'father_rename_file', ''), _defineProperty(_ref, 'father_marriage_file', ''), _defineProperty(_ref, 'child_file', ''), _defineProperty(_ref, 'mother_title_id', ''), _defineProperty(_ref, 'mother_first_name', ''), _defineProperty(_ref, 'mother_last_name', ''), _defineProperty(_ref, 'mother_document_no', ''), _defineProperty(_ref, 'mother_job', ''), _defineProperty(_ref, 'mother_status', ''), _defineProperty(_ref, 'mother_id_card_file', ''), _defineProperty(_ref, 'mother_house_file', ''), _defineProperty(_ref, 'mother_rename_file', ''), _defineProperty(_ref, 'mother_marriage_file', ''), _defineProperty(_ref, 'mother_marital_status', ''), _ref;
+        }, _defineProperty(_ref, 'house_no', ''), _defineProperty(_ref, 'village_no', ''), _defineProperty(_ref, 'lane', ''), _defineProperty(_ref, 'road', ''), _defineProperty(_ref, 'sub_district', ''), _defineProperty(_ref, 'district', ''), _defineProperty(_ref, 'province', ''), _defineProperty(_ref, 'postcode_id', ''), _defineProperty(_ref, 'postcode', ''), _defineProperty(_ref, 'telephone', ''), _defineProperty(_ref, 'contact_house_no', ''), _defineProperty(_ref, 'contact_village_no', ''), _defineProperty(_ref, 'contact_lane', ''), _defineProperty(_ref, 'contact_road', ''), _defineProperty(_ref, 'contact_sub_district', ''), _defineProperty(_ref, 'contact_district', ''), _defineProperty(_ref, 'contact_province', ''), _defineProperty(_ref, 'contact_postcode_id', ''), _defineProperty(_ref, 'contact_postcode', ''), _defineProperty(_ref, 'contact_house_no', ''), _defineProperty(_ref, 'contact_village_no', ''), _defineProperty(_ref, 'contact_lane', ''), _defineProperty(_ref, 'contact_road', ''), _defineProperty(_ref, 'contact_sub_district', ''), _defineProperty(_ref, 'contact_district', ''), _defineProperty(_ref, 'contact_province', ''), _defineProperty(_ref, 'contact_postcode_id', ''), _defineProperty(_ref, 'contact_telephone', ''), _defineProperty(_ref, 'careersApi', ''), _defineProperty(_ref, 'autoComplete', null), _defineProperty(_ref, 'profile_nav', [{ value: '#profile_menu', label: 'ประวัติส่วนตัว', icon: 'fa fa-user-circle-o', class: 'active' }, { value: '#career_menu', label: 'ประวัติการทำงาน', icon: 'fa fa-address-card', class: '' }, { value: '#education_menu', label: 'ประวัติการศึกษา', icon: 'fa fa-graduation-cap', class: '' }, { value: '#taining_menu', label: 'ประวัติการลาศึกษา/อบรม', icon: 'fa fa-plane', class: '' }, { value: '#taining_menu', label: 'ประวัติการรับราชการ', icon: 'fa fa-briefcase', class: '' }, { value: '#insignia_menu', label: 'ประวัติการรับเครื่องราชฯ', icon: 'fa fa-star', class: '' }, { value: '#honor_menu', label: 'ประวัติเกียรติยศ', icon: 'fa fa-trophy', class: '' }, { value: '#manager_menu', label: 'ตำแหน่งบริหาร', icon: 'fa fa-handshake-o', class: '' }]), _defineProperty(_ref, 'id_card_file', ''), _defineProperty(_ref, 'house_file', ''), _defineProperty(_ref, 'rename_file', ''), _defineProperty(_ref, 'medicine_file', ''), _defineProperty(_ref, 'soldier_file', ''), _defineProperty(_ref, 'alien_file', ''), _defineProperty(_ref, 'spouse_id_card_file', ''), _defineProperty(_ref, 'spouse_house_file', ''), _defineProperty(_ref, 'spouse_rename_file', ''), _defineProperty(_ref, 'marriage_file', ''), _defineProperty(_ref, 'father_id_card_file', ''), _defineProperty(_ref, 'father_house_file', ''), _defineProperty(_ref, 'father_rename_file', ''), _defineProperty(_ref, 'father_marriage_file', ''), _defineProperty(_ref, 'child_file', ''), _defineProperty(_ref, 'mother_prefix_id', ''), _defineProperty(_ref, 'mother_first_name', ''), _defineProperty(_ref, 'mother_last_name', ''), _defineProperty(_ref, 'mother_document_no', ''), _defineProperty(_ref, 'mother_career', ''), _defineProperty(_ref, 'mother_status', ''), _defineProperty(_ref, 'mother_id_card_file', ''), _defineProperty(_ref, 'mother_house_file', ''), _defineProperty(_ref, 'mother_rename_file', ''), _defineProperty(_ref, 'mother_marriage_file', ''), _defineProperty(_ref, 'mother_marital_status', ''), _defineProperty(_ref, 'employee_file', ''), _defineProperty(_ref, 'phone', ''), _defineProperty(_ref, 'office_telephone', ''), _defineProperty(_ref, 'mahidol_email', ''), _defineProperty(_ref, 'first_email', ''), _defineProperty(_ref, 'second_email', ''), _defineProperty(_ref, 'child_prefix_id', ''), _defineProperty(_ref, 'child_first_name', ''), _defineProperty(_ref, 'child_last_name', ''), _defineProperty(_ref, 'child_document_no', ''), _defineProperty(_ref, 'child_dob', ''), _defineProperty(_ref, 'child_marital_status', ''), _defineProperty(_ref, 'prefixApi', ''), _defineProperty(_ref, 'prefixUrl', ''), _defineProperty(_ref, 'child_chertificate_file', ''), _ref;
     },
-    created: function created() {},
+
+    watch: {
+        prefix_id: function prefix_id(_prefix_id) {
+            var title = this.prefixApi.find(function (item) {
+                return item.value == _prefix_id;
+            });
+            this.prefix_eng = title.name_eng;
+        }
+    },
+    created: function created() {
+        var _this = this;
+
+        // get defautl prefix filter by genders
+        axios.get('get-list/prefix-female').then(function (response) {
+            _this.prefixApi = response.data;
+        }).catch(function (error) {});
+        // get careers
+        axios.get('get-list/career').then(function (response) {
+            _this.careersApi = response.data;
+        }).catch(function (error) {});
+    },
+    mounted: function mounted() {},
 
     methods: {
         updatePostcodeId: function updatePostcodeId(item) {
@@ -18516,32 +18719,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             this.contact_postcode = location[0];
         },
         employeeApi: function employeeApi(value) {
-            var _this = this;
+            var _this2 = this;
 
             this.ref_id = value;
             axios.post('/get-user', {
                 id: this.ref_id
             }).then(function (response) {
                 console.log(response);
-                _this.document_no = response.data.document_id;
+                _this2.document_no = response.data.document_id;
                 var name = response.data.name.split(' ');
                 if (name.length == 3) {
-                    _this.first_name = name[0];
-                    _this.middle_name = name[1];
-                    _this.middle_name = name[2];
+                    _this2.first_name = name[0];
+                    _this2.middle_name = name[1];
+                    _this2.middle_name = name[2];
                 } else {
-                    _this.first_name = name[0];
-                    _this.last_name = name[1];
+                    _this2.first_name = name[0];
+                    _this2.last_name = name[1];
                 }
 
                 var name_en = response.data.name_en.split(' ');
                 if (name_en.length == 3) {
-                    _this.first_name_eng = name_en[0];
-                    _this.middle_name_eng = name_en[1];
-                    _this.middle_name_eng = name_en[2];
+                    _this2.first_name_eng = name_en[0];
+                    _this2.middle_name_eng = name_en[1];
+                    _this2.middle_name_eng = name_en[2];
                 } else {
-                    _this.first_name_eng = name_en[0];
-                    _this.last_name_eng = name_en[1];
+                    _this2.first_name_eng = name_en[0];
+                    _this2.last_name_eng = name_en[1];
                 }
             }).catch(function (error) {
                 console.log(error);
@@ -18570,9 +18773,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 this.contact_postcode_id = '';
             }
         },
+        updateGender: function updateGender(value) {
+            var _this3 = this;
 
-        test: function test() {
-            console.log(this.dob);
+            this.prefixUrl = value == 0 ? 'prefix-female' : 'prefix-male';
+            axios.get('get-list/' + this.prefixUrl).then(function (response) {
+                _this3.prefixApi = response.data;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        updateAge: function updateAge(dob) {
+            var current_year = __WEBPACK_IMPORTED_MODULE_11_moment___default()().format('YYYY');
+            var age = dob.split('/');
+            this.dob = dob;
+            this.age = current_year - age[2];
+        },
+
+        addChild: function addChild() {
+            var table = document.getElementById("childs");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            cell1.innerHTML = "<center>3</center>";
+            cell2.innerHTML = "ทดสอบ เป็นลูก";
+            cell3.innerHTML = "12345678955";
+            cell4.innerHTML = "12/12/1912";
+            cell5.innerHTML = "100 ปี";
+            cell6.innerHTML = "โสด";
         }
     }
 });
@@ -18663,7 +18895,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\nheader{\n    background-color:#e6e6ff;\n}\n.content {\n    background-color: #fcfcfc;\n}\n.panel {\n    -webkit-box-shadow: -1px 6px 14px 0px rgba(219,216,219,1);\n            box-shadow: -1px 6px 14px 0px rgba(219,216,219,1);\n}\n", ""]);
+exports.push([module.i, "\nheader{\n    background-color:#e6e6ff;\n}\n.panel-relative{\n    position: relative;\n}\n.content {\n    background-color: #fcfcfc;\n}\n.panel {\n    -webkit-box-shadow: -1px 6px 14px 0px rgba(219,216,219,1);\n            box-shadow: -1px 6px 14px 0px rgba(219,216,219,1);\n}\n", ""]);
 
 // exports
 
@@ -18674,6 +18906,9 @@ exports.push([module.i, "\nheader{\n    background-color:#e6e6ff;\n}\n.content {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -18711,7 +18946,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "panel panel-info" }, [
-    _c("div", { staticClass: "panel-heading" }, [
+    _c("div", { staticClass: "panel-heading text-center panel-relative" }, [
       _c("h4", { domProps: { textContent: _vm._s(_vm.title) } })
     ]),
     _vm._v(" "),
@@ -18814,7 +19049,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\ninput:-moz-read-only {\n    background-color: yellow;\n}\ninput:read-only {\n    background-color: yellow;\n}\n", ""]);
+exports.push([module.i, "\ninput[type=text]:disabled {\n    background: white;\n}\n", ""]);
 
 // exports
 
@@ -18855,13 +19090,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: (_props = {
         name: { required: true },
         label: { default: null },
         value: { default: null }
-    }, _defineProperty(_props, 'label', { default: null }), _defineProperty(_props, 'readonly', { default: false }), _defineProperty(_props, 'pattern', { default: '.' }), _defineProperty(_props, 'errorText', { default: 'ข้อมูลไม่ถูกต้อง' }), _defineProperty(_props, 'required', { default: false }), _props),
+    }, _defineProperty(_props, 'label', { default: null }), _defineProperty(_props, 'readonly', { default: false }), _defineProperty(_props, 'pattern', { default: '.' }), _defineProperty(_props, 'errorText', { default: 'ข้อมูลไม่ถูกต้อง' }), _defineProperty(_props, 'required', { default: false }), _defineProperty(_props, 'disabled', { default: false }), _props),
     data: function data() {
         return {
             inputStyle: '',
@@ -18912,7 +19148,12 @@ var render = function() {
       ref: "input",
       staticClass: "form-control",
       style: _vm.inputStyle,
-      attrs: { type: "text", name: _vm.name, readonly: _vm.readonly },
+      attrs: {
+        type: "text",
+        name: _vm.name,
+        readonly: _vm.readonly,
+        disabled: _vm.disabled
+      },
       domProps: { value: _vm.value },
       on: {
         change: function($event) {
@@ -18996,6 +19237,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_pikaday_css_pikaday_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_pikaday_css_pikaday_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_pikaday__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_pikaday___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_pikaday__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
 //
 //
 //
@@ -19013,26 +19256,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    // props : ['label','id'],
-    props: ['label', 'value', 'format'],
+    props: {
+        name: { default: '' },
+        label: { default: '' },
+        format: { default: 'DD/MM/YYYY' },
+        mode: { default: 'AD' },
+        startRange: { default: 2000 },
+        endRange: { default: 2600 }
+    },
+    data: function data() {
+        return {
+            value: ''
+        };
+    },
+
+    computed: {
+        getValue: function getValue() {
+            return this.mode == 'AD' ? __WEBPACK_IMPORTED_MODULE_2_moment___default()(new Date(this.value)).format('DD/MM/YYYY') : __WEBPACK_IMPORTED_MODULE_2_moment___default()(new Date(this.value)).add(543, 'years').format('DD/MM/YYYY');
+        },
+        getYears: function getYears() {
+            return this.mode == 'AD' ? __WEBPACK_IMPORTED_MODULE_2_moment___default()().format('YYYY') : __WEBPACK_IMPORTED_MODULE_2_moment___default()().add(543, 'years').format('YYYY');
+        }
+    },
     mounted: function mounted() {
         var _this = this;
 
         var pikaday = new __WEBPACK_IMPORTED_MODULE_1_pikaday___default.a({
-            // field : document.getElementById(this.id)
             field: this.$refs.input_date,
             format: this.format,
-            onSelect: function onSelect() {
-                // field.value = picker.toString();
-                _this.$emit('input', pikaday.toString());
+            yearRange: [this.startRange, this.endRange],
+            onSelect: function onSelect(getDate) {
+                var date = _this.mode == 'AD' ? __WEBPACK_IMPORTED_MODULE_2_moment___default()(getDate).format('DD/MM/YYYY') : __WEBPACK_IMPORTED_MODULE_2_moment___default()(getDate).add(-543, 'years').format('DD/MM/YYYY');
+                _this.$emit('input', _this.$refs.input_date.value);
+                _this.$emit('update', date);
             }
-        });
+        }).gotoYear(this.getYears);
     }
 });
 
@@ -19051,7 +19314,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, options);
+var update = __webpack_require__(7)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -20614,8 +20877,13 @@ var render = function() {
     _c("input", {
       ref: "input_date",
       staticClass: "pikaday form-control",
-      attrs: { type: "text", format: _vm.format },
-      domProps: { value: _vm.value }
+      attrs: {
+        type: "text",
+        name: _vm.name,
+        format: _vm.format,
+        mode: _vm.mode
+      },
+      domProps: { value: _vm.value == "" ? "" : _vm.getValue }
     })
   ])
 }
@@ -20889,6 +21157,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         onClick: function onClick($event) {
             this.$emit('input', $event.target.value);
+            this.$emit('update', $event.target.value);
         },
         unClick: function unClick() {
             this.$emit('input', '');
@@ -21036,12 +21305,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['name', 'label', 'options', 'value', 'option_start_name'],
-    created: function created() {
-        console.log('jobs created');
+    props: {
+        name: { require: true },
+        label: { default: '' },
+        value: { default: '' },
+        option_start_name: { default: '' },
+        url: { require: false },
+        options: { default: '' }
     },
-    mounted: function mounted() {
-        console.log('jobs mounted');
+    methods: {
+        selected: function selected($event) {
+            this.$emit('input', $event.target.value);
+        }
     }
 });
 
@@ -21061,11 +21336,7 @@ var render = function() {
       {
         staticClass: "form-control",
         attrs: { name: _vm.name },
-        on: {
-          change: function($event) {
-            _vm.$emit("input", $event.target.value)
-          }
-        }
+        on: { change: _vm.selected }
       },
       [
         _c("option", {
@@ -21525,7 +21796,7 @@ __webpack_require__(222);
         });
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
 /* 222 */
@@ -21538,7 +21809,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 *  Ajax Autocomplete for jQuery is freely distributable under the terms of an MIT-style license.
 *  For details, see the web site: https://github.com/devbridge/jQuery-Autocomplete
 */
-!function(a){"use strict"; true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (a),
+!function(a){"use strict"; true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (a),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):a("object"==typeof exports&&"function"==typeof require?require("jquery"):jQuery)}(function(a){"use strict";function b(c,d){var e=this;e.element=c,e.el=a(c),e.suggestions=[],e.badQueries=[],e.selectedIndex=-1,e.currentValue=e.element.value,e.timeoutId=null,e.cachedResponse={},e.onChangeTimeout=null,e.onChange=null,e.isLocal=!1,e.suggestionsContainer=null,e.noSuggestionsContainer=null,e.options=a.extend(!0,{},b.defaults,d),e.classes={selected:"autocomplete-selected",suggestion:"autocomplete-suggestion"},e.hint=null,e.hintValue="",e.selection=null,e.initialize(),e.setOptions(d)}function c(a,b,c){return a.value.toLowerCase().indexOf(c)!==-1}function d(b){return"string"==typeof b?a.parseJSON(b):b}function e(a,b){if(!b)return a.value;var c="("+g.escapeRegExChars(b)+")";return a.value.replace(new RegExp(c,"gi"),"<strong>$1</strong>").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/&lt;(\/?strong)&gt;/g,"<$1>")}function f(a,b){return'<div class="autocomplete-group">'+b+"</div>"}var g=function(){return{escapeRegExChars:function(a){return a.replace(/[|\\{}()[\]^$+*?.]/g,"\\$&")},createNode:function(a){var b=document.createElement("div");return b.className=a,b.style.position="absolute",b.style.display="none",b}}}(),h={ESC:27,TAB:9,RETURN:13,LEFT:37,UP:38,RIGHT:39,DOWN:40},i=a.noop;b.utils=g,a.Autocomplete=b,b.defaults={ajaxSettings:{},autoSelectFirst:!1,appendTo:"body",serviceUrl:null,lookup:null,onSelect:null,width:"auto",minChars:1,maxHeight:300,deferRequestBy:0,params:{},formatResult:e,formatGroup:f,delimiter:null,zIndex:9999,type:"GET",noCache:!1,onSearchStart:i,onSearchComplete:i,onSearchError:i,preserveInput:!1,containerClass:"autocomplete-suggestions",tabDisabled:!1,dataType:"text",currentRequest:null,triggerSelectOnValidInput:!0,preventBadQueries:!0,lookupFilter:c,paramName:"query",transformResult:d,showNoSuggestionNotice:!1,noSuggestionNotice:"No results",orientation:"bottom",forceFixPosition:!1},b.prototype={initialize:function(){var c,d=this,e="."+d.classes.suggestion,f=d.classes.selected,g=d.options;d.element.setAttribute("autocomplete","off"),d.noSuggestionsContainer=a('<div class="autocomplete-no-suggestion"></div>').html(this.options.noSuggestionNotice).get(0),d.suggestionsContainer=b.utils.createNode(g.containerClass),c=a(d.suggestionsContainer),c.appendTo(g.appendTo||"body"),"auto"!==g.width&&c.css("width",g.width),c.on("mouseover.autocomplete",e,function(){d.activate(a(this).data("index"))}),c.on("mouseout.autocomplete",function(){d.selectedIndex=-1,c.children("."+f).removeClass(f)}),c.on("click.autocomplete",e,function(){d.select(a(this).data("index"))}),c.on("click.autocomplete",function(){clearTimeout(d.blurTimeoutId)}),d.fixPositionCapture=function(){d.visible&&d.fixPosition()},a(window).on("resize.autocomplete",d.fixPositionCapture),d.el.on("keydown.autocomplete",function(a){d.onKeyPress(a)}),d.el.on("keyup.autocomplete",function(a){d.onKeyUp(a)}),d.el.on("blur.autocomplete",function(){d.onBlur()}),d.el.on("focus.autocomplete",function(){d.onFocus()}),d.el.on("change.autocomplete",function(a){d.onKeyUp(a)}),d.el.on("input.autocomplete",function(a){d.onKeyUp(a)})},onFocus:function(){var a=this;a.fixPosition(),a.el.val().length>=a.options.minChars&&a.onValueChange()},onBlur:function(){var a=this;a.blurTimeoutId=setTimeout(function(){a.hide()},200)},abortAjax:function(){var a=this;a.currentRequest&&(a.currentRequest.abort(),a.currentRequest=null)},setOptions:function(b){var c=this,d=a.extend({},c.options,b);c.isLocal=Array.isArray(d.lookup),c.isLocal&&(d.lookup=c.verifySuggestionsFormat(d.lookup)),d.orientation=c.validateOrientation(d.orientation,"bottom"),a(c.suggestionsContainer).css({"max-height":d.maxHeight+"px",width:d.width+"px","z-index":d.zIndex}),this.options=d},clearCache:function(){this.cachedResponse={},this.badQueries=[]},clear:function(){this.clearCache(),this.currentValue="",this.suggestions=[]},disable:function(){var a=this;a.disabled=!0,clearTimeout(a.onChangeTimeout),a.abortAjax()},enable:function(){this.disabled=!1},fixPosition:function(){var b=this,c=a(b.suggestionsContainer),d=c.parent().get(0);if(d===document.body||b.options.forceFixPosition){var e=b.options.orientation,f=c.outerHeight(),g=b.el.outerHeight(),h=b.el.offset(),i={top:h.top,left:h.left};if("auto"===e){var j=a(window).height(),k=a(window).scrollTop(),l=-k+h.top-f,m=k+j-(h.top+g+f);e=Math.max(l,m)===l?"top":"bottom"}if("top"===e?i.top+=-f:i.top+=g,d!==document.body){var n,o=c.css("opacity");b.visible||c.css("opacity",0).show(),n=c.offsetParent().offset(),i.top-=n.top,i.top+=d.scrollTop,i.left-=n.left,b.visible||c.css("opacity",o).hide()}"auto"===b.options.width&&(i.width=b.el.outerWidth()+"px"),c.css(i)}},isCursorAtEnd:function(){var a,b=this,c=b.el.val().length,d=b.element.selectionStart;return"number"==typeof d?d===c:!document.selection||(a=document.selection.createRange(),a.moveStart("character",-c),c===a.text.length)},onKeyPress:function(a){var b=this;if(!b.disabled&&!b.visible&&a.which===h.DOWN&&b.currentValue)return void b.suggest();if(!b.disabled&&b.visible){switch(a.which){case h.ESC:b.el.val(b.currentValue),b.hide();break;case h.RIGHT:if(b.hint&&b.options.onHint&&b.isCursorAtEnd()){b.selectHint();break}return;case h.TAB:if(b.hint&&b.options.onHint)return void b.selectHint();if(b.selectedIndex===-1)return void b.hide();if(b.select(b.selectedIndex),b.options.tabDisabled===!1)return;break;case h.RETURN:if(b.selectedIndex===-1)return void b.hide();b.select(b.selectedIndex);break;case h.UP:b.moveUp();break;case h.DOWN:b.moveDown();break;default:return}a.stopImmediatePropagation(),a.preventDefault()}},onKeyUp:function(a){var b=this;if(!b.disabled){switch(a.which){case h.UP:case h.DOWN:return}clearTimeout(b.onChangeTimeout),b.currentValue!==b.el.val()&&(b.findBestHint(),b.options.deferRequestBy>0?b.onChangeTimeout=setTimeout(function(){b.onValueChange()},b.options.deferRequestBy):b.onValueChange())}},onValueChange:function(){if(this.ignoreValueChange)return void(this.ignoreValueChange=!1);var b=this,c=b.options,d=b.el.val(),e=b.getQuery(d);return b.selection&&b.currentValue!==e&&(b.selection=null,(c.onInvalidateSelection||a.noop).call(b.element)),clearTimeout(b.onChangeTimeout),b.currentValue=d,b.selectedIndex=-1,c.triggerSelectOnValidInput&&b.isExactMatch(e)?void b.select(0):void(e.length<c.minChars?b.hide():b.getSuggestions(e))},isExactMatch:function(a){var b=this.suggestions;return 1===b.length&&b[0].value.toLowerCase()===a.toLowerCase()},getQuery:function(b){var c,d=this.options.delimiter;return d?(c=b.split(d),a.trim(c[c.length-1])):b},getSuggestionsLocal:function(b){var c,d=this,e=d.options,f=b.toLowerCase(),g=e.lookupFilter,h=parseInt(e.lookupLimit,10);return c={suggestions:a.grep(e.lookup,function(a){return g(a,b,f)})},h&&c.suggestions.length>h&&(c.suggestions=c.suggestions.slice(0,h)),c},getSuggestions:function(b){var c,d,e,f,g=this,h=g.options,i=h.serviceUrl;if(h.params[h.paramName]=b,h.onSearchStart.call(g.element,h.params)!==!1){if(d=h.ignoreParams?null:h.params,a.isFunction(h.lookup))return void h.lookup(b,function(a){g.suggestions=a.suggestions,g.suggest(),h.onSearchComplete.call(g.element,b,a.suggestions)});g.isLocal?c=g.getSuggestionsLocal(b):(a.isFunction(i)&&(i=i.call(g.element,b)),e=i+"?"+a.param(d||{}),c=g.cachedResponse[e]),c&&Array.isArray(c.suggestions)?(g.suggestions=c.suggestions,g.suggest(),h.onSearchComplete.call(g.element,b,c.suggestions)):g.isBadQuery(b)?h.onSearchComplete.call(g.element,b,[]):(g.abortAjax(),f={url:i,data:d,type:h.type,dataType:h.dataType},a.extend(f,h.ajaxSettings),g.currentRequest=a.ajax(f).done(function(a){var c;g.currentRequest=null,c=h.transformResult(a,b),g.processResponse(c,b,e),h.onSearchComplete.call(g.element,b,c.suggestions)}).fail(function(a,c,d){h.onSearchError.call(g.element,b,a,c,d)}))}},isBadQuery:function(a){if(!this.options.preventBadQueries)return!1;for(var b=this.badQueries,c=b.length;c--;)if(0===a.indexOf(b[c]))return!0;return!1},hide:function(){var b=this,c=a(b.suggestionsContainer);a.isFunction(b.options.onHide)&&b.visible&&b.options.onHide.call(b.element,c),b.visible=!1,b.selectedIndex=-1,clearTimeout(b.onChangeTimeout),a(b.suggestionsContainer).hide(),b.signalHint(null)},suggest:function(){if(!this.suggestions.length)return void(this.options.showNoSuggestionNotice?this.noSuggestions():this.hide());var b,c=this,d=c.options,e=d.groupBy,f=d.formatResult,g=c.getQuery(c.currentValue),h=c.classes.suggestion,i=c.classes.selected,j=a(c.suggestionsContainer),k=a(c.noSuggestionsContainer),l=d.beforeRender,m="",n=function(a,c){var f=a.data[e];return b===f?"":(b=f,d.formatGroup(a,b))};return d.triggerSelectOnValidInput&&c.isExactMatch(g)?void c.select(0):(a.each(c.suggestions,function(a,b){e&&(m+=n(b,g,a)),m+='<div class="'+h+'" data-index="'+a+'">'+f(b,g,a)+"</div>"}),this.adjustContainerWidth(),k.detach(),j.html(m),a.isFunction(l)&&l.call(c.element,j,c.suggestions),c.fixPosition(),j.show(),d.autoSelectFirst&&(c.selectedIndex=0,j.scrollTop(0),j.children("."+h).first().addClass(i)),c.visible=!0,void c.findBestHint())},noSuggestions:function(){var b=this,c=b.options.beforeRender,d=a(b.suggestionsContainer),e=a(b.noSuggestionsContainer);this.adjustContainerWidth(),e.detach(),d.empty(),d.append(e),a.isFunction(c)&&c.call(b.element,d,b.suggestions),b.fixPosition(),d.show(),b.visible=!0},adjustContainerWidth:function(){var b,c=this,d=c.options,e=a(c.suggestionsContainer);"auto"===d.width?(b=c.el.outerWidth(),e.css("width",b>0?b:300)):"flex"===d.width&&e.css("width","")},findBestHint:function(){var b=this,c=b.el.val().toLowerCase(),d=null;c&&(a.each(b.suggestions,function(a,b){var e=0===b.value.toLowerCase().indexOf(c);return e&&(d=b),!e}),b.signalHint(d))},signalHint:function(b){var c="",d=this;b&&(c=d.currentValue+b.value.substr(d.currentValue.length)),d.hintValue!==c&&(d.hintValue=c,d.hint=b,(this.options.onHint||a.noop)(c))},verifySuggestionsFormat:function(b){return b.length&&"string"==typeof b[0]?a.map(b,function(a){return{value:a,data:null}}):b},validateOrientation:function(b,c){return b=a.trim(b||"").toLowerCase(),a.inArray(b,["auto","bottom","top"])===-1&&(b=c),b},processResponse:function(a,b,c){var d=this,e=d.options;a.suggestions=d.verifySuggestionsFormat(a.suggestions),e.noCache||(d.cachedResponse[c]=a,e.preventBadQueries&&!a.suggestions.length&&d.badQueries.push(b)),b===d.getQuery(d.currentValue)&&(d.suggestions=a.suggestions,d.suggest())},activate:function(b){var c,d=this,e=d.classes.selected,f=a(d.suggestionsContainer),g=f.find("."+d.classes.suggestion);return f.find("."+e).removeClass(e),d.selectedIndex=b,d.selectedIndex!==-1&&g.length>d.selectedIndex?(c=g.get(d.selectedIndex),a(c).addClass(e),c):null},selectHint:function(){var b=this,c=a.inArray(b.hint,b.suggestions);b.select(c)},select:function(a){var b=this;b.hide(),b.onSelect(a)},moveUp:function(){var b=this;if(b.selectedIndex!==-1)return 0===b.selectedIndex?(a(b.suggestionsContainer).children("."+b.classes.suggestion).first().removeClass(b.classes.selected),b.selectedIndex=-1,b.ignoreValueChange=!1,b.el.val(b.currentValue),void b.findBestHint()):void b.adjustScroll(b.selectedIndex-1)},moveDown:function(){var a=this;a.selectedIndex!==a.suggestions.length-1&&a.adjustScroll(a.selectedIndex+1)},adjustScroll:function(b){var c=this,d=c.activate(b);if(d){var e,f,g,h=a(d).outerHeight();e=d.offsetTop,f=a(c.suggestionsContainer).scrollTop(),g=f+c.options.maxHeight-h,e<f?a(c.suggestionsContainer).scrollTop(e):e>g&&a(c.suggestionsContainer).scrollTop(e-c.options.maxHeight+h),c.options.preserveInput||(c.ignoreValueChange=!0,c.el.val(c.getValue(c.suggestions[b].value))),c.signalHint(null)}},onSelect:function(b){var c=this,d=c.options.onSelect,e=c.suggestions[b];c.currentValue=c.getValue(e.value),c.currentValue===c.el.val()||c.options.preserveInput||c.el.val(c.currentValue),c.signalHint(null),c.suggestions=[],c.selection=e,a.isFunction(d)&&d.call(c.element,e)},getValue:function(a){var b,c,d=this,e=d.options.delimiter;return e?(b=d.currentValue,c=b.split(e),1===c.length?a:b.substr(0,b.length-c[c.length-1].length)+a):a},dispose:function(){var b=this;b.el.off(".autocomplete").removeData("autocomplete"),a(window).off("resize.autocomplete",b.fixPositionCapture),a(b.suggestionsContainer).remove()}},a.fn.devbridgeAutocomplete=function(c,d){var e="autocomplete";return arguments.length?this.each(function(){var f=a(this),g=f.data(e);"string"==typeof c?g&&"function"==typeof g[c]&&g[c](d):(g&&g.dispose&&g.dispose(),g=new b(this,c),f.data(e,g))}):this.first().data(e)},a.fn.autocomplete||(a.fn.autocomplete=a.fn.devbridgeAutocomplete)});
@@ -21577,15 +21848,19 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(225)
+}
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(225)
+var __vue_script__ = __webpack_require__(227)
 /* template */
-var __vue_template__ = __webpack_require__(226)
+var __vue_template__ = __webpack_require__(231)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -21621,10 +21896,76 @@ module.exports = Component.exports
 
 /***/ }),
 /* 225 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(226);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("675aada4", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b921c61a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NavbarTabsComponent.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-b921c61a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NavbarTabsComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.nav-tabs > li a { \r\n    /* border: 1px solid #D2D0D0;\r\n    background-color :#F5F5F5; \r\n    height: 40px; */\r\n    border: 1px solid #D2D0D0;\r\n    display: block;\r\n    height: 35px;\r\n    line-height: 35px;\r\n    background: rgb(236, 247, 255);\r\n    padding: 0 10px;\r\n    color: black;\r\n    text-decoration: none;\n}\nul{\r\n    font-size: 14px;\n}\n.scrtabs-tab-scroll-arrow {\r\n  border-top: 1px solid #dddddd;\r\n  height: 40px;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 227 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* WEBPACK VAR INJECTION */(function($) {//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21644,14 +21985,82 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+__webpack_require__(228);
+__webpack_require__(230);
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
         options: { required: true }
+    },
+    mounted: function mounted() {
+        $('.nav-tabs').scrollingTabs({});
+        setTimeout(function () {
+            $('.nav-tabs').scrollingTabs('refresh');
+        }, 200);
     }
 });
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
-/* 226 */
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(229);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(7)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../css-loader/index.js!./jquery.scrolling-tabs.css", function() {
+			var newContent = require("!!../../css-loader/index.js!./jquery.scrolling-tabs.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 229 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "/**\n * jquery-bootstrap-scrolling-tabs\n * @version v2.4.0\n * @link https://github.com/mikejacobson/jquery-bootstrap-scrolling-tabs\n * @author Mike Jacobson <michaeljjacobson1@gmail.com>\n * @license MIT License, http://www.opensource.org/licenses/MIT\n */\n.scrtabs-tab-container * {\n  box-sizing: border-box; }\n\n.scrtabs-tab-container {\n  height: 100% }\n  .scrtabs-tab-container .tab-content {\n    clear: left; }\n\n.scrtabs-tab-container.scrtabs-bootstrap4 .scrtabs-tabs-movable-container > .navbar-nav {\n  -ms-flex-direction: row;\n  flex-direction: row; }\n\n.scrtabs-tabs-fixed-container {\n  float: left;\n  height: 100%;\n  overflow: hidden;\n  width: 100%; }\n\n.scrtabs-tabs-movable-container {\n  position: relative; }\n  .scrtabs-tabs-movable-container .tab-content {\n    display: none; }\n\n.scrtabs-tab-container.scrtabs-rtl .scrtabs-tabs-movable-container > ul.nav-tabs {\n  padding-right: 0; }\n\n.scrtabs-tab-scroll-arrow {\n  border: 1px solid #dddddd;\n  border-top: none;\n  color: #428bca;\n  display: none;\n  float: left;\n  font-size: 12px;\n  height: 42px;\n  margin-bottom: -1px;\n  padding-left: 2px;\n  padding-top: 13px;\n  width: 20px; }\n  .scrtabs-tab-scroll-arrow:hover {\n    background-color: #eeeeee; }\n\n.scrtabs-tab-scroll-arrow,\n.scrtabs-tab-scroll-arrow .scrtabs-click-target {\n  cursor: pointer; }\n\n.scrtabs-tab-scroll-arrow.scrtabs-with-click-target {\n  cursor: default; }\n\n.scrtabs-tab-scroll-arrow.scrtabs-disable,\n.scrtabs-tab-scroll-arrow.scrtabs-disable .scrtabs-click-target {\n  color: #ddd;\n  cursor: default; }\n\n.scrtabs-tab-scroll-arrow.scrtabs-disable:hover {\n  background-color: initial; }\n\n.scrtabs-tabs-fixed-container ul.nav-tabs > li {\n  white-space: nowrap; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 230 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(jQuery) {/**
+ * jquery-bootstrap-scrolling-tabs
+ * @version v2.4.0
+ * @link https://github.com/mikejacobson/jquery-bootstrap-scrolling-tabs
+ * @author Mike Jacobson <michaeljjacobson1@gmail.com>
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
+!function(e,t){"use strict";function n(e){this.stc=e}function r(e){this.stc=e}function a(e){this.stc=e}function o(t){var o=this;o.$tabsContainer=t,o.instanceId=e.fn.scrollingTabs.nextInstanceId++,o.movableContainerLeftPos=0,o.scrollArrowsVisible=!1,o.scrollToTabEdge=!1,o.disableScrollArrowsOnFullyScrolled=!1,o.reverseScroll=!1,o.widthMultiplier=1,o.scrollMovement=new a(o),o.eventHandlers=new r(o),o.elementsHandler=new n(o)}function i(t,n,r){var a,o=n.tabs,i={paneId:n.propPaneId,title:n.propTitle,active:n.propActive,disabled:n.propDisabled,content:n.propContent},l=n.ignoreTabPanes,c=o.length&&void 0!==o[0][i.content],d=A.getNewElNavTabs(),b=A.getNewElTabContent(),f=l?null:function(){a.after(b)};if(o.length)return o.forEach(function(e,t){var r={forceActiveTab:!0,tabLiContent:n.tabsLiContent&&n.tabsLiContent[t],tabPostProcessor:n.tabsPostProcessors&&n.tabsPostProcessors[t]};A.getNewElTabLi(e,i,r).appendTo(d),!l&&c&&A.getNewElTabPane(e,i,r).appendTo(b)}),a=s(d,n,r,f),a.appendTo(t),t.data({scrtabs:{tabs:o,propNames:i,ignoreTabPanes:l,hasTabContent:c,tabsLiContent:n.tabsLiContent,tabsPostProcessors:n.tabsPostProcessors,scroller:a}}),a.find(".nav-tabs > li").each(function(t){L.storeDataOnLiEl(e(this),o,t)}),t}function s(e,t,n,r){var a=A.getNewElScrollerElementWrappingNavTabsInstance(e.clone(!0),t),i=new o(a),s=e.data("scrtabs");return s?s.scroller=a:e.data("scrtabs",{scroller:a}),e.replaceWith(a.css("visibility","hidden")),t.tabClickHandler&&"function"==typeof t.tabClickHandler&&(a.hasTabClickHandler=!0,i.tabClickHandler=t.tabClickHandler),a.initTabs=function(){i.initTabs(t,a,n,r)},a.scrollToActiveTab=function(){i.scrollToActiveTab(t)},a.initTabs(),C(a,i),a}function l(e){var t=e.updatedTabsArray,n=e.updatedTabsLiContent||[],r=e.updatedTabsPostProcessors||[],a=e.propNames,o=e.ignoreTabPanes,i=e.options,s=e.$currTabLis,l=e.$navTabs,c=o?null:e.$currTabContentPanesContainer,d=o?null:e.$currTabContentPanes,b=!1;return t.forEach(function(e,f){var C,v=s.find('a[href="#'+e[a.paneId]+'"]'),u=f>=s.length;v.length||(b=!0,i.tabLiContent=n[f],i.tabPostProcessor=r[f],v=A.getNewElTabLi(e,a,i),L.storeDataOnLiEl(v,t,f),u?v.appendTo(l):v.insertBefore(s.eq(f)),o||void 0===e[a.content]||(C=A.getNewElTabPane(e,a,i),u?C.appendTo(c):C.insertBefore(d.eq(f))))}),b}function c(e){var t=e.tabLi,n=e.ignoreTabPanes,r=t.$li,a=t.$contentPane,o=t.origTabData,i=t.newTabData,s=e.propNames,l=!1;return o[s.title]!==i[s.title]&&(r.find('a[role="tab"]').html(o[s.title]=i[s.title]),l=!0),o[s.disabled]!==i[s.disabled]&&(i[s.disabled]?(r.addClass("disabled"),r.find('a[role="tab"]').attr("data-toggle","")):(r.removeClass("disabled"),r.find('a[role="tab"]').attr("data-toggle","tab")),o[s.disabled]=i[s.disabled],l=!0),e.options.forceActiveTab&&(r[i[s.active]?"addClass":"removeClass"]("active"),a[i[s.active]?"addClass":"removeClass"]("active"),o[s.active]=i[s.active],l=!0),n||o[s.content]===i[s.content]||(a.html(o[s.content]=i[s.content]),l=!0),l}function d(e){var t,n=e.tabLi,r=e.ignoreTabPanes,a=n.$li;return-1===n.newIdx&&(a.hasClass("active")&&(t=L.getIndexOfClosestEnabledTab(e.$currTabLis,n.currDomIdx))>-1&&(e.$currTabLis.eq(t).addClass("active"),r||e.$currTabContentPanes.eq(t).addClass("active")),a.remove(),r||n.$contentPane.remove(),!0)}function b(t){var n=t.$currTabLis,r=t.updatedTabsArray,a=t.propNames,o=t.ignoreTabPanes,i=[],s=o?null:[];return!!L.didTabOrderChange(n,r,a)&&(r.forEach(function(t){var r=t[a.paneId];i.push(n.find('a[role="tab"][href="#'+r+'"]').parent("li")),o||s.push(e("#"+r))}),t.$navTabs.append(i),o||t.$currTabContentPanesContainer.append(s),!0)}function f(t){var n=t.$currTabLis,r=t.updatedTabsArray,a=t.propNames,o=!1;return n.each(function(n){var i=e(this),s=i.data("tab"),l=L.getTabIndexByPaneId(r,a.paneId,s[a.paneId]),b=l>-1?r[l]:null;if(t.tabLi={$li:i,currDomIdx:n,newIdx:l,$contentPane:A.getElTabPaneForLi(i),origTabData:s,newTabData:b},d(t))return void(o=!0);c(t)&&(o=!0)}),o}function C(t,n){function r(t){e(t.target).append(o.off(T.EVENTS.CLICK))}function a(r){function a(){var n=e(this),r=n.parent("li"),a=r.parent(".dropdown-menu"),o=n.attr("href");r.hasClass("active")||(t.find("li.active").not(c).add(a.find("li.active")).removeClass("active"),c.add(r).addClass("active"),e(".tab-content .tab-pane.active").removeClass("active"),e(o).addClass("active"))}var i,s,l,c=e(r.target),d=c.offset(),b=t.find('li[role="presentation"].active');o=c.find(".dropdown-menu").attr("data-"+T.DATA_KEY_DDMENU_MODIFIED,!0),b[0]!==c[0]&&o.find("li.active").removeClass("active"),o.on(T.EVENTS.CLICK,'a[role="tab"]',a),e("body").append(o),i=o.width()+d.left,s=t.width()-(n.$slideRightArrow.outerWidth()+1),l=d.left,i>s&&(l-=i-s),o.css({display:"block",top:d.top+c.outerHeight()-2,left:l})}var o;t.on(T.EVENTS.DROPDOWN_MENU_SHOW,a).on(T.EVENTS.DROPDOWN_MENU_HIDE,r)}function v(e,t){var n=e.data().scrtabs,r=n.scroller,a=e.find(".scrtabs-tab-container .nav-tabs"),o=e.find(".tab-content"),i=!1,s={options:t,updatedTabsArray:n.tabs,updatedTabsLiContent:n.tabsLiContent,updatedTabsPostProcessors:n.tabsPostProcessors,propNames:n.propNames,ignoreTabPanes:n.ignoreTabPanes,$navTabs:a,$currTabLis:a.find("> li"),$currTabContentPanesContainer:o,$currTabContentPanes:o.find(".tab-pane")};return l(s)&&(i=!0),b(s)&&(i=!0),f(s)&&(i=!0),i&&r.initTabs(),i}function u(t,n){t.data("scrtabs")&&(!t.data("scrtabs").isWrapperOnly&&v(t,n)||e("body").trigger(T.EVENTS.FORCE_REFRESH))}function h(){var t=e(this),n=t.data("scrtabs");n&&n.scroller.scrollToActiveTab()}function S(){var n,r=e(this),a=r.data("scrtabs");if(a){for("self"===a.enableSwipingElement?r.removeClass(T.CSS_CLASSES.ALLOW_SCROLLBAR):"parent"===a.enableSwipingElement&&r.closest(".scrtabs-tab-container").parent().removeClass(T.CSS_CLASSES.ALLOW_SCROLLBAR),a.scroller.off(T.EVENTS.DROPDOWN_MENU_SHOW).off(T.EVENTS.DROPDOWN_MENU_HIDE),a.scroller.find("[data-"+T.DATA_KEY_DDMENU_MODIFIED+"]").css({display:"",left:"",top:""}).off(T.EVENTS.CLICK).removeAttr("data-"+T.DATA_KEY_DDMENU_MODIFIED),a.scroller.hasTabClickHandler&&r.find('a[data-toggle="tab"]').off(".scrtabs"),a.isWrapperOnly?(n=r.parents(".scrtabs-tab-container"),n.length&&n.replaceWith(r)):(a.scroller&&a.scroller.initTabs&&(a.scroller.initTabs=null),r.find(".scrtabs-tab-container").add(".tab-content").remove()),r.removeData("scrtabs");--e.fn.scrollingTabs.nextInstanceId>=0;)e(t).off(T.EVENTS.WINDOW_RESIZE+e.fn.scrollingTabs.nextInstanceId);e("body").off(T.EVENTS.FORCE_REFRESH)}}var T={CONTINUOUS_SCROLLING_TIMEOUT_INTERVAL:50,SCROLL_OFFSET_FRACTION:6,DATA_KEY_DDMENU_MODIFIED:"scrtabsddmenumodified",DATA_KEY_IS_MOUSEDOWN:"scrtabsismousedown",CSS_CLASSES:{BOOTSTRAP4:"scrtabs-bootstrap4",RTL:"scrtabs-rtl",SCROLL_ARROW_CLICK_TARGET:"scrtabs-click-target",SCROLL_ARROW_DISABLE:"scrtabs-disable",SCROLL_ARROW_WITH_CLICK_TARGET:"scrtabs-with-click-target"},SLIDE_DIRECTION:{LEFT:1,RIGHT:2},EVENTS:{CLICK:"click.scrtabs",DROPDOWN_MENU_HIDE:"hide.bs.dropdown.scrtabs",DROPDOWN_MENU_SHOW:"show.bs.dropdown.scrtabs",FORCE_REFRESH:"forcerefresh.scrtabs",MOUSEDOWN:"mousedown.scrtabs",MOUSEUP:"mouseup.scrtabs",TABS_READY:"ready.scrtabs",TOUCH_END:"touchend.scrtabs",TOUCH_MOVE:"touchmove.scrtabs",TOUCH_START:"touchstart.scrtabs",WINDOW_RESIZE:"resize.scrtabs"}};!function(t){var n=function(e,t,n){var r;return function(){function a(){n||e.apply(o,i),r=null}var o=this,i=arguments;r?clearTimeout(r):n&&e.apply(o,i),r=setTimeout(a,t||100)}};e.fn[t]=function(e,r){var a=r||T.EVENTS.WINDOW_RESIZE;return e?this.bind(a,n(e)):this.trigger(t)}}("smartresizeScrtabs"),function(n){n.initElements=function(e){var t=this;t.setElementReferences(e),t.setEventListeners(e)},n.listenForTouchEvents=function(){var e,t,n,r=this,a=r.stc,o=a.scrollMovement,i=T.EVENTS,s=!1;a.$movableContainer.on(i.TOUCH_START,function(n){s=!0,t=a.movableContainerLeftPos,e=n.originalEvent.changedTouches[0].pageX}).on(i.TOUCH_END,function(){s=!1}).on(i.TOUCH_MOVE,function(r){if(s){var i=r.originalEvent.changedTouches[0].pageX,l=i-e;a.rtl&&(l=-l);var c;n=t+l,n>0?n=0:(c=o.getMinPos(),n<c&&(n=c)),a.movableContainerLeftPos=n;var d=a.rtl?"right":"left";a.$movableContainer.css(d,o.getMovableContainerCssLeftVal()),o.refreshScrollArrowsDisabledState()}})},n.refreshAllElementSizes=function(){var e,t=this,n=t.stc,r=n.scrollMovement,a=n.scrollArrowsVisible,o={didScrollToActiveTab:!1},i=!1;return t.setElementWidths(),t.setScrollArrowVisibility(),n.scrollArrowsVisible?(e=r.getMinPos(),i=r.scrollToActiveTab({isOnWindowResize:!0}),i||(r.refreshScrollArrowsDisabledState(),n.rtl?n.movableContainerRightPos<e&&r.incrementMovableContainerLeft(e):n.movableContainerLeftPos<e&&r.incrementMovableContainerRight(e)),o.didScrollToActiveTab=!0):a&&(n.movableContainerLeftPos=0,r.slideMovableContainerToLeftPos()),o},n.setElementReferences=function(n){var r,a,o,i,s=this,l=s.stc,c=l.$tabsContainer;l.isNavPills=!1,l.rtl&&c.addClass(T.CSS_CLASSES.RTL),l.usingBootstrap4&&c.addClass(T.CSS_CLASSES.BOOTSTRAP4),l.$fixedContainer=c.find(".scrtabs-tabs-fixed-container"),r=l.$fixedContainer.prev(),a=l.$fixedContainer.next(),n.leftArrowContent&&(o=r.find("."+T.CSS_CLASSES.SCROLL_ARROW_CLICK_TARGET)),n.rightArrowContent&&(i=a.find("."+T.CSS_CLASSES.SCROLL_ARROW_CLICK_TARGET)),o&&o.length?r.addClass(T.CSS_CLASSES.SCROLL_ARROW_WITH_CLICK_TARGET):o=r,i&&i.length?a.addClass(T.CSS_CLASSES.SCROLL_ARROW_WITH_CLICK_TARGET):i=a,l.$movableContainer=c.find(".scrtabs-tabs-movable-container"),l.$tabsUl=c.find(".nav-tabs"),l.$tabsUl.length||(l.$tabsUl=c.find(".nav-pills"),l.$tabsUl.length&&(l.isNavPills=!0)),l.$tabsLiCollection=l.$tabsUl.find("> li"),l.$slideLeftArrow=l.reverseScroll?r:a,l.$slideLeftArrowClickTarget=l.reverseScroll?o:i,l.$slideRightArrow=l.reverseScroll?a:r,l.$slideRightArrowClickTarget=l.reverseScroll?i:o,l.$scrollArrows=l.$slideLeftArrow.add(l.$slideRightArrow),l.$win=e(t)},n.setElementWidths=function(){var e=this,t=e.stc;t.winWidth=t.$win.width(),t.scrollArrowsCombinedWidth=t.$slideLeftArrow.outerWidth()+t.$slideRightArrow.outerWidth(),e.setFixedContainerWidth(),e.setMovableContainerWidth()},n.setEventListeners=function(t){var n=this,r=n.stc,a=r.eventHandlers,o=T.EVENTS,i=o.WINDOW_RESIZE+r.instanceId;t.enableSwiping&&n.listenForTouchEvents(),r.$slideLeftArrowClickTarget.off(".scrtabs").on(o.MOUSEDOWN,function(e){a.handleMousedownOnSlideMovContainerLeftArrow.call(a,e)}).on(o.MOUSEUP,function(e){a.handleMouseupOnSlideMovContainerLeftArrow.call(a,e)}).on(o.CLICK,function(e){a.handleClickOnSlideMovContainerLeftArrow.call(a,e)}),r.$slideRightArrowClickTarget.off(".scrtabs").on(o.MOUSEDOWN,function(e){a.handleMousedownOnSlideMovContainerRightArrow.call(a,e)}).on(o.MOUSEUP,function(e){a.handleMouseupOnSlideMovContainerRightArrow.call(a,e)}).on(o.CLICK,function(e){a.handleClickOnSlideMovContainerRightArrow.call(a,e)}),r.tabClickHandler&&r.$tabsLiCollection.find('a[data-toggle="tab"]').off(o.CLICK).on(o.CLICK,r.tabClickHandler),r.$win.off(i).smartresizeScrtabs(function(e){a.handleWindowResize.call(a,e)},i),e("body").on(T.EVENTS.FORCE_REFRESH,r.elementsHandler.refreshAllElementSizes.bind(r.elementsHandler))},n.setFixedContainerWidth=function(){var e=this,t=e.stc,n=t.$tabsContainer.get(0).getBoundingClientRect();t.fixedContainerWidth=n.width||n.right-n.left,t.fixedContainerWidth=t.fixedContainerWidth*t.widthMultiplier,t.$fixedContainer.width(t.fixedContainerWidth)},n.setFixedContainerWidthForHiddenScrollArrows=function(){var e=this,t=e.stc;t.$fixedContainer.width(t.fixedContainerWidth)},n.setFixedContainerWidthForVisibleScrollArrows=function(){var e=this,t=e.stc;t.$fixedContainer.width(t.fixedContainerWidth-t.scrollArrowsCombinedWidth)},n.setMovableContainerWidth=function(){var t=this,n=t.stc,r=n.$tabsUl.find("> li");n.movableContainerWidth=0,r.length&&(r.each(function(){var t=e(this),r=0;n.isNavPills&&(r=parseInt(t.css("margin-left"),10)+parseInt(t.css("margin-right"),10)),n.movableContainerWidth+=t.outerWidth()+r}),n.movableContainerWidth+=1,n.movableContainerWidth<n.fixedContainerWidth&&(n.movableContainerWidth=n.fixedContainerWidth)),n.$movableContainer.width(n.movableContainerWidth)},n.setScrollArrowVisibility=function(){var e=this,t=e.stc,n=t.movableContainerWidth>t.fixedContainerWidth;n&&!t.scrollArrowsVisible?(t.$scrollArrows.show(),t.scrollArrowsVisible=!0):!n&&t.scrollArrowsVisible&&(t.$scrollArrows.hide(),t.scrollArrowsVisible=!1),t.scrollArrowsVisible?e.setFixedContainerWidthForVisibleScrollArrows():e.setFixedContainerWidthForHiddenScrollArrows()}}(n.prototype),function(e){e.handleClickOnSlideMovContainerLeftArrow=function(){this.stc.scrollMovement.incrementMovableContainerLeft()},e.handleClickOnSlideMovContainerRightArrow=function(){this.stc.scrollMovement.incrementMovableContainerRight()},e.handleMousedownOnSlideMovContainerLeftArrow=function(){var e=this,t=e.stc;t.$slideLeftArrowClickTarget.data(T.DATA_KEY_IS_MOUSEDOWN,!0),t.scrollMovement.continueSlideMovableContainerLeft()},e.handleMousedownOnSlideMovContainerRightArrow=function(){var e=this,t=e.stc;t.$slideRightArrowClickTarget.data(T.DATA_KEY_IS_MOUSEDOWN,!0),t.scrollMovement.continueSlideMovableContainerRight()},e.handleMouseupOnSlideMovContainerLeftArrow=function(){this.stc.$slideLeftArrowClickTarget.data(T.DATA_KEY_IS_MOUSEDOWN,!1)},e.handleMouseupOnSlideMovContainerRightArrow=function(){this.stc.$slideRightArrowClickTarget.data(T.DATA_KEY_IS_MOUSEDOWN,!1)},e.handleWindowResize=function(){var e=this,t=e.stc,n=t.$win.width();if(n===t.winWidth)return!1;t.winWidth=n,t.elementsHandler.refreshAllElementSizes()}}(r.prototype),function(t){t.continueSlideMovableContainerLeft=function(){var e=this,t=e.stc;setTimeout(function(){t.movableContainerLeftPos<=e.getMinPos()||!t.$slideLeftArrowClickTarget.data(T.DATA_KEY_IS_MOUSEDOWN)||e.incrementMovableContainerLeft()||e.continueSlideMovableContainerLeft()},T.CONTINUOUS_SCROLLING_TIMEOUT_INTERVAL)},t.continueSlideMovableContainerRight=function(){var e=this,t=e.stc;setTimeout(function(){t.movableContainerLeftPos>=0||!t.$slideRightArrowClickTarget.data(T.DATA_KEY_IS_MOUSEDOWN)||e.incrementMovableContainerRight()||e.continueSlideMovableContainerRight()},T.CONTINUOUS_SCROLLING_TIMEOUT_INTERVAL)},t.decrementMovableContainerLeftPos=function(e){var t=this,n=t.stc;n.movableContainerLeftPos-=n.fixedContainerWidth/T.SCROLL_OFFSET_FRACTION,n.movableContainerLeftPos<e?n.movableContainerLeftPos=e:n.scrollToTabEdge&&(t.setMovableContainerLeftPosToTabEdge(T.SLIDE_DIRECTION.LEFT),n.movableContainerLeftPos<e&&(n.movableContainerLeftPos=e))},t.disableSlideLeftArrow=function(){var e=this,t=e.stc;t.disableScrollArrowsOnFullyScrolled&&t.scrollArrowsVisible&&t.$slideLeftArrow.addClass(T.CSS_CLASSES.SCROLL_ARROW_DISABLE)},t.disableSlideRightArrow=function(){var e=this,t=e.stc;t.disableScrollArrowsOnFullyScrolled&&t.scrollArrowsVisible&&t.$slideRightArrow.addClass(T.CSS_CLASSES.SCROLL_ARROW_DISABLE)},t.enableSlideLeftArrow=function(){var e=this,t=e.stc;t.disableScrollArrowsOnFullyScrolled&&t.scrollArrowsVisible&&t.$slideLeftArrow.removeClass(T.CSS_CLASSES.SCROLL_ARROW_DISABLE)},t.enableSlideRightArrow=function(){var e=this,t=e.stc;t.disableScrollArrowsOnFullyScrolled&&t.scrollArrowsVisible&&t.$slideRightArrow.removeClass(T.CSS_CLASSES.SCROLL_ARROW_DISABLE)},t.getMinPos=function(){var e=this,t=e.stc;return t.scrollArrowsVisible?t.fixedContainerWidth-t.movableContainerWidth-t.scrollArrowsCombinedWidth:0},t.getMovableContainerCssLeftVal=function(){var e=this,t=e.stc;return 0===t.movableContainerLeftPos?"0":t.movableContainerLeftPos+"px"},t.incrementMovableContainerLeft=function(){var e=this,t=e.stc,n=e.getMinPos();return e.decrementMovableContainerLeftPos(n),e.slideMovableContainerToLeftPos(),e.enableSlideRightArrow(),t.movableContainerLeftPos===n},t.incrementMovableContainerRight=function(e){var t=this,n=t.stc;return e?n.movableContainerLeftPos=e:(n.movableContainerLeftPos+=n.fixedContainerWidth/T.SCROLL_OFFSET_FRACTION,n.movableContainerLeftPos>0?n.movableContainerLeftPos=0:n.scrollToTabEdge&&t.setMovableContainerLeftPosToTabEdge(T.SLIDE_DIRECTION.RIGHT)),t.slideMovableContainerToLeftPos(),t.enableSlideLeftArrow(),0===n.movableContainerLeftPos},t.refreshScrollArrowsDisabledState=function(){var e=this,t=e.stc;if(t.disableScrollArrowsOnFullyScrolled&&t.scrollArrowsVisible){if(t.movableContainerLeftPos>=0)return e.disableSlideRightArrow(),void e.enableSlideLeftArrow();if(t.movableContainerLeftPos<=e.getMinPos())return e.disableSlideLeftArrow(),void e.enableSlideRightArrow();e.enableSlideLeftArrow(),e.enableSlideRightArrow()}},t.scrollToActiveTab=function(){var e,t,n,r,a,o,i,s,l,c=this,d=c.stc;if(d.scrollArrowsVisible&&(d.usingBootstrap4?(t=d.$tabsUl.find("li > .nav-link.active"),t.length&&(e=t.parent())):e=d.$tabsUl.find("li.active"),e&&e.length)){if(l=d.$slideRightArrow.outerWidth(),o=e.outerWidth(),n=e.offset().left-d.$fixedContainer.offset().left,r=n+o,a=d.fixedContainerWidth-l,d.rtl){if(d.$slideLeftArrow.outerWidth(),n<0)return d.movableContainerLeftPos+=n,c.slideMovableContainerToLeftPos(),!0;if(r>a)return d.movableContainerLeftPos+=r-a+2*l,c.slideMovableContainerToLeftPos(),!0}else{if(r>a)return i=r-a+l,s=d.fixedContainerWidth/2,i+=s-o/2,d.movableContainerLeftPos-=i,c.slideMovableContainerToLeftPos(),!0;if(d.$slideLeftArrow.outerWidth(),n<0)return s=d.fixedContainerWidth/2,d.movableContainerLeftPos+=-n+s-o/2,c.slideMovableContainerToLeftPos(),!0}return!1}},t.setMovableContainerLeftPosToTabEdge=function(t){var n=this,r=n.stc,a=-r.movableContainerLeftPos,o=0;r.$tabsLiCollection.each(function(){var n=e(this).width();if((o+=n)>a)return r.movableContainerLeftPos=t===T.SLIDE_DIRECTION.RIGHT?-(o-n):-o,!1})},t.slideMovableContainerToLeftPos=function(){var e,t=this,n=t.stc,r=t.getMinPos();n.movableContainerLeftPos>0?n.movableContainerLeftPos=0:n.movableContainerLeftPos<r&&(n.movableContainerLeftPos=r),n.movableContainerLeftPos=n.movableContainerLeftPos/1,e=t.getMovableContainerCssLeftVal(),t.performingSlideAnim=!0;var a=n.rtl?{right:e}:{left:e};n.$movableContainer.stop().animate(a,"slow",function(){var e=t.getMinPos();t.performingSlideAnim=!1,n.movableContainerLeftPos<e?(t.decrementMovableContainerLeftPos(e),a=n.rtl?{right:t.getMovableContainerCssLeftVal()}:{left:t.getMovableContainerCssLeftVal()},n.$movableContainer.stop().animate(a,"fast",function(){t.refreshScrollArrowsDisabledState()})):t.refreshScrollArrowsDisabledState()})}}(a.prototype),function(t){t.initTabs=function(t,n,r,a){function o(){n.find(".nav-tabs").show(),l.initElements(t),l.refreshAllElementSizes(),n.css("visibility","visible"),a&&a(),r&&r()}var i,s=this,l=s.elementsHandler;t.enableRtlSupport&&"rtl"===e("html").attr("dir")&&(s.rtl=!0),t.scrollToTabEdge&&(s.scrollToTabEdge=!0),t.disableScrollArrowsOnFullyScrolled&&(s.disableScrollArrowsOnFullyScrolled=!0),t.reverseScroll&&(s.reverseScroll=!0),1!==t.widthMultiplier&&(i=Number(t.widthMultiplier),isNaN(i)||(s.widthMultiplier=i)),"4"===t.bootstrapVersion.toString().charAt(0)&&(s.usingBootstrap4=!0),setTimeout(o,100)},t.scrollToActiveTab=function(e){this.scrollMovement.scrollToActiveTab(e)}}(o.prototype);var A=function(){function t(t){return e(t.find("a").attr("href"))}function n(){return e('<ul class="nav nav-tabs" role="tablist"></ul>')}function r(t,n){var r=e('<div class="scrtabs-tab-container"></div>'),a=n.leftArrowContent||'<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-left"><span class="'+n.cssClassLeftArrow+'"></span></div>',o=e(a),i=n.rightArrowContent||'<div class="scrtabs-tab-scroll-arrow scrtabs-tab-scroll-arrow-right"><span class="'+n.cssClassRightArrow+'"></span></div>',s=e(i),l=e('<div class="scrtabs-tabs-fixed-container"></div>'),c=e('<div class="scrtabs-tabs-movable-container"></div>');return n.disableScrollArrowsOnFullyScrolled&&o.add(s).addClass(T.CSS_CLASSES.SCROLL_ARROW_DISABLE),r.append(o,l.append(c.append(t)),s)}function a(t,n){return e('<a role="tab" data-toggle="tab"></a>').attr("href","#"+t[n.paneId]).html(t[n.title])}function o(){return e('<div class="tab-content"></div>')}function i(t,n,r){var o=r.tabLiContent||'<li role="presentation" class=""></li>',i=e(o),s=a(t,n).appendTo(i);return t[n.disabled]?(i.addClass("disabled"),s.attr("data-toggle","")):r.forceActiveTab&&t[n.active]&&i.addClass("active"),r.tabPostProcessor&&r.tabPostProcessor(i,s),i}function s(t,n,r){var a=e('<div role="tabpanel" class="tab-pane"></div>').attr("id",t[n.paneId]).html(t[n.content]);return r.forceActiveTab&&t[n.active]&&a.addClass("active"),a}return{getElTabPaneForLi:t,getNewElNavTabs:n,getNewElScrollerElementWrappingNavTabsInstance:r,getNewElTabAnchor:a,getNewElTabContent:o,getNewElTabLi:i,getNewElTabPane:s}}(),L=function(){function t(t,n,a){var o=!1;return t.each(function(t){var i=r(n,a.paneId,e(this).data("tab")[a.paneId]);if(i>-1&&i!==t)return o=!0,!1}),o}function n(e,t){for(var n=e.length-1,r=-1,a=0,o=0;-1===r&&o>=0;)((o=t+ ++a)<=n&&!e.eq(o).hasClass("disabled")||(o=t-a)>=0&&!e.eq(o).hasClass("disabled"))&&(r=o);return r}function r(e,t,n){var r=-1;return e.some(function(e,a){if(e[t]===n)return r=a,!0}),r}function a(t,n,r){t.data({tab:e.extend({},n[r]),index:r})}return{didTabOrderChange:t,getIndexOfClosestEnabledTab:n,getTabIndexByPaneId:r,storeDataOnLiEl:a}}(),E={destroy:function(){return this.each(S)},init:function(t){var n=this,r=n.length-1,a=e.extend({},e.fn.scrollingTabs.defaults,t||{});return a.tabs?n.each(function(t){i(e(this),a,t<r?null:function(){n.trigger(T.EVENTS.TABS_READY)})}):n.each(function(t){var o={isWrapperOnly:!0};s(e(this).data({scrtabs:o}),a,t<r?null:function(){n.trigger(T.EVENTS.TABS_READY)})})},refresh:function(t){var n=this,r=e.extend({},e.fn.scrollingTabs.defaults,t||{});return n.each(function(){u(e(this),r)})},scrollToActiveTab:function(){return this.each(h)}};e.fn.scrollingTabs=function(t){return E[t]?E[t].apply(this,Array.prototype.slice.call(arguments,1)):t&&"object"!=typeof t?void e.error("Method "+t+" does not exist on $.scrollingTabs."):E.init.apply(this,arguments)},e.fn.scrollingTabs.nextInstanceId=0,e.fn.scrollingTabs.defaults={tabs:null,propPaneId:"paneId",propTitle:"title",propActive:"active",propDisabled:"disabled",propContent:"content",ignoreTabPanes:!1,scrollToTabEdge:!1,disableScrollArrowsOnFullyScrolled:!1,forceActiveTab:!1,reverseScroll:!1,widthMultiplier:1,tabClickHandler:null,cssClassLeftArrow:"glyphicon glyphicon-chevron-left",cssClassRightArrow:"glyphicon glyphicon-chevron-right",leftArrowContent:"",rightArrowContent:"",tabsLiContent:null,tabsPostProcessors:null,enableSwiping:!1,enableRtlSupport:!1,bootstrapVersion:3}}(jQuery,window);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -21660,14 +22069,24 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "ul",
-    { staticClass: "nav nav-tabs" },
+    { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
     _vm._l(_vm.options, function(option, index) {
-      return _c("li", { key: index, class: option.class }, [
-        _c("a", { attrs: { "data-toggle": "tab", href: option.value } }, [
-          _c("i", { class: option.icon }),
-          _vm._v(" \n                " + _vm._s(option.label))
-        ])
-      ])
+      return _c(
+        "li",
+        { key: index, class: option.class, attrs: { role: "presentation" } },
+        [
+          _c(
+            "a",
+            {
+              attrs: { href: option.value, role: "tab", "data-toggle": "tab" }
+            },
+            [
+              _c("i", { class: option.icon }),
+              _vm._v(" " + _vm._s(option.label) + " \n         ")
+            ]
+          )
+        ]
+      )
     })
   )
 }
@@ -21682,15 +22101,15 @@ if (false) {
 }
 
 /***/ }),
-/* 227 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(228)
+var __vue_script__ = __webpack_require__(233)
 /* template */
-var __vue_template__ = __webpack_require__(233)
+var __vue_template__ = __webpack_require__(238)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -21729,7 +22148,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 228 */
+/* 233 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21749,8 +22168,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-__webpack_require__(229);
-__webpack_require__(232);
+__webpack_require__(234);
+__webpack_require__(237);
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
         name: { required: true },
@@ -21772,16 +22191,16 @@ __webpack_require__(232);
         }
     }
 });
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
-/* 229 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(230);
+var content = __webpack_require__(235);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -21789,7 +22208,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, options);
+var update = __webpack_require__(7)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -21806,7 +22225,7 @@ if(false) {
 }
 
 /***/ }),
-/* 230 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var escape = __webpack_require__(172);
@@ -21815,19 +22234,19 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "/*!\r\n * bootstrap-fileinput v4.5.1\r\n * http://plugins.krajee.com/file-input\r\n *\r\n * Krajee default styling for bootstrap-fileinput.\r\n *\r\n * Author: Kartik Visweswaran\r\n * Copyright: 2014 - 2018, Kartik Visweswaran, Krajee.com\r\n *\r\n * Licensed under the BSD 3-Clause\r\n * https://github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md\r\n */\r\n.file-loading input[type=file], input[type=file].file-loading {\r\n    width: 0;\r\n    height: 0;\r\n}\r\n\r\n.file-no-browse {\r\n    position: absolute;\r\n    left: 50%;\r\n    bottom: 20%;\r\n    width: 1px;\r\n    height: 1px;\r\n    font-size: 0;\r\n    opacity: 0;\r\n    border: none;\r\n    background: none;\r\n    outline: none;\r\n    box-shadow: none;\r\n}\r\n\r\n.kv-hidden, .file-caption-icon, .file-zoom-dialog .modal-header:before, .file-zoom-dialog .modal-header:after, .file-input-new .file-preview, .file-input-new .close, .file-input-new .glyphicon-file, .file-input-new .fileinput-remove-button, .file-input-new .fileinput-upload-button, .file-input-new .no-browse .input-group-btn, .file-input-ajax-new .fileinput-remove-button, .file-input-ajax-new .fileinput-upload-button, .file-input-ajax-new .no-browse .input-group-btn, .hide-content .kv-file-content {\r\n    display: none;\r\n}\r\n\r\n.btn-file input[type=file], .file-caption-icon, .file-preview .fileinput-remove, .krajee-default .file-thumb-progress, .file-zoom-dialog .btn-navigate, .file-zoom-dialog .floating-buttons {\r\n    position: absolute;\r\n}\r\n\r\n.file-input, .file-loading:before, .btn-file, .file-caption, .file-preview, .krajee-default.file-preview-frame, .krajee-default .file-thumbnail-footer, .file-zoom-dialog .modal-dialog {\r\n    position: relative;\r\n}\r\n\r\n.file-error-message pre, .file-error-message ul, .krajee-default .file-actions, .krajee-default .file-other-error {\r\n    text-align: left;\r\n}\r\n\r\n.file-error-message pre, .file-error-message ul {\r\n    margin: 0;\r\n}\r\n\r\n.krajee-default .file-drag-handle, .krajee-default .file-upload-indicator {\r\n    float: left;\r\n    margin: 5px 0 -5px;\r\n    width: 16px;\r\n    height: 16px;\r\n}\r\n\r\n.krajee-default .file-thumb-progress .progress, .krajee-default .file-thumb-progress .progress-bar {\r\n    height: 11px;\r\n    font-family: Verdana, Helvetica, sans-serif;\r\n    font-size: 9px;\r\n}\r\n\r\n.krajee-default .file-caption-info, .krajee-default .file-size-info {\r\n    display: block;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    width: 160px;\r\n    height: 15px;\r\n    margin: auto;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-video, .file-zoom-content > .file-object.type-flash, .file-zoom-content > .file-object.type-image {\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n    width: auto;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-video, .file-zoom-content > .file-object.type-flash {\r\n    height: 100%;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-pdf, .file-zoom-content > .file-object.type-html, .file-zoom-content > .file-object.type-text, .file-zoom-content > .file-object.type-default {\r\n    width: 100%;\r\n}\r\n\r\n.file-loading:before {\r\n    content: \" Loading...\";\r\n    display: inline-block;\r\n    padding-left: 20px;\r\n    line-height: 16px;\r\n    font-size: 13px;\r\n    font-variant: small-caps;\r\n    color: #999;\r\n    background: transparent url(" + escape(__webpack_require__(14)) + ") top left no-repeat;\r\n}\r\n\r\n.file-object {\r\n    margin: 0 0 -5px 0;\r\n    padding: 0;\r\n}\r\n\r\n.btn-file {\r\n    overflow: hidden;\r\n}\r\n\r\n.btn-file input[type=file] {\r\n    top: 0;\r\n    left: 0;\r\n    min-width: 100%;\r\n    min-height: 100%;\r\n    text-align: right;\r\n    opacity: 0;\r\n    background: none repeat scroll 0 0 transparent;\r\n    cursor: inherit;\r\n    display: block;\r\n}\r\n\r\n.btn-file ::-ms-browse {\r\n    font-size: 10000px;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.file-caption .file-caption-name {\r\n    width: 100%;\r\n    margin: 0;\r\n    padding: 0;\r\n    box-shadow: none;\r\n    border: none;\r\n    background: none;\r\n    outline: none;\r\n}\r\n\r\n.file-caption.icon-visible .file-caption-icon {\r\n    display: inline-block;\r\n}\r\n\r\n.file-caption.icon-visible .file-caption-name {\r\n    padding-left: 15px;\r\n}\r\n\r\n.file-caption-icon {\r\n    left: 8px;\r\n}\r\n\r\n.file-error-message {\r\n    color: #a94442;\r\n    background-color: #f2dede;\r\n    margin: 5px;\r\n    border: 1px solid #ebccd1;\r\n    border-radius: 4px;\r\n    padding: 15px;\r\n}\r\n\r\n.file-error-message pre {\r\n    margin: 5px 0;\r\n}\r\n\r\n.file-caption-disabled {\r\n    background-color: #eee;\r\n    cursor: not-allowed;\r\n    opacity: 1;\r\n}\r\n\r\n.file-preview {\r\n    border-radius: 5px;\r\n    border: 1px solid #ddd;\r\n    padding: 8px;\r\n    width: 100%;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.file-preview .btn-xs {\r\n    padding: 1px 5px;\r\n    font-size: 12px;\r\n    line-height: 1.5;\r\n    border-radius: 3px;\r\n}\r\n\r\n.file-preview .fileinput-remove {\r\n    top: 1px;\r\n    right: 1px;\r\n    line-height: 10px;\r\n}\r\n\r\n.file-preview .clickable {\r\n    cursor: pointer;\r\n}\r\n\r\n.file-preview-image {\r\n    font: 40px Impact, Charcoal, sans-serif;\r\n    color: #008000;\r\n}\r\n\r\n.krajee-default.file-preview-frame {\r\n    margin: 8px;\r\n    border: 1px solid rgba(0,0,0,0.2);\r\n    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);\r\n    padding: 6px;\r\n    float: left;\r\n    text-align: center;\r\n}\r\n\r\n.krajee-default.file-preview-frame .kv-file-content {\r\n    width: 213px;\r\n    height: 160px;\r\n}\r\n\r\n.krajee-default.file-preview-frame .kv-file-content.kv-pdf-rendered {\r\n    width: 400px;\r\n}\r\n\r\n.krajee-default.file-preview-frame .file-thumbnail-footer {\r\n    height: 70px;\r\n}\r\n\r\n.krajee-default.file-preview-frame:not(.file-preview-error):hover {\r\n    border: 1px solid rgba(0,0,0,0.3);\r\n    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);\r\n}\r\n\r\n.krajee-default .file-preview-text {\r\n    display: block;\r\n    color: #428bca;\r\n    border: 1px solid #ddd;\r\n    font-family: Menlo, Monaco, Consolas, \"Courier New\", monospace;\r\n    outline: none;\r\n    padding: 8px;\r\n    resize: none;\r\n}\r\n\r\n.krajee-default .file-preview-html {\r\n    border: 1px solid #ddd;\r\n    padding: 8px;\r\n    overflow: auto;\r\n}\r\n\r\n.krajee-default .file-other-icon {\r\n    font-size: 6em;\r\n}\r\n\r\n.krajee-default .file-footer-buttons {\r\n    float: right;\r\n}\r\n\r\n.krajee-default .file-footer-caption {\r\n    display: block;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n    font-size: 11px;\r\n    color: #777;\r\n    margin-bottom: 15px;\r\n}\r\n\r\n.krajee-default .file-preview-error {\r\n    opacity: 0.65;\r\n    box-shadow: none;\r\n}\r\n\r\n.krajee-default .file-thumb-progress {\r\n    height: 11px;\r\n    top: 37px;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.krajee-default.kvsortable-ghost {\r\n    background: #e1edf7;\r\n    border: 2px solid #a1abff;\r\n}\r\n\r\n.krajee-default .file-preview-other:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.krajee-default .file-preview-frame:not(.file-preview-error) .file-footer-caption:hover {\r\n    color: #000;\r\n}\r\n\r\n.kv-upload-progress .progress {\r\n    height: 20px;\r\n    margin: 10px 0;\r\n    overflow: hidden;\r\n}\r\n\r\n.kv-upload-progress .progress-bar {\r\n    height: 20px;\r\n    font-family: Verdana, Helvetica, sans-serif;\r\n}\r\n\r\n/*noinspection CssOverwrittenProperties*/\r\n.file-zoom-dialog .file-other-icon {\r\n    font-size: 22em;\r\n    font-size: 50vmin;\r\n}\r\n\r\n.file-zoom-dialog .modal-dialog {\r\n    width: auto;\r\n}\r\n\r\n.file-zoom-dialog .modal-header {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.file-zoom-dialog .btn-navigate {\r\n    padding: 0;\r\n    margin: 0;\r\n    background: transparent;\r\n    text-decoration: none;\r\n    outline: none;\r\n    opacity: 0.7;\r\n    top: 45%;\r\n    font-size: 4em;\r\n    color: #1c94c4;\r\n}\r\n\r\n.file-zoom-dialog .btn-navigate:not([disabled]):hover {\r\n    outline: none;\r\n    box-shadow: none;\r\n    opacity: 0.6;\r\n}\r\n\r\n.file-zoom-dialog .floating-buttons {\r\n    top: 5px;\r\n    right: 10px;\r\n}\r\n\r\n.file-zoom-dialog .btn-navigate[disabled] {\r\n    opacity: 0.3;\r\n}\r\n\r\n.file-zoom-dialog .btn-prev {\r\n    left: 1px;\r\n}\r\n\r\n.file-zoom-dialog .btn-next {\r\n    right: 1px;\r\n}\r\n\r\n.file-zoom-dialog .kv-zoom-title {\r\n    font-weight: 300;\r\n    color: #999;\r\n    max-width: 50%;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.file-input-new .no-browse .form-control {\r\n    border-top-right-radius: 4px;\r\n    border-bottom-right-radius: 4px;\r\n}\r\n\r\n.file-input-ajax-new .no-browse .form-control {\r\n    border-top-right-radius: 4px;\r\n    border-bottom-right-radius: 4px;\r\n}\r\n\r\n.file-caption-main {\r\n    width: 100%;\r\n}\r\n\r\n.file-thumb-loading {\r\n    background: transparent url(" + escape(__webpack_require__(14)) + ") no-repeat scroll center center content-box !important;\r\n}\r\n\r\n.file-drop-zone {\r\n    border: 1px dashed #aaa;\r\n    border-radius: 4px;\r\n    height: 100%;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n    margin: 12px 15px 12px 12px;\r\n    padding: 5px;\r\n}\r\n\r\n.file-drop-zone.clickable:hover {\r\n    border: 2px dashed #999;\r\n}\r\n\r\n.file-drop-zone.clickable:focus {\r\n    border: 2px solid #5acde2;\r\n}\r\n\r\n.file-drop-zone .file-preview-thumbnails {\r\n    cursor: default;\r\n}\r\n\r\n.file-drop-zone-title {\r\n    color: #aaa;\r\n    font-size: 1.6em;\r\n    padding: 85px 10px;\r\n    cursor: default;\r\n}\r\n\r\n.file-highlighted {\r\n    border: 2px dashed #999 !important;\r\n    background-color: #eee;\r\n}\r\n\r\n.file-uploading {\r\n    background: url(" + escape(__webpack_require__(231)) + ") no-repeat center bottom 10px;\r\n    opacity: 0.65;\r\n}\r\n\r\n.file-zoom-fullscreen .modal-dialog {\r\n    min-width: 100%;\r\n    margin: 0;\r\n}\r\n\r\n.file-zoom-fullscreen .modal-content {\r\n    border-radius: 0;\r\n    box-shadow: none;\r\n    min-height: 100vh;\r\n}\r\n\r\n.file-zoom-fullscreen .modal-body {\r\n    overflow-y: auto;\r\n}\r\n\r\n.floating-buttons {\r\n    z-index: 3000;\r\n}\r\n\r\n.floating-buttons .btn-kv {\r\n    margin-left: 3px;\r\n    z-index: 3000;\r\n}\r\n\r\n.file-zoom-content {\r\n    height: 480px;\r\n    text-align: center;\r\n}\r\n\r\n.file-zoom-content .file-preview-image {\r\n    max-height: 100%;\r\n}\r\n\r\n.file-zoom-content .file-preview-video {\r\n    max-height: 100%;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-image {\r\n    height: auto;\r\n    min-height: inherit;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-audio {\r\n    width: auto;\r\n    height: 30px;\r\n}\r\n\r\n@media (min-width: 576px) {\r\n    .file-zoom-dialog .modal-dialog {\r\n        max-width: 500px;\r\n    }\r\n}\r\n\r\n@media (min-width: 992px) {\r\n    .file-zoom-dialog .modal-lg {\r\n        max-width: 800px;\r\n    }\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .file-preview-thumbnails {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        flex-direction: column;\r\n    }\r\n\r\n    .file-zoom-dialog .modal-header {\r\n        flex-direction: column;\r\n    }\r\n}\r\n\r\n@media (max-width: 350px) {\r\n    .krajee-default.file-preview-frame .kv-file-content {\r\n        width: 160px;\r\n    }\r\n}\r\n\r\n@media (max-width: 420px) {\r\n    .krajee-default.file-preview-frame .kv-file-content.kv-pdf-rendered {\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n.file-loading[dir=rtl]:before {\r\n    background: transparent url(" + escape(__webpack_require__(14)) + ") top right no-repeat;\r\n    padding-left: 0;\r\n    padding-right: 20px;\r\n}\r\n\r\n.file-sortable .file-drag-handle {\r\n    cursor: move;\r\n    opacity: 1;\r\n}\r\n\r\n.file-sortable .file-drag-handle:hover {\r\n    opacity: 0.7;\r\n}\r\n\r\n.clickable .file-drop-zone-title {\r\n    cursor: pointer;\r\n}\r\n\r\n.kv-zoom-actions .btn-kv {\r\n    margin-left: 3px;\r\n}\r\n\r\n.file-preview-initial.sortable-chosen {\r\n    background-color: #d9edf7;\r\n}\r\n", ""]);
+exports.push([module.i, "/*!\r\n * bootstrap-fileinput v4.5.1\r\n * http://plugins.krajee.com/file-input\r\n *\r\n * Krajee default styling for bootstrap-fileinput.\r\n *\r\n * Author: Kartik Visweswaran\r\n * Copyright: 2014 - 2018, Kartik Visweswaran, Krajee.com\r\n *\r\n * Licensed under the BSD 3-Clause\r\n * https://github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md\r\n */\r\n.file-loading input[type=file], input[type=file].file-loading {\r\n    width: 0;\r\n    height: 0;\r\n}\r\n\r\n.file-no-browse {\r\n    position: absolute;\r\n    left: 50%;\r\n    bottom: 20%;\r\n    width: 1px;\r\n    height: 1px;\r\n    font-size: 0;\r\n    opacity: 0;\r\n    border: none;\r\n    background: none;\r\n    outline: none;\r\n    box-shadow: none;\r\n}\r\n\r\n.kv-hidden, .file-caption-icon, .file-zoom-dialog .modal-header:before, .file-zoom-dialog .modal-header:after, .file-input-new .file-preview, .file-input-new .close, .file-input-new .glyphicon-file, .file-input-new .fileinput-remove-button, .file-input-new .fileinput-upload-button, .file-input-new .no-browse .input-group-btn, .file-input-ajax-new .fileinput-remove-button, .file-input-ajax-new .fileinput-upload-button, .file-input-ajax-new .no-browse .input-group-btn, .hide-content .kv-file-content {\r\n    display: none;\r\n}\r\n\r\n.btn-file input[type=file], .file-caption-icon, .file-preview .fileinput-remove, .krajee-default .file-thumb-progress, .file-zoom-dialog .btn-navigate, .file-zoom-dialog .floating-buttons {\r\n    position: absolute;\r\n}\r\n\r\n.file-input, .file-loading:before, .btn-file, .file-caption, .file-preview, .krajee-default.file-preview-frame, .krajee-default .file-thumbnail-footer, .file-zoom-dialog .modal-dialog {\r\n    position: relative;\r\n}\r\n\r\n.file-error-message pre, .file-error-message ul, .krajee-default .file-actions, .krajee-default .file-other-error {\r\n    text-align: left;\r\n}\r\n\r\n.file-error-message pre, .file-error-message ul {\r\n    margin: 0;\r\n}\r\n\r\n.krajee-default .file-drag-handle, .krajee-default .file-upload-indicator {\r\n    float: left;\r\n    margin: 5px 0 -5px;\r\n    width: 16px;\r\n    height: 16px;\r\n}\r\n\r\n.krajee-default .file-thumb-progress .progress, .krajee-default .file-thumb-progress .progress-bar {\r\n    height: 11px;\r\n    font-family: Verdana, Helvetica, sans-serif;\r\n    font-size: 9px;\r\n}\r\n\r\n.krajee-default .file-caption-info, .krajee-default .file-size-info {\r\n    display: block;\r\n    white-space: nowrap;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    width: 160px;\r\n    height: 15px;\r\n    margin: auto;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-video, .file-zoom-content > .file-object.type-flash, .file-zoom-content > .file-object.type-image {\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n    width: auto;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-video, .file-zoom-content > .file-object.type-flash {\r\n    height: 100%;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-pdf, .file-zoom-content > .file-object.type-html, .file-zoom-content > .file-object.type-text, .file-zoom-content > .file-object.type-default {\r\n    width: 100%;\r\n}\r\n\r\n.file-loading:before {\r\n    content: \" Loading...\";\r\n    display: inline-block;\r\n    padding-left: 20px;\r\n    line-height: 16px;\r\n    font-size: 13px;\r\n    font-variant: small-caps;\r\n    color: #999;\r\n    background: transparent url(" + escape(__webpack_require__(14)) + ") top left no-repeat;\r\n}\r\n\r\n.file-object {\r\n    margin: 0 0 -5px 0;\r\n    padding: 0;\r\n}\r\n\r\n.btn-file {\r\n    overflow: hidden;\r\n}\r\n\r\n.btn-file input[type=file] {\r\n    top: 0;\r\n    left: 0;\r\n    min-width: 100%;\r\n    min-height: 100%;\r\n    text-align: right;\r\n    opacity: 0;\r\n    background: none repeat scroll 0 0 transparent;\r\n    cursor: inherit;\r\n    display: block;\r\n}\r\n\r\n.btn-file ::-ms-browse {\r\n    font-size: 10000px;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.file-caption .file-caption-name {\r\n    width: 100%;\r\n    margin: 0;\r\n    padding: 0;\r\n    box-shadow: none;\r\n    border: none;\r\n    background: none;\r\n    outline: none;\r\n}\r\n\r\n.file-caption.icon-visible .file-caption-icon {\r\n    display: inline-block;\r\n}\r\n\r\n.file-caption.icon-visible .file-caption-name {\r\n    padding-left: 15px;\r\n}\r\n\r\n.file-caption-icon {\r\n    left: 8px;\r\n}\r\n\r\n.file-error-message {\r\n    color: #a94442;\r\n    background-color: #f2dede;\r\n    margin: 5px;\r\n    border: 1px solid #ebccd1;\r\n    border-radius: 4px;\r\n    padding: 15px;\r\n}\r\n\r\n.file-error-message pre {\r\n    margin: 5px 0;\r\n}\r\n\r\n.file-caption-disabled {\r\n    background-color: #eee;\r\n    cursor: not-allowed;\r\n    opacity: 1;\r\n}\r\n\r\n.file-preview {\r\n    border-radius: 5px;\r\n    border: 1px solid #ddd;\r\n    padding: 8px;\r\n    width: 100%;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.file-preview .btn-xs {\r\n    padding: 1px 5px;\r\n    font-size: 12px;\r\n    line-height: 1.5;\r\n    border-radius: 3px;\r\n}\r\n\r\n.file-preview .fileinput-remove {\r\n    top: 1px;\r\n    right: 1px;\r\n    line-height: 10px;\r\n}\r\n\r\n.file-preview .clickable {\r\n    cursor: pointer;\r\n}\r\n\r\n.file-preview-image {\r\n    font: 40px Impact, Charcoal, sans-serif;\r\n    color: #008000;\r\n}\r\n\r\n.krajee-default.file-preview-frame {\r\n    margin: 8px;\r\n    border: 1px solid rgba(0,0,0,0.2);\r\n    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);\r\n    padding: 6px;\r\n    float: left;\r\n    text-align: center;\r\n}\r\n\r\n.krajee-default.file-preview-frame .kv-file-content {\r\n    width: 213px;\r\n    height: 160px;\r\n}\r\n\r\n.krajee-default.file-preview-frame .kv-file-content.kv-pdf-rendered {\r\n    width: 400px;\r\n}\r\n\r\n.krajee-default.file-preview-frame .file-thumbnail-footer {\r\n    height: 70px;\r\n}\r\n\r\n.krajee-default.file-preview-frame:not(.file-preview-error):hover {\r\n    border: 1px solid rgba(0,0,0,0.3);\r\n    box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);\r\n}\r\n\r\n.krajee-default .file-preview-text {\r\n    display: block;\r\n    color: #428bca;\r\n    border: 1px solid #ddd;\r\n    font-family: Menlo, Monaco, Consolas, \"Courier New\", monospace;\r\n    outline: none;\r\n    padding: 8px;\r\n    resize: none;\r\n}\r\n\r\n.krajee-default .file-preview-html {\r\n    border: 1px solid #ddd;\r\n    padding: 8px;\r\n    overflow: auto;\r\n}\r\n\r\n.krajee-default .file-other-icon {\r\n    font-size: 6em;\r\n}\r\n\r\n.krajee-default .file-footer-buttons {\r\n    float: right;\r\n}\r\n\r\n.krajee-default .file-footer-caption {\r\n    display: block;\r\n    text-align: center;\r\n    padding-top: 4px;\r\n    font-size: 11px;\r\n    color: #777;\r\n    margin-bottom: 15px;\r\n}\r\n\r\n.krajee-default .file-preview-error {\r\n    opacity: 0.65;\r\n    box-shadow: none;\r\n}\r\n\r\n.krajee-default .file-thumb-progress {\r\n    height: 11px;\r\n    top: 37px;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n.krajee-default.kvsortable-ghost {\r\n    background: #e1edf7;\r\n    border: 2px solid #a1abff;\r\n}\r\n\r\n.krajee-default .file-preview-other:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.krajee-default .file-preview-frame:not(.file-preview-error) .file-footer-caption:hover {\r\n    color: #000;\r\n}\r\n\r\n.kv-upload-progress .progress {\r\n    height: 20px;\r\n    margin: 10px 0;\r\n    overflow: hidden;\r\n}\r\n\r\n.kv-upload-progress .progress-bar {\r\n    height: 20px;\r\n    font-family: Verdana, Helvetica, sans-serif;\r\n}\r\n\r\n/*noinspection CssOverwrittenProperties*/\r\n.file-zoom-dialog .file-other-icon {\r\n    font-size: 22em;\r\n    font-size: 50vmin;\r\n}\r\n\r\n.file-zoom-dialog .modal-dialog {\r\n    width: auto;\r\n}\r\n\r\n.file-zoom-dialog .modal-header {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n}\r\n\r\n.file-zoom-dialog .btn-navigate {\r\n    padding: 0;\r\n    margin: 0;\r\n    background: transparent;\r\n    text-decoration: none;\r\n    outline: none;\r\n    opacity: 0.7;\r\n    top: 45%;\r\n    font-size: 4em;\r\n    color: #1c94c4;\r\n}\r\n\r\n.file-zoom-dialog .btn-navigate:not([disabled]):hover {\r\n    outline: none;\r\n    box-shadow: none;\r\n    opacity: 0.6;\r\n}\r\n\r\n.file-zoom-dialog .floating-buttons {\r\n    top: 5px;\r\n    right: 10px;\r\n}\r\n\r\n.file-zoom-dialog .btn-navigate[disabled] {\r\n    opacity: 0.3;\r\n}\r\n\r\n.file-zoom-dialog .btn-prev {\r\n    left: 1px;\r\n}\r\n\r\n.file-zoom-dialog .btn-next {\r\n    right: 1px;\r\n}\r\n\r\n.file-zoom-dialog .kv-zoom-title {\r\n    font-weight: 300;\r\n    color: #999;\r\n    max-width: 50%;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.file-input-new .no-browse .form-control {\r\n    border-top-right-radius: 4px;\r\n    border-bottom-right-radius: 4px;\r\n}\r\n\r\n.file-input-ajax-new .no-browse .form-control {\r\n    border-top-right-radius: 4px;\r\n    border-bottom-right-radius: 4px;\r\n}\r\n\r\n.file-caption-main {\r\n    width: 100%;\r\n}\r\n\r\n.file-thumb-loading {\r\n    background: transparent url(" + escape(__webpack_require__(14)) + ") no-repeat scroll center center content-box !important;\r\n}\r\n\r\n.file-drop-zone {\r\n    border: 1px dashed #aaa;\r\n    border-radius: 4px;\r\n    height: 100%;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n    margin: 12px 15px 12px 12px;\r\n    padding: 5px;\r\n}\r\n\r\n.file-drop-zone.clickable:hover {\r\n    border: 2px dashed #999;\r\n}\r\n\r\n.file-drop-zone.clickable:focus {\r\n    border: 2px solid #5acde2;\r\n}\r\n\r\n.file-drop-zone .file-preview-thumbnails {\r\n    cursor: default;\r\n}\r\n\r\n.file-drop-zone-title {\r\n    color: #aaa;\r\n    font-size: 1.6em;\r\n    padding: 85px 10px;\r\n    cursor: default;\r\n}\r\n\r\n.file-highlighted {\r\n    border: 2px dashed #999 !important;\r\n    background-color: #eee;\r\n}\r\n\r\n.file-uploading {\r\n    background: url(" + escape(__webpack_require__(236)) + ") no-repeat center bottom 10px;\r\n    opacity: 0.65;\r\n}\r\n\r\n.file-zoom-fullscreen .modal-dialog {\r\n    min-width: 100%;\r\n    margin: 0;\r\n}\r\n\r\n.file-zoom-fullscreen .modal-content {\r\n    border-radius: 0;\r\n    box-shadow: none;\r\n    min-height: 100vh;\r\n}\r\n\r\n.file-zoom-fullscreen .modal-body {\r\n    overflow-y: auto;\r\n}\r\n\r\n.floating-buttons {\r\n    z-index: 3000;\r\n}\r\n\r\n.floating-buttons .btn-kv {\r\n    margin-left: 3px;\r\n    z-index: 3000;\r\n}\r\n\r\n.file-zoom-content {\r\n    height: 480px;\r\n    text-align: center;\r\n}\r\n\r\n.file-zoom-content .file-preview-image {\r\n    max-height: 100%;\r\n}\r\n\r\n.file-zoom-content .file-preview-video {\r\n    max-height: 100%;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-image {\r\n    height: auto;\r\n    min-height: inherit;\r\n}\r\n\r\n.file-zoom-content > .file-object.type-audio {\r\n    width: auto;\r\n    height: 30px;\r\n}\r\n\r\n@media (min-width: 576px) {\r\n    .file-zoom-dialog .modal-dialog {\r\n        max-width: 500px;\r\n    }\r\n}\r\n\r\n@media (min-width: 992px) {\r\n    .file-zoom-dialog .modal-lg {\r\n        max-width: 800px;\r\n    }\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .file-preview-thumbnails {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        flex-direction: column;\r\n    }\r\n\r\n    .file-zoom-dialog .modal-header {\r\n        flex-direction: column;\r\n    }\r\n}\r\n\r\n@media (max-width: 350px) {\r\n    .krajee-default.file-preview-frame .kv-file-content {\r\n        width: 160px;\r\n    }\r\n}\r\n\r\n@media (max-width: 420px) {\r\n    .krajee-default.file-preview-frame .kv-file-content.kv-pdf-rendered {\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n.file-loading[dir=rtl]:before {\r\n    background: transparent url(" + escape(__webpack_require__(14)) + ") top right no-repeat;\r\n    padding-left: 0;\r\n    padding-right: 20px;\r\n}\r\n\r\n.file-sortable .file-drag-handle {\r\n    cursor: move;\r\n    opacity: 1;\r\n}\r\n\r\n.file-sortable .file-drag-handle:hover {\r\n    opacity: 0.7;\r\n}\r\n\r\n.clickable .file-drop-zone-title {\r\n    cursor: pointer;\r\n}\r\n\r\n.kv-zoom-actions .btn-kv {\r\n    margin-left: 3px;\r\n}\r\n\r\n.file-preview-initial.sortable-chosen {\r\n    background-color: #d9edf7;\r\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 231 */
+/* 236 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/vendor/bootstrap-fileinput/loading-sm.gif?896a6299100dd7cdd258bf1bf06e64ff";
 
 /***/ }),
-/* 232 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -21845,7 +22264,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     //noinspection JSUnresolvedVariable
     if (true) { // jshint ignore:line
         // AMD. Register as an anonymous module.
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(3)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)); // jshint ignore:line
@@ -26324,7 +26743,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 }));
 
 /***/ }),
-/* 233 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -26352,7 +26771,7 @@ if (false) {
 }
 
 /***/ }),
-/* 234 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -26372,11 +26791,74 @@ var render = function() {
         }
       },
       [
-        _c("panel", { attrs: { title: "ประวัติส่วนตัว" } }, [
+        _c("panel", { attrs: { title: "ประวัติบุคลากร" } }, [
           _c("div", { staticClass: "row" }, [
             _c(
               "div",
-              { staticClass: "col-md-12" },
+              {
+                staticClass:
+                  "col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding"
+              },
+              [
+                _c("div", { staticClass: "pull-right" }, [
+                  _c("img", {
+                    staticClass: "img-thumbnail",
+                    attrs: {
+                      src: "/storage/01.jpeg",
+                      alt: "รูปพนักงาน",
+                      height: "200",
+                      width: "200"
+                    }
+                  })
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-md-5 col-md-push-0 col-sm-6 col-sm-push-0 col-xs-12 padding"
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "paddings" },
+                  [
+                    _c("input-text", {
+                      attrs: {
+                        label: "รหัสพนักงาน :",
+                        disabled: true,
+                        name: "ref_id_preview"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input-text", {
+                      attrs: {
+                        label: "ชื่อ - นามสกุล :",
+                        disabled: true,
+                        name: "fullname_preview"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input-text", {
+                      attrs: {
+                        label: "ชื่อ - นามสกุล (อังกฤษ) :",
+                        disabled: true,
+                        name: "fullname_en_preview"
+                      }
+                    })
+                  ],
+                  1
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-md-12 col-sm-12" },
               [_c("navbar-tabs", { attrs: { options: _vm.profile_nav } })],
               1
             )
@@ -26444,27 +26926,34 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "pln",
-                          label: "เลขใบประกอบโรคศิลป์ :",
-                          required: false
-                        },
-                        model: {
-                          value: _vm.pln,
-                          callback: function($$v) {
-                            _vm.pln = $$v
+                  _c("div", { staticClass: "col-md-4" }, [
+                    _c(
+                      "div",
+                      { staticClass: "paddings" },
+                      [
+                        _c("input-radio", {
+                          attrs: {
+                            name: "gender",
+                            label: "เพศ :",
+                            options: _vm.genders
                           },
-                          expression: "pln"
-                        }
-                      })
-                    ],
-                    1
-                  )
+                          on: {
+                            update: function(item) {
+                              return _vm.updateGender(item)
+                            }
+                          },
+                          model: {
+                            value: _vm.gender,
+                            callback: function($$v) {
+                              _vm.gender = $$v
+                            },
+                            expression: "gender"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
@@ -26472,14 +26961,19 @@ var render = function() {
                     "div",
                     { staticClass: "col-md-4" },
                     [
-                      _c("input-text", {
-                        attrs: { name: "title_id", label: "คำนำหน้าชื่อ :" },
+                      _c("input-select", {
+                        attrs: {
+                          label: "คำนำหน้าชื่อ : ",
+                          option_start_name: "เลือกคำนำหน้า",
+                          name: "prefix_id",
+                          options: _vm.prefixApi
+                        },
                         model: {
-                          value: _vm.title_id,
+                          value: _vm.prefix_id,
                           callback: function($$v) {
-                            _vm.title_id = $$v
+                            _vm.prefix_id = $$v
                           },
-                          expression: "title_id"
+                          expression: "prefix_id"
                         }
                       })
                     ],
@@ -26492,15 +26986,15 @@ var render = function() {
                     [
                       _c("input-text", {
                         attrs: {
-                          name: "extra_title_id",
+                          name: "extra_prefix_id",
                           label: "ยศ/ตำแหน่ง :"
                         },
                         model: {
-                          value: _vm.extra_title_id,
+                          value: _vm.extra_prefix_id,
                           callback: function($$v) {
-                            _vm.extra_title_id = $$v
+                            _vm.extra_prefix_id = $$v
                           },
-                          expression: "extra_title_id"
+                          expression: "extra_prefix_id"
                         }
                       })
                     ],
@@ -26515,7 +27009,8 @@ var render = function() {
                         attrs: {
                           name: "position_id",
                           label: "ตำแหน่งทางวิชาการ :",
-                          required: false
+                          required: false,
+                          readonly: true
                         },
                         model: {
                           value: _vm.position_id,
@@ -26536,7 +27031,7 @@ var render = function() {
                     { staticClass: "col-md-4" },
                     [
                       _c("input-text", {
-                        attrs: { name: "first_name", label: "ชื่อ :" },
+                        attrs: { name: "first_name", label: "ชื่อจริง :" },
                         model: {
                           value: _vm.first_name,
                           callback: function($$v) {
@@ -26592,13 +27087,17 @@ var render = function() {
                     { staticClass: "col-md-4" },
                     [
                       _c("input-text", {
-                        attrs: { name: "title_eng_id", label: "Title name :" },
+                        attrs: {
+                          name: "prefix_eng",
+                          label: "คำนำหน้าชื่อ (อังกฤษ):",
+                          readonly: true
+                        },
                         model: {
-                          value: _vm.title_eng_id,
+                          value: _vm.prefix_eng,
                           callback: function($$v) {
-                            _vm.title_eng_id = $$v
+                            _vm.prefix_eng = $$v
                           },
-                          expression: "title_eng_id"
+                          expression: "prefix_eng"
                         }
                       })
                     ],
@@ -26611,15 +27110,15 @@ var render = function() {
                     [
                       _c("input-text", {
                         attrs: {
-                          name: "extra_title_eng_id",
-                          label: "Rank / Position :"
+                          name: "extra_prefix_eng",
+                          label: "ยศ/ตำแหน่ง (อังกฤษ):"
                         },
                         model: {
-                          value: _vm.extra_title_id,
+                          value: _vm.extra_prefix_id,
                           callback: function($$v) {
-                            _vm.extra_title_id = $$v
+                            _vm.extra_prefix_id = $$v
                           },
-                          expression: "extra_title_id"
+                          expression: "extra_prefix_id"
                         }
                       })
                     ],
@@ -26633,7 +27132,7 @@ var render = function() {
                       _c("input-text", {
                         attrs: {
                           name: "position_eng_id",
-                          label: "Academic position :",
+                          label: "ตำแหน่งทางวิชาการ (อังกฤษ) :",
                           required: false
                         },
                         model: {
@@ -26657,7 +27156,7 @@ var render = function() {
                       _c("input-text", {
                         attrs: {
                           name: "first_name_eng",
-                          label: "First name :"
+                          label: "ชื่อจริง (อังกฤษ):"
                         },
                         model: {
                           value: _vm.first_name_eng,
@@ -26678,7 +27177,7 @@ var render = function() {
                       _c("input-text", {
                         attrs: {
                           name: "middle_name_eng",
-                          label: "Middle name :"
+                          label: "ชื่อกลาง (อังกฤษ):"
                         },
                         model: {
                           value: _vm.middle_name_eng,
@@ -26697,7 +27196,10 @@ var render = function() {
                     { staticClass: "col-md-4" },
                     [
                       _c("input-text", {
-                        attrs: { name: "last_name_eng", label: "Last name :" },
+                        attrs: {
+                          name: "last_name_eng",
+                          label: "นามสกุล (อังกฤษ):"
+                        },
                         model: {
                           value: _vm.last_name_eng,
                           callback: function($$v) {
@@ -26736,17 +27238,24 @@ var render = function() {
                     [
                       _c("input-date", {
                         attrs: {
-                          name: "dob",
+                          name: "dob_preview",
                           label: "วัน/เดือน/ปีเกิด :",
-                          format: "DD/MM/YYYY"
+                          format: "DD/MM/YYYY",
+                          mode: "BE",
+                          "start-range": "2400",
+                          "end-range": "3000"
                         },
-                        on: { input: _vm.test },
+                        on: {
+                          update: function(dob) {
+                            return _vm.updateAge(dob)
+                          }
+                        },
                         model: {
-                          value: _vm.dob,
+                          value: _vm.dob_preview,
                           callback: function($$v) {
-                            _vm.dob = $$v
+                            _vm.dob_preview = $$v
                           },
-                          expression: "dob"
+                          expression: "dob_preview"
                         }
                       })
                     ],
@@ -26800,8 +27309,13 @@ var render = function() {
                     "div",
                     { staticClass: "col-md-4" },
                     [
-                      _c("input-text", {
-                        attrs: { name: "nation", label: "สัญชาติ :" },
+                      _c("input-select", {
+                        attrs: {
+                          label: "สัญชาติ : ",
+                          option_start_name: "เลือกสัญชาติ",
+                          name: "nation",
+                          options: _vm.apiRaces
+                        },
                         model: {
                           value: _vm.nation,
                           callback: function($$v) {
@@ -26818,8 +27332,13 @@ var render = function() {
                     "div",
                     { staticClass: "col-md-4" },
                     [
-                      _c("input-text", {
-                        attrs: { name: "religion", label: "ศาสนา :" },
+                      _c("input-select", {
+                        attrs: {
+                          label: "ศาสนา : ",
+                          option_start_name: "เลือกศาสนา",
+                          name: "religion",
+                          options: _vm.apiRaces
+                        },
                         model: {
                           value: _vm.religion,
                           callback: function($$v) {
@@ -26834,32 +27353,32 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "padding" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-md-4" },
-                      [
-                        _c("input-radio", {
-                          attrs: {
-                            name: "gender",
-                            label: "เพศ :",
-                            options: _vm.genders
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("input-text", {
+                        attrs: {
+                          name: "pln",
+                          label: "เลขใบประกอบโรคศิลป์ :",
+                          required: false
+                        },
+                        model: {
+                          value: _vm.pln,
+                          callback: function($$v) {
+                            _vm.pln = $$v
                           },
-                          model: {
-                            value: _vm.gender,
-                            callback: function($$v) {
-                              _vm.gender = $$v
-                            },
-                            expression: "gender"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
+                          expression: "pln"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-4" }, [
                     _c(
                       "div",
-                      { staticClass: "col-md-4" },
+                      { staticClass: "paddings" },
                       [
                         _c("input-radio", {
                           attrs: {
@@ -26878,200 +27397,23 @@ var render = function() {
                       ],
                       1
                     )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-12" },
-                    [
-                      _c("input-line-label", {
-                        attrs: { label: "ที่อยู่ตามทะเบียนบ้าน" }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "house_no", label: "บ้านเลขที่ :" },
-                        model: {
-                          value: _vm.house_no,
-                          callback: function($$v) {
-                            _vm.house_no = $$v
-                          },
-                          expression: "house_no"
-                        }
-                      })
-                    ],
-                    1
-                  ),
+                  ]),
                   _vm._v(" "),
                   _c(
                     "div",
                     { staticClass: "col-md-4" },
                     [
-                      _c("input-text", {
-                        attrs: { name: "village_no", label: "หมู่ที่ :" },
-                        model: {
-                          value: _vm.village_no,
-                          callback: function($$v) {
-                            _vm.village_no = $$v
-                          },
-                          expression: "village_no"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "lane", label: "ซอย :" },
-                        model: {
-                          value: _vm.lane,
-                          callback: function($$v) {
-                            _vm.lane = $$v
-                          },
-                          expression: "lane"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "road", label: "ถนน :" },
-                        model: {
-                          value: _vm.road,
-                          callback: function($$v) {
-                            _vm.road = $$v
-                          },
-                          expression: "road"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("auto-complete", {
-                        attrs: { label: "รหัสไปรษณีย์ :", name: "postcode" },
-                        on: {
-                          update: function(item) {
-                            return _vm.updatePostcodeId(item)
-                          }
-                        },
-                        model: {
-                          value: _vm.postcode,
-                          callback: function($$v) {
-                            _vm.postcode = $$v
-                          },
-                          expression: "postcode"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
+                      _c("file-input", {
                         attrs: {
-                          name: "sub_district",
-                          label: "ตำบล/แขวง :",
-                          readonly: true
+                          name: "employee_file",
+                          label: "รูปถ่ายพนักงาน :"
                         },
                         model: {
-                          value: _vm.sub_district,
+                          value: _vm.employee_file,
                           callback: function($$v) {
-                            _vm.sub_district = $$v
+                            _vm.employee_file = $$v
                           },
-                          expression: "sub_district"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "district",
-                          label: "อำเภอ :",
-                          readonly: true
-                        },
-                        model: {
-                          value: _vm.district,
-                          callback: function($$v) {
-                            _vm.district = $$v
-                          },
-                          expression: "district"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "province",
-                          label: "จังหวัด :",
-                          readonly: true
-                        },
-                        model: {
-                          value: _vm.province,
-                          callback: function($$v) {
-                            _vm.province = $$v
-                          },
-                          expression: "province"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "telephone", label: "โทรศัพท์บ้าน :" },
-                        model: {
-                          value: _vm.telephone,
-                          callback: function($$v) {
-                            _vm.telephone = $$v
-                          },
-                          expression: "telephone"
+                          expression: "employee_file"
                         }
                       })
                     ],
@@ -27164,6 +27506,27 @@ var render = function() {
                     [
                       _c("file-input", {
                         attrs: {
+                          name: "alien_file",
+                          label: "สำเนาเอกสารใบต่างด้าว :"
+                        },
+                        model: {
+                          value: _vm.alien_file,
+                          callback: function($$v) {
+                            _vm.alien_file = $$v
+                          },
+                          expression: "alien_file"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-4" },
+                    [
+                      _c("file-input", {
+                        attrs: {
                           name: "medicine_file",
                           label: "สำเนาใบอนุญาตประกอบโรคศิลป์ :"
                         },
@@ -27198,46 +27561,40 @@ var render = function() {
                       })
                     ],
                     1
-                  ),
-                  _vm._v(" "),
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
                   _c(
                     "div",
                     { staticClass: "col-md-4" },
                     [
                       _c("file-input", {
                         attrs: {
-                          name: "alien_file",
-                          label: "สำเนาเอกสารใบต่างด้าว :"
+                          name: "child_chertificate_file",
+                          label: "สำเนาใบรับรองบุตร :"
                         },
                         model: {
-                          value: _vm.alien_file,
+                          value: _vm.child_chertificate_file,
                           callback: function($$v) {
-                            _vm.alien_file = $$v
+                            _vm.child_chertificate_file = $$v
                           },
-                          expression: "alien_file"
+                          expression: "child_chertificate_file"
                         }
                       })
                     ],
                     1
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "tab-pane fade", attrs: { id: "marital_menu" } },
-              [
-                _c("div", { staticClass: "row" }, [
+                  ),
+                  _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
                     _c(
                       "div",
-                      { staticClass: "padding" },
+                      { staticClass: "paddings" },
                       [
                         _c("input-radio", {
                           attrs: {
                             name: "marital_status",
-                            label: "สถานภาพของพนักงาน : ",
+                            label: "สถานภาพการสมรส : ",
                             options: _vm.marital_statuses
                           },
                           model: {
@@ -27254,226 +27611,71 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-12" },
-                    [_c("input-line-label", { attrs: { label: "คู่สมรส" } })],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "spouse_title_id",
-                          label: "คำนำหน้าชื่อ :"
-                        },
-                        model: {
-                          value: _vm.spouse_title_id,
-                          callback: function($$v) {
-                            _vm.spouse_title_id = $$v
-                          },
-                          expression: "spouse_title_id"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "spouse_first_name", label: "ชื่อ :" },
-                        model: {
-                          value: _vm.spouse_first_name,
-                          callback: function($$v) {
-                            _vm.spouse_first_name = $$v
-                          },
-                          expression: "spouse_first_name"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "spouse_last_name", label: "นามสกุล :" },
-                        model: {
-                          value: _vm.spouse_last_name,
-                          callback: function($$v) {
-                            _vm.spouse_last_name = $$v
-                          },
-                          expression: "spouse_last_name"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "spouse_document_no",
-                          label: "เลขบัตรประชาชน :",
-                          pattern: "^([0-9]{13})$",
-                          "error-text": "เลขบัตรประชาชนไม่ถูกต้อง",
-                          required: true
-                        },
-                        model: {
-                          value: _vm.spouse_document_no,
-                          callback: function($$v) {
-                            _vm.spouse_document_no = $$v
-                          },
-                          expression: "spouse_document_no"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-select", {
-                        attrs: {
-                          label: "อาชีพ : ",
-                          option_start_name: "เลือกอาชีพ",
-                          options: _vm.jobs
-                        },
-                        model: {
-                          value: _vm.spouse_job,
-                          callback: function($$v) {
-                            _vm.spouse_job = $$v
-                          },
-                          expression: "spouse_job"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "spouse_id_card_file",
-                          label: "สำเนาบัตรประชาชน :"
-                        },
-                        model: {
-                          value: _vm.spouse_id_card_file,
-                          callback: function($$v) {
-                            _vm.spouse_id_card_file = $$v
-                          },
-                          expression: "spouse_id_card_file"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "spouse_house_file",
-                          label: "สำเนาทะเบียนบ้าน :"
-                        },
-                        model: {
-                          value: _vm.spouse_house_file,
-                          callback: function($$v) {
-                            _vm.spouse_house_file = $$v
-                          },
-                          expression: "spouse_house_file"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "spouse_rename_file",
-                          label: "สำเนาใบเปลี่ยนชื่อ :"
-                        },
-                        model: {
-                          value: _vm.spouse_rename_file,
-                          callback: function($$v) {
-                            _vm.spouse_rename_file = $$v
-                          },
-                          expression: "spouse_rename_file"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "marriage_file",
-                          label: "สำเนาทะเบียนสมรส/หย่าร้าง :"
-                        },
-                        model: {
-                          value: _vm.marriage_file,
-                          callback: function($$v) {
-                            _vm.marriage_file = $$v
-                          },
-                          expression: "marriage_file"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-4" }, [
+                _c("div", { attrs: { id: "marital_form" } }, [
+                  _c("div", { staticClass: "row" }, [
                     _c(
                       "div",
-                      { staticClass: "padding-row" },
+                      { staticClass: "col-md-12" },
+                      [_c("input-line-label", { attrs: { label: "คู่สมรส" } })],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
                       [
-                        _c("input-radio", {
+                        _c("input-text", {
                           attrs: {
-                            name: "spouse_status",
-                            label: "สถานะ :",
-                            options: _vm.statuses
+                            name: "spouse_prefix_id",
+                            label: "คำนำหน้าชื่อ :"
                           },
                           model: {
-                            value: _vm.spouse_status,
+                            value: _vm.spouse_prefix_id,
                             callback: function($$v) {
-                              _vm.spouse_status = $$v
+                              _vm.spouse_prefix_id = $$v
                             },
-                            expression: "spouse_status"
+                            expression: "spouse_prefix_id"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "spouse_first_name", label: "ชื่อ :" },
+                          model: {
+                            value: _vm.spouse_first_name,
+                            callback: function($$v) {
+                              _vm.spouse_first_name = $$v
+                            },
+                            expression: "spouse_first_name"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "spouse_last_name",
+                            label: "นามสกุล :"
+                          },
+                          model: {
+                            value: _vm.spouse_last_name,
+                            callback: function($$v) {
+                              _vm.spouse_last_name = $$v
+                            },
+                            expression: "spouse_last_name"
                           }
                         })
                       ],
@@ -27481,278 +27683,69 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }, [
+                  _c("div", { staticClass: "row" }, [
                     _c(
                       "div",
-                      { staticClass: "padding-row" },
+                      { staticClass: "col-md-4" },
                       [
-                        _c("input-radio", {
+                        _c("input-text", {
                           attrs: {
-                            name: "spouse_marital_status",
-                            label: "สถานภาพ :",
-                            options: _vm.marital_statuses
+                            name: "spouse_document_no",
+                            label: "เลขบัตรประชาชน :",
+                            pattern: "^([0-9]{13})$",
+                            "error-text": "เลขบัตรประชาชนไม่ถูกต้อง",
+                            required: true
                           },
                           model: {
-                            value: _vm.spouse_marital_status,
+                            value: _vm.spouse_document_no,
                             callback: function($$v) {
-                              _vm.spouse_marital_status = $$v
+                              _vm.spouse_document_no = $$v
                             },
-                            expression: "spouse_marital_status"
+                            expression: "spouse_document_no"
                           }
                         })
                       ],
                       1
-                    )
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "tab-pane fade", attrs: { id: "parents_menu" } },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-12" },
-                    [_c("input-line-label", { attrs: { label: "บิดา" } })],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "father_title_id",
-                          label: "คำนำหน้าชื่อ :"
-                        },
-                        model: {
-                          value: _vm.father_title_id,
-                          callback: function($$v) {
-                            _vm.father_title_id = $$v
-                          },
-                          expression: "father_title_id"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "father_first_name", label: "ชื่อ :" },
-                        model: {
-                          value: _vm.father_first_name,
-                          callback: function($$v) {
-                            _vm.father_first_name = $$v
-                          },
-                          expression: "father_first_name"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "father_last_name", label: "นามสกุล :" },
-                        model: {
-                          value: _vm.father_last_name,
-                          callback: function($$v) {
-                            _vm.father_last_name = $$v
-                          },
-                          expression: "father_last_name"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "father_document_no",
-                          label: "เลขบัตรประชาชน :",
-                          pattern: "^([0-9]{13})$",
-                          "error-text": "เลขบัตรประชาชนไม่ถูกต้อง",
-                          required: false
-                        },
-                        model: {
-                          value: _vm.father_document_no,
-                          callback: function($$v) {
-                            _vm.father_document_no = $$v
-                          },
-                          expression: "father_document_no"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-select", {
-                        attrs: {
-                          label: "อาชีพ : ",
-                          option_start_name: "เลือกอาชีพ",
-                          options: _vm.jobs
-                        },
-                        model: {
-                          value: _vm.father_job,
-                          callback: function($$v) {
-                            _vm.father_job = $$v
-                          },
-                          expression: "father_job"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "father_id_card_file",
-                          label: "สำเนาบัตรประชาชน :"
-                        },
-                        model: {
-                          value: _vm.father_id_card_file,
-                          callback: function($$v) {
-                            _vm.father_id_card_file = $$v
-                          },
-                          expression: "father_id_card_file"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "father_house_file",
-                          label: "สำเนาทะเบียนบ้าน :"
-                        },
-                        model: {
-                          value: _vm.father_house_file,
-                          callback: function($$v) {
-                            _vm.father_house_file = $$v
-                          },
-                          expression: "father_house_file"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "father_rename_file",
-                          label: "สำเนาใบเปลี่ยนชื่อ :"
-                        },
-                        model: {
-                          value: _vm.father_rename_file,
-                          callback: function($$v) {
-                            _vm.father_rename_file = $$v
-                          },
-                          expression: "father_rename_file"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "father_marriage_file",
-                          label: "สำเนาทะเบียนสมรส/หย่าร้าง :"
-                        },
-                        model: {
-                          value: _vm.father_marriage_file,
-                          callback: function($$v) {
-                            _vm.father_marriage_file = $$v
-                          },
-                          expression: "father_marriage_file"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "child_file",
-                          label: "สำเนาใบรับรองบุตร :"
-                        },
-                        model: {
-                          value: _vm.child_file,
-                          callback: function($$v) {
-                            _vm.child_file = $$v
-                          },
-                          expression: "child_file"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }, [
+                    ),
+                    _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "paddings" },
+                      { staticClass: "col-md-4" },
                       [
-                        _c("input-radio", {
+                        _c("input-select", {
                           attrs: {
-                            name: "father_status",
-                            label: "สถานะ :",
-                            options: _vm.statuses
+                            label: "อาชีพ : ",
+                            option_start_name: "เลือกอาชีพ",
+                            name: "spouse_career",
+                            options: _vm.careersApi
                           },
                           model: {
-                            value: _vm.father_status,
+                            value: _vm.spouse_career,
                             callback: function($$v) {
-                              _vm.father_status = $$v
+                              _vm.spouse_career = $$v
                             },
-                            expression: "father_status"
+                            expression: "spouse_career"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "spouse_id_card_file",
+                            label: "สำเนาบัตรประชาชน :"
+                          },
+                          model: {
+                            value: _vm.spouse_id_card_file,
+                            callback: function($$v) {
+                              _vm.spouse_id_card_file = $$v
+                            },
+                            expression: "spouse_id_card_file"
                           }
                         })
                       ],
@@ -27760,251 +27753,64 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }, [
+                  _c("div", { staticClass: "row" }, [
                     _c(
                       "div",
-                      { staticClass: "paddings" },
+                      { staticClass: "col-md-4" },
                       [
-                        _c("input-radio", {
+                        _c("file-input", {
                           attrs: {
-                            name: "father_marital_status",
-                            label: "สถานภาพ :",
-                            options: _vm.marital_statuses
+                            name: "spouse_house_file",
+                            label: "สำเนาทะเบียนบ้าน :"
                           },
                           model: {
-                            value: _vm.father_marital_status,
+                            value: _vm.spouse_house_file,
                             callback: function($$v) {
-                              _vm.father_marital_status = $$v
+                              _vm.spouse_house_file = $$v
                             },
-                            expression: "father_marital_status"
+                            expression: "spouse_house_file"
                           }
                         })
                       ],
                       1
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-12" },
-                    [_c("input-line-label", { attrs: { label: "มารดา" } })],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "mother_title_id",
-                          label: "คำนำหน้าชื่อ :"
-                        },
-                        model: {
-                          value: _vm.mother_title_id,
-                          callback: function($$v) {
-                            _vm.mother_title_id = $$v
-                          },
-                          expression: "mother_title_id"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "mother_first_name", label: "ชื่อ :" },
-                        model: {
-                          value: _vm.mother_first_name,
-                          callback: function($$v) {
-                            _vm.mother_first_name = $$v
-                          },
-                          expression: "mother_first_name"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "mother_last_name", label: "นามสกุล :" },
-                        model: {
-                          value: _vm.mother_last_name,
-                          callback: function($$v) {
-                            _vm.mother_last_name = $$v
-                          },
-                          expression: "mother_last_name"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "mother_document_no",
-                          label: "เลขบัตรประชาชน :",
-                          pattern: "^([0-9]{13})$",
-                          "error-text": "เลขบัตรประชาชนไม่ถูกต้อง",
-                          required: false
-                        },
-                        model: {
-                          value: _vm.mother_document_no,
-                          callback: function($$v) {
-                            _vm.mother_document_no = $$v
-                          },
-                          expression: "mother_document_no"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-select", {
-                        attrs: {
-                          label: "อาชีพ : ",
-                          option_start_name: "เลือกอาชีพ",
-                          options: _vm.jobs
-                        },
-                        model: {
-                          value: _vm.mother_job,
-                          callback: function($$v) {
-                            _vm.mother_job = $$v
-                          },
-                          expression: "mother_job"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "mother_id_card_file",
-                          label: "สำเนาบัตรประชาชน :"
-                        },
-                        model: {
-                          value: _vm.mother_id_card_file,
-                          callback: function($$v) {
-                            _vm.mother_id_card_file = $$v
-                          },
-                          expression: "mother_id_card_file"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "mother_house_file",
-                          label: "สำเนาทะเบียนบ้าน :"
-                        },
-                        model: {
-                          value: _vm.mother_house_file,
-                          callback: function($$v) {
-                            _vm.mother_house_file = $$v
-                          },
-                          expression: "mother_house_file"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "mother_rename_file",
-                          label: "สำเนาใบเปลี่ยนชื่อ :"
-                        },
-                        model: {
-                          value: _vm.mother_rename_file,
-                          callback: function($$v) {
-                            _vm.mother_rename_file = $$v
-                          },
-                          expression: "mother_rename_file"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("file-input", {
-                        attrs: {
-                          name: "mother_marriage_file",
-                          label: "สำเนาทะเบียนสมรส/หย่าร้าง :"
-                        },
-                        model: {
-                          value: _vm.mother_marriage_file,
-                          callback: function($$v) {
-                            _vm.mother_marriage_file = $$v
-                          },
-                          expression: "mother_marriage_file"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-4" }, [
+                    ),
+                    _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "padding-row" },
+                      { staticClass: "col-md-4" },
                       [
-                        _c("input-radio", {
+                        _c("file-input", {
                           attrs: {
-                            name: "mother_status",
-                            label: "สถานะ :",
-                            options: _vm.statuses
+                            name: "spouse_rename_file",
+                            label: "สำเนาใบเปลี่ยนชื่อ :"
                           },
                           model: {
-                            value: _vm.mother_status,
+                            value: _vm.spouse_rename_file,
                             callback: function($$v) {
-                              _vm.mother_status = $$v
+                              _vm.spouse_rename_file = $$v
                             },
-                            expression: "mother_status"
+                            expression: "spouse_rename_file"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "marriage_file",
+                            label: "สำเนาทะเบียนสมรส/หย่าร้าง :"
+                          },
+                          model: {
+                            value: _vm.marriage_file,
+                            callback: function($$v) {
+                              _vm.marriage_file = $$v
+                            },
+                            expression: "marriage_file"
                           }
                         })
                       ],
@@ -28012,288 +27818,1306 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "padding-row" },
+                        [
+                          _c("input-radio", {
+                            attrs: {
+                              name: "spouse_status",
+                              label: "สถานะ :",
+                              options: _vm.statuses
+                            },
+                            model: {
+                              value: _vm.spouse_status,
+                              callback: function($$v) {
+                                _vm.spouse_status = $$v
+                              },
+                              expression: "spouse_status"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "padding-row" },
+                        [
+                          _c("input-radio", {
+                            attrs: {
+                              name: "spouse_marital_status",
+                              label: "สถานภาพ :",
+                              options: _vm.marital_statuses
+                            },
+                            model: {
+                              value: _vm.spouse_marital_status,
+                              callback: function($$v) {
+                                _vm.spouse_marital_status = $$v
+                              },
+                              expression: "spouse_marital_status"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
                     _c(
                       "div",
-                      { staticClass: "padding-row" },
+                      { staticClass: "col-md-12" },
                       [
-                        _c("input-radio", {
+                        _c("input-line-label", {
+                          attrs: { label: "บุตร/ธิดา" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
                           attrs: {
-                            name: "mother_marital_status",
-                            label: "สถานภาพ :",
-                            options: _vm.marital_statuses
+                            name: "child_prefix_id",
+                            label: "คำนำหน้าชื่อ :"
                           },
                           model: {
-                            value: _vm.mother_marital_status,
+                            value: _vm.child_prefix_id,
                             callback: function($$v) {
-                              _vm.mother_marital_status = $$v
+                              _vm.child_prefix_id = $$v
                             },
-                            expression: "mother_marital_status"
+                            expression: "child_prefix_id"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "child_first_name", label: "ชื่อ :" },
+                          model: {
+                            value: _vm.child_first_name,
+                            callback: function($$v) {
+                              _vm.child_first_name = $$v
+                            },
+                            expression: "child_first_name"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "child_last_name",
+                            label: "นามสกุล :"
+                          },
+                          model: {
+                            value: _vm.child_last_name,
+                            callback: function($$v) {
+                              _vm.child_last_name = $$v
+                            },
+                            expression: "child_last_name"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "child_document_no",
+                            label: "เลขบัตรประชาชน :",
+                            pattern: "^([0-9]{13})$",
+                            "error-text": "เลขบัตรประชาชนไม่ถูกต้อง",
+                            required: true
+                          },
+                          model: {
+                            value: _vm.child_document_no,
+                            callback: function($$v) {
+                              _vm.child_document_no = $$v
+                            },
+                            expression: "child_document_no"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-date", {
+                          attrs: {
+                            name: "child_dob",
+                            label: "วัน/เดือน/ปีเกิด :",
+                            format: "DD/MM/YYYY"
+                          },
+                          model: {
+                            value: _vm.child_dob,
+                            callback: function($$v) {
+                              _vm.child_dob = $$v
+                            },
+                            expression: "child_dob"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "paddings" },
+                        [
+                          _c("input-radio", {
+                            attrs: {
+                              name: "child_marital_status",
+                              label: "สถานภาพ :",
+                              options: _vm.marital_statuses
+                            },
+                            model: {
+                              value: _vm.child_marital_status,
+                              callback: function($$v) {
+                                _vm.child_marital_status = $$v
+                              },
+                              expression: "child_marital_status"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12 " },
+                      [
+                        _c("center", [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.addChild()
+                                }
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "fa fa-plus-circle" }),
+                              _vm._v(" เพิ่มข้อมูลบุตร/ธิดา")
+                            ]
+                          )
+                        ])
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-12 col-centered" }, [
+                    _c(
+                      "table",
+                      {
+                        staticClass: "table table-bordered",
+                        attrs: { id: "childs" }
+                      },
+                      [
+                        _c("thead", [
+                          _c("tr", [
+                            _c("th", [_c("center", [_vm._v("คนที่")])], 1),
+                            _vm._v(" "),
+                            _c("th", [_vm._v("ชื่อ - นามสกุล")]),
+                            _vm._v(" "),
+                            _c("th", [_vm._v("เลขบัตรประชาชน")]),
+                            _vm._v(" "),
+                            _c("th", [_vm._v("วัน/เดือน/ปีเกิด")]),
+                            _vm._v(" "),
+                            _c("th", [_vm._v("อายุ")]),
+                            _vm._v(" "),
+                            _c("th", [_vm._v("สถานภาพ")])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("tbody", [
+                          _c("tr", [
+                            _c("td", [_c("center", [_vm._v("1")])], 1),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("John Doe")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("1234567890123")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("10/11/1990")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("28 ปี ")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("สมรส ")])
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", [
+                            _c("td", [_c("center", [_vm._v("2")])], 1),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("July Doe")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("1234567890124")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("10/11/1994")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("24 ปี ")]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v("โสด ")])
+                          ])
+                        ])
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { attrs: { id: "parents_menu" } }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12" },
+                      [_c("input-line-label", { attrs: { label: "บิดา" } })],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "father_prefix_id",
+                            label: "คำนำหน้าชื่อ :"
+                          },
+                          model: {
+                            value: _vm.father_prefix_id,
+                            callback: function($$v) {
+                              _vm.father_prefix_id = $$v
+                            },
+                            expression: "father_prefix_id"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "father_first_name", label: "ชื่อ :" },
+                          model: {
+                            value: _vm.father_first_name,
+                            callback: function($$v) {
+                              _vm.father_first_name = $$v
+                            },
+                            expression: "father_first_name"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "father_last_name",
+                            label: "นามสกุล :"
+                          },
+                          model: {
+                            value: _vm.father_last_name,
+                            callback: function($$v) {
+                              _vm.father_last_name = $$v
+                            },
+                            expression: "father_last_name"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "father_document_no",
+                            label: "เลขบัตรประชาชน :",
+                            pattern: "^([0-9]{13})$",
+                            "error-text": "เลขบัตรประชาชนไม่ถูกต้อง",
+                            required: false
+                          },
+                          model: {
+                            value: _vm.father_document_no,
+                            callback: function($$v) {
+                              _vm.father_document_no = $$v
+                            },
+                            expression: "father_document_no"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-select", {
+                          attrs: {
+                            label: "อาชีพ : ",
+                            option_start_name: "เลือกอาชีพ",
+                            options: _vm.careersApi
+                          },
+                          model: {
+                            value: _vm.father_career,
+                            callback: function($$v) {
+                              _vm.father_career = $$v
+                            },
+                            expression: "father_career"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "father_id_card_file",
+                            label: "สำเนาบัตรประชาชน :"
+                          },
+                          model: {
+                            value: _vm.father_id_card_file,
+                            callback: function($$v) {
+                              _vm.father_id_card_file = $$v
+                            },
+                            expression: "father_id_card_file"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "father_house_file",
+                            label: "สำเนาทะเบียนบ้าน :"
+                          },
+                          model: {
+                            value: _vm.father_house_file,
+                            callback: function($$v) {
+                              _vm.father_house_file = $$v
+                            },
+                            expression: "father_house_file"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "father_rename_file",
+                            label: "สำเนาใบเปลี่ยนชื่อ :"
+                          },
+                          model: {
+                            value: _vm.father_rename_file,
+                            callback: function($$v) {
+                              _vm.father_rename_file = $$v
+                            },
+                            expression: "father_rename_file"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "father_marriage_file",
+                            label: "สำเนาทะเบียนสมรส/หย่าร้าง :"
+                          },
+                          model: {
+                            value: _vm.father_marriage_file,
+                            callback: function($$v) {
+                              _vm.father_marriage_file = $$v
+                            },
+                            expression: "father_marriage_file"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "child_file",
+                            label: "สำเนาใบรับรองบุตร :"
+                          },
+                          model: {
+                            value: _vm.child_file,
+                            callback: function($$v) {
+                              _vm.child_file = $$v
+                            },
+                            expression: "child_file"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "paddings" },
+                        [
+                          _c("input-radio", {
+                            attrs: {
+                              name: "father_status",
+                              label: "สถานะ :",
+                              options: _vm.statuses
+                            },
+                            model: {
+                              value: _vm.father_status,
+                              callback: function($$v) {
+                                _vm.father_status = $$v
+                              },
+                              expression: "father_status"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12" },
+                      [_c("input-line-label", { attrs: { label: "มารดา" } })],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "mother_prefix_id",
+                            label: "คำนำหน้าชื่อ :"
+                          },
+                          model: {
+                            value: _vm.mother_prefix_id,
+                            callback: function($$v) {
+                              _vm.mother_prefix_id = $$v
+                            },
+                            expression: "mother_prefix_id"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "mother_first_name", label: "ชื่อ :" },
+                          model: {
+                            value: _vm.mother_first_name,
+                            callback: function($$v) {
+                              _vm.mother_first_name = $$v
+                            },
+                            expression: "mother_first_name"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "mother_last_name",
+                            label: "นามสกุล :"
+                          },
+                          model: {
+                            value: _vm.mother_last_name,
+                            callback: function($$v) {
+                              _vm.mother_last_name = $$v
+                            },
+                            expression: "mother_last_name"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "mother_document_no",
+                            label: "เลขบัตรประชาชน :",
+                            pattern: "^([0-9]{13})$",
+                            "error-text": "เลขบัตรประชาชนไม่ถูกต้อง",
+                            required: false
+                          },
+                          model: {
+                            value: _vm.mother_document_no,
+                            callback: function($$v) {
+                              _vm.mother_document_no = $$v
+                            },
+                            expression: "mother_document_no"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-select", {
+                          attrs: {
+                            label: "อาชีพ : ",
+                            option_start_name: "เลือกอาชีพ",
+                            options: _vm.careersApi
+                          },
+                          model: {
+                            value: _vm.mother_career,
+                            callback: function($$v) {
+                              _vm.mother_career = $$v
+                            },
+                            expression: "mother_career"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "mother_id_card_file",
+                            label: "สำเนาบัตรประชาชน :"
+                          },
+                          model: {
+                            value: _vm.mother_id_card_file,
+                            callback: function($$v) {
+                              _vm.mother_id_card_file = $$v
+                            },
+                            expression: "mother_id_card_file"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "mother_house_file",
+                            label: "สำเนาทะเบียนบ้าน :"
+                          },
+                          model: {
+                            value: _vm.mother_house_file,
+                            callback: function($$v) {
+                              _vm.mother_house_file = $$v
+                            },
+                            expression: "mother_house_file"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "mother_rename_file",
+                            label: "สำเนาใบเปลี่ยนชื่อ :"
+                          },
+                          model: {
+                            value: _vm.mother_rename_file,
+                            callback: function($$v) {
+                              _vm.mother_rename_file = $$v
+                            },
+                            expression: "mother_rename_file"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("file-input", {
+                          attrs: {
+                            name: "mother_marriage_file",
+                            label: "สำเนาทะเบียนสมรส/หย่าร้าง :"
+                          },
+                          model: {
+                            value: _vm.mother_marriage_file,
+                            callback: function($$v) {
+                              _vm.mother_marriage_file = $$v
+                            },
+                            expression: "mother_marriage_file"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "padding-row" },
+                        [
+                          _c("input-radio", {
+                            attrs: {
+                              name: "mother_status",
+                              label: "สถานะ :",
+                              options: _vm.statuses
+                            },
+                            model: {
+                              value: _vm.mother_status,
+                              callback: function($$v) {
+                                _vm.mother_status = $$v
+                              },
+                              expression: "mother_status"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { attrs: { id: "contact_menu" } }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12" },
+                      [
+                        _c("input-line-label", {
+                          attrs: { label: "ที่อยู่ตามทะเบียนบ้าน" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "house_no", label: "บ้านเลขที่ :" },
+                          model: {
+                            value: _vm.house_no,
+                            callback: function($$v) {
+                              _vm.house_no = $$v
+                            },
+                            expression: "house_no"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "village_no", label: "หมู่ที่ :" },
+                          model: {
+                            value: _vm.village_no,
+                            callback: function($$v) {
+                              _vm.village_no = $$v
+                            },
+                            expression: "village_no"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "lane", label: "ซอย :" },
+                          model: {
+                            value: _vm.lane,
+                            callback: function($$v) {
+                              _vm.lane = $$v
+                            },
+                            expression: "lane"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "road", label: "ถนน :" },
+                          model: {
+                            value: _vm.road,
+                            callback: function($$v) {
+                              _vm.road = $$v
+                            },
+                            expression: "road"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("auto-complete", {
+                          attrs: { label: "รหัสไปรษณีย์ :", name: "postcode" },
+                          on: {
+                            update: function(item) {
+                              return _vm.updatePostcodeId(item)
+                            }
+                          },
+                          model: {
+                            value: _vm.postcode,
+                            callback: function($$v) {
+                              _vm.postcode = $$v
+                            },
+                            expression: "postcode"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "sub_district",
+                            label: "ตำบล/แขวง :",
+                            readonly: true
+                          },
+                          model: {
+                            value: _vm.sub_district,
+                            callback: function($$v) {
+                              _vm.sub_district = $$v
+                            },
+                            expression: "sub_district"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "district",
+                            label: "อำเภอ :",
+                            readonly: true
+                          },
+                          model: {
+                            value: _vm.district,
+                            callback: function($$v) {
+                              _vm.district = $$v
+                            },
+                            expression: "district"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "province",
+                            label: "จังหวัด :",
+                            readonly: true
+                          },
+                          model: {
+                            value: _vm.province,
+                            callback: function($$v) {
+                              _vm.province = $$v
+                            },
+                            expression: "province"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12" },
+                      [
+                        _c("input-line-label", {
+                          attrs: { label: "ที่อยู่ที่สามารถติดต่อได้" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-checkbox", {
+                          attrs: {
+                            label: "ใช้ที่อยู่เดียวกันกับที่อยู่ตามทะเบียนบ้าน"
+                          },
+                          on: {
+                            update: function(checked) {
+                              return _vm.updateContactAddress(checked)
+                            }
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "contact_house_no",
+                            label: "บ้านเลขที่ :"
+                          },
+                          model: {
+                            value: _vm.contact_house_no,
+                            callback: function($$v) {
+                              _vm.contact_house_no = $$v
+                            },
+                            expression: "contact_house_no"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "contact_village_no",
+                            label: "หมู่ที่ :"
+                          },
+                          model: {
+                            value: _vm.contact_village_no,
+                            callback: function($$v) {
+                              _vm.contact_village_no = $$v
+                            },
+                            expression: "contact_village_no"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "contact_lane", label: "ซอย :" },
+                          model: {
+                            value: _vm.contact_lane,
+                            callback: function($$v) {
+                              _vm.contact_lane = $$v
+                            },
+                            expression: "contact_lane"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "contact_road", label: "ถนน :" },
+                          model: {
+                            value: _vm.contact_road,
+                            callback: function($$v) {
+                              _vm.contact_road = $$v
+                            },
+                            expression: "contact_road"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("auto-complete", {
+                          attrs: {
+                            label: "รหัสไปรษณีย์ :",
+                            name: "contact_postcode",
+                            url: "/get-autocomplete/postcode"
+                          },
+                          on: {
+                            update: function(item) {
+                              return _vm.updateContractPostcodeId(item)
+                            }
+                          },
+                          model: {
+                            value: _vm.contact_postcode,
+                            callback: function($$v) {
+                              _vm.contact_postcode = $$v
+                            },
+                            expression: "contact_postcode"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "contact_sub_district",
+                            label: "ตำบล/แขวง :",
+                            readonly: true
+                          },
+                          model: {
+                            value: _vm.contact_sub_district,
+                            callback: function($$v) {
+                              _vm.contact_sub_district = $$v
+                            },
+                            expression: "contact_sub_district"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "contact_district",
+                            label: "อำเภอ :",
+                            readonly: true
+                          },
+                          model: {
+                            value: _vm.contact_district,
+                            callback: function($$v) {
+                              _vm.contact_district = $$v
+                            },
+                            expression: "contact_district"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "contact_province",
+                            label: "จังหวัด :",
+                            readonly: true
+                          },
+                          model: {
+                            value: _vm.contact_province,
+                            callback: function($$v) {
+                              _vm.contact_province = $$v
+                            },
+                            expression: "contact_province"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12" },
+                      [
+                        _c("input-line-label", {
+                          attrs: { label: "ช่องทางการติดต่อ" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "telephone", label: "โทรศัพท์บ้าน :" },
+                          model: {
+                            value: _vm.telephone,
+                            callback: function($$v) {
+                              _vm.telephone = $$v
+                            },
+                            expression: "telephone"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: { name: "phone", label: "โทรศัพท์มือถือ :" },
+                          model: {
+                            value: _vm.phone,
+                            callback: function($$v) {
+                              _vm.phone = $$v
+                            },
+                            expression: "phone"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "office_telephone",
+                            label: "โทรศัพท์ที่ทำงาน :"
+                          },
+                          model: {
+                            value: _vm.office_telephone,
+                            callback: function($$v) {
+                              _vm.office_telephone = $$v
+                            },
+                            expression: "office_telephone"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "mahidol_email",
+                            label: "Email มหิดล :"
+                          },
+                          model: {
+                            value: _vm.mahidol_email,
+                            callback: function($$v) {
+                              _vm.mahidol_email = $$v
+                            },
+                            expression: "mahidol_email"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "first_email",
+                            label: "Email อื่นๆ :"
+                          },
+                          model: {
+                            value: _vm.first_email,
+                            callback: function($$v) {
+                              _vm.first_email = $$v
+                            },
+                            expression: "first_email"
+                          }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "col-md-4" },
+                      [
+                        _c("input-text", {
+                          attrs: {
+                            name: "second_email",
+                            label: "Email อื่นๆ  :"
+                          },
+                          model: {
+                            value: _vm.second_email,
+                            callback: function($$v) {
+                              _vm.second_email = $$v
+                            },
+                            expression: "second_email"
                           }
                         })
                       ],
                       1
                     )
                   ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "tab-pane fade", attrs: { id: "contact_menu" } },
-              [
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-12" },
-                    [
-                      _c("input-line-label", {
-                        attrs: { label: "ที่อยู่ปัจจุบัน" }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-checkbox", {
-                        attrs: {
-                          label: "ใช้ที่อยู่เดียวกันกับที่อยู่ตามทะเบียนบ้าน"
-                        },
-                        on: {
-                          update: function(checked) {
-                            return _vm.updateContactAddress(checked)
-                          }
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "contact_house_no",
-                          label: "บ้านเลขที่ :"
-                        },
-                        model: {
-                          value: _vm.contact_house_no,
-                          callback: function($$v) {
-                            _vm.contact_house_no = $$v
-                          },
-                          expression: "contact_house_no"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "contact_village_no",
-                          label: "หมู่ที่ :"
-                        },
-                        model: {
-                          value: _vm.contact_village_no,
-                          callback: function($$v) {
-                            _vm.contact_village_no = $$v
-                          },
-                          expression: "contact_village_no"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "contact_lane", label: "ซอย :" },
-                        model: {
-                          value: _vm.contact_lane,
-                          callback: function($$v) {
-                            _vm.contact_lane = $$v
-                          },
-                          expression: "contact_lane"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: { name: "contact_road", label: "ถนน :" },
-                        model: {
-                          value: _vm.contact_road,
-                          callback: function($$v) {
-                            _vm.contact_road = $$v
-                          },
-                          expression: "contact_road"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("auto-complete", {
-                        attrs: {
-                          label: "รหัสไปรษณีย์ :",
-                          name: "contact_postcode",
-                          url: "/get-autocomplete/postcode"
-                        },
-                        on: {
-                          update: function(item) {
-                            return _vm.updateContractPostcodeId(item)
-                          }
-                        },
-                        model: {
-                          value: _vm.contact_postcode,
-                          callback: function($$v) {
-                            _vm.contact_postcode = $$v
-                          },
-                          expression: "contact_postcode"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "contact_sub_district",
-                          label: "ตำบล/แขวง :",
-                          readonly: true
-                        },
-                        model: {
-                          value: _vm.contact_sub_district,
-                          callback: function($$v) {
-                            _vm.contact_sub_district = $$v
-                          },
-                          expression: "contact_sub_district"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "contact_district",
-                          label: "อำเภอ :",
-                          readonly: true
-                        },
-                        model: {
-                          value: _vm.contact_district,
-                          callback: function($$v) {
-                            _vm.contact_district = $$v
-                          },
-                          expression: "contact_district"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "contact_province",
-                          label: "จังหวัด :",
-                          readonly: true
-                        },
-                        model: {
-                          value: _vm.contact_province,
-                          callback: function($$v) {
-                            _vm.contact_province = $$v
-                          },
-                          expression: "contact_province"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-4" },
-                    [
-                      _c("input-text", {
-                        attrs: {
-                          name: "contact_telephone",
-                          label: "โทรศัพท์บ้าน :"
-                        },
-                        model: {
-                          value: _vm.contact_telephone,
-                          callback: function($$v) {
-                            _vm.contact_telephone = $$v
-                          },
-                          expression: "contact_telephone"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-md-12" },
-                    [
-                      _c("input-line-label", {
-                        attrs: { label: "ช่องทางการติดต่อ" }
-                      })
-                    ],
-                    1
-                  )
                 ])
               ]
             )
           ])
         ]),
-        _vm._v(" "),
-        _c("button", { attrs: { type: "submit" } }, [_vm._v("submit")]),
         _vm._v(" "),
         _c("div")
       ],

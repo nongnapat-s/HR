@@ -2,6 +2,9 @@
     header{
         background-color:#e6e6ff;
     }
+    .panel-relative{
+        position: relative;
+    }
     .content {
         background-color: #fcfcfc;
     }
@@ -11,7 +14,7 @@
 </style>
 <template>
     <div class="panel panel-info">
-        <div class="panel-heading">    
+        <div class="panel-heading text-center panel-relative">    
             <h4 
                 v-text = "title">
             </h4>

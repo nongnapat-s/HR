@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Title;
-use App\Status;
-use App\Postcode;
-use App\Province;
-use App\SelectItem;
 use Illuminate\Http\Request;
-// use Log;
+use App\Services\ListManager;
+
 class ListController extends Controller
 {
     /**
@@ -18,56 +14,7 @@ class ListController extends Controller
      */
     public function getList(Request $request, $name)
     {
-        Log::info($request->search);
-        switch ($name) {
-            case 'race':
-                $name = 'nation';
-            case 'nation':
-            case 'religion':
-            case 'blood_group':
-            case 'marital_status':
-                return SelectItem::select('value', 'label')
-                                 ->where('field', $name)
-                                 ->orderBy('order')
-                                 ->get();
-            case 'status':
-                return Status::select(
-                                    'id as value',
-                                    'name as label',
-                                    'active',
-                                    'category')
-                                    ->get();
-            case 'title':
-                return Title::select(
-                                    'id as value',
-                                    'name_short as label',
-                                    'name',
-                                    'name_short',
-                                    'name_eng',
-                                    'name_eng_short',
-                                    'gender')
-                                    ->get();
-            case 'postcode':
-                return Postcode::select(
-                                        'id as value',
-                                        'province_id',
-                                        'location as label')
-                                        ->where('location', 'like', '%' . $request->search . '%')
-                                        ->limit(20)
-                                        ->orderBy('location')
-                                        ->get();
-            case 'province':
-                return Province::select(
-                                        'id as value',
-                                        'name as lable',
-                                        'region')
-                                        ->where('name', 'like', '%' . $request->search . '%')
-                                        ->limit(20)
-                                        ->orderBy('name')
-                                        ->get();
-            default:
-                return [];
-        }
+        return (new ListManager($name, $request->search))->getList();
     }
 
     /**
@@ -75,31 +22,8 @@ class ListController extends Controller
      *
      * @var string
      */
-    public function getAutocomplete(Request $request, $name)
+    public function getDevbridgeAutocomplete(Request $request, $name)
     {
-        switch ($name) {
-            case 'postcode':
-                return ['suggestions' => Postcode::select(
-                                                    'id as data',
-                                                    'province_id',
-                                                    'location as value'
-                                                  )
-                                                  ->where('location', 'like', '%' . $request->input('query') . '%')
-                                                  ->limit(20)
-                                                  ->orderBy('location')
-                                                  ->get()];
-            case 'province':
-                return ['suggestions' => Province::select(
-                                                    'id as data',
-                                                    'name as value',
-                                                    'region'
-                                                  )
-                                                  ->where('name', 'like', '%' . $request->input('query') . '%')
-                                                  ->limit(20)
-                                                  ->orderBy('name')
-                                                  ->get()];
-            default:
-                return [];
-        }
+        return (new ListManager($name, $request->search))->getDevbridgeAutocomplete();
     }
 }

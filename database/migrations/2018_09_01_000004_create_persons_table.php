@@ -16,8 +16,8 @@ class CreatePersonsTable extends Migration
         Schema::create('persons', function (Blueprint $table) {
             $table->unsignedSmallInteger('id');
             $table->primary('id');
-            $table->unsignedTinyInteger('title_id')->index()->default(0);           // default คุณ
-            $table->foreign('title_id')->references('id')->on('titles');
+            $table->unsignedTinyInteger('prefix_id')->index()->default(0);           // default คุณ
+            $table->foreign('prefix_id')->references('id')->on('titles');
             $table->string('first_name');                                           // encrypt
             $table->string('first_name_eng');                                       // encrypt
             $table->string('last_name');                                            // encrypt

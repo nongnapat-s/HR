@@ -22,6 +22,7 @@
         "bootstrap-fileinput": "^4.5.1",
         "bootstrap-sass": "^3.3.7",
         "devbridge-autocomplete": "^1.4.9",
+        "jquery-bootstrap-scrolling-tabs": "^2.5.0",
         "npm": "^6.4.1",
         "pretty-checkbox": "^3.0.3",
         "to": "^0.2.9",

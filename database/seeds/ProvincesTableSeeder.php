@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Lists\Province;
 use Illuminate\Database\Seeder;
 
 class ProvincesTableSeeder extends Seeder
@@ -11,7 +12,10 @@ class ProvincesTableSeeder extends Seeder
      */
     public function run()
     {
-        // factory(App\Province::class, 100)->create();
+        DB::statement('SET foreign_key_checks=0');
+        Province::truncate();
+        DB::statement('SET foreign_key_checks=1');
+
         $provinces = [
             ['id' => 10, 'region' => 1, 'name' => 'กรุงเทพมหานคร'],
             ['id' => 11, 'region' => 1, 'name' => 'สมุทรปราการ'],
@@ -93,7 +97,7 @@ class ProvincesTableSeeder extends Seeder
         ];
 
         foreach ($provinces as $province) {
-            App\Province::create($province);
+            Province::create($province);
         }
     }
 }
