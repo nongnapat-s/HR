@@ -185,9 +185,9 @@
                             </div>
                             <div class ="col-md-4">
                                 <input-date
-                                    name = "dob"
+                                    name = "dob_preview"
                                     label = "วัน/เดือน/ปีเกิด :"
-                                    v-model = "dob"
+                                    v-model = "dob_preview"
                                     format="DD/MM/YYYY"
                                     mode = "BE"
                                     start-range= '2400'
@@ -1057,6 +1057,7 @@
                 middle_name : '',
                 middle_name_eng : '',
                 nickname: '',
+                dob_preview : '',
                 dob : '',
                 age : '',
                 race: '',
@@ -1303,6 +1304,7 @@
             updateAge(dob){
                 var current_year = moment().format('YYYY');
                 var age = dob.split('/');
+                this.dob = dob;
                 this.age = current_year - age[2];
             },
             addChild: function(){
