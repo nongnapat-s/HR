@@ -189,10 +189,18 @@
                                     label = "วัน/เดือน/ปีเกิด :"
                                     v-model = "dob_preview"
                                     format="DD/MM/YYYY"
+                                    mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
                                     @update="(dob) => updateAge(dob)"
                                 ></input-date>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-palitday
+                                    name = "dob_preview"
+                                    label = "วัน/เดือน/ปีเกิด :"
+                                    v-model = "dob_preview"
+                                    format="DD/MM/YYYY" />
                             </div>
                             <div class ="col-md-4">
                                 <input-text
@@ -1015,6 +1023,7 @@
     import Panel from '../panels/PanelComponent.vue'
     import InputText from '../inputs/InputTextComponent.vue'
     import InputDate from '../inputs/InputDateComponent.vue'
+    import InputPalitday from '../inputs/InputPalitday.vue'
     import InputToggle from '../inputs/InputToggleComponent.vue'
     import InputRadio from '../inputs/InputRadioComponent.vue'
     import InputSelect from '../inputs/InputSelectComponent.vue'
@@ -1029,6 +1038,7 @@
             Panel,
             InputText,
             InputDate,
+            InputPalitday,
             InputToggle,
             InputCheckbox,
             InputRadio,
