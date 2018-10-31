@@ -49,11 +49,14 @@ export default {
     props : {
         options : { required : true },
     },
+    created() {
+
+    },
     mounted() {
         $('.nav-tabs').scrollingTabs({});
         setTimeout( function() {
             $('.nav-tabs').scrollingTabs('refresh');
-        },200);
+        },300);
     }
 }
 </script>

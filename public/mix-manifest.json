@@ -3,13 +3,5 @@
     "/js/vendor.js": "/js/vendor.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/manifest.js": "/js/manifest.js",
-    "/0.108199b68175dc8c66f5.hot-update.js": "/0.108199b68175dc8c66f5.hot-update.js",
-    "/0.a1cbc8a5404a61913083.hot-update.js": "/0.a1cbc8a5404a61913083.hot-update.js",
-    "/1.81b6ba320f29c7c59508.hot-update.js": "/1.81b6ba320f29c7c59508.hot-update.js",
-    "/0.d03ab52a55df3e54fcd1.hot-update.js": "/0.d03ab52a55df3e54fcd1.hot-update.js",
-    "/2.d03ab52a55df3e54fcd1.hot-update.js": "/2.d03ab52a55df3e54fcd1.hot-update.js",
-    "/0.c03cffd68fc7c9012c8b.hot-update.js": "/0.c03cffd68fc7c9012c8b.hot-update.js",
-    "/1.c03cffd68fc7c9012c8b.hot-update.js": "/1.c03cffd68fc7c9012c8b.hot-update.js",
-    "/2.c03cffd68fc7c9012c8b.hot-update.js": "/2.c03cffd68fc7c9012c8b.hot-update.js"
+    "/js/manifest.js": "/js/manifest.js"
 }

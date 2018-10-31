@@ -23,6 +23,7 @@
         "bootstrap-sass": "^3.3.7",
         "devbridge-autocomplete": "^1.4.9",
         "jquery-bootstrap-scrolling-tabs": "^2.5.0",
+        "jquery-datetimepicker": "^2.5.20",
         "npm": "^6.4.1",
         "palitday": "^1.0.2",
         "pretty-checkbox": "^3.0.3",

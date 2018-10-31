@@ -20,6 +20,7 @@ export default {
         format : { default : 'DD/MM/YYYY'},
         minYear: { default : 1940 },
         maxYear: { default : 2020 },
+        ageShow : { default : ''}
     },
     data() { return { value : '' } },
     mounted() {

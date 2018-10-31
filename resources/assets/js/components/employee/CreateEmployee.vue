@@ -1,83 +1,42 @@
 <template>
     <div class = "container-fuild col-md-12">
         <br>
-            <form action="/test-form" method="POST" enctype="multipart/form-data">
-            <panel
-                title = "ประวัติบุคลากร">
-                <div class="row">
-                   <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
-                        <div class="pull-right"><img
-                            :src="'/storage/01.jpeg'"
-                            class="img-thumbnail"
-                            alt="รูปพนักงาน"
-                            height="200"
-                            width="200"/>
-                        </div>
+            <panel title = "ข้อมูลพนักงาน">
+                <div class ="row">
+                    <div class ="col-md-4">
+                        <input-text
+                            @update="(value) => employeeApi(value)"
+                            name = "ref_id"
+                            label = "รหัสพนักงาน :"
+                            v-model = "ref_id"
+                            pattern= "^100([0-9]{5})$"
+                            error-text = "รหัสพนักงานไม่ถูกต้อง"
+                            :required="true"
+                         ></input-text>
+                     </div>
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "document_no"
+                            label = "เลขบัตรประชาชน :"
+                            v-model = "document_no"
+                            pattern= "^([0-9]{13})$"
+                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                            :required="false"
+                        ></input-text>
                     </div>
-                     <div class="col-md-5 col-md-push-0 col-sm-6 col-sm-push-0 col-xs-12 padding">
-                        <div class="paddings">
-                            <input-text
-                                label = "รหัสพนักงาน :"
-                                :disabled = "true"
-                                name = "ref_id_preview"
-                            ></input-text>
-                            <input-text
-                                label = "ชื่อ - นามสกุล :"
-                                :disabled = "true"
-                                name = "fullname_preview"
-                            ></input-text>
-                            <input-text
-                                label = "ชื่อ - นามสกุล (อังกฤษ) :"
-                                :disabled = "true"
-                                name = "fullname_en_preview"
-                            ></input-text>
+                    <div class = "col-md-4">
+                        <div class = "paddings">
+                            <input-radio
+                                @update="(item) => updateGender(item)"
+                                name = "gender"
+                                label = "เพศ :"
+                                v-model = "gender"
+                                :options = "genders"
+                            />
                         </div>
                     </div>
                 </div>
                 <div class = "row">
-                    <div class ="col-md-12 col-sm-12">
-                        <navbar-tabs
-                            :options = 'profile_nav'
-                        ></navbar-tabs>
-                    </div>
-                </div>
-                <div class="tab-content">
-                    <div id="profile_menu" class="tab-pane fade in active">
-                        <div class = "row">
-                            <div class ="col-md-4">
-                                <input-text
-                                    @update="(value) => employeeApi(value)"
-                                    name = "ref_id"
-                                    label = "รหัสพนักงาน :"
-                                    v-model = "ref_id"
-                                    pattern= "^100([0-9]{5})$"
-                                    error-text = "รหัสพนักงานไม่ถูกต้อง"
-                                    :required="true"
-                                ></input-text>
-                            </div>
-                            <div class ="col-md-4">
-                                <input-text
-                                    name = "document_no"
-                                    label = "เลขบัตรประชาชน :"
-                                    v-model = "document_no"
-                                    pattern= "^([0-9]{13})$"
-                                    error-text="เลขบัตรประชาชนไม่ถูกต้อง"
-                                    :required="false"
-                                ></input-text>
-                            </div>
-                            <div class = "col-md-4">
-                                <div class = "paddings">
-                                    <input-radio
-                                        @update="(item) => updateGender(item)"
-                                        name = "gender"
-                                        label = "เพศ :"
-                                        v-model = "gender"
-                                        :options = "genders"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div class = "row">
                             <div class ="col-md-4">
                                 <input-select
                                     label = "คำนำหน้าชื่อ : "
@@ -175,16 +134,69 @@
                                 ></input-text>
                             </div>
                         </div>
+                    <div class = "row">
+                        <div class = "col-md-4">
+                            <file-input
+                                name = "employee_file"
+                                label = "รูปถ่ายพนักงาน :"
+                                v-model= "employee_file"
+                            >
+                            </file-input>
+                        </div>
+                    </div>
+                    <div class ="row">
+                        <div class = "col-md-12">
+                            <input-button
+                                label = "บันทึกข้อมูล"
+                                button-class="btn btn-success"
+                            ></input-button>
+                        </div>
+                    </div>
+            </panel>  
+            <panel title = "ประวัติบุคลากร">
+                <div class="row">
+                   <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
+                        <div class="pull-right"><img
+                            :src="'/storage/01.jpeg'"
+                            class="img-thumbnail"
+                            alt="รูปพนักงาน"
+                            height="200"
+                            width="200"/>
+                        </div>
+                    </div>
+                     <div class="col-md-5 col-md-push-0 col-sm-6 col-sm-push-0 col-xs-12 padding">
+                        <div class="paddings">
+                            <input-text
+                                label = "รหัสพนักงาน :"
+                                :disabled = "true"
+                                name = "ref_id_preview"
+                            ></input-text>
+                            <input-text
+                                label = "ชื่อ - นามสกุล :"
+                                :disabled = "true"
+                                name = "fullname_preview"
+                            ></input-text>
+                            <input-text
+                                label = "ชื่อ - นามสกุล (อังกฤษ) :"
+                                :disabled = "true"
+                                name = "fullname_en_preview"
+                            ></input-text>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class = "row">
+                    <div class ="col-md-12 col-sm-12">
+                        <navbar-tabs
+                            :options = 'profile_nav'
+                        ></navbar-tabs>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div id="profile_menu" class="tab-pane fade in active">
                         <div class="row">
                             <div class ="col-md-4">
-                                <input-text
-                                    name = "nickname"
-                                    label = "ชื่อเล่น :"
-                                    v-model = "nickname"
-                                ></input-text>
-                            </div>
-                            <div class ="col-md-4">
-                                <input-date
+                                <jquery-input-date
                                     name = "dob_preview"
                                     label = "วัน/เดือน/ปีเกิด :"
                                     v-model = "dob_preview"
@@ -192,21 +204,23 @@
                                     mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
+                                    age-name = "age"
                                     @update="(dob) => updateAge(dob)"
-                                ></input-date>
-                            </div>
-                            <div class ="col-md-4">
-                                <input-palitday
-                                    name = "dob_preview"
-                                    label = "วัน/เดือน/ปีเกิด :"
-                                    v-model = "dob_preview"
-                                    format="DD/MM/YYYY" />
+                                ></jquery-input-date>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
                                     name = "age"
                                     label = "อายุ :"
                                     v-model = "age"
+                                    :readonly="true"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "nickname"
+                                    label = "ชื่อเล่น :"
+                                    v-model = "nickname"
                                 ></input-text>
                             </div>
                         </div>
@@ -257,14 +271,6 @@
                                         :options = "blood_groups"
                                     />
                                 </div>
-                            </div>
-                            <div class = "col-md-4">
-                                <file-input
-                                    name = "employee_file"
-                                    label = "รูปถ่ายพนักงาน :"
-                                    v-model= "employee_file"
-                                >
-                                </file-input>
                             </div>
                         </div>
                         <div class="row">
@@ -464,11 +470,13 @@
                             </div>
                             <div class="row">
                                 <div class ="col-md-4">
-                                    <input-text
-                                        name = "child_prefix_id"
-                                        label = "คำนำหน้าชื่อ :"
+                                    <input-select
+                                        label = "คำนำหน้าชื่อ : "
+                                        option_start_name = "เลือกคำนำหน้า"
                                         v-model = "child_prefix_id"
-                                    ></input-text>
+                                        name = "child_prefix_id"
+                                        :options = "childPrefixApi"
+                                    ></input-select>
                                 </div>
                                 <div class ="col-md-4">
                                     <input-text
@@ -497,15 +505,42 @@
                                     ></input-text>
                                 </div>
                                 <div class ="col-md-4">
-                                    <input-date
-                                        name = "child_dob"
+                                    <jquery-input-date
+                                        name = "child_dob_preview"
                                         label = "วัน/เดือน/ปีเกิด :"
-                                        v-model = "child_dob"
+                                        v-model = "child_dob_preview"
                                         format="DD/MM/YYYY"
-                                    ></input-date>
+                                        mode = "BE"
+                                        start-range= '2400'
+                                        end-range = '3000'
+                                        age-name = "age"
+                                        @update="(dob) => updateChildAge(dob)"
+                                    ></jquery-input-date>
+                                </div>
+                                <div class ="col-md-4">
+                                    <input-text
+                                        name = "child_age"
+                                        label = "อายุ :"
+                                        v-model = "child_age"
+                                        :readonly="true"
+                                    ></input-text>
+                                </div>
+                                
+                            </div>
+                            <div class = "row">
+                                <div class = "col-md-4">
+                                    <div class = "padding-row">
+                                        <input-radio
+                                            @update="(item) => updateChildGender(item)"
+                                            name = "child_gender"
+                                            label = "เพศ :"
+                                            v-model = "child_gender"
+                                            :options = "genders"
+                                        />
+                                    </div>
                                 </div>
                                 <div class = "col-md-4">
-                                    <div class = "paddings">
+                                    <div class = "padding-row">
                                         <input-radio
                                             name = "child_marital_status"
                                             label = "สถานภาพ :"
@@ -527,29 +562,23 @@
                                 <thead>
                                     <tr>
                                         <th ><center>คนที่</center></th>
-                                        <th>ชื่อ - นามสกุล</th>
-                                        <th>เลขบัตรประชาชน</th>
-                                        <th>วัน/เดือน/ปีเกิด</th>
-                                        <th>อายุ</th>
-                                        <th>สถานภาพ</th>
+                                        <th><center>ชื่อ - นามสกุล</center></th>
+                                        <th><center>เลขบัตรประชาชน</center></th>
+                                        <th><center>วัน/เดือน/ปีเกิด</center></th>
+                                        <th><center>อายุ</center></th>
+                                        <th><center>สถานภาพ</center></th>
+                                        <th><center>เพศ</center></th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td><center>1</center></td>
-                                        <td>John Doe</td>
-                                        <td>1234567890123</td>
-                                        <td>10/11/1990</td>
-                                        <td>28 ปี </td>
-                                        <td>สมรส </td>
-                                    </tr>
-                                    <tr>
-                                        <td><center>2</center></td>
-                                        <td>July Doe</td>
-                                        <td>1234567890124</td>
-                                        <td>10/11/1994</td>
-                                        <td>24 ปี </td>
-                                        <td>โสด </td>
+                                        <td><center></center></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -971,14 +1000,18 @@
                             </div>
                         </div>
                     </div>
+                    <div id="career_menu" class="tab-pane fade">
+                        test
+                    </div>
+                    <div id="education_menu" class="tab-pane fade">
+                        test
+                    </div>
                 </div>
             </panel>
 
             <!-- <button type = "submit">submit</button> -->
         <div>
     </div>
-        </form>
-
     <div>
     </div><br><br><br><br><br><br>
     </div>
@@ -1032,6 +1065,8 @@
     import AutoComplete from '../inputs/AutoCompleteComponent.vue'
     import NavbarTabs from '../inputs/NavbarTabsComponent.vue'
     import FileInput from '../inputs/FileInputComponent.vue'
+    import jqueryInputDate from '../inputs/JqueryInputDate.vue'
+    import InputButton from '../inputs/InputButtonComponent.vue'
     import moment from 'moment';
     export default {
         components: {
@@ -1046,7 +1081,10 @@
             InputLineLabel,
             AutoComplete,
             NavbarTabs,
-            FileInput
+            FileInput,
+            jqueryInputDate,
+            InputButton
+            
         },
         data() {
             return {
@@ -1149,8 +1187,9 @@
                 careersApi: '',
                 autoComplete: null,
                 profile_nav : [
+                    { value : '#employee_menu' , label : 'ข้อมูลพนักงาน', icon : 'fa fa-id-card' , class : '' },
                     { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
-                    { value : '#career_menu' , label : 'ประวัติการทำงาน', icon : 'fa fa-address-card', class : ''},
+                    { value : '#career_menu' , label : 'ประวัติการทำงาน', icon : 'fa fa-id-badge', class : ''},
                     { value : '#education_menu' , label : 'ประวัติการศึกษา', icon : 'fa fa-graduation-cap', class : '' },
                     { value : '#taining_menu' , label : 'ประวัติการลาศึกษา/อบรม', icon : 'fa fa-plane', class : ''},
                     { value : '#taining_menu' , label : 'ประวัติการรับราชการ', icon : 'fa fa-briefcase', class : ''},
@@ -1195,10 +1234,15 @@
                 child_last_name: '',
                 child_document_no: '',
                 child_dob:'',
+                child_dob_preview : '',
                 child_marital_status: '',
                 prefixApi : '',
                 prefixUrl : '',
-                child_chertificate_file : ''
+                child_chertificate_file : '',
+                child_gender : '',
+                child_age : '',
+                childPrefixApi : '',
+               
             }
         },
         watch:{
@@ -1214,6 +1258,7 @@
             axios.get('get-list/prefix-female')
             .then((response) => {
                 this.prefixApi = response.data;
+                this.childPrefixApi = response.data;
             })
             .catch((error)=> {
             });
@@ -1221,6 +1266,7 @@
             axios.get('get-list/career')
             .then((response) => {
                 this.careersApi = response.data;
+                
             })
             .catch((error)=> {
             });
@@ -1310,11 +1356,28 @@
                     console.log(error);
                 });
             },
-            updateAge(dob){
+            updateChildGender(value){
+                this.prefixUrl = value == 0 ? 'prefix-female' : 'prefix-male';
+                axios.get('get-list/' + this.prefixUrl)
+
+                .then((response) => {
+                    this.childPrefixApi = response.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+            },
+            updateAge(dob,age){
                 var current_year = moment().format('YYYY');
                 var age = dob.split('/');
                 this.dob = dob;
-                this.age = current_year - age[2];
+                this.age = current_year - age[2] + ' ปี';
+            },
+            updateChildAge(dob,age){
+                var current_year = moment().format('YYYY');
+                var age = dob.split('/');
+                this.dob = dob;
+                this.child_age = current_year - age[2] + ' ปี';
             },
             addChild: function(){
                 var table = document.getElementById("childs");
@@ -1326,7 +1389,7 @@
                 var cell5 = row.insertCell(4);
                 var cell6 = row.insertCell(5);
                 cell1.innerHTML = "<center>3</center>";
-                cell2.innerHTML = "ทดสอบ เป็นลูก";
+                cell2.innerHTML = this.child_prefix_id;
                 cell3.innerHTML = "12345678955";
                 cell4.innerHTML = "12/12/1912";
                 cell5.innerHTML = "100 ปี";
