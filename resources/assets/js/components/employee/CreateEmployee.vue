@@ -37,36 +37,36 @@
                     </div>
                 </div>
                 <div class = "row">
-                            <div class ="col-md-4">
-                                <input-select
-                                    label = "คำนำหน้าชื่อ : "
-                                    option_start_name = "เลือกคำนำหน้า"
-                                    v-model = "prefix_id"
-                                    name = "prefix_id"
-                                    :options = "prefixApi"
-                                ></input-select>
-                            </div>
-                            <div class ="col-md-4">
-                                <input-text
-                                    name = "extra_prefix_id"
-                                    label = "ยศ/ตำแหน่ง :"
-                                    v-model = "extra_prefix_id"
-                                ></input-text>
-                            </div>
-                            <div class ="col-md-4">
-                                <input-text
-                                    name = "position_id"
-                                    label = "ตำแหน่งทางวิชาการ :"
-                                    v-model = "position_id"
-                                    :required="false"
-                                    :readonly="true"
-                                ></input-text>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class ="col-md-4">
-                                <input-text
-                                    name = "first_name"
+                    <div class ="col-md-4">
+                        <input-select
+                            label = "คำนำหน้าชื่อ : "
+                            option_start_name = "เลือกคำนำหน้า"
+                            v-model = "prefix_id"
+                            name = "prefix_id"
+                            :options = "prefixApi"
+                        ></input-select>
+                    </div>
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "extra_prefix_id"
+                            label = "ยศ/ตำแหน่ง :"
+                            v-model = "extra_prefix_id"
+                        ></input-text>
+                    </div>
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "position_id"
+                            label = "ตำแหน่งทางวิชาการ :"
+                            v-model = "position_id"
+                            :required="false"
+                            :readonly="true"
+                            ></input-text>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class ="col-md-4">
+                        <input-text
+                            name = "first_name"
                                     label = "ชื่อจริง :"
                                     v-model = "first_name"
                                 ></input-text>
