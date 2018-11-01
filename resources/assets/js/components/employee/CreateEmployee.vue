@@ -47,6 +47,24 @@
                         ></input-select>
                     </div>
                     <div class ="col-md-4">
+                        <input-select-a
+                            label = "คำนำหน้าชื่อ : "
+                            option_start_name = "เลือกคำนำหน้า"
+                            v-model = "prefix_id"
+                            name = "prefix_id"
+                            :options = "prefixApi"
+                        ></input-select-a>
+                    </div>
+                    <div class ="col-md-4">
+                        <input-select-a
+                            label = "อาชีพ : "
+                            option_start_name = "เลือกอาชีพ"
+                            v-model = "spouse_career"
+                            name = "spouse_career"
+                            :options = "careersApi"
+                        ></input-select-a>
+                    </div>
+                    <div class ="col-md-4">
                         <input-text
                             name = "extra_prefix_id"
                             label = "ยศ/ตำแหน่ง :"
@@ -152,7 +170,7 @@
                             ></input-button>
                         </div>
                     </div>
-            </panel>  
+            </panel>
             <panel title = "ประวัติบุคลากร">
                 <div class="row">
                    <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
@@ -183,7 +201,7 @@
                             ></input-text>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class = "row">
                     <div class ="col-md-12 col-sm-12">
@@ -403,6 +421,7 @@
                                         name = "spouse_career"
                                         :options = "careersApi"
                                     ></input-select>
+
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
@@ -525,7 +544,7 @@
                                         :readonly="true"
                                     ></input-text>
                                 </div>
-                                
+
                             </div>
                             <div class = "row">
                                 <div class = "col-md-4">
@@ -1068,6 +1087,7 @@
     import jqueryInputDate from '../inputs/JqueryInputDate.vue'
     import InputButton from '../inputs/InputButtonComponent.vue'
     import moment from 'moment';
+    import InputSelectA from '../inputs/InputSelect.vue'
     export default {
         components: {
             Panel,
@@ -1083,15 +1103,15 @@
             NavbarTabs,
             FileInput,
             jqueryInputDate,
-            InputButton
-            
+            InputButton,
+            InputSelectA
         },
         data() {
             return {
                 ref_id : '',
                 document_no : '',
                 pln : '',
-                prefix_id : 2,
+                prefix_id : null,
                 prefix_eng: '',
                 extra_prefix_id : '',
                 extra_prefix_eng : '',
@@ -1139,7 +1159,7 @@
                     { value : '0' , label : 'ยังมีชีวิตอยู่' },
                     { value : '1' , label : 'ถึงแก่กรรม' },
                 ],
-                spouse_career: 1,
+                spouse_career: 3,
                 spouse_marital_status: '',
                 father_prefix_id : '',
                 father_first_name : '',
@@ -1242,7 +1262,7 @@
                 child_gender : '',
                 child_age : '',
                 childPrefixApi : '',
-               
+
             }
         },
         watch:{
@@ -1271,7 +1291,7 @@
                 axios.get('get-list/career')
                 .then((response) => {
                     this.careersApi = response.data;
-                
+
                 })
                 .catch((error)=> {
                 });
