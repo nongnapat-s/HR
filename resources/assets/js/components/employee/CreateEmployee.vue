@@ -1091,7 +1091,7 @@
                 ref_id : '',
                 document_no : '',
                 pln : '',
-                prefix_id : '',
+                prefix_id : 2,
                 prefix_eng: '',
                 extra_prefix_id : '',
                 extra_prefix_eng : '',
@@ -1111,7 +1111,7 @@
                 apiRaces : null,
                 nation: '',
                 religion : '',
-                gender : '',
+                gender : 0,
                 genders : [
                     { value : '0' , label : 'หญิง'},
                     { value : '1' , label : 'ชาย'},
@@ -1139,7 +1139,7 @@
                     { value : '0' , label : 'ยังมีชีวิตอยู่' },
                     { value : '1' , label : 'ถึงแก่กรรม' },
                 ],
-                spouse_career: '',
+                spouse_career: 1,
                 spouse_marital_status: '',
                 father_prefix_id : '',
                 father_first_name : '',
@@ -1251,6 +1251,11 @@
                     return item.value == prefix_id
                 })
                 this.prefix_eng = (title.name_eng);
+            },
+            gender(gender){
+                this.prefixApi = '';
+                this.prefix_id = '';
+                this.prefix_eng = '';
             }
         },
         created() {
@@ -1263,13 +1268,13 @@
             .catch((error)=> {
             });
             // get careers
-            axios.get('get-list/career')
-            .then((response) => {
-                this.careersApi = response.data;
+                axios.get('get-list/career')
+                .then((response) => {
+                    this.careersApi = response.data;
                 
-            })
-            .catch((error)=> {
-            });
+                })
+                .catch((error)=> {
+                });
         },
         mounted() {
         },
@@ -1344,6 +1349,17 @@
                     this.contact_postcode = '';
                     this.contact_postcode_id = '';
                 }
+            },
+            updateTestGender(value,apiName){
+                this.prefixUrl = value == 0 ? 'prefix-female' : 'prefix-male';
+                axios.get('get-list/' + this.prefixUrl)
+
+                .then((response) => {
+                    this[apiName] = response.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
             },
             updateGender(value){
                 this.prefixUrl = value == 0 ? 'prefix-female' : 'prefix-male';

@@ -4,6 +4,7 @@
             <select class="form-control" 
                     :name = "name" 
                     @change = "selected"
+                    ref = "select"
             >
                 <option 
                     v-text = "option_start_name" 
@@ -15,9 +16,8 @@
                     :value = "option.value"
                     :key = "index"
                     v-text = "option.label"
-                    :selected  = "option.value == value"
                 ></option>
-
+          
             </select>
     </div>
 </template>
@@ -26,10 +26,15 @@
         props: {
             name : {require :true },
             label : { default : ''},
-            value : { default : ''},
+            value : { default : -1 },
             option_start_name : { default : ''},
             url: { require : false  },
             options: { default : ''},
+        },
+        mounted() {
+            if(this.value){
+                this.$refs.select.value = this.value;
+            }
         },
         methods : {
             selected($event) {
