@@ -1,6 +1,6 @@
 <template>
 <div class="form-group col-xs-12">
-    <label v-text = "label"></label>
+    <label>{{ label}}</label>
         <select class="form-control"
                 :name="name"
                 @change="$emit('input', $event.target.value)"
@@ -18,14 +18,14 @@
 </div>
 </template>
 <script>
-    export default {
-        props: {
-            name : {require :true },
-            label : { default : ''},
-            value : { require : false },
-            option_start_name : { default : ''},
-            url: { require : false  },
-            options: { default : ''},
-        }
+export default {
+    props: {
+        name : {require :true },
+        label : { default : ''},
+        value : { require : false },
+        option_start_name : { default : ''},
+        url: { require : false  },
+        options: { default : ''},
     }
+}
 </script>

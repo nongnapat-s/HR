@@ -4,11 +4,12 @@
             <panel title = "ข้อมูลพนักงาน">
                 <div class ="row">
                     <div class ="col-md-4">
+                        
                         <input-text
                             @update="(value) => employeeApi(value)"
-                            name = "ref_id"
+                            name = "emp_ref_id"
                             label = "รหัสพนักงาน :"
-                            v-model = "ref_id"
+                            v-model = "emp_ref_id"
                             pattern= "^100([0-9]{5})$"
                             error-text = "รหัสพนักงานไม่ถูกต้อง"
                             :required="true"
@@ -16,9 +17,9 @@
                      </div>
                     <div class ="col-md-4">
                         <input-text
-                            name = "document_no"
+                            name = "emp_document_no"
                             label = "เลขบัตรประชาชน :"
-                            v-model = "document_no"
+                            v-model = "emp_document_no"
                             pattern= "^([0-9]{13})$"
                             error-text="เลขบัตรประชาชนไม่ถูกต้อง"
                             :required="false"
@@ -28,11 +29,11 @@
                         <div class = "paddings">
                             <input-radio
                                 @update="(item,apiName) => updateGender(item,apiName)"
-                                name = "gender"
+                                name = "emp_gender"
                                 label = "เพศ :"
-                                v-model = "gender"
+                                v-model = "emp_gender"
                                 :options = "genders"
-                                api-name = "prefixApi"
+                                api-name = "empPrefixApi"
                             />
                         </div>
                     </div>
@@ -42,23 +43,23 @@
                         <input-select
                             label = "คำนำหน้าชื่อ : "
                             option_start_name = "เลือกคำนำหน้า"
-                            v-model = "prefix_id"
-                            name = "prefix_id"
-                            :options = "prefixApi"
+                            v-model = "emp_prefix_id"
+                            name = "emp_prefix_id"
+                            :options = "empPrefixApi"
                         ></input-select>
                     </div>
                     <div class ="col-md-4">
                         <input-text
-                            name = "extra_prefix_id"
+                            name = "emp_extra_prefix_id"
                             label = "ยศ/ตำแหน่ง :"
-                            v-model = "extra_prefix_id"
+                            v-model = "emp_extra_prefix_id"
                         ></input-text>
                     </div>
                     <div class ="col-md-4">
                         <input-text
-                            name = "position_id"
+                            name = "emp_position_id"
                             label = "ตำแหน่งทางวิชาการ :"
-                            v-model = "position_id"
+                            v-model = "emp_position_id"
                             :required="false"
                             :readonly="true"
                             ></input-text>
@@ -67,47 +68,47 @@
                 <div class="row">
                     <div class ="col-md-4">
                         <input-text
-                            name = "first_name"
+                            name = "emp_firstname"
                                     label = "ชื่อจริง :"
-                                    v-model = "first_name"
+                                    v-model = "emp_firstname"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "middle_name"
+                                    name = "emp_middlename"
                                     label = "ชื่อกลาง :"
-                                    v-model = "middle_name"
+                                    v-model = "emp_middlename"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "last_name"
+                                    name = "emp_lastname"
                                     label = "นามสกุล :"
-                                    v-model = "last_name"
+                                    v-model = "emp_lastname"
                                 ></input-text>
                             </div>
                         </div>
                         <div class = "row">
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "prefix_eng"
+                                    name = "emp_prefix_eng"
                                     label = "คำนำหน้าชื่อ (อังกฤษ):"
-                                    v-model = "prefix_eng"
+                                    v-model = "emp_prefix_eng"
                                     :readonly="true"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "extra_prefix_eng"
+                                    name = "emp_extra_prefix_eng"
                                     label = "ยศ/ตำแหน่ง (อังกฤษ):"
-                                    v-model = "extra_prefix_id"
+                                    v-model = "emp_extra_prefix_eng"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "position_eng_id"
+                                    name = "emp_position_eng_id"
                                     label = "ตำแหน่งทางวิชาการ (อังกฤษ) :"
-                                    v-model = "position_eng_id"
+                                    v-model = "emp_position_eng_id"
                                     :required="false"
                                 ></input-text>
                             </div>
@@ -115,32 +116,32 @@
                         <div class="row">
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "first_name_eng"
+                                    name = "emp_firstname_eng"
                                     label = "ชื่อจริง (อังกฤษ):"
-                                    v-model = "first_name_eng"
+                                    v-model = "emp_firstname_eng"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "middle_name_eng"
+                                    name = "emp_middlename_eng"
                                     label = "ชื่อกลาง (อังกฤษ):"
-                                    v-model = "middle_name_eng"
+                                    v-model = "emp_middlename_eng"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "last_name_eng"
+                                    name = "emp_lastname_eng"
                                     label = "นามสกุล (อังกฤษ):"
-                                    v-model = "last_name_eng"
+                                    v-model = "emp_lastname_eng"
                                 ></input-text>
                             </div>
                         </div>
                     <div class = "row">
                         <div class = "col-md-4">
                             <file-input
-                                name = "employee_file"
+                                name = "emp_image"
                                 label = "รูปถ่ายพนักงาน :"
-                                v-model= "employee_file"
+                                v-model= "emp_image"
                             >
                             </file-input>
                         </div>
@@ -171,17 +172,17 @@
                             <input-text
                                 label = "รหัสพนักงาน :"
                                 :disabled = "true"
-                                name = "ref_id_preview"
+                                name = "emp_ref_id_preview"
                             ></input-text>
                             <input-text
                                 label = "ชื่อ - นามสกุล :"
                                 :disabled = "true"
-                                name = "fullname_preview"
+                                name = "emp_name_preview"
                             ></input-text>
                             <input-text
                                 label = "ชื่อ - นามสกุล (อังกฤษ) :"
                                 :disabled = "true"
-                                name = "fullname_en_preview"
+                                name = "emp_name_eng_preview"
                             ></input-text>
                         </div>
                     </div>
@@ -199,30 +200,30 @@
                         <div class="row">
                             <div class ="col-md-4">
                                 <jquery-input-date
-                                    name = "dob_preview"
+                                    name = "emp_dob_preview"
                                     label = "วัน/เดือน/ปีเกิด :"
-                                    v-model = "dob_preview"
+                                    v-model = "emp_dob_preview"
                                     format="DD/MM/YYYY"
                                     mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
-                                    age-name = "age"
-                                    @update="(dob) => updateAge(dob)"
+                                    age-name = "emp_age"
+                                    @update="(dob,ageName) => updateAge(dob,ageName)"
                                 ></jquery-input-date>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "age"
+                                    name = "emp_age"
                                     label = "อายุ :"
-                                    v-model = "age"
+                                    v-model = "emp_age"
                                     :readonly="true"
                                 ></input-text>
                             </div>
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "nickname"
+                                    name = "emp_nickname"
                                     label = "ชื่อเล่น :"
-                                    v-model = "nickname"
+                                    v-model = "emp_nickname"
                                 ></input-text>
                             </div>
                         </div>
@@ -231,45 +232,45 @@
                                 <input-select
                                     label = "เชื้อชาติ : "
                                     option_start_name = "เลือกเชื้อชาติ"
-                                    v-model = "race"
-                                    name = "race"
-                                    :options = "apiRaces"
+                                    v-model = "emp_race"
+                                    name = "emp_race"
+                                    :options = "empApiRaces"
                                 ></input-select>
                             </div>
                             <div class ="col-md-4">
                                  <input-select
                                     label = "สัญชาติ : "
                                     option_start_name = "เลือกสัญชาติ"
-                                    v-model = "nation"
-                                    name = "nation"
-                                    :options = "apiRaces"
+                                    v-model = "emp_nation"
+                                    name = "emp_nation"
+                                    :options = "empApiRaces"
                                 ></input-select>
                             </div>
                             <div class ="col-md-4">
                                 <input-select
                                     label = "ศาสนา : "
                                     option_start_name = "เลือกศาสนา"
-                                    v-model = "religion"
+                                    v-model = "emp_religion"
                                     name = "religion"
-                                    :options = "apiRaces"
+                                    :options = "empApiRaces"
                                 ></input-select>
                             </div>
                         </div>
                         <div class="row">
                             <div class ="col-md-4">
                                 <input-text
-                                    name = "pln"
+                                    name = "emp_pln"
                                     label = "เลขใบประกอบโรคศิลป์ :"
-                                    v-model = "pln"
+                                    v-model = "emp_pln"
                                     :required="false"
                                 ></input-text>
                             </div>
                             <div class = "col-md-4">
                                 <div class = "paddings">
                                     <input-radio
-                                        name = "blood_group"
+                                        name = "emp_blood"
                                         label = "หมู่เลือด :"
-                                        v-model = "blood_group"
+                                        v-model = "emp_blood"
                                         :options = "blood_groups"
                                     />
                                 </div>
@@ -285,25 +286,25 @@
                         <div class = "row">
                             <div class ="col-md-4">
                                 <file-input
-                                    name = "id_card_file"
+                                    name = "emp_id_card"
                                     label = "สำเนาบัตรประชาชน :"
-                                    v-model= "id_card_file"
+                                    v-model= "emp_id_card"
                                 >
                                 </file-input>
                             </div>
                             <div class ="col-md-4">
                                 <file-input
-                                    name = "house_file"
+                                    name = "emp_house"
                                     label = "สำเนาทะเบียนบ้าน :"
-                                    v-model= "house_file"
+                                    v-model= "emp_house"
                                 >
                                 </file-input>
                             </div>
                             <div class ="col-md-4">
                                 <file-input
-                                    name = "rename_file"
+                                    name = "emp_rename"
                                     label = "สำเนาใบเปลี่ยนชื่อ :"
-                                    v-model= "rename_file"
+                                    v-model= "emp_rename"
                                 >
                                 </file-input>
                             </div>
@@ -311,25 +312,25 @@
                         <div class = "row">
                             <div class ="col-md-4">
                                 <file-input
-                                    name = "alien_file"
+                                    name = "emp_foreign"
                                     label = "สำเนาเอกสารใบต่างด้าว :"
-                                    v-model= "alien_file"
+                                    v-model= "emp_foreign"
                                 >
                                 </file-input>
                             </div>
                             <div class ="col-md-4">
                                 <file-input
-                                    name = "medicine_file"
+                                    name = "emp_medicine"
                                     label = "สำเนาใบอนุญาตประกอบโรคศิลป์ :"
-                                    v-model= "medicine_file"
+                                    v-model= "emp_medicine"
                                 >
                                 </file-input>
                             </div>
                             <div class ="col-md-4">
                                 <file-input
-                                    name = "soldier_file"
+                                    name = "emp_soldier"
                                     label = "สำเนาเอกสารทางทหาร :"
-                                    v-model= "soldier_file"
+                                    v-model= "emp_soldier"
                                 >
                                 </file-input>
                             </div>
@@ -337,24 +338,24 @@
                         <div class = "row">
                             <div class ="col-md-4">
                                 <file-input
-                                    name = "child_chertificate_file"
+                                    name = "emp_child_cher"
                                     label = "สำเนาใบรับรองบุตร :"
-                                    v-model= "child_chertificate_file"
+                                    v-model= "emp_child_cher"
                                 >
                                 </file-input>
                             </div>
                             <div class = "col-md-6">
                                 <div class="paddings">
                                     <input-radio
-                                        name = "marital_status"
+                                        name = "emp_marital_status"
                                         label = "สถานภาพการสมรส : "
-                                        v-model = "marital_status"
+                                        v-model = "emp_marital_status"
                                         :options = "marital_statuses"
                                     />
                                 </div>
                             </div>
                         </div>
-                        <div id="marital_form">
+                        <div id="emp_marital_form" style="display:none;">
                             <div class="row">
                                 <div class ="col-md-12">
                                     <input-line-label
@@ -388,9 +389,9 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "spouse_document_no"
+                                        name = "spouse_emp_document_no"
                                         label = "เลขบัตรประชาชน :"
-                                        v-model = "spouse_document_no"
+                                        v-model = "spouse_emp_document_no"
                                         pattern= "^([0-9]{13})$"
                                         error-text="เลขบัตรประชาชนไม่ถูกต้อง"
                                         :required="true"
@@ -409,9 +410,9 @@
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "spouse_id_card_file"
+                                        name = "spouse_id_card"
                                         label = "สำเนาบัตรประชาชน :"
-                                        v-model= "spouse_id_card_file"
+                                        v-model= "spouse_id_card"
                                     >
                                     </file-input>
                                 </div>
@@ -419,25 +420,25 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "spouse_house_file"
+                                        name = "spouse_house"
                                         label = "สำเนาทะเบียนบ้าน :"
-                                        v-model= "spouse_house_file"
+                                        v-model= "spouse_house"
                                     >
                                     </file-input>
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "spouse_rename_file"
+                                        name = "spouse_rename"
                                         label = "สำเนาใบเปลี่ยนชื่อ :"
-                                        v-model= "spouse_rename_file"
+                                        v-model= "spouse_rename"
                                     >
                                     </file-input>
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "marriage_file"
+                                        name = "spouse_marriage"
                                         label = "สำเนาทะเบียนสมรส/หย่าร้าง :"
-                                        v-model= "marriage_file"
+                                        v-model= "spouse_marriage"
                                     >
                                     </file-input>
                                 </div>
@@ -499,9 +500,9 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "child_document_no"
+                                        name = "child_emp_document_no"
                                         label = "เลขบัตรประชาชน :"
-                                        v-model = "child_document_no"
+                                        v-model = "child_emp_document_no"
                                         pattern= "^([0-9]{13})$"
                                         error-text="เลขบัตรประชาชนไม่ถูกต้อง"
                                         :required="true"
@@ -516,8 +517,8 @@
                                         mode = "BE"
                                         start-range= '2400'
                                         end-range = '3000'
-                                        age-name = "age"
-                                        @update="(dob) => updateChildAge(dob)"
+                                        age-name = "child_age"
+                                        @update="(dob,ageName) => updateAge(dob,ageName)"
                                     ></jquery-input-date>
                                 </div>
                                 <div class ="col-md-4">
@@ -557,7 +558,7 @@
                             <div class="row">
                                 <div class="col-md-12 ">
                                     <center>
-                                        <button type="button" class="btn btn-primary" @click="addChild()"><i class="fa fa-plus-circle"></i> เพิ่มข้อมูลบุตร/ธิดา</button>
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-plus-circle"></i> เพิ่มข้อมูลบุตร/ธิดา</button>
                                     </center>
                                 </div>
                             </div>
@@ -622,9 +623,9 @@
                             <div class = "row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "father_document_no"
+                                        name = "father_emp_document_no"
                                         label = "เลขบัตรประชาชน :"
-                                        v-model = "father_document_no"
+                                        v-model = "father_emp_document_no"
                                         pattern= "^([0-9]{13})$"
                                         error-text="เลขบัตรประชาชนไม่ถูกต้อง"
                                         :required="false"
@@ -640,9 +641,9 @@
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "father_id_card_file"
+                                        name = "father_id_card"
                                         label = "สำเนาบัตรประชาชน :"
-                                        v-model= "father_id_card_file"
+                                        v-model= "father_id_card"
                                     >
                                     </file-input>
                                 </div>
@@ -650,25 +651,25 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "father_house_file"
+                                        name = "father_house"
                                         label = "สำเนาทะเบียนบ้าน :"
-                                        v-model= "father_house_file"
+                                        v-model= "father_house"
                                     >
                                     </file-input>
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "father_rename_file"
+                                        name = "father_rename"
                                         label = "สำเนาใบเปลี่ยนชื่อ :"
-                                        v-model= "father_rename_file"
+                                        v-model= "father_rename"
                                     >
                                     </file-input>
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "father_marriage_file"
+                                        name = "father_marriage"
                                         label = "สำเนาทะเบียนสมรส/หย่าร้าง :"
-                                        v-model= "father_marriage_file"
+                                        v-model= "father_marriage"
                                     >
                                     </file-input>
                                 </div>
@@ -676,9 +677,9 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "child_file"
+                                        name = "father_child_cher"
                                         label = "สำเนาใบรับรองบุตร :"
-                                        v-model= "child_file"
+                                        v-model= "father_child_cher"
                                     >
                                     </file-input>
                                 </div>
@@ -726,9 +727,9 @@
                             <div class = "row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "mother_document_no"
+                                        name = "mother_emp_document_no"
                                         label = "เลขบัตรประชาชน :"
-                                        v-model = "mother_document_no"
+                                        v-model = "mother_emp_document_no"
                                         pattern= "^([0-9]{13})$"
                                         error-text="เลขบัตรประชาชนไม่ถูกต้อง"
                                         :required="false"
@@ -744,9 +745,9 @@
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "mother_id_card_file"
+                                        name = "mother_id_card"
                                         label = "สำเนาบัตรประชาชน :"
-                                        v-model= "mother_id_card_file"
+                                        v-model= "mother_id_card"
                                     >
                                     </file-input>
                                 </div>
@@ -754,25 +755,25 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "mother_house_file"
+                                        name = "mother_house"
                                         label = "สำเนาทะเบียนบ้าน :"
-                                        v-model= "mother_house_file"
+                                        v-model= "mother_house"
                                     >
                                     </file-input>
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "mother_rename_file"
+                                        name = "mother_rename"
                                         label = "สำเนาใบเปลี่ยนชื่อ :"
-                                        v-model= "mother_rename_file"
+                                        v-model= "mother_rename"
                                     >
                                     </file-input>
                                 </div>
                                 <div class ="col-md-4">
                                     <file-input
-                                        name = "mother_marriage_file"
+                                        name = "mother_marriage"
                                         label = "สำเนาทะเบียนสมรส/หย่าร้าง :"
-                                        v-model= "mother_marriage_file"
+                                        v-model= "mother_marriage"
                                     >
                                     </file-input>
                                 </div>
@@ -1044,10 +1045,14 @@
     .paddings{
         padding-top: 30px;
         padding-bottom: 30px;
+       
     }
     .tab-pane{
         padding-top: 25px;
         padding-bottom: 25px;
+        border: 1px solid #D2D0D0;
+        border-top:  0px;
+	    box-shadow:0 0 20px #D2D0D0;
     }
     @media (max-width: 1200px) {
     .row .col-md-4 > .pull-right {
@@ -1071,6 +1076,7 @@
     import FileInput from '../inputs/FileInputComponent.vue'
     import jqueryInputDate from '../inputs/JqueryInputDate.vue'
     import InputButton from '../inputs/InputButtonComponent.vue'
+    import InputSelectA from '../inputs/InputSelect.vue'
     import moment from 'moment';
     export default {
         components: {
@@ -1088,45 +1094,56 @@
             FileInput,
             jqueryInputDate,
             InputButton,
+            InputSelectA
         },
         data() {
             return {
-                ref_id : '',
-                document_no : '',
-                pln : '',
-                prefix_id : null,
-                prefix_eng: '',
-                extra_prefix_id : '',
-                extra_prefix_eng : '',
-                position_id : '',
-                position_eng_id : '',
-                first_name : '',
-                first_name_eng : '',
-                last_name : '',
-                last_name_eng : '',
-                middle_name : '',
-                middle_name_eng : '',
-                nickname: '',
-                dob_preview : '',
-                dob : '',
-                age : '',
-                race: '',
-                apiRaces : null,
-                nation: '',
-                religion : '',
-                gender : null,
+                emp_ref_id : '',
+                emp_document_no : '',
+                emp_gender : null,
+                emp_prefix_id : null,
+                emp_prefix_eng: '',
+                emp_extra_prefix_id : '',
+                emp_extra_prefix_eng : '',
+                emp_position_id : '',
+                emp_position_eng_id : '',
+                emp_firstname : '',
+                emp_firstname_eng : '',
+                emp_lastname : '',
+                emp_lastname_eng : '',
+                emp_middlename : '',
+                emp_middlename_eng : '',
+                emp_image : '',
+                emp_dob_preview : '',
+                emp_dob : '',
+                emp_age : '',
+                emp_nickname: '',
+                emp_race: '',
+                empApiRaces : null,
+                emp_nation: '',
+                emp_religion : '',
+                emp_pln : '',
+                emp_blood : '',
+                emp_id_card : '',
+                emp_house : '',
+                emp_rename : '',
+                emp_foreign : '',
+                emp_medicine : '',
+                emp_soldier : '',
+                emp_child_cher : '',
+                emp_marital_status : '',
+                empPrefixApi : '',
+                empApiRaces : '',
                 genders : [
                     { value : '0' , label : 'หญิง'},
                     { value : '1' , label : 'ชาย'},
                 ],
-                blood_group : '',
                 blood_groups : [
                     { value : '0' , label : 'A' },
                     { value : '1' , label : 'B' },
                     { value : '2' , label : 'O' },
                     { value : '3' , label : 'AB' },
                 ],
-                marital_status : '',
                 marital_statuses : [
                     { value : '0' , label : 'โสด' },
                     { value : '1' , label : 'สมรส' },
@@ -1136,19 +1153,19 @@
                 spouse_prefix_id : '',
                 spouse_first_name : '',
                 spouse_last_name : '',
-                spouse_document_no : '',
+                spouse_emp_document_no : '',
                 spouse_status : '',
                 statuses : [
                     { value : '0' , label : 'ยังมีชีวิตอยู่' },
                     { value : '1' , label : 'ถึงแก่กรรม' },
                 ],
-                spouse_career: '',
+                spouse_career: null,
                 spouse_marital_status: '',
                 father_prefix_id : '',
                 father_first_name : '',
                 father_last_name : '',
-                father_document_no : '',
-                father_career : '',
+                father_emp_document_no : '',
+                father_career : null,
                 father_status : '',
                 father_marital_status :  '',
                 house_no : '',
@@ -1200,33 +1217,26 @@
                     { value : '#honor_menu' , label : 'ประวัติเกียรติยศ', icon : 'fa fa-trophy', class : ''},
                     { value : '#manager_menu' , label : 'ตำแหน่งบริหาร', icon : 'fa fa-handshake-o', class : ''},
                 ],
-                id_card_file : '',
-                house_file : '',
-                rename_file : '',
-                medicine_file : '',
-                soldier_file : '',
-                alien_file : '',
-                spouse_id_card_file : '',
-                spouse_house_file : '',
-                spouse_rename_file : '',
-                marriage_file : '',
-                father_id_card_file : '',
-                father_house_file : '',
-                father_rename_file : '',
-                father_marriage_file : '',
-                child_file : '',
+                spouse_id_card : '',
+                spouse_house : '',
+                spouse_rename : '',
+                spouse_marriage : '',
+                father_id_card : '',
+                father_house : '',
+                father_rename : '',
+                father_marriage : '',
+                father_child_cher : '',
                 mother_prefix_id : '',
                 mother_first_name : '',
                 mother_last_name : '',
-                mother_document_no : '',
+                mother_emp_document_no : '',
                 mother_career : '',
                 mother_status : '',
-                mother_id_card_file : '',
-                mother_house_file : '',
-                mother_rename_file : '',
-                mother_marriage_file : '',
+                mother_id_card : '',
+                mother_house : '',
+                mother_rename : '',
+                mother_marriage : '',
                 mother_marital_status :  '',
-                employee_file : '',
                 phone : '',
                 office_telephone : '',
                 mahidol_email : '',
@@ -1235,51 +1245,55 @@
                 child_prefix_id: '',
                 child_first_name : '',
                 child_last_name: '',
-                child_document_no: '',
+                child_emp_document_no: '',
                 child_dob:'',
                 child_dob_preview : '',
                 child_marital_status: '',
-                prefixApi : '',
                 prefixUrl : '',
-                child_chertificate_file : '',
+                child_chertificate : '',
                 child_gender : '',
                 child_age : '',
                 childPrefixApi : '',
-
             }
         },
         watch:{
-            prefix_id(prefix_id){
-                if (prefix_id !== ''){
+            emp_prefix_id(emp_prefix_id){
+                if (emp_prefix_id !== ''){
                     let title = this.prefixApi.find((item) => {
-                        return item.value == prefix_id
+                        return item.value == emp_prefix_id
                     })
-                    this.prefix_eng = (title.name_eng);
+                    this.emp_prefix_eng = (title.name_eng);
                 }
             },
-            gender(gender){
-                this.prefixApi = '';
-                this.prefix_id = '';
-                this.prefix_eng = '';
+            emp_gender(emp_gender){
+                this.empPrefixApi = '';
+                this.emp_prefix_id = '';
+                this.emp_prefix_eng = '';
+            },
+            emp_marital_status(emp_marital_status){
+                if (emp_marital_status == '' || emp_marital_status == 0){
+                    $('#emp_marital_form').slideUp('slow'); 
+                }else{
+                    $('#emp_marital_form').slideDown('slow'); 
+                }
             }
+
         },
         created() {
               // get defautl prefix filter by genders
             axios.get('get-list/prefix-female')
-            .then((response) => {
-                this.prefixApi = response.data;
-                this.childPrefixApi = response.data;
-            })
-            .catch((error)=> {
-            });
+                .then((response) => {
+                    this.prefixApi = response.data;
+                    this.childPrefixApi = response.data;
+                })
+                .catch((error)=> { console.log(error) });
             // get careers
-                axios.get('get-list/career')
+            axios.get('get-list/career')
                 .then((response) => {
                     this.careersApi = response.data;
 
                 })
-                .catch((error)=> {
-                });
+                .catch((error)=> { console.log(error) });
         },
         mounted() {
         },
@@ -1301,13 +1315,13 @@
 	            this.contact_postcode = location[0];
             },
             employeeApi(value){
-               this.ref_id = value
+               this.emp_ref_id = value
                axios.post('/get-user',{
-                   id : this.ref_id
+                   id : this.emp_ref_id
                })
                .then((response) => {
                     console.log(response);
-                    this.document_no = response.data.document_id;
+                    this.emp_document_no = response.data.document_id;
                     let name = response.data.name.split(' ');
                     if (name.length == 3 ){
                         this.first_name = name[0];
@@ -1367,33 +1381,11 @@
                     });
                 }
             },
-            updateAge(dob,age){
+            updateAge(dob,ageName){
                 var current_year = moment().format('YYYY');
                 var age = dob.split('/');
                 this.dob = dob;
-                this.age = current_year - age[2] + ' ปี';
-            },
-            updateChildAge(dob,age){
-                var current_year = moment().format('YYYY');
-                var age = dob.split('/');
-                this.dob = dob;
-                this.child_age = current_year - age[2] + ' ปี';
-            },
-            addChild: function(){
-                var table = document.getElementById("childs");
-                var row = table.insertRow(-1);
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                var cell4 = row.insertCell(3);
-                var cell5 = row.insertCell(4);
-                var cell6 = row.insertCell(5);
-                cell1.innerHTML = "<center>3</center>";
-                cell2.innerHTML = this.child_prefix_id;
-                cell3.innerHTML = "12345678955";
-                cell4.innerHTML = "12/12/1912";
-                cell5.innerHTML = "100 ปี";
-                cell6.innerHTML = "โสด";
+                this[ageName] = current_year - age[2] + ' ปี';
             },
         }
     }

@@ -9,7 +9,7 @@
     height: 35px;
     line-height: 35px;
     background: rgb(236, 247, 255);
-    padding: 0 10px;
+    padding: 0 4px;
     color: black;
     text-decoration: none;
 }
@@ -18,7 +18,8 @@ ul{
 }
 .scrtabs-tab-scroll-arrow {
   border-top: 1px solid #dddddd;
-  height: 40px;
+  height: 36px;
+  padding-top: 10px;
 }
 </style>
 

@@ -22,6 +22,7 @@ export default {
         format : { default : 'DD/MM/YYYY'},
         minYear: { default : 1940 },
         maxYear: { default : 2020 },
+        ageName : { default : ''}
     },
     data() { return { value : '' } },
     mounted() {
@@ -32,7 +33,7 @@ export default {
             yearOffset:543,
             onSelectDate:(pickedDate) =>{
                 this.$emit('input', this.$refs.input_date.value);
-                this.$emit('update', pickedDate.toLocaleDateString());
+                this.$emit('update', pickedDate.toLocaleDateString(),this.ageName);
             }
         });
     },
