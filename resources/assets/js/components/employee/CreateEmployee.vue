@@ -27,11 +27,12 @@
                     <div class = "col-md-4">
                         <div class = "paddings">
                             <input-radio
-                                @update="(item) => updateGender(item)"
+                                @update="(item,apiName) => updateGender(item,apiName)"
                                 name = "gender"
                                 label = "เพศ :"
                                 v-model = "gender"
                                 :options = "genders"
+                                api-name = "prefixApi"
                             />
                         </div>
                     </div>
@@ -45,24 +46,6 @@
                             name = "prefix_id"
                             :options = "prefixApi"
                         ></input-select>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-select-a
-                            label = "คำนำหน้าชื่อ : "
-                            option_start_name = "เลือกคำนำหน้า"
-                            v-model = "prefix_id"
-                            name = "prefix_id"
-                            :options = "prefixApi"
-                        ></input-select-a>
-                    </div>
-                    <div class ="col-md-4">
-                        <input-select-a
-                            label = "อาชีพ : "
-                            option_start_name = "เลือกอาชีพ"
-                            v-model = "spouse_career"
-                            name = "spouse_career"
-                            :options = "careersApi"
-                        ></input-select-a>
                     </div>
                     <div class ="col-md-4">
                         <input-text
@@ -161,6 +144,7 @@
                             >
                             </file-input>
                         </div>
+                        - สถานภาพการปฏิบัติงาน
                     </div>
                     <div class ="row">
                         <div class = "col-md-12">
@@ -550,11 +534,12 @@
                                 <div class = "col-md-4">
                                     <div class = "padding-row">
                                         <input-radio
-                                            @update="(item) => updateChildGender(item)"
+                                            @update="(item,apiName) => updateGender(item,apiName)"
                                             name = "child_gender"
                                             label = "เพศ :"
                                             v-model = "child_gender"
                                             :options = "genders"
+                                            api-name = "childPrefixApi"
                                         />
                                     </div>
                                 </div>
@@ -1087,7 +1072,6 @@
     import jqueryInputDate from '../inputs/JqueryInputDate.vue'
     import InputButton from '../inputs/InputButtonComponent.vue'
     import moment from 'moment';
-    import InputSelectA from '../inputs/InputSelect.vue'
     export default {
         components: {
             Panel,
@@ -1104,7 +1088,6 @@
             FileInput,
             jqueryInputDate,
             InputButton,
-            InputSelectA
         },
         data() {
             return {
@@ -1131,7 +1114,7 @@
                 apiRaces : null,
                 nation: '',
                 religion : '',
-                gender : 0,
+                gender : null,
                 genders : [
                     { value : '0' , label : 'หญิง'},
                     { value : '1' , label : 'ชาย'},
@@ -1159,7 +1142,7 @@
                     { value : '0' , label : 'ยังมีชีวิตอยู่' },
                     { value : '1' , label : 'ถึงแก่กรรม' },
                 ],
-                spouse_career: 3,
+                spouse_career: '',
                 spouse_marital_status: '',
                 father_prefix_id : '',
                 father_first_name : '',
@@ -1267,10 +1250,12 @@
         },
         watch:{
             prefix_id(prefix_id){
-                let title = this.prefixApi.find((item) => {
-                    return item.value == prefix_id
-                })
-                this.prefix_eng = (title.name_eng);
+                if (prefix_id !== ''){
+                    let title = this.prefixApi.find((item) => {
+                        return item.value == prefix_id
+                    })
+                    this.prefix_eng = (title.name_eng);
+                }
             },
             gender(gender){
                 this.prefixApi = '';
@@ -1370,38 +1355,17 @@
                     this.contact_postcode_id = '';
                 }
             },
-            updateTestGender(value,apiName){
-                this.prefixUrl = value == 0 ? 'prefix-female' : 'prefix-male';
-                axios.get('get-list/' + this.prefixUrl)
-
-                .then((response) => {
-                    this[apiName] = response.data;
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-            },
-            updateGender(value){
-                this.prefixUrl = value == 0 ? 'prefix-female' : 'prefix-male';
-                axios.get('get-list/' + this.prefixUrl)
-
-                .then((response) => {
-                    this.prefixApi = response.data;
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-            },
-            updateChildGender(value){
-                this.prefixUrl = value == 0 ? 'prefix-female' : 'prefix-male';
-                axios.get('get-list/' + this.prefixUrl)
-
-                .then((response) => {
-                    this.childPrefixApi = response.data;
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+            updateGender(value,apiName){
+                if (apiName!== ''){
+                    this.url = value == 0 ? 'prefix-female' : 'prefix-male';
+                    axios.get('get-list/' + this.url)
+                    .then((response) => {
+                        this[apiName] = response.data;
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+                }
             },
             updateAge(dob,age){
                 var current_year = moment().format('YYYY');

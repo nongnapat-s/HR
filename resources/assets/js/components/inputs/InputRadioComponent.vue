@@ -9,7 +9,7 @@
                 @click="onClick"
                 @dblclick="unClick"
                 :value = "option.value"
-                :checked = "option.value === value"/>  
+                :checked="value == option.value"/>
             <div class="state">
                 <label
                     v-text = "option.label">
@@ -21,11 +21,17 @@
 <script>
     import 'pretty-checkbox/src/pretty-checkbox.scss';
     export default {
-        props: ['name', 'label', 'options','value'],
+        props: {
+            name : { default : ''},
+            label : { default : ''},
+            options : { default : ''},
+            value : { default : ''},
+            apiName : { default : ''}
+        },
         methods : {
             onClick: function($event){
                 this.$emit('input', $event.target.value)
-                this.$emit('update', $event.target.value)
+                this.$emit('update', $event.target.value,this.apiName);
             },
             unClick:function(){
                 this.$emit('input','');
