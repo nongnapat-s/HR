@@ -3,7 +3,7 @@
         background-color:#e6e6ff;
     }
     .panel-relative{
-        position: relative;
+        position: top;
     }
     .content {
         background-color: #fcfcfc;
@@ -14,15 +14,14 @@
 </style>
 <template>
     <div class="panel panel-info">
-        <div class="panel-heading text-center panel-relative">    
-            <h4 
-                v-text = "title">
-            </h4>
+        <div  class="panel-heading text-center panel-relative">    
+           <div style = "font-size : 18px;" v-text="title"></div>
         </div>
         <div class="panel-body">
             <slot></slot>
         </div>
     </div>
+ 
 </template>
 <script>
     export default {
