@@ -168,7 +168,7 @@
                                         name = "emp_work_date"
                                         label = "วัน/เดือน/ปี :"
                                         v-model = "emp_work_date"
-                                        format="DD/MM/YYYY"
+                                        format="d/m/Y"
                                         mode = "BE"
                                         start-range= '2400'
                                         end-range = '3000'
@@ -223,7 +223,7 @@
                                     name = "emp_dob_preview"
                                     label = "วัน/เดือน/ปีเกิด :"
                                     v-model = "emp_dob_preview"
-                                    format="DD/MM/YYYY"
+                                    format="d/m/Y"
                                     mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
@@ -533,7 +533,7 @@
                                         name = "child_dob_preview"
                                         label = "วัน/เดือน/ปีเกิด :"
                                         v-model = "child_dob_preview"
-                                        format="DD/MM/YYYY"
+                                        format="d/m/Y"
                                         mode = "BE"
                                         start-range= '2400'
                                         end-range = '3000'
@@ -1084,7 +1084,7 @@
                         <div class="row">
                             <div class ="col-md-12">
                                 <input-line-label
-                                    label = "ข้อมูลการทำงานปัจุบัน"
+                                    label = "ข้อมูลการทำงาน"
                                 ></input-line-label>
                             </div>
                         </div>
@@ -1125,12 +1125,12 @@
                                     v-model = "emp_position_frame"
                                 ></input-text>
                             </div>
-                            <div class ="col-md-4">
+                            <!-- <div class ="col-md-4">
                                 <jquery-input-date
                                     name = "emp_work_date"
                                     label = "วันที่บรรจุ :"
                                     v-model = "emp_work_date"
-                                    format="DD/MM/YYYY"
+                                    format="d/m/Y"
                                     mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
@@ -1142,7 +1142,7 @@
                                     name = "emp_work_date"
                                     label = "วันที่โอนย้าย:"
                                     v-model = "emp_work_date"
-                                    format="DD/MM/YYYY"
+                                    format="d/m/Y"
                                     mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
@@ -1156,7 +1156,7 @@
                                     name = "emp_work_date"
                                     label = "วันที่บรรจุเป็นอาจารย์ :"
                                     v-model = "emp_work_date"
-                                    format="DD/MM/YYYY"
+                                    format="d/m/Y"
                                     mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
@@ -1168,7 +1168,7 @@
                                     name = "emp_work_date"
                                     label = "วันที่มีมติรับเป็นอาจารย์ภาควิชาฯ :"
                                     v-model = "emp_work_date"
-                                    format="DD/MM/YYYY"
+                                    format="d/m/Y"
                                     mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
@@ -1180,29 +1180,78 @@
                                     name = "emp_work_date"
                                     label = "วันที่เกษียณอายุ:"
                                     v-model = "emp_work_date"
-                                    format="DD/MM/YYYY"
+                                    format="d/m/Y"
                                     mode = "BE"
                                     start-range= '2400'
                                     end-range = '3000'
                                     age-name = "emp_work_date"
                                 ></jquery-input-date>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="row">
                             <div class ="col-md-12">
                                 <input-line-label
-                                    label = "ประวัติการทำงาน"
+                                    label = "สถานที่ปฏิบัติงาน"
                                 ></input-line-label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class ="col-md-12">
-                                <input-line-label
-                                    label = "ประวัติการจ้างงาน"
-                                ></input-line-label>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-select
+                                    label = "หน่วยงาน : "
+                                    option_start_name = "เลือกหน่วยงาน"
+                                    v-model = "emp_unit_id"
+                                    name = "emp_unit_id"
+                                    :options = "empUnitApi"
+                                ></input-select>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-select
+                                    label = "หน่วยงานย่อย : "
+                                    option_start_name = "เลือกหน่วยงานย่อย"
+                                    v-model = "emp_subunit_id"
+                                    name = "emp_subunit_id"
+                                    :options = "empSubunitApi"
+                                ></input-select>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-select
+                                    label = "สถานที่ปฏิบัติงาน : "
+                                    option_start_name = "เลือกสถานที่ปฏิบัติงาน"
+                                    v-model = "emp_work_place_id"
+                                    name = "emp_work_place_id"
+                                    :options = "empWorkPlaceApi"
+                                ></input-select>
                             </div>
                         </div>
-                        
+                        <div class = "row">
+                            <div class ="col-md-2 col-xs-4">
+                                <jquery-input-date
+                                    name = "emp_work_start"
+                                    label = "เวลาเริ่มปฏิบัติงาน :"
+                                    v-model = "emp_work_start"
+                                    format="H:i"
+                                    mode = "BE"
+                                    :datepicker = "false"
+                                    :timepicker="true"
+                                ></jquery-input-date>
+                            </div>
+                            <div class="col-md-3 col-xs-6 col-md-push-0 col-xs-push-0">
+                                <div class = "col-md-1 col-xs-1 paddings"> - </div>
+                                    <div class ="col-md-9 col-xs-9">
+                                        <jquery-input-date
+                                            name = "emp_work_end"
+                                            label = "เวลาเลิกปฏิบัติงาน :"
+                                            v-model = "emp_work_end"
+                                            format="H:i"
+                                            mode = "BE"
+                                            :datepicker = "false"
+                                            :timepicker="true"
+                                        ></jquery-input-date>
+                                    </div>
+                            </div>                
+                        </div>
+
                     </div>
                     <div id="education_menu" class="tab-pane fade">
                         test
