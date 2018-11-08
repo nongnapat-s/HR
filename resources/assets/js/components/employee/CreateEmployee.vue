@@ -390,6 +390,18 @@
                                         name = "emp_work_subtype"
                                     ></input-select>
                                 </div>
+                                <div class = "col-md-4">
+                                    <jquery-input-date
+                                        name = "emp_unemploy_date"
+                                        label = "วันที่พ้นสภาพ :"
+                                        v-model = "emp_unemploy_date"
+                                        format="d/m/Y"
+                                        mode = "BE"
+                                        start-range= '2400'
+                                        end-range = '3000'
+                                        age-name = "emp_unemploy_date"
+                                    ></jquery-input-date>
+                                </div>
                         </div>
                     </div>
                     <div id="profile_menu" class="tab-pane fade in active" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
@@ -687,106 +699,107 @@
                         </div>
                         <div class = "row">
                             <div class = "col-md-12 col-sm-11 col-xs-11">
-                                <div id = "child_form" class="col-centered collapse" style="width: 97.5%;border: 1px solid #b3b3b3;border-radius: 8px;border-style :dashed;">
-                                    <br/>
-                                <div class="row">
-                                    <div class ="col-md-4">
-                                        <input-select
-                                            label = "คำนำหน้าชื่อ : "
-                                            option_start_name = "เลือกคำนำหน้า"
-                                            v-model = "child_prefix_id"
-                                            name = "child_prefix_id"
-                                            :options = "childPrefixApi"
-                                        ></input-select>
-                                    </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "child_first_name"
-                                            label = "ชื่อ :"
-                                            v-model = "child_first_name"
-                                        ></input-text>
-                                    </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "child_last_name"
-                                            label = "นามสกุล :"
-                                            v-model = "child_last_name"
-                                        ></input-text>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class = "col-md-4">
-                                        <div class = "paddings">
-                                        <input-radio
-                                            @update="(item,apiName) => updateGender(item,apiName)"
-                                            name = "child_gender"
-                                            label = "เลือกเพศ :"
-                                            v-model = "child_gender"
-                                            :options = "genders"
-                                            api-name = "childPrefixApi"
-                                        />
+                                <form-dashed
+                                    id = "child_form"
+                                >
+                                    <div class="row">
+                                        <div class ="col-md-4">
+                                            <input-select
+                                                label = "คำนำหน้าชื่อ : "
+                                                option_start_name = "เลือกคำนำหน้า"
+                                                v-model = "child_prefix_id"
+                                                name = "child_prefix_id"
+                                                :options = "childPrefixApi"
+                                            ></input-select>
+                                        </div>
+                                        <div class ="col-md-4">
+                                            <input-text
+                                                name = "child_first_name"
+                                                label = "ชื่อ :"
+                                                v-model = "child_first_name"
+                                            ></input-text>
+                                        </div>
+                                        <div class ="col-md-4">
+                                            <input-text
+                                                name = "child_last_name"
+                                                label = "นามสกุล :"
+                                                v-model = "child_last_name"
+                                            ></input-text>
                                         </div>
                                     </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "child_document_no"
-                                            label = "เลขบัตรประชาชน :"
-                                            v-model = "child_document_no"
-                                            pattern= "^([0-9]{13})$"
-                                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
-                                            :required="true"
-                                        ></input-text>
+                                    <div class="row">
+                                        <div class = "col-md-4">
+                                            <div class = "paddings">
+                                            <input-radio
+                                                @update="(item,apiName) => updateGender(item,apiName)"
+                                                name = "child_gender"
+                                                label = "เลือกเพศ :"
+                                                v-model = "child_gender"
+                                                :options = "genders"
+                                                api-name = "childPrefixApi"
+                                            />
+                                            </div>
+                                        </div>
+                                        <div class ="col-md-4">
+                                            <input-text
+                                                name = "child_document_no"
+                                                label = "เลขบัตรประชาชน :"
+                                                v-model = "child_document_no"
+                                                pattern= "^([0-9]{13})$"
+                                                error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                                :required="true"
+                                            ></input-text>
+                                        </div>
+                                        <div class ="col-md-4">
+                                            <input-text
+                                                name = "child_passport_no"
+                                                label = "เลขหนังสือเดินทาง :"
+                                                v-model = "child_passport_no"
+                                                error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                            ></input-text>
+                                        </div>
                                     </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "child_passport_no"
-                                            label = "เลขหนังสือเดินทาง :"
-                                            v-model = "child_passport_no"
-                                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
-                                        ></input-text>
+                                    <div class = "row">
+                                        <div class ="col-md-4">
+                                            <jquery-input-date
+                                                name = "child_dob_preview"
+                                                label = "วัน/เดือน/ปีเกิด :"
+                                                v-model = "child_dob_preview"
+                                                format="d/m/Y"
+                                                mode = "BE"
+                                                start-range= '2400'
+                                                end-range = '3000'
+                                                age-name = "child_age"
+                                                @update="(dob,ageName) => updateAge(dob,ageName)"
+                                            ></jquery-input-date>
+                                        </div>
+                                        <div class ="col-md-4">
+                                            <file-input
+                                                name = "child_id_card"
+                                                label = "สำเนาบัตรประชาชน :"
+                                                v-model= "child_id_card"
+                                            >
+                                            </file-input>
+                                        </div>
+                                        <div class ="col-md-4">
+                                            <file-input
+                                                name = "child_cher"
+                                                label = "สำเนาใบรับรองบุตร :"
+                                                v-model= "child_cher"
+                                            >
+                                            </file-input>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class = "row">
-                                    <div class ="col-md-4">
-                                        <jquery-input-date
-                                            name = "child_dob_preview"
-                                            label = "วัน/เดือน/ปีเกิด :"
-                                            v-model = "child_dob_preview"
-                                            format="d/m/Y"
-                                            mode = "BE"
-                                            start-range= '2400'
-                                            end-range = '3000'
-                                            age-name = "child_age"
-                                            @update="(dob,ageName) => updateAge(dob,ageName)"
-                                        ></jquery-input-date>
+                                    <div class = "row">
+                                        <input-button 
+                                            label = "เพิ่มข้อมูล"
+                                            buttonClass = "btn btn-success"
+                                            iconClass = "fa fa-save"
+                                        ></input-button>
                                     </div>
-                                    <div class ="col-md-4">
-                                        <file-input
-                                            name = "child_id_card"
-                                            label = "สำเนาบัตรประชาชน :"
-                                            v-model= "child_id_card"
-                                        >
-                                        </file-input>
-                                    </div>
-                                    <div class ="col-md-4">
-                                        <file-input
-                                            name = "child_cher"
-                                            label = "สำเนาใบรับรองบุตร :"
-                                            v-model= "child_cher"
-                                        >
-                                        </file-input>
-                                    </div>
-                                </div>
-                                <div class = "row">
-                                    <input-button 
-                                        label = "เพิ่มข้อมูล"
-                                        buttonClass = "btn btn-success"
-                                        iconClass = "fa fa-save"
-                                    ></input-button>
-                                 </div>
+                                </form-dashed>
                             </div>
                         </div>
-                    </div>
                     <div class = "col-md-12 col-centered">
                     <table class="table table-bordered" id = "childs">
                         <thead>
@@ -1506,6 +1519,101 @@
                     <div id="education_menu" class="tab-pane fade">
                         test
                     </div>
+                    <div id = "insignia_menu" class = "tab-pane fade">
+                        <div class = "row">
+                            <div class = "col-md-2 col-sm-2 col-xs-2">
+                            <input-button 
+                                label = "เพิ่มข้อมูลการรับเครื่องราชอิสริยาภรณ์"
+                                iconClass = "fa fa-plus-circle"
+                                data-toggle="collapse" 
+                                data-target="#insignia_form"
+                            ></input-button>
+                            </div>
+                        </div>
+                         <div class = "row">
+                            <div class = "col-md-12 col-sm-11 col-xs-11">
+                                <form-dashed
+                                    id = "insignia_form"
+                                
+                                >
+                                    <div class = "row">
+                                        <div class="col-md-4">
+                                            <input-text
+                                                name = "insignai_name"
+                                                label = "ชื่อเครื่องราชอิสริยาภรณ์ :"
+                                                v-model = "insignai_name"
+                                            ></input-text>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input-text
+                                                name = "insignai_initial_name"
+                                                label = "ชื่อย่อเครื่องราชอิสริยาภรณ์ :"
+                                                v-model = "insignai_initial_name"
+                                            ></input-text>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input-text
+                                                name = "insignai_position"
+                                                label = "ตำแหน่งที่ได้รับ :"
+                                                v-model = "insignai_position"
+                                            ></input-text>
+                                        </div>
+                                    </div>
+                                    <div class = "row">
+                                        <div class="col-md-4">
+                                            <input-text
+                                                name = "insignai_lavel"
+                                                label = "ระดับ :"
+                                                v-model = "insignai_lavel"
+                                            ></input-text>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input-text
+                                                name = "insignai_grade"
+                                                label = "ขั้น :"
+                                                v-model = "insignai_grade"
+                                            ></input-text>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <jquery-input-date
+                                                name = "insignai_receive_date"
+                                                label = "วันที่ได้รับ :"
+                                                v-model = "insignai_receive_date"
+                                                format="d/m/Y"
+                                                mode = "BE"
+                                                start-range= '2400'
+                                                end-range = '3000'
+                                                age-name = "insignai_receive_date"
+                                            ></jquery-input-date>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <jquery-input-date
+                                                name = "insignai_return_date"
+                                                label = "วันที่ได้รับ :"
+                                                v-model = "insignai_return_date"
+                                                format="d/m/Y"
+                                                mode = "BE"
+                                                start-range= '2400'
+                                                end-range = '3000'
+                                                age-name = "insignai_return_date"
+                                            ></jquery-input-date>
+                                        </div>
+                                    </div>
+                                    <div class = "row">
+                                        <div class = "row">
+                                            <input-button 
+                                                label = "เพิ่มข้อมูล"
+                                                buttonClass = "btn btn-success"
+                                                iconClass = "fa fa-save"
+                                            ></input-button>
+                                        </div>
+                                    </div>
+                                </form-dashed>
+                            </div>
+                        </div>
+                    </div>
                     <div id="honor_menu" class="tab-pane fade">
                         <div class = "row">
                             <div class = "col-md-2 col-sm-2 col-xs-2">
@@ -1519,8 +1627,9 @@
                         </div>
                         <div class = "row">
                             <div class = "col-md-12 col-sm-11 col-xs-11">
-                                <div id = "honor_form" class="col-centered collapse" style="width: 97.5%;border: 1px solid #b3b3b3;border-radius: 8px;border-style :dashed;">
-                                    <br/>
+                                <form-dashed
+                                    id = "honor_form"
+                                >
                                         <div class = "row">
                                             <div class = "col-md-4">
                                                 <input-text
@@ -1573,7 +1682,7 @@
                                                 iconClass = "fa fa-save"
                                             ></input-button>
                                         </div>
-                                </div>
+                                </form-dashed>
                             </div>
                         </div>
                         <div class = "col-md-12 col-centered">
@@ -1670,6 +1779,7 @@
     import jqueryInputDate from '../inputs/JqueryInputDate.vue'
     import InputButton from '../inputs/InputButtonComponent.vue'
     import InputSelectA from '../inputs/InputSelect.vue'
+    import FormDashed from '../inputs/FormDashed.vue'
     import InputTable from '../inputs/InputTableComponent.vue'
     import moment from 'moment';
     export default {
@@ -1690,6 +1800,7 @@
             InputButton,
             InputSelectA,
             InputTable,
+            FormDashed,
         },
         data() {
             return {
@@ -1712,7 +1823,7 @@
                 emp_work_status : '',
                 emp_work_type :  '',
                 emp_work_subtype : '',
-                emp_work_date : '',
+                emp_unemploy_date : '',
                 emp_dob_preview : '',
                 emp_dob : '',
                 emp_age : '',
@@ -1909,7 +2020,14 @@
                 ],
                 childsData : [
                     { id : '1' , prefix_id : 'นางสาว' , first_name : 'นงนภัส' , last_name : 'สำแดงเดช', document_id : '1100800997121', passport_no : '1100800997121', child_dob: '12/09/1994', child_gender : '0'}
-                ]
+                ],
+                insignai_name : '',
+                insignai_initial_name : '',
+                insignai_position : '',
+                insignai_lavel : '',
+                insignai_grade : '',
+                insignai_receive_date : '',
+                insignai_return_date : '',
 
             }
         },
