@@ -605,7 +605,7 @@
                                 <div class = "col-md-4">
                                  <jquery-input-date
                                         name = "spouse_marriage_date"
-                                        label = "วันที่สมรส :"
+                                        label = "วันที่สมรส/หย่าร้าง :"
                                         v-model = "spouse_marriage_date"
                                         format="d/m/Y"
                                         mode = "BE"
@@ -616,7 +616,7 @@
                                 <div class ="col-md-4">
                                     <input-text
                                         name = "spouse_marriage_no"
-                                        label = "เลขที่ใบสมรส :"
+                                        label = "เลขที่ใบสมรส/หย่าร้าง :"
                                         v-model = "spouse_marriage_no"
                                     ></input-text>
                                 </div>
@@ -676,136 +676,146 @@
                                 </div>
                             </div>
                             <div class = "row">
-                                <div class = "col-md-4">
-                                    <div class = "padding">
-                                    <input-radio
-                                        @update="(item,apiName) => updateGender(item,apiName)"
-                                        name = "child_gender"
-                                        label = "เลือกเพศ :"
-                                        v-model = "child_gender"
-                                        :options = "genders"
-                                        api-name = "childPrefixApi"
-                                    />
+                            <div class = "col-md-2 col-sm-2 col-xs-2">
+                            <input-button 
+                                label = "เพิ่มข้อมูลบุตร/ธิดา"
+                                iconClass = "fa fa-plus-circle"
+                                data-toggle="collapse" 
+                                data-target="#child_form"
+                            ></input-button>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-md-12 col-sm-11 col-xs-11">
+                                <div id = "child_form" class="col-centered collapse" style="width: 97.5%;border: 1px solid #b3b3b3;border-radius: 8px;border-style :dashed;">
+                                    <br/>
+                                <div class="row">
+                                    <div class ="col-md-4">
+                                        <input-select
+                                            label = "คำนำหน้าชื่อ : "
+                                            option_start_name = "เลือกคำนำหน้า"
+                                            v-model = "child_prefix_id"
+                                            name = "child_prefix_id"
+                                            :options = "childPrefixApi"
+                                        ></input-select>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "child_first_name"
+                                            label = "ชื่อ :"
+                                            v-model = "child_first_name"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "child_last_name"
+                                            label = "นามสกุล :"
+                                            v-model = "child_last_name"
+                                        ></input-text>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class = "col-md-4">
+                                        <div class = "paddings">
+                                        <input-radio
+                                            @update="(item,apiName) => updateGender(item,apiName)"
+                                            name = "child_gender"
+                                            label = "เลือกเพศ :"
+                                            v-model = "child_gender"
+                                            :options = "genders"
+                                            api-name = "childPrefixApi"
+                                        />
+                                        </div>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "child_document_no"
+                                            label = "เลขบัตรประชาชน :"
+                                            v-model = "child_document_no"
+                                            pattern= "^([0-9]{13})$"
+                                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                            :required="true"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "child_passport_no"
+                                            label = "เลขหนังสือเดินทาง :"
+                                            v-model = "child_passport_no"
+                                            error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                        ></input-text>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class ="col-md-4">
+                                        <jquery-input-date
+                                            name = "child_dob_preview"
+                                            label = "วัน/เดือน/ปีเกิด :"
+                                            v-model = "child_dob_preview"
+                                            format="d/m/Y"
+                                            mode = "BE"
+                                            start-range= '2400'
+                                            end-range = '3000'
+                                            age-name = "child_age"
+                                            @update="(dob,ageName) => updateAge(dob,ageName)"
+                                        ></jquery-input-date>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <file-input
+                                            name = "child_id_card"
+                                            label = "สำเนาบัตรประชาชน :"
+                                            v-model= "child_id_card"
+                                        >
+                                        </file-input>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <file-input
+                                            name = "child_cher"
+                                            label = "สำเนาใบรับรองบุตร :"
+                                            v-model= "child_cher"
+                                        >
+                                        </file-input>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <input-button 
+                                        label = "เพิ่มข้อมูล"
+                                        buttonClass = "btn btn-success"
+                                        iconClass = "fa fa-save"
+                                    ></input-button>
+                                 </div>
                             </div>
-                            <div class="row">
-                                <div class ="col-md-4">
-                                    <input-select
-                                        label = "คำนำหน้าชื่อ : "
-                                        option_start_name = "เลือกคำนำหน้า"
-                                        v-model = "child_prefix_id"
-                                        name = "child_prefix_id"
-                                        :options = "childPrefixApi"
-                                    ></input-select>
-                                </div>
-                                <div class ="col-md-4">
-                                    <input-text
-                                        name = "child_first_name"
-                                        label = "ชื่อ :"
-                                        v-model = "child_first_name"
-                                    ></input-text>
-                                </div>
-                                <div class ="col-md-4">
-                                    <input-text
-                                        name = "child_last_name"
-                                        label = "นามสกุล :"
-                                        v-model = "child_last_name"
-                                    ></input-text>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class ="col-md-4">
-                                    <input-text
-                                        name = "child_document_no"
-                                        label = "เลขบัตรประชาชน :"
-                                        v-model = "child_document_no"
-                                        pattern= "^([0-9]{13})$"
-                                        error-text="เลขบัตรประชาชนไม่ถูกต้อง"
-                                        :required="true"
-                                    ></input-text>
-                                </div>
-                                <div class ="col-md-4">
-                                    <input-text
-                                        name = "child_passport_no"
-                                        label = "เลขหนังสือเดินทาง :"
-                                        v-model = "child_passport_no"
-                                        error-text="เลขบัตรประชาชนไม่ถูกต้อง"
-                                    ></input-text>
-                                </div>
-                                <div class ="col-md-4">
-                                    <jquery-input-date
-                                        name = "child_dob_preview"
-                                        label = "วัน/เดือน/ปีเกิด :"
-                                        v-model = "child_dob_preview"
-                                        format="d/m/Y"
-                                        mode = "BE"
-                                        start-range= '2400'
-                                        end-range = '3000'
-                                        age-name = "child_age"
-                                        @update="(dob,ageName) => updateAge(dob,ageName)"
-                                    ></jquery-input-date>
-                                </div>
-                            </div>
-                            <div class = "row">
-                                <div class ="col-md-4">
-                                    <input-text
-                                        name = "child_age"
-                                        label = "อายุ :"
-                                        v-model = "child_age"
-                                        :readonly="true"
-                                    ></input-text>
-                                </div>
-                                <div class ="col-md-4">
-                                    <file-input
-                                        name = "child_id_card"
-                                        label = "สำเนาบัตรประชาชน :"
-                                        v-model= "child_id_card"
-                                    >
-                                    </file-input>
-                                </div>
-                                <div class ="col-md-4">
-                                    <file-input
-                                        name = "child_cher"
-                                        label = "สำเนาใบรับรองบุตร :"
-                                        v-model= "child_cher"
-                                    >
-                                    </file-input>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 ">
+                        </div>
+                    </div>
+                    <div class = "col-md-12 col-centered">
+                    <table class="table table-bordered" id = "childs">
+                        <thead>
+                         <tr>
+                                <th 
+                                    v-for="(childHeadTable, index) in childHeadTables" 
+                                    :key="index" 
+                                    style="max-width: 100px;"
+                                >
                                     <center>
-                                        <button type="button" class="btn btn-primary"><i class="fa fa-plus-circle"></i> เพิ่มข้อมูลบุตร/ธิดา</button>
+                                        {{ childHeadTable.label }}
                                     </center>
-                                </div>
-                            </div>
-                            <div class = "col-md-12 col-centered">
-                                <table class="table table-bordered" id = "childs">
-                                <thead>
-                                    <tr>
-                                        <th ><center>คนที่</center></th>
-                                        <th><center>ชื่อ - นามสกุล</center></th>
-                                        <th><center>เลขบัตรประชาชน</center></th>
-                                        <th><center>วัน/เดือน/ปีเกิด</center></th>
-                                        <th><center>อายุ</center></th>
-                                        <th><center>สถานภาพ</center></th>
-                                        <th><center>เพศ</center></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td><center></center></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr v-for="(childData,index) in childsData" :key="index">
+                                    <td style="max-width: 10px;word-wrap:break-word;"><center>{{ childData.id }}</center></td>
+                                    <td style="max-width: 100px;word-wrap:break-word;"><center>{{ childData.prefix_id + ' ' + childData.first_name + ' ' + childData.last_name}}</center></td>
+                                    <td style="max-width: 50px;word-wrap:break-word;"><center>{{ childData.document_id}}</center></td>
+                                    <td style="max-width: 10px;word-wrap:break-word;"><center>{{ childData.passport_no }}</center></td>
+                                    <td style="max-width: 10px;word-wrap:break-word;"><center>{{ childData.child_dob }}</center></td>
+                                    <td style="max-width: 10px;word-wrap:break-word;"><center>ยังไม่รู้</center></td>
+                                    <td style="max-width: 10px;word-wrap:break-word;"><center>{{ childData.child_gender}}</center></td>
+                                     <td style="max-width: 10px;word-wrap:break-word;"><center></center></td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    </div>
                         <div id="parents_menu">
                             <div class="row">
                                 <div class ="col-md-12">
@@ -1017,7 +1027,7 @@
                                     </file-input>
                                 </div>
                                 <div class = "col-md-4">
-                                    <div class = "padding-row">
+                                    <div class = "paddings">
                                         <input-radio
                                             name = "mother_status"
                                             label = "สถานะ :"
@@ -1566,8 +1576,33 @@
                                 </div>
                             </div>
                         </div>
+                        <div class = "col-md-12 col-centered">
+                            <table class="table table-bordered" id = "childs">
+                                <thead>
+                                    <tr>
+                                        <th ><center>ปีพ.ศ.</center></th>
+                                        <th><center>ชื่อรางวัลเกียรติยศ</center></th>
+                                        <th><center>ระดับของรางวัลเกียรติยศ</center></th>
+                                        <th><center>ด้านของรางวัลเกียรติยศ</center></th>
+                                        <th><center>หน่วยงานที่มอบรางวัลเกียรติยศ</center></th>
+                                        <th><center>จัดการข้อมูล</center></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><center></center></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <br/>
                     </div>
+                    
                 
                 </div>
             </panel>
@@ -1635,6 +1670,7 @@
     import jqueryInputDate from '../inputs/JqueryInputDate.vue'
     import InputButton from '../inputs/InputButtonComponent.vue'
     import InputSelectA from '../inputs/InputSelect.vue'
+    import InputTable from '../inputs/InputTableComponent.vue'
     import moment from 'moment';
     export default {
         components: {
@@ -1652,7 +1688,8 @@
             FileInput,
             jqueryInputDate,
             InputButton,
-            InputSelectA
+            InputSelectA,
+            InputTable,
         },
         data() {
             return {
@@ -1859,6 +1896,21 @@
                     { value : '0', label : 'ระดับชาติ' },
                     { value : '0', label : 'ระดับนานาชาติ'}
                 ],
+                childHeadTables : [
+                    { value : '0', label : 'คนที่' },
+                    { value : '1' , label : 'ชื่อ-นามสกุล' },
+                    { value : '2' , label : 'เลขบัตรประชาชน' },
+                    { value : '3' , label : 'เลขหนังสือเดินทาง' },
+                    { value : '4' , label : 'วัน/เดือน/ปีเกิด' },
+                    { value : '5' , label : 'อายุ' },
+                    { value : '6' , label : 'เพศ' },
+                    { value : '7' , label : 'จัดการข้อมูล' },	
+
+                ],
+                childsData : [
+                    { id : '1' , prefix_id : 'นางสาว' , first_name : 'นงนภัส' , last_name : 'สำแดงเดช', document_id : '1100800997121', passport_no : '1100800997121', child_dob: '12/09/1994', child_gender : '0'}
+                ]
+
             }
         },
         watch:{
