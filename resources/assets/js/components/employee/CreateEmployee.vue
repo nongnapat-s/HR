@@ -1,13 +1,13 @@
 <template>
     <div class = "container-fuild col-md-12">
         <br>
-            <!-- <panel title = "ข้อมูลพนักงาน">
+            <!-- <panel title = "ประวัติบุคลากร">
                 <div class = "row">
                     <div class = "col-md-3 col-sm-4">
                         <file-input
-                            name = "emp_image"
+                            name = "emp_picture"
                             label = "รูปถ่ายพนักงาน :"
-                            v-model= "emp_image"
+                            v-model= "emp_picture"
                             :preview= "true"
                         >
                         </file-input>
@@ -163,23 +163,19 @@
                                         name = "emp_work_type"
                                     ></input-select>
                                 </div>
-                                <div class ="col-md-4">
-                                    <jquery-input-date
-                                        name = "emp_work_date"
-                                        label = "วัน/เดือน/ปี :"
-                                        v-model = "emp_work_date"
-                                        format="d/m/Y"
-                                        mode = "BE"
-                                        start-range= '2400'
-                                        end-range = '3000'
-                                        age-name = "emp_work_date"
-                                    ></jquery-input-date>
+                                <div class="col-md-4">
+                                    <input-select
+                                        label = "ประเภทของสถานภาพ : "
+                                        option_start_name = "เลือกประเภทของสถานภาพ"
+                                        v-model = "emp_work_type"
+                                        name = "emp_work_type"
+                                    ></input-select>
                                 </div>
                             </div>
                     </div>
                 </div>
             </panel> -->
-            <panel title = "ประวัติบุคลากร">
+            <panel title = "ข้อมูลบุคลากร">
                 <div class="row">
                    <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
                         <div class="pull-right"><img
@@ -216,6 +212,186 @@
                     </div>
                 </div>
                 <div class="tab-content">
+                    <div id="employee_menu" class="tab-pane fade">
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    @update="(value) => employeeApi(value)"
+                                    name = "emp_ref_id"
+                                    label = "รหัสพนักงาน :"
+                                    v-model = "emp_ref_id"
+                                    pattern= "^100([0-9]{5})$"
+                                    error-text = "รหัสพนักงานไม่ถูกต้อง"
+                                    :required="true"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "emp_document_no"
+                                    label = "เลขบัตรประชาชน :"
+                                    v-model = "emp_document_no"
+                                    pattern= "^([0-9]{13})$"
+                                    error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                    :required="false"
+                                ></input-text>
+                            </div>
+                            <div class = "col-md-4">
+                                <div class = "paddings">
+                                    <input-radio
+                                        @update="(item,apiName) => updateGender(item,apiName)"
+                                        name = "emp_gender"
+                                        label = "เพศ :"
+                                        v-model = "emp_gender"
+                                        :options = "genders"
+                                        api-name = "empPrefixApi"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-md-4">
+                                <input-select
+                                    label = "คำนำหน้าชื่อ : "
+                                    option_start_name = "เลือกคำนำหน้า"
+                                    v-model = "emp_prefix_id"
+                                    name = "emp_prefix_id"
+                                    :options = "empPrefixApi"
+                                ></input-select>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "emp_extra_prefix_id"
+                                    label = "ยศ/ตำแหน่ง :"
+                                    v-model = "emp_extra_prefix_id"
+                                ></input-text>
+                            </div>
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "emp_position_id"
+                                    label = "ตำแหน่งทางวิชาการ :"
+                                    v-model = "emp_position_id"
+                                    :required="false"
+                                    :readonly="true"
+                                    ></input-text>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class ="col-md-4">
+                                <input-text
+                                    name = "emp_firstname"
+                                            label = "ชื่อจริง :"
+                                            v-model = "emp_firstname"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "emp_middlename"
+                                            label = "ชื่อกลาง :"
+                                            v-model = "emp_middlename"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "emp_lastname"
+                                            label = "นามสกุล :"
+                                            v-model = "emp_lastname"
+                                        ></input-text>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "emp_prefix_eng"
+                                            label = "คำนำหน้าชื่อ (อังกฤษ):"
+                                            v-model = "emp_prefix_eng"
+                                            :readonly="true"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "emp_extra_prefix_eng"
+                                            label = "ยศ/ตำแหน่ง (อังกฤษ):"
+                                            v-model = "emp_extra_prefix_eng"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "emp_position_eng_id"
+                                            label = "ตำแหน่งทางวิชาการ (อังกฤษ) :"
+                                            v-model = "emp_position_eng_id"
+                                            :required="false"
+                                        ></input-text>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "emp_firstname_eng"
+                                            label = "ชื่อจริง (อังกฤษ):"
+                                            v-model = "emp_firstname_eng"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "emp_middlename_eng"
+                                            label = "ชื่อกลาง (อังกฤษ):"
+                                            v-model = "emp_middlename_eng"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "emp_lastname_eng"
+                                            label = "นามสกุล (อังกฤษ):"
+                                            v-model = "emp_lastname_eng"
+                                        ></input-text>
+                                    </div>
+                                </div>
+                            <div class = "row">
+                                <div class = "col-md-4">
+                                    <file-input
+                                        name = "emp_picture"
+                                        label = "รูปถ่ายพนักงาน :"
+                                        v-model= "emp_picture"
+                                    >
+                                    </file-input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class ="col-md-12">
+                                    <input-line-label
+                                    label = "สถานภาพการปฏิบัติงาน"
+                                    ></input-line-label>
+                                </div>
+                            </div>
+                            <div class = "row">
+                                <div class ="col-md-4">
+                                    <input-radio
+                                        name = "emp_work_status"
+                                        label = ""
+                                        v-model = "emp_work_status"
+                                        :options = "work_statuses"
+                                    />
+                                </div>
+                            </div>
+                            <div class = "row">
+                                <div class="col-md-4">
+                                    <input-select
+                                        label = "ประเภทของสถานภาพ : "
+                                        option_start_name = "เลือกประเภทของสถานภาพ"
+                                        v-model = "emp_work_type"
+                                        name = "emp_work_type"
+                                    ></input-select>
+                                </div>
+                                <div class="col-md-4">
+                                    <input-select
+                                        label = "ประเภทย่อยของสถานภาพ : "
+                                        option_start_name = "เลือกประเภทย่อยของสถานภาพ"
+                                        v-model = "emp_work_subtype"
+                                        name = "emp_work_subtype"
+                                    ></input-select>
+                                </div>
+                        </div>
+                    </div>
                     <div id="profile_menu" class="tab-pane fade in active" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
                         <div class="row">
                             <div class ="col-md-4">
@@ -254,7 +430,7 @@
                                     option_start_name = "เลือกเชื้อชาติ"
                                     v-model = "emp_race"
                                     name = "emp_race"
-                                    :options = "empApiRaces"
+                                    :options = "empRacesApi"
                                 ></input-select>
                             </div>
                             <div class ="col-md-4">
@@ -263,7 +439,7 @@
                                     option_start_name = "เลือกสัญชาติ"
                                     v-model = "emp_nation"
                                     name = "emp_nation"
-                                    :options = "empApiRaces"
+                                    :options = "empnationsApi"
                                 ></input-select>
                             </div>
                             <div class ="col-md-4">
@@ -272,7 +448,7 @@
                                     option_start_name = "เลือกศาสนา"
                                     v-model = "emp_religion"
                                     name = "religion"
-                                    :options = "empApiRaces"
+                                    :options = "empReligionsApi"
                                 ></input-select>
                             </div>
                         </div>
@@ -356,16 +532,8 @@
                             </div>
                         </div>
                         <div class = "row">
-                            <div class ="col-md-4">
-                                <file-input
-                                    name = "emp_child_cher"
-                                    label = "สำเนาใบรับรองบุตร :"
-                                    v-model= "emp_child_cher"
-                                >
-                                </file-input>
-                            </div>
                             <div class = "col-md-6">
-                                <div class="paddings">
+                                <div class="padding-row">
                                     <input-radio
                                         name = "emp_marital_status"
                                         label = "สถานภาพการสมรส : "
@@ -409,16 +577,23 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "spouse_emp_document_no"
+                                        name = "spouse_document_no"
                                         label = "เลขบัตรประชาชน :"
-                                        v-model = "spouse_emp_document_no"
+                                        v-model = "spouse_document_no"
                                         pattern= "^([0-9]{13})$"
                                         error-text="เลขบัตรประชาชนไม่ถูกต้อง"
                                         :required="true"
                                     ></input-text>
                                 </div>
+                                <div class ="col-md-4">
+                                    <input-text
+                                        name = "spouse_passport_no"
+                                        label = "เลขหนังสือเดินทาง :"
+                                        v-model = "spouse_passport_no"
+                                        error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                    ></input-text>
+                                </div>
                                 <div class = "col-md-4">
-
                                     <input-select
                                         label = "อาชีพ : "
                                         option_start_name = "เลือกอาชีพ"
@@ -426,8 +601,35 @@
                                         name = "spouse_career"
                                         :options = "careersApi"
                                     ></input-select>
-
                                 </div>
+                                <div class = "col-md-4">
+                                 <jquery-input-date
+                                        name = "spouse_marriage_date"
+                                        label = "วันที่สมรส :"
+                                        v-model = "spouse_marriage_date"
+                                        format="d/m/Y"
+                                        mode = "BE"
+                                        start-range= '2400'
+                                        end-range = '3000'
+                                    ></jquery-input-date>
+                                </div>
+                                <div class ="col-md-4">
+                                    <input-text
+                                        name = "spouse_marriage_no"
+                                        label = "เลขที่ใบสมรส :"
+                                        v-model = "spouse_marriage_no"
+                                    ></input-text>
+                                </div>
+                                <div class ="col-md-4">
+                                    <file-input
+                                        name = "spouse_marriage"
+                                        label = "สำเนาทะเบียนสมรส/หย่าร้าง :"
+                                        v-model= "spouse_marriage"
+                                    >
+                                    </file-input>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
                                         name = "spouse_id_card"
@@ -436,8 +638,6 @@
                                     >
                                     </file-input>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
                                         name = "spouse_house"
@@ -454,14 +654,6 @@
                                     >
                                     </file-input>
                                 </div>
-                                <div class ="col-md-4">
-                                    <file-input
-                                        name = "spouse_marriage"
-                                        label = "สำเนาทะเบียนสมรส/หย่าร้าง :"
-                                        v-model= "spouse_marriage"
-                                    >
-                                    </file-input>
-                                </div>
                             </div>
                             <div class="row">
                                 <div class = "col-md-4">
@@ -474,22 +666,27 @@
                                         />
                                     </div>
                                 </div>
-                                <div class = "col-md-4">
-                                    <div class = "padding-row">
-                                        <input-radio
-                                            name = "spouse_marital_status"
-                                            label = "สถานภาพ :"
-                                            v-model = "spouse_marital_status"
-                                            :options = "marital_statuses"
-                                        />
-                                    </div>
-                                </div>
                             </div>
+                        </div>
                             <div class="row">
                                 <div class ="col-md-12">
                                     <input-line-label
                                         label = "บุตร/ธิดา"
                                     ></input-line-label>
+                                </div>
+                            </div>
+                            <div class = "row">
+                                <div class = "col-md-4">
+                                    <div class = "padding">
+                                    <input-radio
+                                        @update="(item,apiName) => updateGender(item,apiName)"
+                                        name = "child_gender"
+                                        label = "เลือกเพศ :"
+                                        v-model = "child_gender"
+                                        :options = "genders"
+                                        api-name = "childPrefixApi"
+                                    />
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -520,12 +717,20 @@
                             <div class="row">
                                 <div class ="col-md-4">
                                     <input-text
-                                        name = "child_emp_document_no"
+                                        name = "child_document_no"
                                         label = "เลขบัตรประชาชน :"
-                                        v-model = "child_emp_document_no"
+                                        v-model = "child_document_no"
                                         pattern= "^([0-9]{13})$"
                                         error-text="เลขบัตรประชาชนไม่ถูกต้อง"
                                         :required="true"
+                                    ></input-text>
+                                </div>
+                                <div class ="col-md-4">
+                                    <input-text
+                                        name = "child_passport_no"
+                                        label = "เลขหนังสือเดินทาง :"
+                                        v-model = "child_passport_no"
+                                        error-text="เลขบัตรประชาชนไม่ถูกต้อง"
                                     ></input-text>
                                 </div>
                                 <div class ="col-md-4">
@@ -541,6 +746,8 @@
                                         @update="(dob,ageName) => updateAge(dob,ageName)"
                                     ></jquery-input-date>
                                 </div>
+                            </div>
+                            <div class = "row">
                                 <div class ="col-md-4">
                                     <input-text
                                         name = "child_age"
@@ -549,30 +756,21 @@
                                         :readonly="true"
                                     ></input-text>
                                 </div>
-
-                            </div>
-                            <div class = "row">
-                                <div class = "col-md-4">
-                                    <div class = "padding-row">
-                                        <input-radio
-                                            @update="(item,apiName) => updateGender(item,apiName)"
-                                            name = "child_gender"
-                                            label = "เพศ :"
-                                            v-model = "child_gender"
-                                            :options = "genders"
-                                            api-name = "childPrefixApi"
-                                        />
-                                    </div>
+                                <div class ="col-md-4">
+                                    <file-input
+                                        name = "child_id_card"
+                                        label = "สำเนาบัตรประชาชน :"
+                                        v-model= "child_id_card"
+                                    >
+                                    </file-input>
                                 </div>
-                                <div class = "col-md-4">
-                                    <div class = "padding-row">
-                                        <input-radio
-                                            name = "child_marital_status"
-                                            label = "สถานภาพ :"
-                                            v-model = "child_marital_status"
-                                            :options = "marital_statuses"
-                                        />
-                                    </div>
+                                <div class ="col-md-4">
+                                    <file-input
+                                        name = "child_cher"
+                                        label = "สำเนาใบรับรองบุตร :"
+                                        v-model= "child_cher"
+                                    >
+                                    </file-input>
                                 </div>
                             </div>
                             <div class="row">
@@ -608,7 +806,6 @@
                                 </tbody>
                             </table>
                             </div>
-                        </div>
                         <div id="parents_menu">
                             <div class="row">
                                 <div class ="col-md-12">
@@ -619,11 +816,13 @@
                             </div>
                             <div class="row">
                                 <div class ="col-md-4">
-                                    <input-text
-                                        name = "father_prefix_id"
-                                        label = "คำนำหน้าชื่อ :"
+                                    <input-select
+                                        label = "คำนำหน้าชื่อ : "
+                                        option_start_name = "เลือกคำนำหน้า"
                                         v-model = "father_prefix_id"
-                                    ></input-text>
+                                        name = "father_prefix_id"
+                                        :options = "fatherPrefixApi"
+                                    ></input-select>
                                 </div>
                                 <div class ="col-md-4">
                                     <input-text
@@ -651,6 +850,14 @@
                                         :required="false"
                                     ></input-text>
                                 </div>
+                                <div class ="col-md-4">
+                                    <input-text
+                                        name = "father_passport_no"
+                                        label = "เลขหนังสือเดินทาง :"
+                                        v-model = "father_passport_no"
+                                        error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                    ></input-text>
+                                </div>
                                 <div class = "col-md-4">
                                     <input-select
                                         label = "อาชีพ : "
@@ -659,6 +866,8 @@
                                         :options = "careersApi"
                                     ></input-select>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
                                         name = "father_id_card"
@@ -667,8 +876,6 @@
                                     >
                                     </file-input>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
                                         name = "father_house"
@@ -685,6 +892,8 @@
                                     >
                                     </file-input>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
                                         name = "father_marriage"
@@ -693,8 +902,6 @@
                                     >
                                     </file-input>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
                                         name = "father_child_cher"
@@ -723,11 +930,13 @@
                             </div>
                             <div class="row">
                                 <div class ="col-md-4">
-                                    <input-text
-                                        name = "mother_prefix_id"
-                                        label = "คำนำหน้าชื่อ :"
+                                    <input-select
+                                        label = "คำนำหน้าชื่อ : "
+                                        option_start_name = "เลือกคำนำหน้า"
                                         v-model = "mother_prefix_id"
-                                    ></input-text>
+                                        name = "mother_prefix_id"
+                                        :options = "motherPrefixApi"
+                                    ></input-select>
                                 </div>
                                 <div class ="col-md-4">
                                     <input-text
@@ -755,6 +964,14 @@
                                         :required="false"
                                     ></input-text>
                                 </div>
+                                <div class ="col-md-4">
+                                    <input-text
+                                        name = "father_passport_no"
+                                        label = "เลขหนังสือเดินทาง :"
+                                        v-model = "father_passport_no"
+                                        error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                                    ></input-text>
+                                </div>
                                 <div class = "col-md-4">
                                     <input-select
                                         label = "อาชีพ : "
@@ -763,6 +980,8 @@
                                         :options = "careersApi"
                                     ></input-select>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
                                         name = "mother_id_card"
@@ -771,8 +990,6 @@
                                     >
                                     </file-input>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
                                         name = "mother_house"
@@ -789,6 +1006,8 @@
                                     >
                                     </file-input>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class ="col-md-4">
                                     <file-input
                                         name = "mother_marriage"
@@ -797,8 +1016,6 @@
                                     >
                                     </file-input>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class = "col-md-4">
                                     <div class = "padding-row">
                                         <input-radio
@@ -992,22 +1209,16 @@
                                         v-model = "phone"
                                     ></input-text>
                                 </div>
-                                <div class ="col-md-4">
-                                    <input-text
-                                        name = "office_telephone"
-                                        label = "โทรศัพท์ที่ทำงาน :"
-                                        v-model = "office_telephone"
-                                    ></input-text>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class ="col-md-4">
+                               <div class ="col-md-4">
                                     <input-text
                                         name = "mahidol_email"
                                         label = "Email มหิดล :"
                                         v-model = "mahidol_email"
                                     ></input-text>
                                 </div>
+                            </div>
+                            <div class="row">
+                             
                                 <div class ="col-md-4">
                                     <input-text
                                         name = "first_email"
@@ -1081,14 +1292,7 @@
                         </div>
                     </div>
                     <div id="career_menu" class="tab-pane fade">
-                        <div class="row">
-                            <div class ="col-md-12">
-                                <input-line-label
-                                    label = "ข้อมูลการทำงาน"
-                                ></input-line-label>
-                            </div>
-                        </div>
-                        <div class = "row">
+                        <!-- <div class = "row">
                             <div class ="col-md-4">
                                 <input-select
                                     label = "ประเภทการจ้าง : "
@@ -1098,7 +1302,23 @@
                                     :options = "empEmployTypesApi"
                                 ></input-select>
                             </div>
-                            <div class ="col-md-4">
+                            <div class = "col-md-4">
+                                <input-text
+                                    name = "emp_position_id"
+                                    label = "รหัสตำแหน่ง :"
+                                    v-model = "emp_position_id"
+                                ></input-text>
+                            </div>
+                            <div class = "col-md-4">
+                                <input-text
+                                    name = "emp_position_frame"
+                                    label = "เลขประจำตำแหน่ง/เลขที่อัตรา :"
+                                    v-model = "emp_position_frame"
+                                ></input-text>
+                            </div>
+                        </div> -->
+                        <!-- <div class = "row">
+                             <div class ="col-md-4">
                                 <input-select
                                     label = "สายงาน : "
                                     option_start_name = "เลือกสายงาน"
@@ -1115,16 +1335,7 @@
                                     name = "emp_position_id"
                                     :options = "empPositionsApi"
                                 ></input-select>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-md-4">
-                                <input-text
-                                    name = "emp_position_frame"
-                                    label = "เลขประจำตำแหน่ง :"
-                                    v-model = "emp_position_frame"
-                                ></input-text>
-                            </div>
+                            </div> -->
                             <!-- <div class ="col-md-4">
                                 <jquery-input-date
                                     name = "emp_work_date"
@@ -1187,7 +1398,7 @@
                                     age-name = "emp_work_date"
                                 ></jquery-input-date>
                             </div> -->
-                        </div>
+                        <!-- </div>
                         <div class="row">
                             <div class ="col-md-12">
                                 <input-line-label
@@ -1225,6 +1436,36 @@
                             </div>
                         </div>
                         <div class = "row">
+                            <div class = "col-md-4">
+                                <input-text
+                                    name = "work_place_telephone"
+                                    label = "โทรศัพท์ :"
+                                    v-model = "work_place_phoneout"
+                                ></input-text>
+                            </div>
+                            <div class = "col-md-4">
+                                <input-text
+                                    name = "work_place_telephone"
+                                    label = "โทรศัพท์ :"
+                                    v-model = "work_place_phonein"
+                                ></input-text>
+                            </div>
+                             <div class = "col-md-4">
+                                <input-text
+                                    name = "work_place_fax"
+                                    label = "โทรสาร :"
+                                    v-model = "work_place_fax"
+                                ></input-text>
+                            </div> 
+                        </div>
+                        <div class = "row">
+                            <div class = "col-md-4">
+                                <input-text
+                                    name = "emp_vpn"
+                                    label = "VPN :"
+                                    v-model = "emp_vpn"
+                                ></input-text>
+                            </div> 
                             <div class ="col-md-2 col-xs-4">
                                 <jquery-input-date
                                     name = "emp_work_start"
@@ -1237,25 +1478,97 @@
                                 ></jquery-input-date>
                             </div>
                             <div class="col-md-3 col-xs-6 col-md-push-0 col-xs-push-0">
-                                <div class = "col-md-1 col-xs-1 paddings"> - </div>
-                                    <div class ="col-md-9 col-xs-9">
-                                        <jquery-input-date
-                                            name = "emp_work_end"
-                                            label = "เวลาเลิกปฏิบัติงาน :"
-                                            v-model = "emp_work_end"
-                                            format="H:i"
-                                            mode = "BE"
-                                            :datepicker = "false"
-                                            :timepicker="true"
-                                        ></jquery-input-date>
-                                    </div>
-                            </div>                
-                        </div>
-
+                                <div class = "col-md-1 col-xs-1 col-md-push-0 col-xs-push-0 paddings"> - </div>
+                                <div class ="col-md-9 col-xs-9">
+                                    <jquery-input-date
+                                        name = "emp_work_end"
+                                        label = "เวลาเลิกปฏิบัติงาน :"
+                                        v-model = "emp_work_end"
+                                        format="H:i"
+                                        mode = "BE"
+                                        :datepicker = "false"
+                                        :timepicker="true"
+                                    ></jquery-input-date>
+                                </div>
+                            </div>  
+                        </div> -->
                     </div>
                     <div id="education_menu" class="tab-pane fade">
                         test
                     </div>
+                    <div id="honor_menu" class="tab-pane fade">
+                        <div class = "row">
+                            <div class = "col-md-2 col-sm-2 col-xs-2">
+                            <input-button 
+                                label = "เพิ่มข้อมูลรางวัลเกียรติยศ"
+                                iconClass = "fa fa-plus-circle"
+                                data-toggle="collapse" 
+                                data-target="#honor_form"
+                            ></input-button>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-md-12 col-sm-11 col-xs-11">
+                                <div id = "honor_form" class="col-centered collapse" style="width: 97.5%;border: 1px solid #b3b3b3;border-radius: 8px;border-style :dashed;">
+                                    <br/>
+                                        <div class = "row">
+                                            <div class = "col-md-4">
+                                                <input-text
+                                                    name = "emp_honor_year"
+                                                    label = "ปีพ.ศ.ที่ได้รับรางวัลเกียรติยศ :"
+                                                    v-model = "emp_honor_year"
+                                                    pattern= "^2([4-9]{1})([0-9]{2})$"
+                                                    error-text = "รูปแบบพ.ศ.ไม่ถูกต้อง"
+                                                ></input-text>
+                                            </div>
+                                            <div class = "col-md-4">
+                                                <input-text
+                                                    name = "emp_honor_name"
+                                                    label = "ชื่อรางวัลเกียรติยศ :"
+                                                    v-model = "emp_honor_name"
+                                                    pattern= "^2([4-9]{1})([0-9]{2})$"
+                                                    error-text = "รูปแบบพ.ศ.ไม่ถูกต้อง"
+                                                ></input-text>
+                                            </div>
+                                            <div class = "col-md-4">
+                                                <input-select
+                                                    label = "ระดับของรางวัลเกียรติยศ : "
+                                                    option_start_name = "เลือกระดับของรางวัลเกียรติยศ "
+                                                    v-model = "emp_honor_lavel"
+                                                    name = "emp_honor_lavel"
+                                                    :options = "empHonorLavelApi"
+                                                ></input-select>
+                                            </div>     
+                                        </div>
+                                        <div class = "row">
+                                            <div class = "col-md-4">
+                                                <input-text
+                                                    name = "emp_honor_type"
+                                                    label = "ด้านของรางวัลเกียรติยศ :"
+                                                    v-model = "emp_honor_type"
+                                                ></input-text>
+                                            </div>
+                                            <div class = "col-md-4">
+                                                <input-text
+                                                    name = "emp_honor_unit"
+                                                    label = "หน่วยงานที่มอบรางวัลเกียรติยศ :"
+                                                    v-model = "emp_honor_unit"
+                                                ></input-text>
+                                            </div>
+                                        </div>
+                                        <div class = "row">
+                                            <input-button 
+                                                label = "เพิ่มข้อมูล"
+                                                buttonClass = "btn btn-success"
+                                                iconClass = "fa fa-save"
+                                            ></input-button>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                
                 </div>
             </panel>
 
@@ -1358,9 +1671,10 @@
                 emp_lastname_eng : '',
                 emp_middlename : '',
                 emp_middlename_eng : '',
-                emp_image : '',
+                emp_picture : '',
                 emp_work_status : '',
                 emp_work_type :  '',
+                emp_work_subtype : '',
                 emp_work_date : '',
                 emp_dob_preview : '',
                 emp_dob : '',
@@ -1378,7 +1692,6 @@
                 emp_foreign : '',
                 emp_medicine : '',
                 emp_soldier : '',
-                emp_child_cher : '',
                 emp_marital_status : '',
                 empPrefixApi : '',
                 empApiRaces : '',
@@ -1388,7 +1701,7 @@
                 ],
                 work_statuses : [
                     { value : '0', label : 'ปฏิบัติงาน'},
-                    { value : '1', label : 'ไม่ปฏิบัติงาน'},
+                    { value : '1', label : 'พ้นสภาพ'},
                 ],
                 blood_groups : [
                     { value : '0' , label : 'A' },
@@ -1402,17 +1715,32 @@
                     { value : '2' , label : 'หย่าร้าง' },
                     { value : '3' , label : 'หม้าย' },
                 ],
+                empRacesApi : [ 
+                    { value : '0' , label : 'ไทย'},
+                    { value : '1' , label : 'จีน'},
+                ],
+                empnationsApi : [ 
+                    { value : '0' , label : 'ไทย'},
+                    { value : '1' , label : 'จีน'},
+                ],
+                empReligionsApi : [
+                    { value : '0' , label : 'พุทธ'},
+                    { value : '1' , label : 'อิสลาม'},
+                    { value : '2' , label : 'คริสต์'} 
+                ],
                 spouse_prefix_id : '',
                 spouse_first_name : '',
                 spouse_last_name : '',
-                spouse_emp_document_no : '',
+                spouse_document_no : '',
+                spouse_passport_no : '',
                 spouse_status : '',
                 statuses : [
                     { value : '0' , label : 'ยังมีชีวิตอยู่' },
                     { value : '1' , label : 'ถึงแก่กรรม' },
                 ],
                 spouse_career: null,
-                spouse_marital_status: '',
+                spouse_marriage_date : '',
+                spouse_marriage_no: '',
                 father_prefix_id : '',
                 father_first_name : '',
                 father_last_name : '',
@@ -1459,7 +1787,7 @@
                 careersApi: '',
                 autoComplete: null,
                 profile_nav : [
-                    { value : '#employee_menu' , label : 'ข้อมูลพนักงาน', icon : 'fa fa-id-card' , class : '' },
+                    { value : '#employee_menu' , label : 'ประวัติบุคลากร', icon : 'fa fa-id-card' , class : '' },
                     { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
                     { value : '#career_menu' , label : 'ประวัติการทำงาน', icon : 'fa fa-id-badge', class : ''},
                     { value : '#education_menu' , label : 'ประวัติการศึกษา', icon : 'fa fa-graduation-cap', class : '' },
@@ -1472,12 +1800,16 @@
                 spouse_id_card : '',
                 spouse_house : '',
                 spouse_rename : '',
+                spouse_marriage_date : '',
+                spouse_marriage_no: '',
                 spouse_marriage : '',
                 father_id_card : '',
+                father_passport_no : '',
                 father_house : '',
                 father_rename : '',
                 father_marriage : '',
                 father_child_cher : '',
+                fatherPrefixApi : '',
                 mother_prefix_id : '',
                 mother_first_name : '',
                 mother_last_name : '',
@@ -1489,6 +1821,7 @@
                 mother_rename : '',
                 mother_marriage : '',
                 mother_marital_status :  '',
+                motherPrefixApi : '',
                 phone : '',
                 office_telephone : '',
                 mahidol_email : '',
@@ -1497,7 +1830,8 @@
                 child_prefix_id: '',
                 child_first_name : '',
                 child_last_name: '',
-                child_emp_document_no: '',
+                child_document_no: '',
+                child_passport_no : '',
                 child_dob:'',
                 child_dob_preview : '',
                 child_marital_status: '',
@@ -1505,6 +1839,8 @@
                 child_chertificate : '',
                 child_gender : '',
                 child_age : '',
+                child_cher : '',
+                child_id_card : '',
                 childPrefixApi : '',
                 emergency_prefix_id : '',
                 emergency_firstname : '',
@@ -1514,6 +1850,15 @@
                 emergency_telephone : '',
                 emergency_phone : '',
                 emergencyPrefixApi : '',
+                emp_honor_year : '',
+                emp_honor_name : '',
+                emp_honor_lavel : '',
+                emp_honor_type : '',
+                emp_honor_unit : '',
+                empHonorLavelApi : [
+                    { value : '0', label : 'ระดับชาติ' },
+                    { value : '0', label : 'ระดับนานาชาติ'}
+                ],
             }
         },
         watch:{
@@ -1544,12 +1889,13 @@
 
         },
         created() {
-              // get defautl prefix filter by genders
+              // get defautl prefix filter by female gender
             axios.get('get-list/prefix-female')
                 .then((response) => {
                     this.prefixApi = response.data;
                     this.childPrefixApi = response.data;
                     this.emergencyPrefixApi = response.data;
+                    this.motherPrefixApi = response.data;
                 })
                 .catch((error)=> { console.log(error) });
             // get careers
@@ -1557,6 +1903,12 @@
                 .then((response) => {
                     this.careersApi = response.data;
 
+                })
+                .catch((error)=> { console.log(error) });
+              // get defautl prefix filter by male gender
+            axios.get('get-list/prefix-male')
+                .then((response) => {
+                    this.fatherPrefixApi = response.data;
                 })
                 .catch((error)=> { console.log(error) });
         },

@@ -6,7 +6,7 @@
                 :class="buttonClass" 
             >
                 <i 
-                    class = "fa fa-save"> 
+                    :class="iconClass"> 
                 </i> 
                 {{ label}}
             </button> 
@@ -17,6 +17,7 @@
 export default {
     props : {
         label : {default : ''},
+        iconClass : { default : ''},
         buttonClass : { default : 'btn btn-default'}
     }
 }
