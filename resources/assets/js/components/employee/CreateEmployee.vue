@@ -1614,15 +1614,135 @@
                             </div>
                         </div>
                     </div>
-                    <div id="honor_menu" class="tab-pane fade">
+                    <div id = "taining_menu" class = "tab-pane fade">
                         <div class = "row">
                             <div class = "col-md-2 col-sm-2 col-xs-2">
                             <input-button 
-                                label = "เพิ่มข้อมูลรางวัลเกียรติยศ"
+                                label = "เพิ่มข้อมูลการลาศึกษา/อบรม"
                                 iconClass = "fa fa-plus-circle"
                                 data-toggle="collapse" 
-                                data-target="#honor_form"
+                                data-target="#tainning_form"
                             ></input-button>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class="col-md-12 col-sm-11 col-xs-11">
+                                <form-dashed
+                                    id = "tainning_form"
+                                >
+                                    <div class="row">
+                                       <div class = "col-md-4">
+                                            <input-select
+                                                label = "ประเภทการลา : "
+                                                option_start_name = "เลือกประเภทการลา"
+                                                v-model = "tainning_type"
+                                                name = "tainning_type"
+                                                :options = "tainningTypeApi"
+                                            ></input-select>                                       
+                                        </div>         
+                                        <div class = "col-md-4">
+                                            <input-select
+                                                label = "ระดับการศึกษา/ฝึกอบรม : "
+                                                option_start_name = "เลือกระดับการศึกษา/ฝึกอบรม"
+                                                v-model = "tainning_lavel"
+                                                name = "tainning_lavel"
+                                                :options = "tainningLavelApi"
+                                            ></input-select>                                       
+                                        </div>         
+                                         <div class = "col-md-4">  
+                                            <input-text
+                                                name = "tainning_course"
+                                                label = "หลักสูตร :"
+                                                v-model = "tainning_course"
+                                            ></input-text>                                  
+                                        </div>         
+                                    </div>
+                                    <div class = "row">
+                                         <div class = "col-md-4">
+                                            <input-select
+                                                label = "สาขาวิชา : "
+                                                option_start_name = "เลือกสาขาวิชา"
+                                                v-model = "tainning_division"
+                                                name = "tainning_division"
+                                            ></input-select>                                       
+                                        </div>       
+                                        <div class="col-md-4">
+                                            <jquery-input-date
+                                                name = "tainning_date_start"
+                                                label = "ลาตั้งแต่วันที่ :"
+                                                v-model = "tainning_date_start"
+                                                format="d/m/Y"
+                                                mode = "BE"
+                                                start-range= '2400'
+                                                end-range = '3000'
+                                                age-name = "tainning_date_start"
+                                            ></jquery-input-date>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <jquery-input-date
+                                                name = "tainning_date_finish"
+                                                label = "ถึงวันที่ :"
+                                                v-model = "tainning_date_finish"
+                                                format="d/m/Y"
+                                                mode = "BE"
+                                                start-range= '2400'
+                                                end-range = '3000'
+                                                age-name = "tainning_date_finish"
+                                            ></jquery-input-date>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                           <input-text
+                                                name = "tainning_place"
+                                                label = "สถานศึกษา :"
+                                                v-model = "tainning_place"
+                                            ></input-text>   
+                                        </div>
+                                        <div class="col-md-4">
+                                           <input-text
+                                                name = "tainning_country"
+                                                label = "ประเทศ :"
+                                                v-model = "tainning_country"
+                                            ></input-text>   
+                                        </div>      
+                                       <div class="col-md-4">
+                                           <input-text
+                                                name = "tainning_city"
+                                                label = "เมือง :"
+                                                v-model = "tainning_city"
+                                            ></input-text>   
+                                        </div>                                  
+                                    </div>
+                                    <div class = "row">
+                                        <div class="col-md-4">
+                                           <input-text
+                                                name = "tainning_bursary"
+                                                label = "ทุนการศึกษา :"
+                                                v-model = "tainning_bursary"
+                                            ></input-text>   
+                                        </div> 
+                                    </div>
+                                    <div class = "row">
+                                            <input-button 
+                                                label = "เพิ่มข้อมูล"
+                                                buttonClass = "btn btn-success"
+                                                iconClass = "fa fa-save"
+                                            ></input-button>
+                                        </div>
+                                </form-dashed>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="honor_menu" class="tab-pane fade">
+                        <div class = "row">
+                            <div class = "col-md-2 col-sm-2 col-xs-2">
+                                <input-button 
+                                    label = "เพิ่มข้อมูลรางวัลเกียรติยศ"
+                                    iconClass = "fa fa-plus-circle"
+                                    data-toggle="collapse" 
+                                    data-target="#honor_form"
+                                ></input-button>
                             </div>
                         </div>
                         <div class = "row">
@@ -1940,7 +2060,7 @@
                     { value : '#career_menu' , label : 'ประวัติการทำงาน', icon : 'fa fa-id-badge', class : ''},
                     { value : '#education_menu' , label : 'ประวัติการศึกษา', icon : 'fa fa-graduation-cap', class : '' },
                     { value : '#taining_menu' , label : 'ประวัติการลาศึกษา/อบรม', icon : 'fa fa-plane', class : ''},
-                    { value : '#taining_menu' , label : 'ประวัติการรับราชการ', icon : 'fa fa-briefcase', class : ''},
+                    { value : '#government_menu' , label : 'ประวัติการรับราชการ', icon : 'fa fa-briefcase', class : ''},
                     { value : '#insignia_menu' , label : 'ประวัติการรับเครื่องราชฯ', icon : 'fa fa-star', class : ''},
                     { value : '#honor_menu' , label : 'ประวัติเกียรติยศ', icon : 'fa fa-trophy', class : ''},
                     { value : '#manager_menu' , label : 'ตำแหน่งบริหาร', icon : 'fa fa-handshake-o', class : ''},
@@ -2028,6 +2148,28 @@
                 insignai_grade : '',
                 insignai_receive_date : '',
                 insignai_return_date : '',
+                tainning_type : '',
+                tainning_lavel : '',
+                tainning_course : '',
+                tainning_division : '',
+                tainning_date_start : '',
+                tainning_date_finish : '',
+                tainning_place : '',
+                tainning_country : '',
+                tainning_city : '',
+                tainning_bursary : '',
+                tainningTypeApi : [ 
+                    { value : '1', label : 'ลาประชุม สัมนา อบรม' }, 
+                    { value : '2', label : 'ลาศึกษาต่อ ลาฝึกอบรม' }, 
+                    { value : '3', label : 'ขยายเวลา ลาศึกษาต่อ ฝึกอบรม' }, 
+                    { value : '4', label : 'รายงานตัวกลับจากลาศึกษา ฝึกอบรม' }, 
+                ],
+                tainningLavelApi : [
+                    { value : '1', label : 'ลาศึกษาต่อ ณ ต่างประเทศ' }, 
+                    { value : '2', label : 'ลาศึกษาในประเทศ' }, 
+                    { value : '3', label : 'ลาฝึกอบรม ณ ต่างประเทศ' }, 
+                    { value : '4', label : 'ลาฝึกอบรมในต่างประเทศ' }, 
+                ]
 
             }
         },
