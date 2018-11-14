@@ -237,7 +237,7 @@
                             </div>
                             <div class = "col-md-4">
                                 <div class = "paddings">
-                                    <input-radio
+                                    <input-radio-a
                                         @update="(item,apiName) => updateGender(item,apiName)"
                                         name = "gender"
                                         label = "เพศ :"
@@ -2106,6 +2106,7 @@
     import FormDashed from '../inputs/FormDashed.vue'
     import InputTable from '../inputs/InputTableComponent.vue'
     import InputTextArea from '../inputs/InputTextAreaComponent.vue'
+    import InputRadioA from '../inputs/InputRadio.vue'
     import moment from 'moment';
     export default {
         components: {
@@ -2127,12 +2128,13 @@
             InputTable,
             FormDashed,
             InputTextArea,
+            InputRadioA
         },
         data() {
             return {
                 ref_id : '',
                 document_no : '',
-                gender : null,
+                gender : '',
                 prefix_id : null,
                 prefix_eng: '',
                 extra_prefix_id : '',
@@ -2170,8 +2172,8 @@
                 empPrefixApi : '',
                 empApiRaces : '',
                 genders : [
-                    { value : '0' , label : 'หญิง'},
-                    { value : '1' , label : 'ชาย'},
+                    { value : '0' , label : 'หญิง' , url : 'prefix-female'},
+                    { value : '1' , label : 'ชาย' , url : 'prefix-male'}, 
                 ],
                 work_statuses : [
                     { value : '0', label : 'ปฏิบัติงาน'},
@@ -2353,6 +2355,7 @@
                 insignai_grade : '',
                 insignai_receive_date : '',
                 insignai_return_date : '',
+                insignai_remark: '',
                 tainning_type : '',
                 tainning_lavel : '',
                 tainning_course : '',
@@ -2531,16 +2534,7 @@
                 }
             },
             updateGender(value,apiName){
-                if (apiName!== ''){
-                    this.url = value == 0 ? 'prefix-female' : 'prefix-male';
-                    axios.get('get-list/' + this.url)
-                    .then((response) => {
-                        this[apiName] = response.data;
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
-                }
+                this[apiName] = value;
             },
             updateAge(dob,ageName){
                 var current_year = moment().format('YYYY');
