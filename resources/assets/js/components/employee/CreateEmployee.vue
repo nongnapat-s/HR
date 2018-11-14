@@ -1591,6 +1591,16 @@
                                         </div>
                                     </div>
                                     <div class = "row">
+                                        <div class="col-md-4">
+                                           <input-text-area
+                                                name = "insignai_remark"
+                                                label = "หมายเหตุ : "
+                                                v-model= "insignai_remark"
+                                           ></input-text-area>
+                                           
+                                        </div>                            
+                                    </div>
+                                    <div class = "row">
                                         <div class="col-md-12">
                                             <div class="form-group col-xs-12">
                                                 <center>
@@ -1885,6 +1895,13 @@
                                                 v-model = "tainning_bursary"
                                             ></input-text>   
                                         </div> 
+                                        <div class="col-md-4">
+                                           <input-text-area
+                                                name = "tainning_remark"
+                                                label = "หมายเหตุ :"
+                                                v-model = "tainning_remark"
+                                            ></input-text-area>   
+                                        </div> 
                                     </div>
                                     <div class = "row">
                                         <div class="col-md-12">
@@ -2088,6 +2105,7 @@
     import InputSelectA from '../inputs/InputSelect.vue'
     import FormDashed from '../inputs/FormDashed.vue'
     import InputTable from '../inputs/InputTableComponent.vue'
+    import InputTextArea from '../inputs/InputTextAreaComponent.vue'
     import moment from 'moment';
     export default {
         components: {
@@ -2108,6 +2126,7 @@
             InputSelectA,
             InputTable,
             FormDashed,
+            InputTextArea,
         },
         data() {
             return {
@@ -2344,6 +2363,7 @@
                 tainning_country : '',
                 tainning_city : '',
                 tainning_bursary : '',
+                tainning_remark : '',
                 tainningTypeApi : [ 
                     { value : '1', label : 'ลาประชุม สัมนา อบรม' }, 
                     { value : '2', label : 'ลาศึกษาต่อ ลาฝึกอบรม' }, 
