@@ -35,6 +35,7 @@
             },
             unClick:function(){
                 this.$emit('input','');
+                this.$emit('update','');
             }
         }
     }

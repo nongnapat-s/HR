@@ -1,17 +1,13 @@
 <template>
-    <div class="form-group col-xs-12">
-       <center> 
-           <button 
-                type="button" 
-                :class="buttonClass" 
-            >
-                <i 
-                    :class="iconClass"> 
-                </i> 
-                {{ label}}
-            </button> 
-        </center>
-    </div>
+    <button 
+        type="button" 
+        :class="buttonClass" 
+     >
+        <i 
+            :class="iconClass"> 
+        </i> 
+        {{ label}}
+    </button> 
 </template>
 <script>
 export default {
