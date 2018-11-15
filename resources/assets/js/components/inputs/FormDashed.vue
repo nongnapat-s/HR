@@ -1,5 +1,5 @@
 <template>
-    <div 
+    <div
         :id = "id" 
         class="collapse" 
         style=" margin: 0 auto;

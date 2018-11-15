@@ -1308,115 +1308,324 @@
                             </div>
                         </div>
                     </div>
-                    <div id="career_menu" class="tab-pane fade">
-                        <!-- <div class = "row">
-                            <div class ="col-md-4">
-                                <input-select
-                                    label = "ประเภทการจ้าง : "
-                                    option_start_name = "เลือกประเภทการจ้าง"
-                                    v-model = "employ_type"
-                                    name = "employ_type"
-                                    :options = "empEmployTypesApi"
-                                ></input-select>
+                    <div id="education_menu" class="tab-pane fade">
+                        test
+                    </div>
+                    <div id = "insignia_menu" class = "tab-pane fade">
+                        <div class = "row">
+                            <div class = "col-md-2 col-sm-2 col-xs-2">
+                                <div class="form-group col-xs-12">
+                                    <input-button 
+                                        label = "เพิ่มข้อมูลการรับเครื่องราชอิสริยาภรณ์"
+                                        iconClass = "fa fa-plus-circle"
+                                        data-toggle="collapse" 
+                                        data-target="#insignia_form"
+                                    ></input-button>
+                                </div>
                             </div>
-                            <div class = "col-md-4">
-                                <input-text
-                                    name = "position_id"
-                                    label = "รหัสตำแหน่ง :"
-                                    v-model = "position_id"
-                                ></input-text>
+                        </div>
+                         <div class = "row">
+                            <div class = "col-md-12 col-sm-11 col-xs-11">
+                                <form-dashed
+                                    id = "insignia_form"
+                                
+                                >
+                                    <div class = "row">
+                                        <div class="col-md-4">
+                                            <input-select
+                                                name = "insignai_name"
+                                                option_start_name = "เลือกเครื่องราชอิสริยาภรณ์"
+                                                label = "ชื่อเครื่องราชอิสริยาภรณ์ :"
+                                                v-model = "insignai_name"
+                                            ></input-select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input-text
+                                                name = "insignai_initial_name"
+                                                label = "ชื่อย่อเครื่องราชอิสริยาภรณ์ :"
+                                                v-model = "insignai_initial_name"
+                                                :readonly="true"
+                                            ></input-text>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input-select
+                                                name = "insignai_position"
+                                                option_start_name = "เลือกตำแหน่งวิชาการ"
+                                                label = "ตำแหน่งทางวิชาการที่ได้รับ :"
+                                                v-model = "insignai_position"
+                                            ></input-select>
+                                        </div>
+                                    </div>
+                                    <div class = "row">
+                                        <div class="col-md-4">
+                                            <input-text
+                                                name = "insignai_grade"
+                                                label = "ขั้น :"
+                                                v-model = "insignai_grade"
+                                            ></input-text>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <jquery-input-date
+                                                name = "insignai_receive_date"
+                                                label = "วันที่ได้รับ :"
+                                                v-model = "insignai_receive_date"
+                                                format="d/m/Y"
+                                                mode = "BE"
+                                                start-range= '2400'
+                                                end-range = '3000'
+                                                age-name = "insignai_receive_date"
+                                            ></jquery-input-date>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <jquery-input-date
+                                                name = "insignai_return_date"
+                                                label = "วันที่ได้รับ :"
+                                                v-model = "insignai_return_date"
+                                                format="d/m/Y"
+                                                mode = "BE"
+                                                start-range= '2400'
+                                                end-range = '3000'
+                                                age-name = "insignai_return_date"
+                                            ></jquery-input-date>
+                                        </div>
+                                    </div>
+                                    <div class = "row">
+                                        <div class="col-md-4">
+                                           <input-text-area
+                                                name = "insignai_remark"
+                                                label = "หมายเหตุ : "
+                                                v-model= "insignai_remark"
+                                           ></input-text-area> 
+                                        </div>                            
+                                    </div>
+                                    <div class = "row">
+                                        <div class="col-md-12">
+                                            <div class="form-group col-xs-12">
+                                                <center>
+                                                    <input-button 
+                                                        label = "บันทึกข้อมูล"
+                                                        buttonClass = "btn btn-success"
+                                                        iconClass = "fa fa-save"
+                                                    ></input-button>
+                                                    <input-button 
+                                                        label = "ยกเลิกการบันทึก"
+                                                        buttonClass = "btn btn-danger"
+                                                        iconClass = "fa fa-ban"
+                                                    ></input-button>   
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form-dashed>
                             </div>
-                            <div class = "col-md-4">
-                                <input-text
-                                    name = "position_frame"
-                                    label = "เลขประจำตำแหน่ง/เลขที่อัตรา :"
-                                    v-model = "position_frame"
-                                ></input-text>
-                            </div>
-                        </div> -->
-                        <!-- <div class = "row">
-                             <div class ="col-md-4">
-                                <input-select
-                                    label = "สายงาน : "
-                                    option_start_name = "เลือกสายงาน"
-                                    v-model = "work_field"
-                                    name = "work_field"
-                                    :options = "empWorkFieldsApi"
-                                ></input-select>
-                            </div>
-                            <div class ="col-md-4">
-                                <input-select
-                                    label = "ตำแหน่ง : "
-                                    option_start_name = "เลือกตำแหน่ง"
-                                    v-model = "position_id"
-                                    name = "position_id"
-                                    :options = "empPositionsApi"
-                                ></input-select>
-                            </div> -->
-                            <!-- <div class ="col-md-4">
-                                <jquery-input-date
-                                    name = "work_date"
-                                    label = "วันที่บรรจุ :"
-                                    v-model = "work_date"
-                                    format="d/m/Y"
-                                    mode = "BE"
-                                    start-range= '2400'
-                                    end-range = '3000'
-                                    age-name = "work_date"
-                                ></jquery-input-date>
-                            </div>
-                            <div class ="col-md-4">
-                                <jquery-input-date
-                                    name = "work_date"
-                                    label = "วันที่โอนย้าย:"
-                                    v-model = "work_date"
-                                    format="d/m/Y"
-                                    mode = "BE"
-                                    start-range= '2400'
-                                    end-range = '3000'
-                                    age-name = "work_date"
-                                ></jquery-input-date>
+                        </div>
+                    </div>
+                    <div id = "works_menu" class = "tab-pane fade">
+                        <div class = "row">
+                            <div class = "col-md-2 col-sm-2 col-xs-2">
+                                <div class="form-group col-xs-12">
+                                    <input-button 
+                                        label = "เพิ่มข้อมูลประวัติการทำงาน"
+                                        iconClass = "fa fa-plus-circle"
+                                        data-toggle="collapse" 
+                                        data-target="#works_form"
+                                    ></input-button>
+                                </div>
                             </div>
                         </div>
                         <div class = "row">
-                            <div class ="col-md-4">
-                                <jquery-input-date
-                                    name = "work_date"
-                                    label = "วันที่บรรจุเป็นอาจารย์ :"
-                                    v-model = "work_date"
-                                    format="d/m/Y"
-                                    mode = "BE"
-                                    start-range= '2400'
-                                    end-range = '3000'
-                                    age-name = "work_date"
-                                ></jquery-input-date>
+                            <div class="col-md-12 col-sm-11 col-xs-11">
+                                <form-dashed
+                                    id = "works_form"
+                                >
+                                    <div class="row">
+                                        <div class = "col-md-4">
+                                            <input-select
+                                                label = "ประเภทของหนังสือคำสั่ง: "
+                                                option_start_name = "ประเภทของหนังสือคำสั่ง"
+                                                v-model = "document_type"
+                                                name = "document_type"
+                                                :options = "documentTypesApi"
+                                            ></input-select>                                       
+                                        </div>   
+                                        <div class = "col-md-4">  
+                                            <input-text
+                                                name = "document_number"
+                                                label = "เลขที่หนังสือคำสั่ง :"
+                                                v-model = "document_number"
+                                            ></input-text>                                  
+                                        </div>  
+                                        <div class = "col-md-4">  
+                                            <input-text
+                                                name = "document_name"
+                                                label = "เรื่องของหนังสือคำสั่ง :"
+                                                v-model = "document_name"
+                                            ></input-text>                                  
+                                        </div>         
+                                    </div>
+                                    <div class = "row">
+                                        <div class = "col-md-4">  
+                                            <input-text
+                                                name = "unit"
+                                                label = "หน่วยงาน :"
+                                                v-model = "unit"
+                                            ></input-text>                                  
+                                        </div>  
+                                        <div class = "col-md-4">
+                                            <jquery-input-date
+                                                    name = "sign_date"
+                                                    label = "วันที่ลงนาม :"
+                                                    v-model = "sign_date"
+                                                    format="d/m/Y"
+                                                    mode = "BE"
+                                                    start-range= '2400'
+                                                    end-range = '3000'
+                                                    age-name = "sign_date"
+                                            ></jquery-input-date>
+                                        </div> 
+                                        <div class = "col-md-4">
+                                            <jquery-input-date
+                                                    name = "enforce_date"
+                                                    label = "วันที่มีผลบังคับใช้ :"
+                                                    v-model = "enforce_date"
+                                                    format="d/m/Y"
+                                                    mode = "BE"
+                                                    start-range= '2400'
+                                                    end-range = '3000'
+                                                    age-name = "enforce_date"
+                                            ></jquery-input-date>
+                                        </div> 
+                                    </div>
+                                     <div class = "row">
+                                        <div class = "col-md-4">
+                                            <input-select
+                                                label = "ประเภทการจ้าง :"
+                                                option_start_name = "เลือกประเภทการจ้าง"
+                                                v-model = "employ_type"
+                                                name = "employ_type"
+                                            ></input-select>                                       
+                                        </div>    
+                                        <div class ="col-md-4">
+                                            <input-select
+                                                label = "ตำแหน่ง :"
+                                                option_start_name = "เลือกตำแหน่ง"
+                                                v-model = "position_id"
+                                                name = "position_id"
+                                                :options = "empPositionsApi"
+                                            ></input-select>
+                                        </div> 
+                                        <div class="col-md-4">
+                                           <input-text-area
+                                                name = "work_remark"
+                                                label = "หมายเหตุ : "
+                                                v-model= "work_remark"
+                                           ></input-text-area> 
+                                        </div>   
+                                    </div>
+                                    <div id = "main_collapse" class = "work_collapse" style="display:none;"> 
+                                        <div class = "row">
+                                            <input-line></input-line>
+                                        </div>
+                                    </div>
+                                    <div class = "row">
+                                        <div id = "first_collapse" class = "work_collapse" style="display:none;">
+                                            <div class = "col-md-4">  
+                                                    <input-text
+                                                        name = "employee_number"
+                                                        label = "เลขประจำตำแหน่งพนักงาน:"
+                                                        v-model = "employee_number"
+                                                    ></input-text>                                  
+                                                </div>  
+                                                <div class = "col-md-4">  
+                                                    <input-text
+                                                        name = "goverment_number"
+                                                        label = "เลขประจำตำแหน่งข้าราชการ :"
+                                                        v-model = "goverment_number"
+                                                    ></input-text>                                  
+                                                </div>  
+                                                <div class = "col-md-4">  
+                                                    <input-text
+                                                        name = "positon_frame"
+                                                        label = "เลขกรอบของตำแหน่ง :"
+                                                        v-model = "positon_frame"
+                                                    ></input-text>                                  
+                                            </div>
+                                        </div>
+                                        <div id = "second_collapse" class = "work_collapse" style="display:none;">
+                                            <div class ="col-md-4">
+                                                <input-select
+                                                    label = "สายงาน :"
+                                                    option_start_name = "เลือกสายงาน"
+                                                    v-model = "work_field"
+                                                    name = "work_field"
+                                                ></input-select>
+                                            </div>
+                                        </div>
+                                        <div id = "third_collapse" class = "work_collapse" style="display:none;">
+                                            <div class = "col-md-4">
+                                                <jquery-input-date
+                                                        name = "employ_date_start"
+                                                        label = "ระยะเวลาจ้างเริ่มต้น :"
+                                                        v-model = "employ_date_start"
+                                                        format="d/m/Y"
+                                                        mode = "BE"
+                                                        start-range= '2400'
+                                                        end-range = '3000'
+                                                ></jquery-input-date>
+                                            </div>
+                                            <div class = "col-md-4">
+                                                <jquery-input-date
+                                                        name = "employ_date_end"
+                                                        label = "ระยะเวลาจ้างสิ้นสุด :"
+                                                        v-model = "employ_date_end"
+                                                        format="d/m/Y"
+                                                        mode = "BE"
+                                                        start-range= '2400'
+                                                        end-range = '3000'
+                                                ></jquery-input-date>
+                                            </div>
+                                        </div>
+                                        <div id = "fourth_collapse" class = "work_collapse" style="display:none;">
+                                            <div class ="col-md-4">
+                                                <input-select
+                                                    label = "ระดับที่ได้รับแต่งตั้ง :"
+                                                    option_start_name = "เลือกระดับ"
+                                                    v-model = "appoint_lavel"
+                                                    name = "appoint_lavel"
+                                                ></input-select>
+                                            </div>
+                                            <div class ="col-md-4">
+                                                <input-select
+                                                    label = "สายงานที่ได้รับแต่งตั้ง :"
+                                                    option_start_name = "เลือกสายงานที่ได้รับแต่งตั้ง"
+                                                    v-model = "appoint_field"
+                                                    name = "appoint_field"
+                                                ></input-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class = "row">
+                                        <div class="col-md-12">
+                                            <div class="form-group col-xs-12">
+                                                <center>
+                                                    <input-button 
+                                                        label = "บันทึกข้อมูล"
+                                                        buttonClass = "btn btn-success"
+                                                        iconClass = "fa fa-save"
+                                                    ></input-button>
+                                                    <input-button 
+                                                        label = "ยกเลิกการบันทึก"
+                                                        buttonClass = "btn btn-danger"
+                                                        iconClass = "fa fa-ban"
+                                                    ></input-button>   
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>                             
+                                </form-dashed>
                             </div>
-                            <div class ="col-md-4">
-                                <jquery-input-date
-                                    name = "work_date"
-                                    label = "วันที่มีมติรับเป็นอาจารย์ภาควิชาฯ :"
-                                    v-model = "work_date"
-                                    format="d/m/Y"
-                                    mode = "BE"
-                                    start-range= '2400'
-                                    end-range = '3000'
-                                    age-name = "work_date"
-                                ></jquery-input-date>
-                            </div>
-                            <div class ="col-md-4">
-                                <jquery-input-date
-                                    name = "work_date"
-                                    label = "วันที่เกษียณอายุ:"
-                                    v-model = "work_date"
-                                    format="d/m/Y"
-                                    mode = "BE"
-                                    start-range= '2400'
-                                    end-range = '3000'
-                                    age-name = "work_date"
-                                ></jquery-input-date>
-                            </div> -->
-                        <!-- </div>
-                        <div class="row">
+                        </div>
+                        <!-- <div class="row">
                             <div class ="col-md-12">
                                 <input-line-label
                                     label = "สถานที่ปฏิบัติงาน"
@@ -1510,283 +1719,6 @@
                             </div>  
                         </div> -->
                     </div>
-                    <div id="education_menu" class="tab-pane fade">
-                        test
-                    </div>
-                    <div id = "insignia_menu" class = "tab-pane fade">
-                        <div class = "row">
-                            <div class = "col-md-2 col-sm-2 col-xs-2">
-                                <div class="form-group col-xs-12">
-                                    <input-button 
-                                        label = "เพิ่มข้อมูลการรับเครื่องราชอิสริยาภรณ์"
-                                        iconClass = "fa fa-plus-circle"
-                                        data-toggle="collapse" 
-                                        data-target="#insignia_form"
-                                    ></input-button>
-                                </div>
-                            </div>
-                        </div>
-                         <div class = "row">
-                            <div class = "col-md-12 col-sm-11 col-xs-11">
-                                <form-dashed
-                                    id = "insignia_form"
-                                
-                                >
-                                    <div class = "row">
-                                        <div class="col-md-4">
-                                            <input-select
-                                                name = "insignai_name"
-                                                option_start_name = "เลือกเครื่องราชอิสริยาภรณ์"
-                                                label = "ชื่อเครื่องราชอิสริยาภรณ์ :"
-                                                v-model = "insignai_name"
-                                            ></input-select>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input-text
-                                                name = "insignai_initial_name"
-                                                label = "ชื่อย่อเครื่องราชอิสริยาภรณ์ :"
-                                                v-model = "insignai_initial_name"
-                                                :readonly="true"
-                                            ></input-text>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input-select
-                                                name = "insignai_position"
-                                                option_start_name = "เลือกตำแหน่งวิชาการ"
-                                                label = "ตำแหน่งทางวิชาการที่ได้รับ :"
-                                                v-model = "insignai_position"
-                                            ></input-select>
-                                        </div>
-                                    </div>
-                                    <div class = "row">
-                                        <div class="col-md-4">
-                                            <input-text
-                                                name = "insignai_grade"
-                                                label = "ขั้น :"
-                                                v-model = "insignai_grade"
-                                            ></input-text>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <jquery-input-date
-                                                name = "insignai_receive_date"
-                                                label = "วันที่ได้รับ :"
-                                                v-model = "insignai_receive_date"
-                                                format="d/m/Y"
-                                                mode = "BE"
-                                                start-range= '2400'
-                                                end-range = '3000'
-                                                age-name = "insignai_receive_date"
-                                            ></jquery-input-date>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <jquery-input-date
-                                                name = "insignai_return_date"
-                                                label = "วันที่ได้รับ :"
-                                                v-model = "insignai_return_date"
-                                                format="d/m/Y"
-                                                mode = "BE"
-                                                start-range= '2400'
-                                                end-range = '3000'
-                                                age-name = "insignai_return_date"
-                                            ></jquery-input-date>
-                                        </div>
-                                    </div>
-                                    <div class = "row">
-                                        <div class="col-md-4">
-                                           <input-text-area
-                                                name = "insignai_remark"
-                                                label = "หมายเหตุ : "
-                                                v-model= "insignai_remark"
-                                           ></input-text-area>
-                                           
-                                        </div>                            
-                                    </div>
-                                    <div class = "row">
-                                        <div class="col-md-12">
-                                            <div class="form-group col-xs-12">
-                                                <center>
-                                                    <input-button 
-                                                        label = "บันทึกข้อมูล"
-                                                        buttonClass = "btn btn-success"
-                                                        iconClass = "fa fa-save"
-                                                    ></input-button>
-                                                    <input-button 
-                                                        label = "ยกเลิกการบันทึก"
-                                                        buttonClass = "btn btn-danger"
-                                                        iconClass = "fa fa-ban"
-                                                    ></input-button>   
-                                                </center>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form-dashed>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div id = "works_menu" class = "tab-pane fade">
-                        <div class = "row">
-                            <div class = "col-md-2 col-sm-2 col-xs-2">
-                                <div class="form-group col-xs-12">
-                                    <input-button 
-                                        label = "เพิ่มข้อมูลประวัติการทำงาน"
-                                        iconClass = "fa fa-plus-circle"
-                                        data-toggle="collapse" 
-                                        data-target="#works_form"
-                                    ></input-button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class="col-md-12 col-sm-11 col-xs-11">
-                                <form-dashed
-                                    id = "works_form"
-                                >
-                                    <div class="row">
-                                        <div class = "col-md-4">  
-                                            <input-text
-                                                name = "document_number"
-                                                label = "เลขที่หนังสือคำสั่ง :"
-                                                v-model = "document_number"
-                                            ></input-text>                                  
-                                        </div>  
-                                        <div class = "col-md-4">  
-                                            <input-text
-                                                name = "document_name"
-                                                label = "เรื่องของหนังสือคำสั่ง :"
-                                                v-model = "document_name"
-                                            ></input-text>                                  
-                                        </div>        
-                                        <div class = "col-md-4">
-                                            <input-select
-                                                label = "ประเภทของหนังสือคำสั่ง: "
-                                                option_start_name = "ประเภทของหนังสือคำสั่ง"
-                                                v-model = "document_type"
-                                                name = "document_type"
-                                                :options = "documentTypesApi"
-                                            ></input-select>                                       
-                                        </div>    
-                                    </div>
-                                    <div class = "row">
-                                        <div class = "col-md-4">
-                                            <input-select
-                                                label = "ประเภทของการจ้าง: "
-                                                option_start_name = "เลือกประเภทของการจ้าง"
-                                                v-model = "employ_type"
-                                                name = "employ_type"
-                                            ></input-select>                                       
-                                        </div>    
-                                        <div class ="col-md-4">
-                                            <input-select
-                                                label = "สายงาน : "
-                                                option_start_name = "เลือกสายงาน"
-                                                v-model = "work_field"
-                                                name = "work_field"
-                                                :options = "empWorkFieldsApi"
-                                            ></input-select>
-                                        </div>
-                                        <div class ="col-md-4">
-                                            <input-select
-                                                label = "ตำแหน่ง : "
-                                                option_start_name = "เลือกตำแหน่ง"
-                                                v-model = "position_id"
-                                                name = "position_id"
-                                                :options = "empPositionsApi"
-                                            ></input-select>
-                                        </div>
-                                    </div>
-                                    <div class = "row">
-                                        <div class = "col-md-4">  
-                                            <input-text
-                                                name = "employee_number"
-                                                label = "เลขที่ประจำตำแหน่งของพนักงาน :"
-                                                v-model = "employee_number"
-                                            ></input-text>                                  
-                                        </div>  
-                                        <div class = "col-md-4">  
-                                            <input-text
-                                                name = "goverment_number"
-                                                label = "เลขที่ประจำตำแหน่งของข้าราชการ :"
-                                                v-model = "goverment_number"
-                                            ></input-text>                                  
-                                        </div>  
-                                        <div class = "col-md-4">  
-                                            <input-text
-                                                name = "positon_frame"
-                                                label = "เลขที่กรอบของตำแหน่ง :"
-                                                v-model = "positon_frame"
-                                            ></input-text>                                  
-                                        </div> 
-                                    </div>
-                                    <div class = "row">
-                                        <div class = "col-md-4">  
-                                            <input-text
-                                                name = "unit"
-                                                label = "หน่วยงาน :"
-                                                v-model = "unit"
-                                            ></input-text>                                  
-                                        </div>  
-                                        <div class = "col-md-4">
-                                            <jquery-input-date
-                                                    name = "sign_date"
-                                                    label = "วันที่ลงนาม :"
-                                                    v-model = "sign_date"
-                                                    format="d/m/Y"
-                                                    mode = "BE"
-                                                    start-range= '2400'
-                                                    end-range = '3000'
-                                                    age-name = "sign_date"
-                                            ></jquery-input-date>
-                                        </div> 
-                                        <div class = "col-md-4">
-                                            <jquery-input-date
-                                                    name = "fill_date"
-                                                    label = "วันที่บรรจุ :"
-                                                    v-model = "fill_date"
-                                                    format="d/m/Y"
-                                                    mode = "BE"
-                                                    start-range= '2400'
-                                                    end-range = '3000'
-                                                    age-name = "fill_date"
-                                            ></jquery-input-date>
-                                        </div>
-                                    </div>
-                                    <div class = "row">
-                                        <div class = "col-md-4">
-                                            <jquery-input-date
-                                                    name = "employ_date_start"
-                                                    label = "ระยะเวลาจ้างเริ่มต้น :"
-                                                    v-model = "employ_date_start"
-                                                    format="d/m/Y"
-                                                    mode = "BE"
-                                                    start-range= '2400'
-                                                    end-range = '3000'
-                                                    age-name = "fill_date"
-                                            ></jquery-input-date>
-                                        </div>
-                                        <div class = "col-md-4">
-                                            <jquery-input-date
-                                                    name = "employ_date_end"
-                                                    label = "ระยะเวลาจ้างสิ้นสุด :"
-                                                    v-model = "employ_date_end"
-                                                    format="d/m/Y"
-                                                    mode = "BE"
-                                                    start-range= '2400'
-                                                    end-range = '3000'
-                                                    age-name = "fill_date"
-                                            ></jquery-input-date>
-                                        </div>
-                                    </div>
-                                </form-dashed>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class ="col-md-12">
-                                <input-line-label
-                                    label = "ข้อมูลการทำงานปัจจุบัน"
-                                ></input-line-label>
-                            </div>
-                         </div>
-                    </div> -->
                     <div id = "taining_menu" class = "tab-pane fade">
                         <div class = "row">
                             <div class = "col-md-2 col-sm-2 col-xs-2">
@@ -2108,6 +2040,7 @@
     import InputTable from '../inputs/InputTableComponent.vue'
     import InputTextArea from '../inputs/InputTextAreaComponent.vue'
     import InputRadio from '../inputs/InputRadio.vue'
+    import InputLine from '../inputs/LineComponent.vue'
     import moment from 'moment';
     export default {
         components: {
@@ -2129,6 +2062,7 @@
             InputTable,
             FormDashed,
             InputTextArea,
+            InputLine
         },
         data() {
             return {
@@ -2387,18 +2321,18 @@
                     { value : '3', label : 'จ้างต่อ' }, 
                     { value : '4', label : 'ต่อเวลาปฏิบัติงาน' }, 
                     { value : '5', label : 'ต่อสัญญาจ้างเป็นที่ปรึกษาคณะฯ' }, 
-                    { value : '6', label : 'ขยายระยะเวลาการจ้างพนักงานมหาวิทยาลัย' }, 
-                    { value : '7', label : 'อนุมัติให้ยืมตัว' }, 
-                    { value : '8', label : 'โอนย้าย' }, 
-                    { value : '9', label : 'เปลี่ยนตำแหน่ง' }, 
-                    { value : '10', label : 'แก้ไขคำสั่งให้ข้าราชการลาออกจากราชการ' }, 
-                    { value : '11', label : 'แก้ไขคำสั่งบรรจุและแต่งตั้งผู้เปลี่ยนสถานภาพ' }, 
-                    { value : '12', label : 'ปรับระดับชั้นงาน' }, 
-                    { value : '13', label : 'เปลี่ยนประเภทการจ้าง' }, 
-                    { value : '14', label : 'ให้ใช้ชื่อตำแหน่งพนักงานมหาวิทยาลัยประเภทสนับสนุนความก้าวหน้าของตำแหน่ง' }, 
-                    { value : '15', label : 'แต่งตั้งพนักงานมหาวิทยาลัยให้ดำรงตำแหน่งทางวิชาการ' }, 
-                    { value : '16', label : 'แต่งตั้งผู้บริหาร' }, 
-                    { value : '17', label : 'ลาออก' }, 
+                    { value : '6', label : 'อนุมัติให้ยืมตัว' }, 
+                    { value : '7', label : 'โอนย้าย' }, 
+                    { value : '8', label : 'เปลี่ยนตำแหน่ง' }, 
+                    { value : '9', label : 'แก้ไขคำสั่งให้ข้าราชการลาออกจากราชการ' }, 
+                    { value : '10', label : 'แก้ไขคำสั่งบรรจุและแต่งตั้งผู้เปลี่ยนสถานภาพ' }, 
+                    { value : '11', label : 'ปรับระดับชั้นงาน' }, 
+                    { value : '12', label : 'เปลี่ยนประเภทการจ้าง' }, 
+                    { value : '13', label : 'ให้ใช้ชื่อตำแหน่งพนักงานมหาวิทยาลัยประเภทสนับสนุนความก้าวหน้าของตำแหน่ง' }, 
+                    { value : '14', label : 'แต่งตั้งพนักงานมหาวิทยาลัยให้ดำรงตำแหน่งทางวิชาการ' }, 
+                    { value : '15', label : 'แต่งตั้งผู้บริหาร' }, 
+                    { value : '16', label : 'ลาออก' },
+                    { value : '17', label : 'ขยายระยะเวลาการจ้างพนักงานมหาวิทยาลัย' },  
                     { value : '18', label : 'ให้พนักงานมหาวิทยาลัยกลับเข้าปฏิบัติงานตามปกติ' }, 
                     { value : '19', label : 'ลาฝึกอบรม เรียนต่อ' }, 
                 ],
@@ -2441,6 +2375,39 @@
                 this.work_type = '';
                 this.StatusApi = '';
                 $('#unemploy_date').hide(); 
+            },
+            document_type(document_type){
+                if (document_type == 1){
+                    $('.work_collapse').hide();
+                    $('#main_collapse').show();
+                    $('#first_collapse').show();
+                    $('#third_collapse').show();
+                }
+                if (document_type == 2 || document_type == 4){
+                    $('.work_collapse').hide();
+                    $('#main_collapse').show();
+                    $('#third_collapse').show();
+                }
+                if (document_type == 3 || document_type == 17 || document_type == 19){
+                    $('.work_collapse').hide();
+                    $('#main_collapse').show();
+                    $('#second_collapse').show();
+                    $('#third_collapse').show();
+                }
+                if (document_type == 5 || document_type == 6 || document_type == 7 || document_type == 8 || document_type == 10 || document_type == 12 || document_type == 13 || document_type == 16 || document_type == 18){
+                    $('.work_collapse').hide();
+                    $('#main_collapse').show();
+                    $('#second_collapse').show();
+                }
+                if (document_type == 9 || document_type == 11 || document_type == 14){
+                    $('.work_collapse').hide();
+                }
+                if (document_type == 15){
+                    $('.work_collapse').hide();
+                    $('#main_collapse').show();
+                    $('#third_collapse').show();
+                    $('#fourth_collapse').show();
+                }
             }
 
         },
