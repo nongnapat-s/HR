@@ -237,8 +237,8 @@
                             </div>
                             <div class = "col-md-4">
                                 <div class = "paddings">
-                                    <input-radio-a
-                                        @update="(item,apiName) => updateGender(item,apiName)"
+                                    <input-radio
+                                        @update="(item,radioName,apiName,value) => updateGender(item,radioName,apiName,value)"
                                         name = "gender"
                                         label = "เพศ :"
                                         v-model = "gender"
@@ -371,7 +371,8 @@
                                         label = "สถานภาพ : "
                                         v-model = "work_status"
                                         :options = "work_statuses"
-                                        @update="(value,StatusApi) => updateStatus(value,StatusApi)"
+                                        @update="(item,radioName,apiName,value) => updateStatus(item,radioName,apiName,value)"
+                                        api-name="StatusApi"
                                     />
                                     </div>
                                 </div>
@@ -2093,7 +2094,7 @@
     import InputDate from '../inputs/InputDateComponent.vue'
     import InputPalitday from '../inputs/InputPalitday.vue'
     import InputToggle from '../inputs/InputToggleComponent.vue'
-    import InputRadio from '../inputs/InputRadioComponent.vue'
+    // import InputRadio from '../inputs/InputRadioComponent.vue'
     import InputSelect from '../inputs/InputSelectComponent.vue'
     import InputCheckbox from '../inputs/InputCheckboxComponent.vue'
     import InputLineLabel from '../inputs/InputLineLabelComponent.vue'
@@ -2106,7 +2107,7 @@
     import FormDashed from '../inputs/FormDashed.vue'
     import InputTable from '../inputs/InputTableComponent.vue'
     import InputTextArea from '../inputs/InputTextAreaComponent.vue'
-    import InputRadioA from '../inputs/InputRadio.vue'
+    import InputRadio from '../inputs/InputRadio.vue'
     import moment from 'moment';
     export default {
         components: {
@@ -2128,13 +2129,12 @@
             InputTable,
             FormDashed,
             InputTextArea,
-            InputRadioA
         },
         data() {
             return {
                 ref_id : '',
                 document_no : '',
-                gender : '',
+                gender : null,
                 prefix_id : null,
                 prefix_eng: '',
                 extra_prefix_id : '',
@@ -2148,7 +2148,7 @@
                 middlename : '',
                 middlename_eng : '',
                 picture : '',
-                work_status : '',
+                work_status : null,
                 work_type :  '',
                 work_subtype : '',
                 unemploy_date : '',
@@ -2176,8 +2176,8 @@
                     { value : '1' , label : 'ชาย' , url : 'prefix-male'}, 
                 ],
                 work_statuses : [
-                    { value : '0', label : 'ปฏิบัติงาน'},
-                    { value : '1', label : 'พ้นสภาพ'},
+                    { value : '0', label : 'ปฏิบัติงาน' , url : 'status-active'},
+                    { value : '1', label : 'พ้นสภาพ' ,  url : 'status-inactive'},
                 ],
                 blood_groups : [
                     { value : '0' , label : 'A' },
@@ -2432,6 +2432,11 @@
                 this.emergencyPrefixApi = '';
                 this.emergency_prefix_id = '';
             },
+            work_status(work_status){
+                this.work_type = '';
+                this.StatusApi = '';
+                $('#unemploy_date').hide(); 
+            }
 
         },
         created() {
@@ -2533,8 +2538,10 @@
                     this.contact_postcode_id = '';
                 }
             },
-            updateGender(value,apiName){
-                this[apiName] = value;
+            updateGender(item,radioName,apiName,value){
+                if (this[radioName] != ''){ 
+                    this[apiName] = item;
+                }
             },
             updateAge(dob,ageName){
                 var current_year = moment().format('YYYY');
@@ -2542,20 +2549,16 @@
                 this.dob = dob;
                 this[ageName] = current_year - age[2] + ' ปี';
             },
-            updateStatus(value,StatusApi) {
-                var url = value == 0 ? 'status-active' : 'status-inactive';
-                if ( value == 1 ){
-                    $('#unemploy_date').fadeIn(); 
-                }else{
-                    $('#unemploy_date').fadeOut(); 
+            updateStatus(item,radioName,apiName,value) {
+                if (this[radioName] != ''){ 
+                    if ( value == 1 ){
+                        $('#unemploy_date').fadeIn(); 
+                    }else{
+                        $('#unemploy_date').hide(); 
+                    }
+                        this[apiName] = item;
                 }
-                axios.get('/get-list/'+ url)
-                .then ((response) => {
-                    this.StatusApi = response.data;
-                })
-                .catch((error) => {
-                    console.log(error);
-                })
+             
             }
         }
     }

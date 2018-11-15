@@ -12,7 +12,7 @@
                 :value="option.value"
                 :key="index"
                 :selected="value == option.value"
-                v-text="option.label + ' ' + option.name_eng"
+                v-text="option.label"
             ></option>
         </select>
 </div>

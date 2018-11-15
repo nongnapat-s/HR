@@ -1,3 +1,4 @@
+
 <template>
     <div class="form-group col-xs-12">
         <label v-text = "label"></label>
@@ -29,24 +30,21 @@
         },
         methods : {
             onClick: function($event){
-                if (this.options[$event.target.value].url != ''){
-                    console.log(this.options[$event.target.value].url);
-                } 
                 let url = this.options[$event.target.value].url;
                 axios.get('get-list/' + url)
-                    .then((response) => {
-                        console.log(response.data)
-                        this.$emit('update',response.data,this.apiName);
-                    })
-                    .catch((error) => {
-                        console.log(error);
+                .then((response) => {               			 	   
+                    this.$emit('update',response.data,this.name,this.apiName,$event.target.value);
+                })
+                .catch((error) => {
+                    console.log(error);
                 });
                 this.$emit('input', $event.target.value)
             },
+
             unClick:function($event){
-                console.log('click uncheck');
-                this.$emit('input','');
-                this.$emit('update','');
+                //alert('test');
+                    this.$emit('input','');
+                    this.$emit('update','');
             }
         }
     }
