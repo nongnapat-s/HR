@@ -730,7 +730,7 @@
                                         <div class = "col-md-4">
                                             <div class = "paddings">
                                             <input-radio
-                                                @update="(item,apiName) => updateGender(item,apiName)"
+                                                @update="(item,radioName,apiName,value) => updateGender(item,radioName,apiName,value)"
                                                 name = "child_gender"
                                                 label = "เลือกเพศ :"
                                                 v-model = "child_gender"
@@ -2419,6 +2419,11 @@
                 this.empPrefixApi = '';
                 this.prefix_id = '';
                 this.prefix_eng = '';
+            },
+            child_gender(child_gender){
+                this.childPrefixApi = '';
+                this.child_prefix_id = '';
+                this.child_prefix_eng = '';
             },
             marital_status(marital_status){
                 console.log(marital_status);
