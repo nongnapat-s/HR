@@ -1309,7 +1309,119 @@
                         </div>
                     </div>
                     <div id="education_menu" class="tab-pane fade">
-                        test
+                        <div class = "row">
+                            <div class = "col-md-2 col-sm-2 col-xs-2">
+                                <div class="form-group col-xs-12">
+                                    <input-button 
+                                        label = "เพิ่มข้อมูลการศึกษา"
+                                        iconClass = "fa fa-plus-circle"
+                                        data-toggle="collapse" 
+                                        data-target="#education_form"
+                                    ></input-button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-md-12 col-sm-11 col-xs-11">
+                                <form-dashed
+                                    id = "education_form"
+                                
+                                >
+                                    <div class = "row">
+                                        <div class = "col-md-4">
+                                            <input-select
+                                                label = "ระดับการศึกษา : "
+                                                option_start_name = "เลือกระดับการศึกษา"
+                                                v-model = "education_grade"
+                                                name = "education_grade"
+                                            ></input-select>                                       
+                                        </div> 
+                                        <div class = "col-md-4">
+                                            <auto-complete
+                                                v-model = "education_faculty"
+                                                label = "เลือกคณะ :auto-complete"
+                                                name = "education_faculty"
+                                                >
+                                            </auto-complete>                                     
+                                        </div>     
+                                        <div class = "col-md-4">
+                                            <auto-complete
+                                                v-model = "education_division"
+                                                label = "เลือกสาขาวิชา :auto-complete"
+                                                name = "education_division"
+                                                >
+                                            </auto-complete>                                        
+                                        </div>     
+                                    </div> 
+                                    <div class = "row">
+                                        <div class = "col-md-4">
+                                             <auto-complete
+                                                label = "วุฒิการศึกษา :auto-complete"
+                                                v-model = "education_qualify"
+                                                name = "education_qualify"
+                                           ></auto-complete>                                        
+                                        </div>    
+                                        <div class="col-md-4">
+                                            <input-text
+                                                name = "education_short_qualify"
+                                                label = "วุฒิการศึกษา (ย่อ) :"
+                                                v-model = "education_short_qualify"
+                                                :readonly="true"
+                                            >
+                                            </input-text>
+                                        </div>
+                                        <div class = "col-md-4">
+                                             <auto-complete
+                                                label = "สถานศึกษา :auto-complete"
+                                                v-model = "education_place"
+                                                name = "education_place"
+                                           ></auto-complete>                                        
+                                        </div>  
+                                        <div class = "col-md-4">
+                                            <input-text
+                                                label = "ประเทศ :"
+                                                v-model = "education_country"
+                                                name = "education_country"
+                                           ></input-text>                                        
+                                        </div>  
+                                        <div class = "col-md-4">
+                                            <input-text
+                                                name = "education_year"
+                                                label = "ปีพ.ศ.ที่จบการศึกษา:"
+                                                v-model = "education_year"
+                                                pattern= "^2([4-9]{1})([0-9]{2})$"
+                                                error-text = "รูปแบบพ.ศ.ไม่ถูกต้อง"
+                                            ></input-text>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input-text
+                                                name = "education_generation"
+                                                label = "รุ่นที่จบการศึกษา:"
+                                                v-model = "education_generation"
+                                            ></input-text>
+                                        </div>
+                                    </div>
+                                    <div class = "row">
+                                        <div class="col-md-12">
+                                            <div class="form-group col-xs-12">
+                                                <center>
+                                                    <input-button 
+                                                        label = "บันทึกข้อมูล"
+                                                        buttonClass = "btn btn-success"
+                                                        iconClass = "fa fa-save"
+                                                    ></input-button>
+                                                    <input-button 
+                                                        label = "ยกเลิกการบันทึก"
+                                                        buttonClass = "btn btn-danger"
+                                                        iconClass = "fa fa-ban"
+                                                    ></input-button>   
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form-dashed>
+                            </div>
+                        </div>
                     </div>
                     <div id = "insignia_menu" class = "tab-pane fade">
                         <div class = "row">
@@ -1332,12 +1444,11 @@
                                 >
                                     <div class = "row">
                                         <div class="col-md-4">
-                                            <input-select
+                                            <auto-complete
                                                 name = "insignai_name"
-                                                option_start_name = "เลือกเครื่องราชอิสริยาภรณ์"
-                                                label = "ชื่อเครื่องราชอิสริยาภรณ์ :"
+                                                label = "ชื่อเครื่องราชอิสริยาภรณ์ : auto-complete"
                                                 v-model = "insignai_name"
-                                            ></input-select>
+                                            ></auto-complete>
                                         </div>
                                         <div class="col-md-4">
                                             <input-text
@@ -2337,6 +2448,30 @@
                     { value : '19', label : 'ลาฝึกอบรม เรียนต่อ' }, 
                 ],
                 StatusApi : '',
+                document_name : '',
+                unit : '',
+                sign_date : '',
+                enforce_date : '',
+                employ_type : '',
+                empPositionsApi : '',
+                work_remark : '',
+                employee_number : '',
+                goverment_number : '',
+                positon_frame : '',
+                work_field : '',
+                employ_date_start : '',
+                employ_date_end : '',
+                appoint_lavel : '',
+                appoint_field : '',
+                education_grade : '',
+                education_faculty: '',
+                education_division : '',
+                education_qualify : '',
+                education_short_qualify : '',
+                education_place : '',
+                education_country : '',
+                education_year : '',
+                education_generation : '',
 
             }
         },
