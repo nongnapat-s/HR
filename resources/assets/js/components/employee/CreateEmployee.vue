@@ -702,6 +702,20 @@
                                             id = "child_form"
                                         >
                                             <div class="row">
+                                                <div class = "col-md-4">
+                                                    <div class = "padding">
+                                                    <input-radio
+                                                        @update="(item,radioName,apiName,value) => updateGender(item,radioName,apiName,value)"
+                                                        name = "child_gender"
+                                                        label = "เลือกเพศ :"
+                                                        v-model = "child_gender"
+                                                        :options = "genders"
+                                                        api-name = "childPrefixApi"
+                                                    />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
                                                 <div class ="col-md-4">
                                                     <input-select
                                                         label = "คำนำหน้าชื่อ : "
@@ -727,18 +741,6 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class = "col-md-4">
-                                                    <div class = "paddings">
-                                                    <input-radio
-                                                        @update="(item,radioName,apiName,value) => updateGender(item,radioName,apiName,value)"
-                                                        name = "child_gender"
-                                                        label = "เลือกเพศ :"
-                                                        v-model = "child_gender"
-                                                        :options = "genders"
-                                                        api-name = "childPrefixApi"
-                                                    />
-                                                    </div>
-                                                </div>
                                                 <div class ="col-md-4">
                                                     <input-text
                                                         name = "child_document_no"
@@ -1255,6 +1257,20 @@
                                         <input-line-label
                                             label = "ผู้ติดต่อกรณีฉุกเฉิน"
                                         ></input-line-label>
+                                    </div>
+                                </div>
+                                <div class = "row">
+                                   <div class = "col-md-4">
+                                        <div class = "padding">
+                                            <input-radio
+                                                @update="(item,radioName,apiName,value) => updateGender(item,radioName,apiName,value)"
+                                                name = "emergency_gender"
+                                                label = "เลือกเพศ :"
+                                                v-model = "emergency_gender"
+                                                :options = "genders"
+                                                api-name = "emergencyPrefixApi"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                                 <div class = "row">
@@ -2555,7 +2571,7 @@
                     $('#first_collapse').show();
                     $('#fourth_collapse').show();
                 }
-            }
+            },
 
         },
         created() {

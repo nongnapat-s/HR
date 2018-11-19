@@ -28,7 +28,6 @@ export default {
     },
     data() { return { value : '' } },
     mounted() {
-        $.datetimepicker.setLocale('th');
         jQuery('input[name='+ this.name + ']').datetimepicker({
             datepicker: this.datepicker,
             timepicker: this.timepicker,
@@ -40,7 +39,7 @@ export default {
                         '20.00'],
             onSelectDate:(pickedDate) =>{
                 this.$emit('input', this.$refs.input_date.value);
-                this.$emit('update', pickedDate.toLocaleDateString(),this.ageName);
+                this.$emit('update', pickedDate.toLocaleDateString('en'),this.ageName);
             }
         });
     },
