@@ -176,6 +176,11 @@
                 </div>
             </panel> -->
                     <panel title = "ข้อมูลบุคลากร">
+                                <input-table
+                                    :has-actions = "['edit','delete']"
+                                    :head-rows = "['ชื่อ','นามสกุล','อายุ']"
+                                    :rows = "rows"
+                                ></input-table>
                         <div class="row">
                         <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
                                 <div class="pull-right"><img
@@ -2525,7 +2530,27 @@
                 vpn : '',
                 work_start : '',
                 work_end : '',
-
+                hasActions : {
+                    edit : [ 
+                        {
+                            "label" : "แก้ไข",
+                        }
+                    ]
+                },
+                rows :  [
+                            {
+                                "first_name" : "Jill",
+                                "last_name" : "Smith",
+                                "age" : 18
+                            }
+                        ,
+                        
+                            {
+                                "first_name" : "Eve",
+                                "last_name" : "Jackson",
+                                "age" : 15
+                            }
+                        ],
 
             }
         },
