@@ -176,13 +176,8 @@
                 </div>
             </panel> -->
                     <panel title = "ข้อมูลบุคลากร">
-                                <input-table
-                                    :has-actions = "['edit','delete']"
-                                    :head-rows = "['ชื่อ','นามสกุล','อายุ']"
-                                    :rows = "rows"
-                                ></input-table>
                         <div class="row">
-                        <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
+                            <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
                                 <div class="pull-right"><img
                                     :src="'/storage/01.jpeg'"
                                     class="img-thumbnail"
@@ -1023,7 +1018,7 @@
                                     </div>
                                 </div>
                             <div class = "col-md-12 col-centered">
-                                <table class="table table-bordered" id = "childs">
+                                <!-- <table class="table table-bordered" id = "childs">
                                     <thead>
                                     <tr>
                                             <th 
@@ -1049,7 +1044,13 @@
                                                 <td style="max-width: 10px;word-wrap:break-word;"><center></center></td>
                                             </tr>
                                     </tbody>
-                                </table>
+                                </table> -->
+                                <input-table
+                                    name = "childs_table"
+                                    :has-actions = "['edit','delete']"
+                                    :head-rows = "childsHeadRows"
+                                    :rows = "childRows"
+                                ></input-table>
                             </div>
                             </div>
                             <div id="contact_menu">
@@ -1451,6 +1452,14 @@
                                         </form-dashed>
                                     </div>
                                 </div>
+                                <div class = "col-md-12 col-centered">
+                                    <input-table
+                                        name = "education_table"
+                                        :has-actions = "['edit','delete']"
+                                        :head-rows = "educationHeadRows"
+                                        :rows = "educationRows"
+                                    ></input-table>
+                                </div>
                             </div>
                             <div id = "insignia_menu" class = "tab-pane fade">
                                 <div class = "row">
@@ -1465,7 +1474,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                    <div class = "row">
+                                <div class = "row">
                                     <div class = "col-md-12 col-sm-11 col-xs-11">
                                         <form-dashed
                                             id = "insignia_form"
@@ -1558,6 +1567,14 @@
                                             </div>
                                         </form-dashed>
                                     </div>
+                                </div>
+                                <div class = "col-md-12 col-centered">
+                                    <input-table
+                                        name = "insignia_table"
+                                        :has-actions = "['edit','delete']"
+                                        :head-rows = "insigniaHeadRows"
+                                        :rows = "insigniaRows"
+                                    ></input-table>
                                 </div>
                             </div>
                             <div id = "works_menu" class = "tab-pane fade">
@@ -2012,6 +2029,14 @@
                                         </form-dashed>
                                     </div>
                                 </div>
+                                <div class = "col-md-12 col-centered">
+                                    <input-table
+                                        name = "taining_table"
+                                        :has-actions = "['edit','delete']"
+                                        :head-rows = "tainingHeadRows"
+                                        :rows = "tainingRows"
+                                    ></input-table>
+                                </div>
                             </div>
                             <div id="honor_menu" class="tab-pane fade">
                                 <div class = "row">
@@ -2098,28 +2123,12 @@
                                     </div>
                                 </div>
                                 <div class = "col-md-12 col-centered">
-                                    <table class="table table-bordered" id = "childs">
-                                        <thead>
-                                            <tr>
-                                                <th ><center>ปีพ.ศ.</center></th>
-                                                <th><center>ชื่อรางวัลเกียรติยศ</center></th>
-                                                <th><center>ระดับของรางวัลเกียรติยศ</center></th>
-                                                <th><center>ด้านของรางวัลเกียรติยศ</center></th>
-                                                <th><center>หน่วยงานที่มอบรางวัลเกียรติยศ</center></th>
-                                                <th><center>จัดการข้อมูล</center></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><center></center></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <input-table
+                                        name = "honor_table"
+                                        :has-actions = "['edit','delete']"
+                                        :head-rows = "honorHeadRows"
+                                        :rows = "honorRows"
+                                    ></input-table>
                                 </div>
                                 <br/>
                             </div>
@@ -2530,27 +2539,38 @@
                 vpn : '',
                 work_start : '',
                 work_end : '',
-                hasActions : {
-                    edit : [ 
-                        {
-                            "label" : "แก้ไข",
-                        }
-                    ]
-                },
-                rows :  [
-                            {
-                                "first_name" : "Jill",
-                                "last_name" : "Smith",
-                                "age" : 18
-                            }
-                        ,
-                        
-                            {
-                                "first_name" : "Eve",
-                                "last_name" : "Jackson",
-                                "age" : 15
-                            }
-                        ],
+                childRows :  [
+                    {
+                        "no" : 1,
+                        "full_name" : "Jill Smith",
+                        "document_no" : 1234567890,
+                        "passport_no" : 1234567890,
+                        "dob" : '10/10/2010',
+                        "age" : 8,
+                        "gender" : "หญิง",
+                    },
+                    {
+                        "no" : 2,
+                        "full_name" : "Jame Smith",
+                        "document_no" : 1234567891,
+                        "passport_no" : 1234567892,
+                        "dob" : '10/10/2012',
+                        "age" : 6,
+                        "gender" : "ชาย",
+
+                    },
+                ],
+                educationRows : [],
+                tainingRows : [],
+                insigniaRows : [],
+                honorRows : [],
+                workrows : [],
+                childsHeadRows : ['คนที่','ชื่อ-นามสกุล','เลขบัตรประชาชน','เลขหนังสือเดินทาง','วัน/เดือน/ปีเกิด','อายุ','เพศ'],
+                worksHeadRows : [''],
+                educationHeadRows : ['ระดับการศึกษา','คณะ','สาขาวิชา','วุฒิการศึกษา','วุฒิการศึกษา (ย่อ)','สถานศึกษา','ประเทศ','ปีการศึกษา','รุ่นที่'],
+                tainingHeadRows : ['ประเภทการลา','ระดับ','หลักสูตร/เรื่อง','สาขาวิชา','ระยะเวลา','สถานศึกษา','ประเทศ','เมือง','ทุน','หมายเหตุ'],
+                insigniaHeadRows : ['ชื่อเครื่องราชอิสริยาภรณ์','ชื่อ (ย่อ)','ตำแหน่งที่ได้รับ','ขั้น','วันที่ได้รับ','วันที่คืน','หมายเหตุ'],
+                honorHeadRows : ['ปีที่ได้รับรางวัล', 'ชื่อรางวัล','ระดับของรางวัล','ด้านของรางวัล','หน่วยงานที่มอบรางวัล']
 
             }
         },
