@@ -1,180 +1,6 @@
 <template>
     <div class = "container-fuild col-md-12">
         <br>
-            <!-- <panel title = "ประวัติบุคลากร">
-                <div class = "row">
-                    <div class = "col-md-3 col-sm-4">
-                        <file-input
-                            name = "picture"
-                            label = "รูปถ่ายพนักงาน :"
-                            v-model= "picture"
-                            :preview= "true"
-                        >
-                        </file-input>
-                    </div>
-                    <div class = "col-md-9">
-                        <div class = "row">
-                            <div class ="col-md-4">
-                                <input-text
-                                    @update="(value) => employeeApi(value)"
-                                    name = "ref_id"
-                                    label = "รหัสพนักงาน :"
-                                    v-model = "ref_id"
-                                    pattern= "^100([0-9]{5})$"
-                                    error-text = "รหัสพนักงานไม่ถูกต้อง"
-                                    :required="true"
-                                ></input-text>
-                            </div>
-                            <div class ="col-md-4">
-                                <input-text
-                                    name = "document_no"
-                                    label = "เลขบัตรประชาชน :"
-                                    v-model = "document_no"
-                                    pattern= "^([0-9]{13})$"
-                                    error-text="เลขบัตรประชาชนไม่ถูกต้อง"
-                                    :required="false"
-                                ></input-text>
-                            </div>
-                            <div class = "col-md-4">
-                                <div class = "paddings">
-                                    <input-radio
-                                        @update="(item,apiName) => updateGender(item,apiName)"
-                                        name = "gender"
-                                        label = "เพศ :"
-                                        v-model = "gender"
-                                        :options = "genders"
-                                        api-name = "empPrefixApi"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class ="col-md-4">
-                                <input-select
-                                    label = "คำนำหน้าชื่อ : "
-                                    option_start_name = "เลือกคำนำหน้า"
-                                    v-model = "prefix_id"
-                                    name = "prefix_id"
-                                    :options = "empPrefixApi"
-                                ></input-select>
-                            </div>
-                            <div class ="col-md-4">
-                                <input-text
-                                    name = "extra_prefix_id"
-                                    label = "ยศ/ตำแหน่ง :"
-                                    v-model = "extra_prefix_id"
-                                ></input-text>
-                            </div>
-                            <div class ="col-md-4">
-                                <input-text
-                                    name = "position_id"
-                                    label = "ตำแหน่งทางวิชาการ :"
-                                    v-model = "position_id"
-                                    :required="false"
-                                    :readonly="true"
-                                    ></input-text>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class ="col-md-4">
-                                <input-text
-                                    name = "firstname"
-                                            label = "ชื่อจริง :"
-                                            v-model = "firstname"
-                                        ></input-text>
-                                    </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "middlename"
-                                            label = "ชื่อกลาง :"
-                                            v-model = "middlename"
-                                        ></input-text>
-                                    </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "lastname"
-                                            label = "นามสกุล :"
-                                            v-model = "lastname"
-                                        ></input-text>
-                                    </div>
-                                </div>
-                                <div class = "row">
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "prefix_eng"
-                                            label = "คำนำหน้าชื่อ (อังกฤษ):"
-                                            v-model = "prefix_eng"
-                                            :readonly="true"
-                                        ></input-text>
-                                    </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "extra_prefix_eng"
-                                            label = "ยศ/ตำแหน่ง (อังกฤษ):"
-                                            v-model = "extra_prefix_eng"
-                                        ></input-text>
-                                    </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "position_eng_id"
-                                            label = "ตำแหน่งทางวิชาการ (อังกฤษ) :"
-                                            v-model = "position_eng_id"
-                                            :required="false"
-                                        ></input-text>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "firstname_eng"
-                                            label = "ชื่อจริง (อังกฤษ):"
-                                            v-model = "firstname_eng"
-                                        ></input-text>
-                                    </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "middlename_eng"
-                                            label = "ชื่อกลาง (อังกฤษ):"
-                                            v-model = "middlename_eng"
-                                        ></input-text>
-                                    </div>
-                                    <div class ="col-md-4">
-                                        <input-text
-                                            name = "lastname_eng"
-                                            label = "นามสกุล (อังกฤษ):"
-                                            v-model = "lastname_eng"
-                                        ></input-text>
-                                    </div>
-                                </div>
-                            <div class = "row">
-                                <div class ="col-md-4">
-                                        <input-radio
-                                            name = "work_status"
-                                            label = "สถานภาพการปฏิบัติงาน :"
-                                            v-model = "work_status"
-                                            :options = "work_statuses"
-                                        />
-                                </div>
-                                <div class="col-md-4">
-                                    <input-select
-                                        label = "ประเภทของสถานภาพ : "
-                                        option_start_name = "เลือกประเภทของสถานภาพ"
-                                        v-model = "work_type"
-                                        name = "work_type"
-                                    ></input-select>
-                                </div>
-                                <div class="col-md-4">
-                                    <input-select
-                                        label = "ประเภทของสถานภาพ : "
-                                        option_start_name = "เลือกประเภทของสถานภาพ"
-                                        v-model = "work_type"
-                                        name = "work_type"
-                                    ></input-select>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </panel> -->
                     <panel title = "ข้อมูลบุคลากร">
                         <div class="row">
                             <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
@@ -212,7 +38,7 @@
                             </div>
                         </div>
                         <div class="tab-content">
-                            <div id="employee_menu" class="tab-pane fade">
+                            <div id="employee_menu" class="tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class ="col-md-4">
                                         <input-text
@@ -222,6 +48,7 @@
                                             v-model = "ref_id"
                                             pattern= "^100([0-9]{5})$"
                                             error-text = "รหัสพนักงานไม่ถูกต้อง"
+                                            data-preview = "false"
                                             :required="true"
                                         ></input-text>
                                     </div>
@@ -249,6 +76,14 @@
                                     </div>
                                 </div>
                                 <div class = "row">
+                                    <div class = "col-md-4">
+                                        <file-input
+                                            name = "picture"
+                                            label = "รูปถ่ายพนักงาน :"
+                                            v-model= "picture"
+                                        >
+                                        </file-input>
+                                    </div>
                                     <div class ="col-md-4">
                                         <input-select
                                             label = "คำนำหน้าชื่อ : "
@@ -259,20 +94,38 @@
                                         ></input-select>
                                     </div>
                                     <div class ="col-md-4">
-                                        <input-text
+                                        <input-select
                                             name = "extra_prefix_id"
-                                            label = "ยศ/ตำแหน่ง :"
+                                            option_start_name = "เลือกยศทางทหาร/ตำรวจ"
+                                            label = "ยศทางทหาร/ตำรวจ :"
                                             v-model = "extra_prefix_id"
-                                        ></input-text>
+                                        ></input-select>
                                     </div>
+                                </div>
+                                <div class = "row">
                                     <div class ="col-md-4">
-                                        <input-text
+                                        <input-select
                                             name = "position_id"
+                                            option_start_name = "เลือกตำแหน่งทางวิชาการ"
                                             label = "ตำแหน่งทางวิชาการ :"
                                             v-model = "position_id"
-                                            :required="false"
-                                            :readonly="true"
-                                            ></input-text>
+                                            ></input-select>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-select
+                                            label = "ตำแหน่งทางวุฒิการศึกษา : "
+                                            option_start_name = "เลือกตำแหน่งทางวุฒิการศึกษา"
+                                            v-model = "education_prefix"
+                                            name = "education_prefix"
+                                        ></input-select>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-select
+                                            label = "ตำแหน่งทางวิชาชีพ : "
+                                            option_start_name = "เลือกตำแหน่งทางวิชาชีพ"
+                                            v-model = "profession_prefix"
+                                            name = "profession_prefix"
+                                        ></input-select>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -283,86 +136,44 @@
                                             v-model = "firstname"
                                         ></input-text>
                                     </div>
-                                            <div class ="col-md-4">
-                                                <input-text
-                                                    name = "middlename"
-                                                    label = "ชื่อกลาง :"
-                                                    v-model = "middlename"
-                                                ></input-text>
-                                            </div>
-                                            <div class ="col-md-4">
-                                                <input-text
-                                                    name = "lastname"
-                                                    label = "นามสกุล :"
-                                                    v-model = "lastname"
-                                                ></input-text>
-                                            </div>
-                                        </div>
-                                        <div class = "row">
-                                            <div class ="col-md-4">
-                                                <input-text
-                                                    name = "prefix_eng"
-                                                    label = "คำนำหน้าชื่อ (อังกฤษ):"
-                                                    v-model = "prefix_eng"
-                                                    :readonly="true"
-                                                ></input-text>
-                                            </div>
-                                            <div class ="col-md-4">
-                                                <input-text
-                                                    name = "extra_prefix_eng"
-                                                    label = "ยศ/ตำแหน่ง (อังกฤษ):"
-                                                    v-model = "extra_prefix_eng"
-                                                ></input-text>
-                                            </div>
-                                            <div class ="col-md-4">
-                                                <input-text
-                                                    name = "position_eng_id"
-                                                    label = "ตำแหน่งทางวิชาการ (อังกฤษ) :"
-                                                    v-model = "position_eng_id"
-                                                    :required="false"
-                                                ></input-text>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class ="col-md-4">
-                                                <input-text
-                                                    name = "firstname_eng"
-                                                    label = "ชื่อจริง (อังกฤษ):"
-                                                    v-model = "firstname_eng"
-                                                ></input-text>
-                                            </div>
-                                            <div class ="col-md-4">
-                                                <input-text
-                                                    name = "middlename_eng"
-                                                    label = "ชื่อกลาง (อังกฤษ):"
-                                                    v-model = "middlename_eng"
-                                                ></input-text>
-                                            </div>
-                                            <div class ="col-md-4">
-                                                <input-text
-                                                    name = "lastname_eng"
-                                                    label = "นามสกุล (อังกฤษ):"
-                                                    v-model = "lastname_eng"
-                                                ></input-text>
-                                            </div>
-                                        </div>
-                                    <div class = "row">
-                                        <div class = "col-md-4">
-                                            <file-input
-                                                name = "picture"
-                                                label = "รูปถ่ายพนักงาน :"
-                                                v-model= "picture"
-                                            >
-                                            </file-input>
-                                        </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "middlename"
+                                            label = "ชื่อกลาง :"
+                                            v-model = "middlename"
+                                        ></input-text>
                                     </div>
-                                    <div class="row">
-                                        <div class ="col-md-12">
-                                            <input-line-label
-                                            label = "สถานภาพการปฏิบัติงาน"
-                                            ></input-line-label>
-                                        </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "lastname"
+                                            label = "นามสกุล :"
+                                            v-model = "lastname"
+                                        ></input-text>
                                     </div>
+                                </div>
+                                <div class="row">
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "firstname_eng"
+                                            label = "ชื่อจริง (อังกฤษ):"
+                                            v-model = "firstname_eng"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "middlename_eng"
+                                            label = "ชื่อกลาง (อังกฤษ):"
+                                            v-model = "middlename_eng"
+                                        ></input-text>
+                                    </div>
+                                    <div class ="col-md-4">
+                                        <input-text
+                                            name = "lastname_eng"
+                                            label = "นามสกุล (อังกฤษ):"
+                                            v-model = "lastname_eng"
+                                        ></input-text>
+                                    </div>
+                                </div>
                                     <div class = "row">
                                         <div class ="col-md-4">
                                             <div class = "paddings">
@@ -385,21 +196,39 @@
                                                 :options = "StatusApi"
                                             ></input-select>
                                         </div>
-                                        <div id = "unemploy_date" style="display:none;">
-                                            <div class = "col-md-4">
-                                                <jquery-input-date
-                                                    name = "unemploy_date"
-                                                    label = "วันที่พ้นสภาพ :"
-                                                    v-model = "unemploy_date"
-                                                    format="d/m/Y"
-                                                    mode = "BE"
-                                                    start-range= '2400'
-                                                    end-range = '3000'
-                                                    age-name = "unemploy_date"
-                                                ></jquery-input-date>
+                                            <div id = "unemploy_date" style="display:none;">
+                                                <div class = "col-md-4">
+                                                    <jquery-input-date
+                                                        name = "unemploy_date"
+                                                        label = "วันที่พ้นสภาพ :"
+                                                        v-model = "unemploy_date"
+                                                        format="d/m/Y"
+                                                        mode = "BE"
+                                                        start-range= '2400'
+                                                        end-range = '3000'
+                                                        age-name = "unemploy_date"
+                                                    ></jquery-input-date>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class = "row padding">
+                                        <div class="col-md-12">
+                                            <div class="form-group col-xs-12">
+                                                <center>
+                                                    <input-button 
+                                                        label = "บันทึกข้อมูล"
+                                                        buttonClass = "btn btn-success"
+                                                        iconClass = "fa fa-save"
+                                                    ></input-button>
+                                                    <input-button 
+                                                        label = "ยกเลิกการบันทึก"
+                                                        buttonClass = "btn btn-danger"
+                                                        iconClass = "fa fa-ban"
+                                                    ></input-button>   
+                                                </center>
                                             </div>
                                         </div>
-                                </div>
+                                    </div>
                             </div>
                             <div id="profile_menu" class="tab-pane fade in active" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class="row">
@@ -1001,12 +830,12 @@
                                                     <div class="form-group col-xs-12">
                                                         <center>
                                                             <input-button 
-                                                                label = "บันทึกข้อมูล"
+                                                                label = "บันทึก"
                                                                 buttonClass = "btn btn-success"
                                                                 iconClass = "fa fa-save"
                                                             ></input-button>
                                                             <input-button 
-                                                                label = "ยกเลิกการบันทึก"
+                                                                label = "ยกเลิก"
                                                                 buttonClass = "btn btn-danger"
                                                                 iconClass = "fa fa-ban"
                                                             ></input-button>   
@@ -1018,33 +847,6 @@
                                     </div>
                                 </div>
                             <div class = "col-md-12 col-centered">
-                                <!-- <table class="table table-bordered" id = "childs">
-                                    <thead>
-                                    <tr>
-                                            <th 
-                                                v-for="(childHeadTable, index) in childHeadTables" 
-                                                :key="index" 
-                                                style="max-width: 100px;"
-                                            >
-                                                <center>
-                                                    {{ childHeadTable.label }}
-                                                </center>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                            <tr v-for="(childData,index) in childsData" :key="index">
-                                                <td style="max-width: 10px;word-wrap:break-word;"><center>{{ childData.id }}</center></td>
-                                                <td style="max-width: 100px;word-wrap:break-word;"><center>{{ childData.prefix_id + ' ' + childData.first_name + ' ' + childData.last_name}}</center></td>
-                                                <td style="max-width: 50px;word-wrap:break-word;"><center>{{ childData.document_id}}</center></td>
-                                                <td style="max-width: 10px;word-wrap:break-word;"><center>{{ childData.passport_no }}</center></td>
-                                                <td style="max-width: 10px;word-wrap:break-word;"><center>{{ childData.child_dob }}</center></td>
-                                                <td style="max-width: 10px;word-wrap:break-word;"><center>ยังไม่รู้</center></td>
-                                                <td style="max-width: 10px;word-wrap:break-word;"><center>{{ childData.child_gender}}</center></td>
-                                                <td style="max-width: 10px;word-wrap:break-word;"><center></center></td>
-                                            </tr>
-                                    </tbody>
-                                </table> -->
                                 <input-table
                                     name = "childs_table"
                                     :has-actions = "['edit','delete']"
@@ -1327,18 +1129,27 @@
                                         ></input-text>
                                     </div>
                                 </div> 
-                                <!-- <div class = "row">
-                                    <div class="col-md-4">
-                                        <input-text-area
-                                            name = "emp_remark"
-                                            label = "หมายเหตุ :"
-                                            v-model = "emp_remark"
-                                        ></input-text-area>   
-                                    </div> 
-                                </div>                              -->
+                                <div class = "row padding">
+                                    <div class="col-md-12">
+                                        <div class="form-group col-xs-12">
+                                            <center>
+                                                <input-button 
+                                                    label = "บันทึกข้อมูล"
+                                                    buttonClass = "btn btn-success"
+                                                    iconClass = "fa fa-save"
+                                                ></input-button>
+                                                <input-button 
+                                                    label = "ยกเลิกการบันทึก"
+                                                    buttonClass = "btn btn-danger"
+                                                    iconClass = "fa fa-ban"
+                                                ></input-button>   
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div> 
                             </div>
                         </div>
-                            <div id="education_menu" class="tab-pane fade">
+                            <div id="education_menu" class="tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class="form-group col-xs-12">
@@ -1436,12 +1247,12 @@
                                                     <div class="form-group col-xs-12">
                                                         <center>
                                                             <input-button 
-                                                                label = "บันทึกข้อมูล"
+                                                                label = "บันทึก"
                                                                 buttonClass = "btn btn-success"
                                                                 iconClass = "fa fa-save"
                                                             ></input-button>
                                                             <input-button 
-                                                                label = "ยกเลิกการบันทึก"
+                                                                label = "ยกเลิก"
                                                                 buttonClass = "btn btn-danger"
                                                                 iconClass = "fa fa-ban"
                                                             ></input-button>   
@@ -1461,7 +1272,7 @@
                                     ></input-table>
                                 </div>
                             </div>
-                            <div id = "insignia_menu" class = "tab-pane fade">
+                            <div id = "insignia_menu" class = "tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class="form-group col-xs-12">
@@ -1552,12 +1363,12 @@
                                                     <div class="form-group col-xs-12">
                                                         <center>
                                                             <input-button 
-                                                                label = "บันทึกข้อมูล"
+                                                                label = "บันทึก"
                                                                 buttonClass = "btn btn-success"
                                                                 iconClass = "fa fa-save"
                                                             ></input-button>
                                                             <input-button 
-                                                                label = "ยกเลิกการบันทึก"
+                                                                label = "ยกเลิก"
                                                                 buttonClass = "btn btn-danger"
                                                                 iconClass = "fa fa-ban"
                                                             ></input-button>   
@@ -1577,7 +1388,7 @@
                                     ></input-table>
                                 </div>
                             </div>
-                            <div id = "works_menu" class = "tab-pane fade">
+                            <div id = "works_menu" class = "tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class="form-group col-xs-12">
@@ -1759,12 +1570,12 @@
                                                     <div class="form-group col-xs-12">
                                                         <center>
                                                             <input-button 
-                                                                label = "บันทึกข้อมูล"
+                                                                label = "บันทึก"
                                                                 buttonClass = "btn btn-success"
                                                                 iconClass = "fa fa-save"
                                                             ></input-button>
                                                             <input-button 
-                                                                label = "ยกเลิกการบันทึก"
+                                                                label = "ยกเลิก"
                                                                 buttonClass = "btn btn-danger"
                                                                 iconClass = "fa fa-ban"
                                                             ></input-button>   
@@ -1889,9 +1700,27 @@
                                             ></jquery-input-date>
                                         </div>
                                     </div>   -->
+                                    <div class = "row padding">
+                                        <div class="col-md-12">
+                                            <div class="form-group col-xs-12">
+                                                <center>
+                                                    <input-button 
+                                                        label = "บันทึกข้อมูล"
+                                                        buttonClass = "btn btn-success"
+                                                        iconClass = "fa fa-save"
+                                                    ></input-button>
+                                                    <input-button 
+                                                        label = "ยกเลิกการบันทึก"
+                                                        buttonClass = "btn btn-danger"
+                                                        iconClass = "fa fa-ban"
+                                                    ></input-button>   
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div> 
                                 </div>
                             </div>
-                            <div id = "taining_menu" class = "tab-pane fade">
+                            <div id = "taining_menu" class = "tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class="form-group col-xs-12">
@@ -2013,12 +1842,12 @@
                                                     <div class="form-group col-xs-12">
                                                         <center>
                                                             <input-button 
-                                                                label = "บันทึกข้อมูล"
+                                                                label = "บันทึก"
                                                                 buttonClass = "btn btn-success"
                                                                 iconClass = "fa fa-save"
                                                             ></input-button>
                                                             <input-button 
-                                                                label = "ยกเลิกการบันทึก"
+                                                                label = "ยกเลิก"
                                                                 buttonClass = "btn btn-danger"
                                                                 iconClass = "fa fa-ban"
                                                             ></input-button>   
@@ -2038,7 +1867,7 @@
                                     ></input-table>
                                 </div>
                             </div>
-                            <div id="honor_menu" class="tab-pane fade">
+                            <div id="honor_menu" class="tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class = "form-group col-xs-12">
@@ -2106,12 +1935,12 @@
                                                     <div class="form-group col-xs-12">
                                                         <center>
                                                             <input-button 
-                                                                label = "บันทึกข้อมูล"
+                                                                label = "บันทึก"
                                                                 buttonClass = "btn btn-success"
                                                                 iconClass = "fa fa-save"
                                                             ></input-button>
                                                             <input-button 
-                                                                label = "ยกเลิกการบันทึก"
+                                                                label = "ยกเลิก"
                                                                 buttonClass = "btn btn-danger"
                                                                 iconClass = "fa fa-ban"
                                                             ></input-button>   
@@ -2573,7 +2402,8 @@
                 tainingHeadRows : ['ประเภทการลา','ระดับ','หลักสูตร/เรื่อง','สาขาวิชา','ระยะเวลา','สถานศึกษา','ประเทศ','เมือง','ทุน','หมายเหตุ'],
                 insigniaHeadRows : ['ชื่อเครื่องราชอิสริยาภรณ์','ชื่อ (ย่อ)','ตำแหน่งที่ได้รับ','ขั้น','วันที่ได้รับ','วันที่คืน','หมายเหตุ'],
                 honorHeadRows : ['ปีที่ได้รับรางวัล', 'ชื่อรางวัล','ระดับของรางวัล','ด้านของรางวัล','หน่วยงานที่มอบรางวัล']
-
+                education_prefix : '',
+                profession_prefix : '',
             }
         },
         watch:{
