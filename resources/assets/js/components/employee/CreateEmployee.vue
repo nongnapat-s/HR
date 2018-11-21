@@ -2541,6 +2541,7 @@
                 work_end : '',
                 childRows :  [
                     {
+                        "id" : 22,
                         "no" : 1,
                         "full_name" : "Jill Smith",
                         "document_no" : 1234567890,
@@ -2550,6 +2551,7 @@
                         "gender" : "หญิง",
                     },
                     {
+                        "id" : 33, 
                         "no" : 2,
                         "full_name" : "Jame Smith",
                         "document_no" : 1234567891,

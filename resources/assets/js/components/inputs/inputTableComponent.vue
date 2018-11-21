@@ -18,6 +18,7 @@
                 <td 
                     v-for = "(field,fieldIndex) in row " 
                     :key = "fieldIndex"
+                    v-if = "fieldIndex !== 'id'"
                     v-text = "field"
                 ></td>   
                 <td v-if = "hasActions !== undefined">
@@ -27,8 +28,12 @@
                         :key = "action"
                         :class = "actions[action].class"
                         v-html= "actions[action].icon"
+                        :name = "actions[action].name"
+                        :value="row.id"
+                        @click="ClickButton"
                     ></button>
                 </td>
+
             </tr>
         </tbody>
     </table>
@@ -44,6 +49,7 @@
 <script>
 export default {
     props : {
+        name  : { required : true },
         headRows : 
             {
                 required : true,
@@ -63,18 +69,23 @@ export default {
         return {
             actions : {
                 edit : {
-                    class : "btn btn-sm btn-info",
+                    name : 'edit',
+                    class : 'btn btn-sm btn-info',
                     icon : '<i class = "fa fa-pencil"></i>'
                 },
                 delete : {
-                    class : "btn btn-sm btn-danger",
+                    name : 'delete',
+                    class : 'btn btn-sm btn-danger',
                     icon : '<i class = "fa fa-trash"></i>'
                 }
             }
         }
+    },
+    methods:{
+        ClickButton: function (event) {
+            console.log ( 'table name : ' + this.name + ' id : ' + event.target.value + ' type : ' + event.target.name)
+        }
     }
 }
-// 1. ลบและแก้ไข emit ชื่อ event
-// 2. ซ่อน รหัส
 </script>
 
