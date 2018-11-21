@@ -6,7 +6,7 @@
     <input 
         :name = "name"
         class="file"  
-        data-show-preview="false"
+        :data-show-preview="dataPreview"
         type="file" 
         @change="handleFileChange" 
     >
@@ -23,7 +23,7 @@
             name : { required : true},
             label : { default : ''},
             preview : { default : false},
-            dataPreview : { default : false},
+            dataPreview : { default : true},
         },
         mounted() {
             if (!this.preview){

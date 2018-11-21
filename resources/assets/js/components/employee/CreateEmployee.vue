@@ -48,7 +48,6 @@
                                             v-model = "ref_id"
                                             pattern= "^100([0-9]{5})$"
                                             error-text = "รหัสพนักงานไม่ถูกต้อง"
-                                            data-preview = "false"
                                             :required="true"
                                         ></input-text>
                                     </div>
@@ -81,6 +80,7 @@
                                             name = "picture"
                                             label = "รูปถ่ายพนักงาน :"
                                             v-model= "picture"
+                                            data-preview="false"
                                         >
                                         </file-input>
                                     </div>
@@ -1961,6 +1961,16 @@
                                 </div>
                                 <br/>
                             </div>
+                            <div id="manager_menu" class="tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
+                                <div class = "col-md-12 col-centered"> 
+                                    <input-table
+                                        name = "manager_table"
+                                        :has-actions = "['edit','delete']"
+                                        :head-rows = "managerHeadRows"
+                                        :rows = "managerRows"
+                                    ></input-table>
+                                </div>
+                            </div>
                         </div>
                     </panel>
 
@@ -2395,13 +2405,15 @@
                 tainingRows : [],
                 insigniaRows : [],
                 honorRows : [],
-                workrows : [],
+                workRows : [],
+                managerRows :[],
                 childsHeadRows : ['คนที่','ชื่อ-นามสกุล','เลขบัตรประชาชน','เลขหนังสือเดินทาง','วัน/เดือน/ปีเกิด','อายุ','เพศ'],
                 worksHeadRows : [''],
                 educationHeadRows : ['ระดับการศึกษา','คณะ','สาขาวิชา','วุฒิการศึกษา','วุฒิการศึกษา (ย่อ)','สถานศึกษา','ประเทศ','ปีการศึกษา','รุ่นที่'],
                 tainingHeadRows : ['ประเภทการลา','ระดับ','หลักสูตร/เรื่อง','สาขาวิชา','ระยะเวลา','สถานศึกษา','ประเทศ','เมือง','ทุน','หมายเหตุ'],
                 insigniaHeadRows : ['ชื่อเครื่องราชอิสริยาภรณ์','ชื่อ (ย่อ)','ตำแหน่งที่ได้รับ','ขั้น','วันที่ได้รับ','วันที่คืน','หมายเหตุ'],
-                honorHeadRows : ['ปีที่ได้รับรางวัล', 'ชื่อรางวัล','ระดับของรางวัล','ด้านของรางวัล','หน่วยงานที่มอบรางวัล']
+                honorHeadRows : ['ปีที่ได้รับรางวัล', 'ชื่อรางวัล','ระดับของรางวัล','ด้านของรางวัล','หน่วยงานที่มอบรางวัล'],
+                managerHeadRows : ['ชื่อคณะกรรมการ', 'ตำแหน่ง', 'ระยะเวลาดำรงตำแหน่ง'],
                 education_prefix : '',
                 profession_prefix : '',
             }
