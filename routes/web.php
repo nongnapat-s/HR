@@ -31,3 +31,10 @@ Route::get('/',function(){
 Route::post('/test-form',function(Illuminate\Http\Request $request){
     return $request->all();
 });
+
+Route::get('/test-component', function() {
+    return view('vue-app')->with([
+        'title' => 'Test Zone',
+        'jsFile' => 'test-component.js',
+    ]);
+});
