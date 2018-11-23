@@ -23,8 +23,10 @@ export default {
         minYear: { default : 1940 },
         maxYear: { default : 2020 },
         ageName : { default : ''},
+        enDate : { default : ''},
         datepicker : { default : true },
         timepicker : { default : false}
+        
     },
     data() { return { value : '' } },
     mounted() {
@@ -39,7 +41,7 @@ export default {
                         '20.00'],
             onSelectDate:(pickedDate) =>{
                 this.$emit('input', this.$refs.input_date.value);
-                this.$emit('update', pickedDate.toLocaleDateString('en'),this.ageName);
+                this.$emit('update',this.enDate,pickedDate.toLocaleDateString('en-GB'),this.ageName);
             }
         });
     },
