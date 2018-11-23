@@ -55,7 +55,7 @@
 </template>
 <style>
 .navbar-default {
-  background-color: #51acff;
+  background-color: #6ea8d6;
   border-color: #ebeff0;
 }
 .navbar-default .navbar-brand {
@@ -76,7 +76,7 @@
   color: #000000;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #51acff;
+  background-color: #6ea8d6;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
   color: #ffffff;

@@ -1,6 +1,7 @@
 <template>
+    <div>
+    <navbar-component></navbar-component>
     <div class = "container-fuild col-md-12">
-        <br>
                     <panel title = "ข้อมูลบุคลากร">
                         <div class="row">
                             <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
@@ -1992,9 +1993,9 @@
                 <div>
             </div>
         <div>
-    </div><br><br><br><br><br><br>
-</div>
-
+        </div><br><br><br><br><br><br>
+    </div>
+    </div>
 </template>
 <style>
     .col-centered{
@@ -2056,6 +2057,7 @@
     import InputTextArea from '../inputs/InputTextAreaComponent.vue'
     import InputRadio from '../inputs/InputRadio.vue'
     import InputLine from '../inputs/LineComponent.vue'
+    import NavbarComponent from '../inputs/NavbarComponent.vue'
     import moment from 'moment';
     export default {
         components: {
@@ -2077,7 +2079,8 @@
             InputTable,
             FormDashed,
             InputTextArea,
-            InputLine
+            InputLine,
+            NavbarComponent
         },
         data() {
             return {
@@ -2089,7 +2092,7 @@
                     { value : '#taining_menu' , label : 'ประวัติการลาศึกษา/อบรม', icon : 'fa fa-plane', class : ''},
                     { value : '#insignia_menu' , label : 'ประวัติการรับเครื่องราชฯ', icon : 'fa fa-star', class : ''},
                     { value : '#honor_menu' , label : 'ประวัติเกียรติยศ', icon : 'fa fa-trophy', class : ''},
-                    { value : '#manager_menu' , label : 'ตำแหน่งบริหาร', icon : 'fa fa-handshake-o', class : ''},
+                    { value : '#manager_menu' , label : 'ตำแหน่งบริหาร', icon : 'fa fa-black-tie', class : ''},
                 ],
                 careersApi: '',
                 workStatusApi : '',
