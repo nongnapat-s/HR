@@ -4,7 +4,6 @@
     <div class = "container-fuild col-md-12">
                     <panel title = "ข้อมูลบุคลากร">
                         <div class="row col-md-12" style="font-size:16px;padding-bottom:15px;">
-                            
                              <table class="responsive-card-table" style="width:100%;">
                                 <tr>
                                     <th rowspan="6" style="width:30%;">                            
@@ -16,9 +15,9 @@
                                             width="160"/>
                                         </div>
                                     </th>
-                                     <td><b>รหัสพนักงาน : </b> 10000702</td>
+                                    <td><b>รหัสพนักงาน : </b> 10000702</td>
                                 </tr>
-                                <tr >
+                                <tr>
                                     <td><b>ชื่อ-สกุล (ไทย) : </b>รศ.ดร.พญ.บุคลากร เวลาพักตร์</td>
                                     <td><b>ชื่อ-สกุล (อังกฤษ) : </b>รศ.ดร.พญ.Bukarakorn Welapak</td>
                                 </tr>
