@@ -32,6 +32,10 @@ class ListManager
                 return $this->getSelectItems();
             case 'status':
                 return $this->getStatuses();
+            case 'status-active':
+                return $this->getStatuses(1);
+            case 'status-inactive':
+                return $this->getStatuses(0);
             case 'prefix-male':
                 return $this->getTitles(1);
             case 'prefix-female':
@@ -65,13 +69,21 @@ class ListManager
                            ->get();
     }
 
-    protected function getStatuses()
+    protected function getStatuses($active = 'all')
     {
-        return Status::select(
+        $query = Status::select(
                         'id as value',
                         'name as label',
-                        'active','category')
-                       ->get();
+                        'active','category');
+        if ($active !== 'all') {
+            $query->where('active', $active);
+        }
+
+        if ($this->search) {
+            $query->where('name', 'like', '%' . $this->search . '%');
+        }
+
+        return $query->get();
     }
 
     protected function getTitles($gender)

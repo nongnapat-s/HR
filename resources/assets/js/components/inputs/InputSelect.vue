@@ -1,6 +1,6 @@
 <template>
 <div class="form-group col-xs-12">
-    <label>{{ label}}</label>
+    <label>{{ label + " TEST" }}</label>
         <select class="form-control"
                 :name="name"
                 @change="$emit('input', $event.target.value)"

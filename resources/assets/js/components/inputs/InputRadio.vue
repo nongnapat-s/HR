@@ -30,12 +30,21 @@
         },
         methods : {
             onClick: function($event){
-                this.$emit('input', $event.target.url)
-                this.$emit('update', $event.target.value,this.apiName);
+                let url = this.options[$event.target.value].url;
+                axios.get('get-list/' + url)
+                .then((response) => {               			 	   
+                    this.$emit('update',response.data,this.name,this.apiName,$event.target.value);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+                this.$emit('input', $event.target.value)
             },
-            unClick:function(){
-                this.$emit('input','');
-                this.$emit('update','');
+
+            unClick:function($event){
+                //alert('test');
+                    this.$emit('input','');
+                    this.$emit('update','');
             }
         }
     }
