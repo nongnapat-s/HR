@@ -3,33 +3,42 @@
     <navbar-component></navbar-component>
     <div class = "container-fuild col-md-12">
                     <panel title = "ข้อมูลบุคลากร">
-                        <div class="row">
-                            <div class="col-md-5 col-md-push-0 col-sm-5 col-sm-push-0 col-xs-6 col-xs-push-3 padding">
-                                <div class="pull-right"><img
-                                    :src="'/storage/01.jpeg'"
-                                    class="img-thumbnail"
-                                    alt="รูปพนักงาน"
-                                    height="160"
-                                    width="160"/>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-md-push-0 col-sm-6 col-sm-push-0 col-xs-12 padding">
-                                    <input-text
-                                        label = "รหัสพนักงาน :"
-                                        :disabled = "true"
-                                        name = "ref_id_preview"
-                                    ></input-text>
-                                    <input-text
-                                        label = "ชื่อ - นามสกุล :"
-                                        :disabled = "true"
-                                        name = "name_preview"
-                                    ></input-text>
-                                    <input-text
-                                        label = "ชื่อ - นามสกุล (อังกฤษ) :"
-                                        :disabled = "true"
-                                        name = "name_eng_preview"
-                                    ></input-text>
-                            </div>
+                        <div class="row col-md-12" style="font-size:16px;padding-bottom:15px;">
+                            
+                             <table class="responsive-card-table" style="width:100%;">
+                                <tr>
+                                    <th rowspan="6" style="width:30%;">                            
+                                        <div style="text-align:center;"><img
+                                            :src="'01.jpeg'"
+                                            class="img-thumbnail"
+                                            alt="รูปพนักงาน"
+                                            height="160"
+                                            width="160"/>
+                                        </div>
+                                    </th>
+                                     <td><b>รหัสพนักงาน : </b> 10000702</td>
+                                </tr>
+                                <tr >
+                                    <td><b>ชื่อ-สกุล (ไทย) : </b>รศ.ดร.พญ.บุคลากร เวลาพักตร์</td>
+                                    <td><b>ชื่อ-สกุล (อังกฤษ) : </b>รศ.ดร.พญ.Bukarakorn Welapak</td>
+                                </tr>
+                                <tr>
+                                    <td><b>ประเภทการจ้าง : </b>พนักงานมหาวิทยาลัย</td>
+                                    <td><b>ตำแหน่ง : </b>อาจารย์</td>
+                                </tr>
+                                <tr>
+                                    <td><b>วันที่บรรจุ : </b>01/06/2547</td>
+                                    <td><b>อายุงาน : </b>15 ปี</td>
+                                </tr>
+                                <tr>
+                                    <td><b>วันที่โอนย้าย : </b></td>
+                                    <td><b>วันที่มีมติเป็นอาจารย์ : </b>12/05/2547</td>
+                                </tr>
+                                <tr>
+                                    <td><b>วันที่ครบรอบ 25 ปี : </b>01/06/2572</td>
+                                    <td><b>วันที่ครบรอบ 65 ปี : </b>01/06/2577</td>
+                                </tr>      
+                            </table>
                         </div>
                         <div class = "row">
                             <div class ="col-md-12 col-sm-12">
@@ -39,7 +48,7 @@
                             </div>
                         </div>
                         <div class="tab-content">
-                            <div id="employee_menu" class="tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id="employee_menu" class="tab-pane fade" style="max-max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class ="col-md-4">
                                         <input-text
@@ -231,7 +240,7 @@
                                         </div>
                                     </div>
                             </div>
-                            <div id="profile_menu" class="tab-pane fade in active" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id="profile_menu" class="tab-pane fade in active" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class="row">
                                     <div class ="col-md-4">
                                         <jquery-input-date
@@ -1156,7 +1165,7 @@
                                     </div> 
                                 </div>
                             </div>
-                            <div id="education_menu" class="tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id="education_menu" class="tab-pane fade" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class="form-group col-xs-12">
@@ -1279,7 +1288,7 @@
                                     ></input-table>
                                 </div>
                             </div>
-                            <div id = "insignia_menu" class = "tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id = "insignia_menu" class = "tab-pane fade" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class="form-group col-xs-12">
@@ -1397,7 +1406,7 @@
                                     ></input-table>
                                 </div>
                             </div>
-                            <div id = "works_menu" class = "tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id = "works_menu" class = "tab-pane fade" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class="form-group col-xs-12">
@@ -1442,11 +1451,13 @@
                                             </div>
                                             <div class = "row">
                                                 <div class = "col-md-4">  
-                                                    <input-text
+                                                    <input-select
                                                         name = "employ_unit"
                                                         label = "หน่วยงาน :"
+                                                        option_start_name = "เลือกหน่วยงาน"
                                                         v-model = "employ_unit"
-                                                    ></input-text>                                  
+                                                        :options="employUnitApi"
+                                                    ></input-select>                                  
                                                 </div>  
                                                 <div class = "col-md-4">
                                                     <jquery-input-date
@@ -1514,6 +1525,7 @@
                                                             option_start_name = "เลือกสายงาน"
                                                             v-model = "work_field"
                                                             name = "work_field"
+                                                            :options="workFieldApi"
                                                         ></input-select>
                                                     </div>
                                                 </div>
@@ -1568,6 +1580,7 @@
                                                             option_start_name = "เลือกระดับ"
                                                             v-model = "appoint_lavel"
                                                             name = "appoint_lavel"
+                                                            :options="appointLavelApi"
                                                         ></input-select>
                                                     </div>
                                                     <div class ="col-md-4">
@@ -1576,6 +1589,7 @@
                                                             option_start_name = "เลือกสายงานที่ได้รับแต่งตั้ง"
                                                             v-model = "appoint_field"
                                                             name = "appoint_field"
+                                                            :options = "appointFieldApi"
                                                         ></input-select>
                                                     </div>
                                                 </div>
@@ -1600,6 +1614,14 @@
                                             </div>                             
                                         </form-dashed>
                                     </div>
+                                </div>
+                                <div class="col-md-12 col-centered">
+                                    <input-table
+                                        name = "work_table"
+                                        :has-actions = "['edit','delete']"
+                                        :head-rows = "workHeadRows"
+                                        :rows = "workRows"
+                                    ></input-table>
                                 </div>
                                 <div class="row">
                                     <div class ="col-md-12">
@@ -1735,7 +1757,7 @@
                                     </div> 
                                 </div>
                             </div>
-                            <div id = "taining_menu" class = "tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id = "taining_menu" class = "tab-pane fade" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class="form-group col-xs-12">
@@ -1884,7 +1906,7 @@
                                     ></input-table>
                                 </div>
                             </div>
-                            <div id="honor_menu" class="tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id="honor_menu" class="tab-pane fade" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class = "col-md-2 col-sm-2 col-xs-2">
                                         <div class = "form-group col-xs-12">
@@ -1978,7 +2000,7 @@
                                 </div>
                                 <br/>
                             </div>
-                            <div id="manager_menu" class="tab-pane fade" style="height: 500px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id="manager_menu" class="tab-pane fade" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "col-md-12 col-centered"> 
                                     <input-table
                                         name = "manager_table"
@@ -2033,6 +2055,51 @@
     .row .col-md-4 > .pull-right {
         float: none !important;
     }
+    @media screen and (max-width: 640px) {
+    .responsive-card-table thead tr {
+        position: absolute;
+        top: -9999em;
+        left: -9999em;
+    }
+    .responsive-card-table tr {
+        display: block;
+    }
+    .responsive-card-table td {
+        margin-top: 1rem;
+        border: none;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding-left: 0%;
+        position: relative;
+        padding-left:100px;
+    }
+    .responsive-card-table td:before {
+        content: attr(data-label);
+        display: inline-block;
+        font-weight: bold;
+        line-height: 1.5;
+        margin-left: -100%;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    .responsive-card-table td:after {
+        content: '';
+        position: absolute;
+        width: 45%;
+        height: 95%;
+        left: 0px;
+        top: 1px;
+        z-index: 0;
+    }
+}
 }
 </style>
 <script>
@@ -2096,13 +2163,13 @@
                 ],
                 careersApi: '',
                 workStatusApi : '',
+
                 // ข้อมูลพนักงาน
                 ref_id : '',
                 document_no : '',
                 gender : null,
                 prefix_id : null,
                 extra_prefix_id : '',
-                position_id : '',
                 education_prefix : '',
                 profession_prefix : '',
                 firstname : '',
@@ -2343,6 +2410,7 @@
                 ],
                 tainingHeadRows : ['ประเภทการลา','ระดับ','หลักสูตร/เรื่อง','สาขาวิชา','ระยะเวลา','สถานศึกษา','ประเทศ','เมือง','ทุน','หมายเหตุ'],
                 tainingRows : [],
+
                 // การรับเครื่องราชฯ
                 insignai_name : '',
                 insignai_initial_name : '',
@@ -2356,6 +2424,7 @@
                 insignai_remark: '',
                 insigniaHeadRows : ['ชื่อเครื่องราชอิสริยาภรณ์','ชื่อ (ย่อ)','ตำแหน่งที่ได้รับ','ขั้น','วันที่ได้รับ','วันที่คืน','หมายเหตุ'],
                 insigniaRows : [],
+
                // รางวัลเกียรติยศ
                 honor_year : '',
                 honor_name : '',
@@ -2400,6 +2469,7 @@
                 enforce_date_preview : '',
                 enforce_date : '',
                 employ_type : '',
+                position_id : '',
                 empPositionsApi : '',
                 work_remark : '',
                 goverment_no : '',
@@ -2411,8 +2481,37 @@
                 employ_date_end : '',
                 appoint_lavel : '',
                 appoint_field : '',
-                worksHeadRows : [''],
-                workRows : [],
+                employUnitApi : [
+                    { 'value' : 1 , 'label' : 'มหาวิทยาลัยมหิดล' },
+                    { 'value' : 2 , 'label' : 'คณะแพทยศาสตร์ ศิริราชพยาบาล'}
+                ],
+                appointLavelApi : [
+                    { 'value' : 1 , 'label' : 'คณะฯ' },
+                    { 'value' : 2 , 'label' : 'ภาควิชาฯ' },
+                    { 'value' : 3 , 'label' : 'สาขาวิชา'} 
+                ],
+                appointFieldApi : [
+                    { 'value' : 1 , 'label' : 'บริหาร' },
+                    { 'value' : 2 , 'label' : 'วิชาชีพ' },
+                    { 'value' : 2 , 'label' : 'วิชาการ' } 
+                ],
+                workFieldApi : [
+                    { 'value' : 1 , 'label' : 'ชำนาญการ' },
+                    { 'value' : 2 , 'label' : 'ชำนาญการพิเศษ'}
+                ], 
+                workHeadRows : ['ข้อมูลของคำสั่ง','หน่วยงาน','วันที่','ประเภทการจ้าง','ตำแหน่ง','ระยะเวลาจ้าง','หมายเหตุ'],
+                workRows : [
+                    {
+                        'id' : 1,
+                        'document' : 'เลขที่/เรื่อง/ประเภทคำสั่ง',
+                        'employ_unit' : '',
+                        'date' : 'วันที่ลงนาม/วันที่มีผลบังคับใช้',
+                        'employ_type' : '',
+                        'position_id' : '',
+                        'employ_range_date' : 'วันที่เริ่มต้น - วันที่สิ้นสุด',
+                        'remark' : '',
+                    },
+                ],
 
                 // สถานที่ปฏิบัติงาน
                 UnitApi : '',
@@ -2510,12 +2609,12 @@
                     $('#second_collapse').show();
                     $('#first_collapse').show();
                 }
-                if (official_type == 5 || official_type == 6 || official_type == 7 || official_type == 8 || official_type == 10 || official_type == 12 || official_type == 13 || official_type == 16 || official_type == 18){
+                if (official_type == 5 || official_type == 6 || official_type == 7 || official_type == 8 || official_type == 9 || official_type == 10 || official_type == 12 || official_type == 13 || official_type == 16 || official_type == 18){
                     $('.work_collapse').hide();
                     $('#main_collapse').show();
                     $('#second_collapse').show();
                 }
-                if (official_type == 9 || official_type == 11 || official_type == 14){
+                if (official_type == 11 || official_type == 14){
                     $('.work_collapse').hide();
                 }
                 if (official_type == 15){

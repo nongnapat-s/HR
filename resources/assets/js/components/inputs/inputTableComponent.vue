@@ -3,25 +3,28 @@
         <thead>
             <tr style="background: azure;">
                 <th 
+                    class="word-wrap"
                     v-for = "head in headRows"
                     :key = "head"
                     scope = "col"
                     v-text = "head"
                 ></th>  
-                <th v-if = "hasActions !== undefined">จัดการข้อมูล</th>
+                <th class="word-wrap" v-if = "hasActions !== undefined">จัดการข้อมูล</th>
             </tr>
         </thead>
         <tbody>
-            <tr v-for = "(row,index) in rows"
-                    :key = "index"
-                    scope = "col">
+            <tr class="word-wrap" 
+                v-for = "(row,index) in rows"
+                :key = "index"
+                scope = "col">
                 <td 
+                    class="word-wrap"
                     v-for = "(field,fieldIndex) in row " 
                     :key = "fieldIndex"
                     v-if = "fieldIndex !== 'id'"
                     v-text = "field"
                 ></td>   
-                <td v-if = "hasActions !== undefined">
+                <td class="word-wrap" v-if = "hasActions !== undefined">
                     <button
                         style="margin-left:5px;"
                         v-for ="action in hasActions"
@@ -33,15 +36,14 @@
                         @click="ClickButton"
                     ></button>
                 </td>
-
             </tr>
         </tbody>
     </table>
 </template>
 <style>
-    th, td  {
+    .word-wrap{
         text-align: center;
-        max-width: 10px;
+        max-width: 15px;
         word-wrap:break-word;
     }
 </style>
