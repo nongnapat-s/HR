@@ -46,6 +46,9 @@
         max-width: 15px;
         word-wrap:break-word;
     }
+    button {
+        box-shadow:0 0 5px #D2D0D0;
+    }
 </style>
 
 <script>
