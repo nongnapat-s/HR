@@ -1407,7 +1407,7 @@
                             </div>
                             <div id = "works_menu" class = "tab-pane fade" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
-                                    <div class = "col-md-2 col-sm-2 col-xs-2">
+                                    <div class = "col-md-2 col-sm-4 col-xs-12">
                                         <div class="form-group col-xs-12">
                                             <input-button 
                                                 label = "เพิ่มข้อมูลประวัติการทำงาน"
@@ -1417,7 +1417,15 @@
                                             ></input-button>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class = "col-md-4 col-sm-7 col-xs-12">
+                                        <input-select
+                                                label = "false"
+                                                option_start_name = "ค้นหาด้วยประเภทหนังสือคำสั่ง"
+                                                v-model = "work_filter"
+                                                name = "work_filter"
+                                        ></input-select>
+                                    </div>
+                                </div>         
                                 <div class = "row">
                                     <div class="col-md-12 col-sm-11 col-xs-11">
                                         <form-dashed
@@ -2443,24 +2451,25 @@
                 official_name : '',
                 officialTypesApi : [
                     { value : '1', label : 'บรรจุและแต่งตั้ง' }, 
-                    { value : '2', label : 'อนุมัติลูกจ้างชั่วคราว' }, 
-                    { value : '3', label : 'จ้างต่อ' }, 
-                    { value : '4', label : 'ต่อเวลาปฏิบัติงาน' }, 
-                    { value : '5', label : 'ต่อสัญญาจ้างเป็นที่ปรึกษาคณะฯ' }, 
-                    { value : '6', label : 'อนุมัติให้ยืมตัว' }, 
-                    { value : '7', label : 'โอนย้าย' }, 
-                    { value : '8', label : 'เปลี่ยนตำแหน่ง' }, 
-                    { value : '9', label : 'แก้ไขคำสั่งให้ข้าราชการลาออกจากราชการ' }, 
-                    { value : '10', label : 'แก้ไขคำสั่งบรรจุและแต่งตั้งผู้เปลี่ยนสถานภาพ' }, 
-                    { value : '11', label : 'ปรับระดับชั้นงาน' }, 
-                    { value : '12', label : 'เปลี่ยนประเภทการจ้าง' }, 
-                    { value : '13', label : 'ให้ใช้ชื่อตำแหน่งพนักงานมหาวิทยาลัยประเภทสนับสนุนความก้าวหน้าของตำแหน่ง' }, 
-                    { value : '14', label : 'แต่งตั้งพนักงานมหาวิทยาลัยให้ดำรงตำแหน่งทางวิชาการ' }, 
-                    { value : '15', label : 'แต่งตั้งผู้บริหาร' }, 
-                    { value : '16', label : 'ลาออก' },
-                    { value : '17', label : 'ขยายระยะเวลาการจ้างพนักงานมหาวิทยาลัย' },  
-                    { value : '18', label : 'ให้พนักงานมหาวิทยาลัยกลับเข้าปฏิบัติงานตามปกติ' }, 
-                    { value : '19', label : 'ลาฝึกอบรม เรียนต่อ' }, 
+                    { value : '2', label : 'บรรจุและแต่งตั้ง (อาจารย์)' }, 
+                    { value : '3', label : 'อนุมัติลูกจ้างชั่วคราว' }, 
+                    { value : '4', label : 'จ้างต่อ' }, 
+                    { value : '5', label : 'ต่อเวลาปฏิบัติงาน' }, 
+                    { value : '6', label : 'ต่อสัญญาจ้างเป็นที่ปรึกษาคณะฯ' }, 
+                    { value : '7', label : 'อนุมัติให้ยืมตัว' }, 
+                    { value : '8', label : 'โอนย้าย' }, 
+                    { value : '9', label : 'เปลี่ยนตำแหน่ง' }, 
+                    { value : '10', label : 'แก้ไขคำสั่งให้ข้าราชการลาออกจากราชการ' }, 
+                    { value : '11', label : 'แก้ไขคำสั่งบรรจุและแต่งตั้งผู้เปลี่ยนสถานภาพ' }, 
+                    { value : '12', label : 'ปรับระดับชั้นงาน' }, 
+                    { value : '13', label : 'เปลี่ยนประเภทการจ้าง' }, 
+                    { value : '14', label : 'ให้ใช้ชื่อตำแหน่งพนักงานมหาวิทยาลัยประเภทสนับสนุนความก้าวหน้าของตำแหน่ง' }, 
+                    { value : '15', label : 'แต่งตั้งพนักงานมหาวิทยาลัยให้ดำรงตำแหน่งทางวิชาการ' }, 
+                    { value : '16', label : 'แต่งตั้งผู้บริหาร' }, 
+                    { value : '17', label : 'ลาออก' },
+                    { value : '18', label : 'ขยายระยะเวลาการจ้างพนักงานมหาวิทยาลัย' },  
+                    { value : '19', label : 'ให้พนักงานมหาวิทยาลัยกลับเข้าปฏิบัติงานตามปกติ' }, 
+                    { value : '20', label : 'ลาฝึกอบรม เรียนต่อ' }, 
                 ],
                 employ_unit : '',
                 sign_date_preview : '',
@@ -2511,6 +2520,7 @@
                         'remark' : '',
                     },
                 ],
+                work_filter : '',
 
                 // สถานที่ปฏิบัติงาน
                 UnitApi : '',
@@ -2591,32 +2601,32 @@
                 $('#unemploy_date').hide(); 
             },
             official_type(official_type){
-                if (official_type == 1){
+                if (official_type == 1 ||official_type == 2){
                     $('.work_collapse').hide();
                     $('#main_collapse').show();
                     $('#third_collapse').show();
                     $('#first_collapse').show();
                 }
-                if (official_type == 2 || official_type == 4){
+                if (official_type == 3 || official_type == 5){
                     $('.work_collapse').hide();
                     $('#main_collapse').show();
                     $('#first_collapse').show();
                 }
-                if (official_type == 3 || official_type == 17 || official_type == 19){
+                if (official_type == 4 || official_type == 18 || official_type == 20){
                     $('.work_collapse').hide();
                     $('#main_collapse').show();
                     $('#second_collapse').show();
                     $('#first_collapse').show();
                 }
-                if (official_type == 5 || official_type == 6 || official_type == 7 || official_type == 8 || official_type == 9 || official_type == 10 || official_type == 12 || official_type == 13 || official_type == 16 || official_type == 18){
+                if (official_type == 6 || official_type == 7 || official_type == 8 || official_type == 9 || official_type == 10 || official_type == 11 || official_type == 13 || official_type == 14 || official_type == 17 || official_type == 19){
                     $('.work_collapse').hide();
                     $('#main_collapse').show();
                     $('#second_collapse').show();
                 }
-                if (official_type == 11 || official_type == 14){
+                if (official_type == 12 || official_type == 15){
                     $('.work_collapse').hide();
                 }
-                if (official_type == 15){
+                if (official_type == 16){
                     $('.work_collapse').hide();
                     $('#main_collapse').show();
                     $('#first_collapse').show();

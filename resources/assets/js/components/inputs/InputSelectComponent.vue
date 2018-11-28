@@ -1,6 +1,6 @@
 <template>
 <div class="form-group col-xs-12">
-    <label>{{ label}}</label>
+    <label v-if = "label != 'false'">{{ label}}</label>
         <select class="form-control"
                 :name="name"
                 @change="$emit('input', $event.target.value)"
