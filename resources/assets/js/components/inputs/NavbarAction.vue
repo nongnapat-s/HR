@@ -1,7 +1,7 @@
 <template>
-     <ul class="nav navbar-nav navbar-right">
+     <ul :class="ulClass">
         <li 
-            v-for = "action in rightActions" 
+            v-for = "action in actions" 
             :key = "action.label"
             :class="action.active ? 'active':''"
             v-if = "action.name === undefined"
@@ -23,9 +23,17 @@
     import NavbarDropdown from './NavbarDropdown.vue'
     export default {
         components :{
-            NavbarAction,
             NavbarDropdown
         },
+        props : {
+            ulClass : {  default : 'nav navbar-nav'},
+            actions : { required : true ,
+                        type : Array },            
+            },
+        data () {
+            return {
+            }
+        }
     }
 </script>
 

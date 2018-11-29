@@ -23,7 +23,7 @@
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <!-- <ul class="nav navbar-nav">
                     <li 
                         v-for = "action in leftActions" 
                         :key = "action.label"
@@ -41,9 +41,9 @@
                         v-else 
                         :list = "action" 
                     ></navbar-dropdown>
-                </ul>
+                </ul> -->
 
-                <ul class="nav navbar-nav navbar-right">
+                <!-- <ul class="nav navbar-nav navbar-right">
                     <li 
                         v-for = "action in rightActions" 
                         :key = "action.label"
@@ -61,7 +61,16 @@
                         v-else 
                         :list = "action" 
                     ></navbar-dropdown>
-                </ul>
+                </ul> -->
+                <navbar-action
+                    :actions="leftActions"
+                    ul-class = "nav navbar-nav"
+                ></navbar-action>
+
+                <navbar-action
+                    :actions="rightActions"
+                    ul-class = "nav navbar-nav navbar-right"
+                ></navbar-action>
             </div>
         </div>
 </nav>
@@ -170,44 +179,24 @@ import NavbarAction from './NavbarAction.vue'
 export default {
     components :{
         NavbarAction,
-        NavbarDropdown
     },
     data () {
         return {
             leftActions : [
+                { label : 'รายชื่อบุคลากร' , icon : 'fa fa-address-book-o' , link : '#' , active : true },
                 {
-                    name : "ทดสอบ ซ้าย 1",
-                    items : [
-                        { label : '1google' , link : 'https://www.google.com'},
-                        { label : '1youtube' , link : 'https://www.youtube.com'},
-                        { label : '1sanook' , link : 'https://www.sanook.com'},
-                    ]
-                },
-                {
-                    name : "ทดสอบ ซ้าย 2",
+                    name : "Dropdown",
                     items : [
                         { label : 'google' , link : 'https://www.google.com'},
                         { label : 'youtube' , link : 'https://www.youtube.com'},
                         { label : 'sanook' , link : 'https://www.sanook.com'},
                     ]
                 },
-                { label : 'ลิงค์ 2' , icon : 'fa fa-address-book-o' , link : '#' , active : true },
             ],
             rightActions : [
-                { label : '5ชื่อผู้ใช้งาน' , icon : 'fa fa-user' , link : '#' , active : true},
-                { label : '4ออกจากระบบ' , icon : 'fa fa-signout' , link : '#'},
-                { 
-                    name: "test dropdown",
-                    items: [
-                        { label : 'google' , link : 'https://www.google.com'},
-                        { label : 'youtube' , link : 'https://www.youtube.com'},
-                        { label : 'sanook' , link : 'https://www.sanook.com'},
-                    ]
-                },
-                { label : '2ออกจากระบบ' , icon : 'fa fa-signout' , link : '#'},
-                { label : '1ออกจากระบบ' , icon : 'fa fa-signout' , link : '#'}
-            ]
-           
+                { label : 'ชื่อผู้ใช้งาน' , icon : 'fa fa-user' , link : '#'},
+                { label : 'ออกจากระบบ' , icon : 'fa fa-sign-out' , link : '#'},
+            ]  
         }
     }
 }
