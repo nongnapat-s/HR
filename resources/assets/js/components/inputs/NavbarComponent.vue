@@ -2,36 +2,65 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button 
+                    type="button" 
+                    class="navbar-toggle collapsed" 
+                    data-toggle="collapse" 
+                    data-target="#bs-example-navbar-collapse-1" 
+                    aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img
-                                    :src="'logo.png'"
-                                    height="35"
-                                    width="60"/></a>
+                <a 
+                    class="navbar-brand" 
+                    href="#"
+                    ><img
+                        :src="'logo.png'"
+                        height="35"
+                        width="60"/>
+                </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                        <li class="active"><a href="#"><i class="fa fa-address-book-o" aria-hidden="true"></i> รายชื่อบุคลากร</a></li>
-                        <li><a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i> ข้อมูลงานบริหาร</a></li>
-                        <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                        </li>
+                    <li 
+                        v-for = "action in leftActions" 
+                        :key = "action.label"
+                        :class="action.active ? 'active':''"
+                        v-if = "action.name === undefined"
+                        >
+                        <a :href="action.link">
+                            <i :class="action.icon" 
+                                aria-hidden="true">
+                            </i> 
+                                {{ action.label }}
+                        </a>
+                    </li>
+                    <navbar-dropdown 
+                        v-else 
+                        :list = "action" 
+                    ></navbar-dropdown>
                 </ul>
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">nav-right</a></li>
+                    <li 
+                        v-for = "action in rightActions" 
+                        :key = "action.label"
+                        :class="action.active ? 'active':''"
+                        v-if = "action.name === undefined"
+                        >
+                        <a :href="action.link">
+                            <i :class="action.icon" 
+                                aria-hidden="true">
+                            </i> 
+                                {{ action.label }}
+                        </a>
+                    </li>
+                    <navbar-dropdown 
+                        v-else 
+                        :list = "action" 
+                    ></navbar-dropdown>
                 </ul>
             </div>
         </div>
@@ -136,7 +165,50 @@
 </style>
 
 <script>
+import NavbarAction from './NavbarAction.vue'
+
 export default {
-    
+    components :{
+        NavbarAction,
+        NavbarDropdown
+    },
+    data () {
+        return {
+            leftActions : [
+                {
+                    name : "ทดสอบ ซ้าย 1",
+                    items : [
+                        { label : '1google' , link : 'https://www.google.com'},
+                        { label : '1youtube' , link : 'https://www.youtube.com'},
+                        { label : '1sanook' , link : 'https://www.sanook.com'},
+                    ]
+                },
+                {
+                    name : "ทดสอบ ซ้าย 2",
+                    items : [
+                        { label : 'google' , link : 'https://www.google.com'},
+                        { label : 'youtube' , link : 'https://www.youtube.com'},
+                        { label : 'sanook' , link : 'https://www.sanook.com'},
+                    ]
+                },
+                { label : 'ลิงค์ 2' , icon : 'fa fa-address-book-o' , link : '#' , active : true },
+            ],
+            rightActions : [
+                { label : '5ชื่อผู้ใช้งาน' , icon : 'fa fa-user' , link : '#' , active : true},
+                { label : '4ออกจากระบบ' , icon : 'fa fa-signout' , link : '#'},
+                { 
+                    name: "test dropdown",
+                    items: [
+                        { label : 'google' , link : 'https://www.google.com'},
+                        { label : 'youtube' , link : 'https://www.youtube.com'},
+                        { label : 'sanook' , link : 'https://www.sanook.com'},
+                    ]
+                },
+                { label : '2ออกจากระบบ' , icon : 'fa fa-signout' , link : '#'},
+                { label : '1ออกจากระบบ' , icon : 'fa fa-signout' , link : '#'}
+            ]
+           
+        }
+    }
 }
 </script>
