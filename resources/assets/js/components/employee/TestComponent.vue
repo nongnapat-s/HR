@@ -1,152 +1,134 @@
 <template>
-    <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
+<div class= "container">
+  <div class="table-responsive">
+ <table class="table table-bordered table-hover" style="width:100%">
+        <thead>
+            <tr style="background: azure;" class="word-wrap" >
+                <th class="word-wrap">ประเภทเอกสาร</th>  
+                <th class="word-wrap">เลขคำสั่ง</th>  
+                <th class="word-wrap">เรื่องคำสั่ง</th>
+                <th class="word-wrap">หน่วยงาน</th>
+                <th class="word-wrap">วันที่ลงนาม</th>
+                <th class="word-wrap">วันที่มีผลบังคับใช้</th>
+                <th style="max-width: 5px;">ประเภทการจ้าง</th>
+                <th style="max-width: 5px;">ตำแหน่ง</th>
+                <th style="max-width: 5px;">ระดับ/สาย</th>
+                <th style="max-width: 5px;">ระยะเวลาการจ้าง - สิ้นสุด</th>
+                <th style="max-width: 5px;">หมายเหตุ</th>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="word-wrap" style="text-align:left"> บรรจุและแต่งตั้ง </td>
+                <td class="word-wrap" style="text-align:left"> 1234 </td>
+                                <td class="word-wrap" style="text-align:left"> บรรจุและแต่งตั้งพนักงานใหม่ </td>
+                <td class="word-wrap" style="text-align:left"> ศิริราชพยาบาล </td>
+                                <td class="word-wrap" style="text-align:left"> 10/10/2560 </td>
+                <td class="word-wrap" style="text-align:left"> 10/10/2560 </td>
+                                <td class="word-wrap" style="text-align:left"> ประเภทการจ้างของพนักงาน </td>
+                <td style="text-align:left"> ตำแหน่ง : <br>
+                                                               สาย : ถ้ามี<br>
+                                                               เลขกรอบ : <br>
+                                                               เลขประจำตำแหน่งพนักงาน :<br>
+                                                               </td>
+                                <td class="word-wrap" style="text-align:left"> บรรจุและแต่งตั้ง </td>
+                <td class="word-wrap" style="text-align:left"> บรรจุและแต่งตั้ง </td>
+            </tr>
+
+            <tr>
+                <td class="word-wrap"> บรรจุและแต่งตั้ง (อาจารย์)</td>
+            </tr>
+
+            <tr> 
+              <td class="word-wrap"> อนุมัติลูกจ้างชั่วคราว</td>
+            </tr>
+
+            <tr> 
+              <td class="word-wrap"> จ้างต่อ</td>
+            </tr>
+
+            <tr> 
+              <td class="word-wrap"> ต่อเวลาปฏิบัติงาน</td>
+            </tr>
+
+            <tr> 
+              <td class="word-wrap"> จ้างเป็นที่ปรึกษาคณะฯ</td>
+            </tr>
+
+            <tr> 
+              <td class="word-wrap"> อนุมัติให้ยืมตัว</td>
+            </tr>
+
+           <tr> 
+              <td class="word-wrap"> โอนย้าย</td>
+            </tr>
+
+            <tr> 
+              <td class="word-wrap"> เปลี่ยนตำแหน่ง</td>
+            </tr>
+
+            <tr> 
+              <td class="word-wrap"> แก้ไขคำสั่งให้ข้าราชการลาออกจากราชการ</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> แก้ไขคำสั่งบรรจุและแต่งตั้งผู้เปลี่ยนสถานภาพ</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> ปรับระดับชั้นงาน</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> เปลี่ยนประเภทการจ้าง</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> ให้ใช้ชื่อตำแหน่งพนักงานมหาวิทยาลัยประเภทสนับสนุนความก้าวหน้าของตำแหน่ง</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> แต่งตั้งพนักงานมหาวิทยาลัยให้ดำรงตำแหน่งทางวิชาการ</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> แต่งตั้งผู้บริหาร</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> ลาออก</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> ขยายระยะเวลาการจ้างพนักงานมหาวิทยาลัย</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> ให้พนักงานมหาวิทยาลัยกลับเข้าปฏิบัติงานตามปกติ</td>
+            </tr>
+            
+            <tr> 
+              <td class="word-wrap"> ลาฝึกอบรม เรียนต่อ</td>
+            </tr>
+        </tbody>
+  </table>
+  </div>
+</div>
+  
 </template>
 <style>
-.navbar-default {
-  background-color: #6ea8d6;
-  border-color: #ebeff0;
-}
-.navbar-default .navbar-brand {
-  color: #ffffff;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #000000;
-}
-.navbar-default .navbar-text {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #000000;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #6ea8d6;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #000000;
-  background-color: #ebeff0;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-  background-color: #ebeff0;
-}
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-  color: #000000;
-  background-color: #ebeff0;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #000000;
-  background-color: #ebeff0;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #000000;
-  background-color: #ebeff0;
-}
-.navbar-default .navbar-toggle {
-  border-color: #ebeff0;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #ebeff0;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ffffff;
-}
-.navbar-default .navbar-link {
-  color: #ffffff;
-}
-.navbar-default .navbar-link:hover {
-  color: #000000;
-}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffffff;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #000000;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #000000;
-    background-color: #ebeff0;
-  }
-}
+    .word-wrap{
+        text-align: center;
+        max-width: 50px;
+        word-wrap:break-word;
+    }
+    button {
+        box-shadow:0 0 5px #D2D0D0;
+    }
 </style>
 
 <script>
-export default {
-    
+export default { 
 }
 </script>

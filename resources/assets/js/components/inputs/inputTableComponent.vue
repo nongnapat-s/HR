@@ -1,30 +1,31 @@
 <template>
-    <table class="table table-bordered table-hover" style="width:100%">
+    <div class = "table-responsive">
+    <table class="table table-bordered table-hover" >
         <thead>
             <tr style="background: azure;">
                 <th 
-                    class="word-wrap"
+                    
                     v-for = "head in headRows"
                     :key = "head"
                     scope = "col"
                     v-text = "head"
                 ></th>  
-                <th class="word-wrap" v-if = "hasActions !== undefined">จัดการข้อมูล</th>
+                <th  v-if = "hasActions !== undefined">จัดการข้อมูล</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="word-wrap" 
+            <tr  
                 v-for = "(row,index) in rows"
                 :key = "index"
                 scope = "col">
                 <td 
-                    class="word-wrap"
+                    
                     v-for = "(field,fieldIndex) in row " 
                     :key = "fieldIndex"
                     v-if = "fieldIndex !== 'id'"
                     v-text = "field"
                 ></td>   
-                <td class="word-wrap" v-if = "hasActions !== undefined">
+                <td  v-if = "hasActions !== undefined">
                     <button
                         style="margin-left:5px;"
                         v-for ="action in hasActions"
@@ -39,13 +40,17 @@
             </tr>
         </tbody>
     </table>
+    </div>
 </template>
 <style>
     .word-wrap{
         text-align: center;
-        max-width: 15px;
+        max-width: 100px;
         word-wrap:break-word;
     }
+    th,td {
+    white-space: nowrap;
+}
     button {
         box-shadow:0 0 5px #D2D0D0;
     }
@@ -72,6 +77,7 @@ export default {
     },
     data() {
         return {
+
             actions : {
                 edit : {
                     name : 'edit',
