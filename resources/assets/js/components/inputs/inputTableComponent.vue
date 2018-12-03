@@ -49,8 +49,8 @@
         word-wrap:break-word;
     }
     th,td {
-    white-space: nowrap;
-}
+        white-space: nowrap;
+    }
     button {
         box-shadow:0 0 5px #D2D0D0;
     }

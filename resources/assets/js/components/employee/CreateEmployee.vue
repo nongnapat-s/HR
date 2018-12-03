@@ -2,7 +2,204 @@
     <div>
     <navbar-component></navbar-component>
     <div class = "container-fuild col-md-12">
-                    <panel title = "ข้อมูลบุคลากร">
+        <panel title = "เพิ่มประวัติบุคลากร" id = "first_panel">
+            <div class = "row">
+            <div class ="col-md-4">
+                <input-text
+                    @update="(value) => employeeApi(value)"
+                    name = "ref_id"
+                    label = "รหัสพนักงาน :"
+                    v-model = "ref_id"
+                    pattern= "^100([0-9]{5})$"
+                    error-text = "รหัสพนักงานไม่ถูกต้อง"
+                    :required="true"
+                ></input-text>
+            </div>
+            <div class ="col-md-4">
+                <input-text
+                    name = "document_no"
+                    label = "เลขบัตรประชาชน :"
+                    v-model = "document_no"
+                    pattern= "^([0-9]{13})$"
+                    error-text="เลขบัตรประชาชนไม่ถูกต้อง"
+                    :required="false"
+                ></input-text>
+            </div>
+            <div class = "col-md-4">
+                <div class = "paddings">
+                    <input-radio
+                        @update="(item,radioName,apiName,value) => updateGender(item,radioName,apiName,value)"
+                        name = "gender"
+                        label = "เพศ :"
+                        v-model = "gender"
+                        :options = "genders"
+                        api-name = "empPrefixApi"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-4">
+                <file-input
+                    name = "picture"
+                    label = "รูปถ่ายพนักงาน :"
+                    v-model= "picture"
+                    data-preview="false"
+                >
+                </file-input>
+            </div>
+            <div class ="col-md-4">
+                <input-select
+                    label = "คำนำหน้าชื่อ : "
+                    option_start_name = "เลือกคำนำหน้า"
+                    v-model = "prefix_id"
+                    name = "prefix_id"
+                    :options = "empPrefixApi"
+                ></input-select>
+            </div>
+            <div class ="col-md-4">
+                <input-select
+                    name = "extra_prefix_id"
+                    option_start_name = "เลือกยศทางทหาร/ตำรวจ"
+                    label = "ยศทางทหาร/ตำรวจ :"
+                    v-model = "extra_prefix_id"
+                ></input-select>
+            </div>
+        </div>
+        <div class = "row">
+            <div class ="col-md-4">
+                <input-select
+                    name = "position_id"
+                    option_start_name = "เลือกตำแหน่งทางวิชาการ"
+                    label = "ตำแหน่งทางวิชาการ :"
+                    v-model = "position_id"
+                    ></input-select>
+            </div>
+            <div class ="col-md-4">
+                <input-select
+                    label = "ตำแหน่งทางวุฒิการศึกษา : "
+                    option_start_name = "เลือกตำแหน่งทางวุฒิการศึกษา"
+                    v-model = "education_prefix"
+                    name = "education_prefix"
+                ></input-select>
+            </div>
+            <div class ="col-md-4">
+                <input-select
+                    label = "ตำแหน่งทางวิชาชีพ : "
+                    option_start_name = "เลือกตำแหน่งทางวิชาชีพ"
+                    v-model = "profession_prefix"
+                    name = "profession_prefix"
+                ></input-select>
+            </div>
+        </div>
+        <div class="row">
+            <div class ="col-md-4">
+                <input-text
+                    name = "firstname"
+                    label = "ชื่อจริง :"
+                    v-model = "firstname"
+                ></input-text>
+            </div>
+            <div class ="col-md-4">
+                <input-text
+                    name = "middlename"
+                    label = "ชื่อกลาง :"
+                    v-model = "middlename"
+                ></input-text>
+            </div>
+            <div class ="col-md-4">
+                <input-text
+                    name = "lastname"
+                    label = "นามสกุล :"
+                    v-model = "lastname"
+                ></input-text>
+            </div>
+        </div>
+        <div class="row">
+            <div class ="col-md-4">
+                <input-text
+                    name = "firstname_eng"
+                    label = "ชื่อจริง (อังกฤษ):"
+                    v-model = "firstname_eng"
+                ></input-text>
+            </div>
+            <div class ="col-md-4">
+                <input-text
+                    name = "middlename_eng"
+                    label = "ชื่อกลาง (อังกฤษ):"
+                    v-model = "middlename_eng"
+                ></input-text>
+            </div>
+            <div class ="col-md-4">
+                <input-text
+                    name = "lastname_eng"
+                    label = "นามสกุล (อังกฤษ):"
+                    v-model = "lastname_eng"
+                ></input-text>
+            </div>
+        </div>
+            <div class = "row">
+                <div class ="col-md-4">
+                    <div class = "paddings">
+                    <input-radio
+                        name = "work_status"
+                        label = "สถานภาพ : "
+                        v-model = "work_status"
+                        :options = "work_statuses"
+                        @update="(item,radioName,apiName,value) => updateStatus(item,radioName,apiName,value)"
+                        api-name="workStatusApi"
+                    />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input-select
+                        label = "ประเภทของสถานภาพ : "
+                        option_start_name = "เลือกประเภทของสถานภาพ"
+                        v-model = "work_type"
+                        name = "work_type"
+                        :options = "workStatusApi"
+                    ></input-select>
+                </div>
+                    <div id = "unemploy_date" style="display:none;">
+                        <div class = "col-md-4">
+                            <jquery-input-date
+                                name = "unemploy_date"
+                                label = "วันที่พ้นสภาพ :"
+                                v-model = "unemploy_date"
+                                format="d/m/Y"
+                                mode = "BE"
+                                start-range= '2400'
+                                end-range = '3000'
+                                age-name = "unemploy_date"
+                            ></jquery-input-date>
+                        </div>
+                    </div>
+            </div>
+            <div class = "row padding">
+                <div class="col-md-12">
+                    <div class="form-group col-xs-12">
+                        <center>
+                            <input-button 
+                                name = "btn"
+                                label = "บันทึกข้อมูล"
+                                buttonClass = "btn btn-success"
+                                iconClass = "fa fa-save"
+                                @update="(value) => clickBtn(value)"
+                            ></input-button>
+                            <input-button 
+                                label = "ยกเลิกการบันทึก"
+                                buttonClass = "btn btn-danger"
+                                iconClass = "fa fa-ban"
+                            ></input-button>   
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+        </panel>
+    </div>
+    <div class = "container-fuild col-md-12">
+                    <panel title = "ข้อมูลบุคลากร" id = "main_panel">
                         <div class="row col-md-12" style="font-size:16px;padding-bottom:15px;">
                              <table class="responsive-card-table" style="width:100%;">
                                 <tr>
@@ -47,7 +244,7 @@
                             </div>
                         </div>
                         <div class="tab-content">
-                            <div id="employee_menu" class="tab-pane fade" style="max-max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id="employee_menu" class="tab-pane fade in active" style="max-max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class ="col-md-4">
                                         <input-text
@@ -239,7 +436,7 @@
                                         </div>
                                     </div>
                             </div>
-                            <div id="profile_menu" class="tab-pane fade in active" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id="profile_menu" class="tab-pane fade" style="max-height: 625px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class="row">
                                     <div class ="col-md-4">
                                         <jquery-input-date
@@ -1630,7 +1827,8 @@
                                         :rows = "workRows"
                                     ></input-table>
                                 </div>
-                                <div class="row">
+                                
+                                <div class="row"><br/>
                                     <div class ="col-md-12">
                                         <input-line-label
                                             label = "สถานที่ปฏิบัติงาน"
@@ -2159,9 +2357,10 @@
         },
         data() {
             return {
+                btn : '',
                 profile_nav : [
-                    { value : '#employee_menu' , label : 'ประวัติบุคลากร', icon : 'fa fa-id-card' , class : '' },
-                    { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : 'active' },
+                    { value : '#employee_menu' , label : 'ประวัติบุคลากร', icon : 'fa fa-id-card' , class : 'active' },
+                    { value : '#profile_menu' , label : 'ประวัติส่วนตัว', icon : 'fa fa-user-circle-o' , class : '' },
                     { value : '#works_menu' , label : 'ประวัติการทำงาน', icon : 'fa fa-id-badge', class : ''},
                     { value : '#education_menu' , label : 'ประวัติการศึกษา', icon : 'fa fa-graduation-cap', class : '' },
                     { value : '#taining_menu' , label : 'ประวัติการลาศึกษา/อบรม', icon : 'fa fa-plane', class : ''},
@@ -2508,21 +2707,22 @@
                     { 'value' : 1 , 'label' : 'ชำนาญการ' },
                     { 'value' : 2 , 'label' : 'ชำนาญการพิเศษ'}
                 ], 
-                workHeadRows : ['ประเภทเอกสาร','เลขคำสั่ง','เรื่องคำสั่ง','หน่วยงาน','วันที่ลงนาม','วันที่มีผลบังคับใช้','ประเภทการจ้าง','ตำแหน่ง','ระดับ/สาย','ระยะเวลาการจ้าง - สิ้นสุด','หมายเหตุ'],
+                workHeadRows : ['ประเภทคำสั่ง','ข้อมูลคำสั่ง','หน่วยงาน','วันที่ลงนาม','วันที่มีผลบังคับใช้','ประเภทการจ้าง','ตำแหน่ง','เลขกรอบตำแหน่ง','เลขประจำตำแหน่งพนักงาน','ระดับ/สาย','ระยะเวลาการจ้าง - สิ้นสุด','หมายเหตุ'],
                 workRows : [
                     {
                         'id' : 1,
-                        'document' : 'เลขที่/เรื่อง/ประเภทคำสั่ง',
-                        'employ_unit' : '11454456456',
-                        'date' : 'วันที่ลงนาม/วันที่มีผลบังคับใช้',
-                        'employ_type' : 'คณะแพทยศาสตร์ ศิริราชพยาบาล',
-                         'test1' : 'คณะแพทยศาสตร์ ศิริราชพยาบาล',
-                          'test2' : 'คณะแพทยศาสตร์ ศิริราชพยาบาล',
-                           'test0' : 'คณะแพทยศาสตร์ ศิริราชพยาบาล',
-                            'test3' : 'คณะแพทยศาสตร์ ศิริราชพยาบาล',
-                             'test4' : 'คณะแพทยศาสตร์ ศิริราชพยาบาล',    
-                             'test5' : 'คณะแพทยศาสตร์ ศิริราชพยาบาล',
-                             'test6' : 'คณะแพทยศาสตร์ ศิริราชพยาบาล',
+                        'document' : 'ประเภทคำสั่ง',
+                        'employ_unit' : 'เลขที่ / เรื่องของคำสั่ง',
+                        'date' : 'หน่วยงานที่ออกหนังสือ',
+                        'sign_date' : 'วันที่ลงนาม',
+                        'enforce_date' : 'วันที่มีผลบังคับใช้',
+                        'employ_type' : 'ประเภทการจ้าง',
+                        'position' : 'ตำแหน่ง',
+                        'frame_id' : 'เลขกรอบตำแหน่ง',
+                        'position_id' : 'เลขประจำตำแหน่ง',    
+                        'lavel' : 'ระดับ/สาย',
+                        'start_end' : 'ระยะเวลาเริ่มต้น - สิ้นสุด',
+                        'remark' : 'หมายเหตุ',
                     },
                 ],
                 work_filter : '',
@@ -2666,6 +2866,9 @@
 
         },
         mounted() {
+            setTimeout( function() {
+                $('#main_panel').hide();
+            },300);
         },
         methods: {
             updatePostcodeId(item){
@@ -2760,6 +2963,10 @@
                         this[apiName] = item;
                 }
              
+            },
+            clickBtn : function(value){ // ใช้ทดสอบ
+                $('#first_panel').hide();
+                $('#main_panel').fadeIn();
             }
         }
     }

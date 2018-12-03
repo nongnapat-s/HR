@@ -1,7 +1,9 @@
 <template>
     <button 
+        :name = "name"
         type="button" 
         :class="buttonClass" 
+        @click="btn"
      >
         <i 
             :class="iconClass"> 
@@ -18,9 +20,15 @@
 <script>
 export default {
     props : {
+        name :  {default : ''},
         label : {default : ''},
         iconClass : { default : ''},
         buttonClass : { default : 'btn btn-default'}
+    },
+    methods : {
+        btn :function (){
+            this.$emit('update',this.name);
+        }
     }
 }
 </script>

@@ -1,8 +1,8 @@
 {
     "/js/create-employee.js": "/js/create-employee.js",
     "/js/vendor.js": "/js/vendor.js",
+    "/js/test-component.js": "/js/test-component.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/test-component.js": "/js/test-component.js",
     "/js/manifest.js": "/js/manifest.js"
 }

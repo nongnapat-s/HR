@@ -4,6 +4,7 @@
             <button 
                 class="w3-button w3-light-blue"
                 v-text  = "label"
+                @click="alert('test')"
             ></button>
         </p>
      </div>
