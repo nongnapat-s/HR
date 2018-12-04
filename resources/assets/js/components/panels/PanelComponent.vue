@@ -1,18 +1,4 @@
-<style>
-    header{
-        background-color:#e6e6ff;
-    }
-    .panel-relative{
-        position: top;
-    }
-    .content {
-        background-color: #fcfcfc;
-    }
-    /* .panel {
-        box-shadow: -1px 6px 14px 0px rgba(219,216,219,1);
-    } */
-    .panel-heading {background-color: #afcfe9 !important}
-</style>
+
 <template>
     <div class="panel panel-default">
         <div  class="panel-heading text-center panel-relative">    
@@ -29,3 +15,18 @@
         props : ['title']
     }
 </script>
+<style>
+    header{
+        background-color:#e6e6ff;
+    }
+    .panel-relative{
+        position: top;
+    }
+    .content {
+        background-color: #fcfcfc;
+    }
+    .panel {
+        box-shadow: 2px 2px 20px #D2D0D0;
+    }
+    .panel-heading {background-color: #afcfe9 !important}
+</style>

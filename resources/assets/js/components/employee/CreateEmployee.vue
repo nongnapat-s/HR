@@ -199,38 +199,8 @@
         </panel>
     </div>
     <div class = "container-fuild col-md-12">
-                    <!-- <panel title = "ข้อมูลบุคลากร" id = "main_panel"> -->
-                        <!-- <div  style="font-size:16px;padding-bottom:15px;">
-                             <table class="responsive-card-table" style="width:100%;">
-                                <tr>
-                                    <th rowspan="4" style="width:27%;">                            
-                                        <div style="padding-left:150px;">
-                                            <img
-                                            :src="'01.jpeg'"
-                                            class="img-thumbnail"
-                                            alt="รูปพนักงาน"
-                                            height="140"
-                                            width="140"/>
-                                        </div>
-                                    </th>
-                                    <td><b>รหัสพนักงาน : </b> 10000702</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ชื่อ-สกุล (ไทย) : </b>รศ.ดร.พญ.บุคลากร เวลาพักตร์</td>
-                                    <td><b>ชื่อ-สกุล (อังกฤษ) : </b>รศ.ดร.พญ.Bukarakorn Welapak</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ประเภทการจ้าง : </b>พนักงานมหาวิทยาลัย</td>
-                                    <td><b>ตำแหน่ง : </b>อาจารย์</td>
-                                </tr>
-                                <tr>
-                                    <td><b>วันที่บรรจุ : </b>01/06/2547</td>
-                                    <td><b>อายุงาน : </b>  ...ปี ...เดือน ...วัน</td>
-                                </tr>  
-                            </table>
-                        </div> -->
-                        <!-- <div class="profile-preview"> -->
-            <div id = "main_panel">
+                    <panel title = "ข้อมูลบุคลากร" id = "main_panel">
+                    <div id = "main_panel">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-3"></div>
@@ -253,34 +223,6 @@
                                     </div>
                             </div>
                         </div>
-                               <!-- <table class="responsive-card-table" style="width:100%;">
-                                <tr>
-                                    <th rowspan="4" style="width:27%;">                            
-                                        <div style="padding-left:150px;">
-                                            <img
-                                            :src="'01.jpeg'"
-                                            class="img-thumbnail"
-                                            alt="รูปพนักงาน"
-                                            height="140"
-                                            width="140"/>
-                                        </div>
-                                    </th>
-                                    <td><b>รหัสพนักงาน : </b> 10000702</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ชื่อ-สกุล (ไทย) : </b>รศ.ดร.พญ.บุคลากร เวลาพักตร์</td>
-                                    <td><b>ชื่อ-สกุล (อังกฤษ) : </b>รศ.ดร.พญ.Bukarakorn Welapak</td>
-                                </tr>
-                                <tr>
-                                    <td><b>ประเภทการจ้าง : </b>พนักงานมหาวิทยาลัย</td>
-                                    <td><b>ตำแหน่ง : </b>อาจารย์</td>
-                                </tr>
-                                <tr>
-                                    <td><b>วันที่บรรจุ : </b>01/06/2547</td>
-                                    <td><b>อายุงาน : </b>  ...ปี ...เดือน ...วัน</td>
-                                </tr>  
-                            </table> -->
-                        <!-- </div> -->
                         <div class = "row" style = "padding-top:5px;">
                             <div class ="col-md-12 col-sm-12">
                                 <navbar-tabs
@@ -2261,7 +2203,8 @@
                                 </div>
                             </div>
                         </div>
-                    <!-- </panel> -->
+                    </div>
+                    </panel>
                 <div>
             </div>
         <div>
