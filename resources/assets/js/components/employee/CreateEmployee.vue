@@ -199,17 +199,18 @@
         </panel>
     </div>
     <div class = "container-fuild col-md-12">
-                    <panel title = "ข้อมูลบุคลากร" id = "main_panel">
-                        <div class="row col-md-12" style="font-size:16px;padding-bottom:15px;">
+                    <!-- <panel title = "ข้อมูลบุคลากร" id = "main_panel"> -->
+                        <!-- <div  style="font-size:16px;padding-bottom:15px;">
                              <table class="responsive-card-table" style="width:100%;">
                                 <tr>
-                                    <th rowspan="6" style="width:30%;">                            
-                                        <div style="text-align:center;"><img
+                                    <th rowspan="4" style="width:27%;">                            
+                                        <div style="padding-left:150px;">
+                                            <img
                                             :src="'01.jpeg'"
                                             class="img-thumbnail"
                                             alt="รูปพนักงาน"
-                                            height="160"
-                                            width="160"/>
+                                            height="140"
+                                            width="140"/>
                                         </div>
                                     </th>
                                     <td><b>รหัสพนักงาน : </b> 10000702</td>
@@ -224,19 +225,63 @@
                                 </tr>
                                 <tr>
                                     <td><b>วันที่บรรจุ : </b>01/06/2547</td>
-                                    <td><b>อายุงาน : </b>15 ปี</td>
-                                </tr>
-                                <tr>
-                                    <td><b>วันที่โอนย้าย : </b></td>
-                                    <td><b>วันที่มีมติเป็นอาจารย์ : </b>12/05/2547</td>
-                                </tr>
-                                <tr>
-                                    <td><b>วันที่ครบรอบ 25 ปี : </b>01/06/2572</td>
-                                    <td><b>วันที่ครบรอบ 65 ปี : </b>01/06/2577</td>
-                                </tr>      
+                                    <td><b>อายุงาน : </b>  ...ปี ...เดือน ...วัน</td>
+                                </tr>  
                             </table>
+                        </div> -->
+                        <!-- <div class="profile-preview"> -->
+            <div id = "main_panel">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                    <div class="col-md-2 img">
+                                        <img :src="'01.jpeg'"  
+                                            alt=""  
+                                            class="img-thumbnail"
+                                            height="130"
+                                            width="130"/>
+                                    </div>
+                                    <div class="col-md-6 details">
+                                        <h4>น.ส. นงนภัส สำแดงเดช</h4>
+                                        <h4>Miss Nongnapat Somdangdech</h4>
+                                        <div style = "font-size:16px;padding-top:10px;">
+                                            ประเภทการจ้าง : &emsp; พนักงานมหาวิทยาลัย <br>
+                                            ตำแหน่ง : &emsp;&emsp;&emsp;&emsp;นักวิชาการคอมพิวเตอร์ <br>
+                                            บรรจุครั้งแรก : &emsp;&emsp; 12/09/1994 <br/>
+                                            อายุงาน : &emsp;&emsp;&emsp;&emsp; 24 ปี 2 เดือน 33 วัน<br/>
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
-                        <div class = "row">
+                               <!-- <table class="responsive-card-table" style="width:100%;">
+                                <tr>
+                                    <th rowspan="4" style="width:27%;">                            
+                                        <div style="padding-left:150px;">
+                                            <img
+                                            :src="'01.jpeg'"
+                                            class="img-thumbnail"
+                                            alt="รูปพนักงาน"
+                                            height="140"
+                                            width="140"/>
+                                        </div>
+                                    </th>
+                                    <td><b>รหัสพนักงาน : </b> 10000702</td>
+                                </tr>
+                                <tr>
+                                    <td><b>ชื่อ-สกุล (ไทย) : </b>รศ.ดร.พญ.บุคลากร เวลาพักตร์</td>
+                                    <td><b>ชื่อ-สกุล (อังกฤษ) : </b>รศ.ดร.พญ.Bukarakorn Welapak</td>
+                                </tr>
+                                <tr>
+                                    <td><b>ประเภทการจ้าง : </b>พนักงานมหาวิทยาลัย</td>
+                                    <td><b>ตำแหน่ง : </b>อาจารย์</td>
+                                </tr>
+                                <tr>
+                                    <td><b>วันที่บรรจุ : </b>01/06/2547</td>
+                                    <td><b>อายุงาน : </b>  ...ปี ...เดือน ...วัน</td>
+                                </tr>  
+                            </table> -->
+                        <!-- </div> -->
+                        <div class = "row" style = "padding-top:5px;">
                             <div class ="col-md-12 col-sm-12">
                                 <navbar-tabs
                                     :options = 'profile_nav'
@@ -244,7 +289,7 @@
                             </div>
                         </div>
                         <div class="tab-content">
-                            <div id="employee_menu" class="tab-pane fade in active" style="max-max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
+                            <div id="employee_menu" class="tab-pane fade in active" style="max-height: 680px; overflow-y: scroll;overflow-x: hidden;">
                                 <div class = "row">
                                     <div class ="col-md-4">
                                         <input-text
@@ -2216,15 +2261,23 @@
                                 </div>
                             </div>
                         </div>
-                    </panel>
+                    <!-- </panel> -->
                 <div>
             </div>
         <div>
         </div><br><br><br><br><br><br>
     </div>
     </div>
+    </div>
 </template>
 <style>
+.profile-preview {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #d9d9d9; 
+    box-shadow:0 0 20px #D2D0D0;
+}
+
     .col-centered{
         top : 15px;
         float: none;
@@ -2256,56 +2309,19 @@
         border-top:  0px;
 	    box-shadow:0 0 20px #D2D0D0;
     }
-    @media (max-width: 1200px) {
-    .row .col-md-4 > .pull-right {
-        float: none !important;
+    .container{
+    padding:6px;
     }
-    @media screen and (max-width: 640px) {
-    .responsive-card-table thead tr {
-        position: absolute;
-        top: -9999em;
-        left: -9999em;
+    .container .img{
+        text-align:center;
     }
-    .responsive-card-table tr {
-        display: block;
+    .container .details{
+        padding-left : 0px 0px;
+        border-left:3px solid #D2D0D0;
     }
-    .responsive-card-table td {
-        margin-top: 1rem;
-        border: none;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-justify-content: flex-start;
-            -ms-flex-pack: start;
-                justify-content: flex-start;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        padding-left: 0%;
-        position: relative;
-        padding-left:100px;
-    }
-    .responsive-card-table td:before {
-        content: attr(data-label);
-        display: inline-block;
-        font-weight: bold;
-        line-height: 1.5;
-        margin-left: -100%;
-        width: 100%;
-        position: relative;
-        z-index: 1;
-    }
-    .responsive-card-table td:after {
-        content: '';
-        position: absolute;
-        width: 45%;
-        height: 95%;
-        left: 0px;
-        top: 1px;
-        z-index: 0;
-    }
-}
-
+    .container .details p{
+        font-size:15px;
+        font-weight:bold;
 }
 </style>
 <script>
@@ -2366,7 +2382,7 @@
                     { value : '#taining_menu' , label : 'ประวัติการลาศึกษา/อบรม', icon : 'fa fa-plane', class : ''},
                     { value : '#insignia_menu' , label : 'ประวัติการรับเครื่องราชฯ', icon : 'fa fa-star', class : ''},
                     { value : '#honor_menu' , label : 'ประวัติเกียรติยศ', icon : 'fa fa-trophy', class : ''},
-                    { value : '#manager_menu' , label : 'ตำแหน่งบริหาร', icon : 'fa fa-black-tie', class : ''},
+                    // { value : '#manager_menu' , label : 'ตำแหน่งบริหาร', icon : 'fa fa-black-tie', class : ''},
                 ],
                 careersApi: '',
                 workStatusApi : '',
@@ -2758,12 +2774,6 @@
                                 
                 managerHeadRows : ['ชื่อคณะกรรมการ', 'ตำแหน่ง', 'ระยะเวลาดำรงตำแหน่ง'],
                 managerRows :[],
-
-               
-               
-                
-
-                
             }
         },
         watch:{
@@ -2866,9 +2876,7 @@
 
         },
         mounted() {
-            setTimeout( function() {
-                $('#main_panel').hide();
-            },300);
+            $('#main_panel').hide();
         },
         methods: {
             updatePostcodeId(item){
